@@ -1,10 +1,5 @@
 <template>
-  <el-input-number
-    class="base-input-number"
-    v-model="value"
-    :min="minVal"
-    :max="maxVal"
-  />
+  <el-input-number class="base-input-number" v-model="value" />
 </template>
 
 <script setup>
@@ -15,19 +10,11 @@ const props = defineProps({
     type: Number,
     required: true,
   },
-
-  minVal: {
-    type: Number,
-    default: null,
-  },
-
-  maxVal: {
-    type: Number,
-    default: null,
-  },
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits({
+  'update:modelValue': val => typeof val === 'number',
+})
 
 const value = computed({
   get() {
