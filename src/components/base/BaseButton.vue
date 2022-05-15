@@ -1,0 +1,50 @@
+<template>
+  <el-button class="btn" type="primary" @click="$emit('click')">
+    <slot />
+  </el-button>
+</template>
+
+<script setup>
+defineEmits(['click'])
+</script>
+
+<style lang="scss" scoped>
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2.5rem 3.5rem;
+  background: $primary;
+  border-radius: 0 9rem 0 6.1rem;
+
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  font-weight: 900;
+  color: $white;
+
+  cursor: pointer;
+  border: none;
+
+  transition: all 0.3s ease-in-out;
+
+  &:disabled {
+    background: $gray;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  &:hover:not(:disabled) {
+    background: $black;
+    color: $primary;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+</style>
