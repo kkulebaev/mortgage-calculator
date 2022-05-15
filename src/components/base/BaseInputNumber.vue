@@ -1,5 +1,12 @@
 <template>
-  <el-input-number class="base-input-number" v-model="value" />
+  <el-input-number
+    class="base-input-number"
+    v-model="value"
+    :step="step"
+    :max="max"
+    :min="min"
+    :controls="false"
+  />
 </template>
 
 <script setup>
@@ -9,6 +16,21 @@ const props = defineProps({
   modelValue: {
     type: Number,
     required: true,
+  },
+
+  step: {
+    type: Number,
+    default: 1,
+  },
+
+  max: {
+    type: Number,
+    default: Infinity,
+  },
+
+  min: {
+    type: Number,
+    default: -Infinity,
   },
 })
 
