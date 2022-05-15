@@ -17,9 +17,7 @@
       </div>
     </div>
 
-    <base-button :disabled="isDisabledBtn" @click="log">
-      Рассчитать ипотеку
-    </base-button>
+    <base-button> Рассчитать ипотеку </base-button>
   </div>
 </template>
 
