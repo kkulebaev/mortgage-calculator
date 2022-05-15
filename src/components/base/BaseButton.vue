@@ -30,17 +30,8 @@ defineEmits(['click'])
 
   transition: all 0.3s ease-in-out;
 
-  &:disabled {
-    background: $gray;
-
-    &:hover {
-      cursor: not-allowed;
-    }
-  }
-
   &:hover:not(:disabled) {
     background: $black;
-    color: $primary;
   }
 
   &:focus {
