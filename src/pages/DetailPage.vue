@@ -52,4 +52,8 @@ const tableData = [
 ]
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.detail-info {
+  padding: 2rem;
+}
+</style>

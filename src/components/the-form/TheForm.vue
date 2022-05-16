@@ -1,7 +1,12 @@
 <template>
   <form class="form" action="/">
     <div class="form__item">
-      <span class="form__item__label">Сумма ипотеки</span>
+      <span class="form__item__label">
+        Сумма ипотеки
+        <base-tooltip
+          content="Сумма, которую вы хотите взять (с учетом первоначального взноса)"
+        />
+      </span>
       <base-input-number v-model="mortgageAmount" :step="100000" :min="0" />
     </div>
     <div class="form__item">
@@ -17,7 +22,13 @@
       <base-input-number v-model="mortgageRate" :step="0.1" :min="0" />
     </div>
     <div class="form__item">
-      <span class="form__item__label">Тип платежей</span>
+      <span class="form__item__label">
+        Тип платежей
+        <base-tooltip
+          content="Аннуитетный тип – размер ежемесячного платежа одинаковый.
+        Дифференцированный тип – тело кредита одинаковое, а размер ежемесячного платежа постепенно уменьшается."
+        />
+      </span>
       <base-select v-model="paymentType" :options="selectOptions" />
     </div>
   </form>
@@ -28,6 +39,7 @@ import { ref } from 'vue'
 
 import BaseInputNumber from '../base/BaseInputNumber.vue'
 import BaseSelect from '../base/BaseSelect.vue'
+import BaseTooltip from '../base/BaseTooltip.vue'
 
 const selectOptions = [
   { value: 'an', label: 'Аннуитетный' },
@@ -51,10 +63,14 @@ const mortgageRate = ref(6.5)
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: calc(50% - 2rem);
 
     &__label {
       color: $black;
       font-size: 1.8rem;
+      width: fit-content;
+      cursor: default;
+      position: relative;
     }
   }
 }
