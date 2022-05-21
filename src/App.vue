@@ -29,9 +29,9 @@
 .app-wrapper {
   display: flex;
   width: 100%;
-  max-width: 1260px;
+  max-width: 150rem;
   margin: auto;
-  min-height: 750px;
+  min-height: 75rem;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
 }
 
