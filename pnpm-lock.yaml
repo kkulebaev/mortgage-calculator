@@ -4,6 +4,7 @@ specifiers:
   '@vitejs/plugin-vue': ^2.3.1
   element-plus: ^2.1.11
   eslint: ^8.16.0
+  eslint-config-prettier: ^8.5.0
   eslint-plugin-vue: ^9.0.1
   sass: ^1.50.1
   sass-loader: ^12.6.0
@@ -19,6 +20,7 @@ dependencies:
 devDependencies:
   '@vitejs/plugin-vue': 2.3.3_vite@2.9.9+vue@3.2.33
   eslint: 8.16.0
+  eslint-config-prettier: 8.5.0_eslint@8.16.0
   eslint-plugin-vue: 9.0.1_eslint@8.16.0
   sass: 1.51.0
   sass-loader: 12.6.0_sass@1.51.0
@@ -657,6 +659,15 @@ packages:
   /escape-string-regexp/4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
+    dev: true
+
+  /eslint-config-prettier/8.5.0_eslint@8.16.0:
+    resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      eslint: 8.16.0
     dev: true
 
   /eslint-plugin-vue/9.0.1_eslint@8.16.0:
