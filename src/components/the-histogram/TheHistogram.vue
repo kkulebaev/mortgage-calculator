@@ -2,24 +2,37 @@
   <div class="histogram">
     <div class="histogram__item">
       <span class="histogram__item__label"> Возьмете </span>
-      <span class="histogram__item__value"> 50000 RUB </span>
+      <span class="histogram__item__value"> {{ takeValue }} RUB </span>
       <div class="histogram__item__scale" />
     </div>
     <div class="histogram__item">
       <span class="histogram__item__label"> Вернете </span>
-      <span class="histogram__item__value"> 50000 RUB </span>
+      <span class="histogram__item__value"> {{ repayValue }} RUB </span>
       <div class="histogram__item__scale" />
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+  takeValue: {
+    type: Number,
+    required: true,
+  },
+
+  repayValue: {
+    type: Number,
+    required: true,
+  },
+})
+</script>
 
 <style lang="scss" scoped>
 .histogram {
   display: flex;
   flex: 1;
   justify-content: space-evenly;
+  gap: 2rem;
 
   &__item {
     display: flex;
@@ -41,6 +54,7 @@
     &__scale {
       height: 20rem;
       width: 100%;
+      min-width: 18rem;
       background-color: $primary;
       border-radius: 15px;
     }

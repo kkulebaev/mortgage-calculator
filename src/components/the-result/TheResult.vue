@@ -1,6 +1,6 @@
 <template>
   <div class="result-block">
-    <the-histogram />
+    <the-histogram :take-value="takeValue" :repay-value="repayValue" />
 
     <div class="info-block">
       <div class="info-block__item">
@@ -17,13 +17,27 @@
       </div>
     </div>
 
-    <base-button> Рассчитать ипотеку </base-button>
+    <base-button @click="$emit('submitForm')"> Рассчитать ипотеку </base-button>
   </div>
 </template>
 
 <script setup>
 import TheHistogram from '/src/components/the-histogram/TheHistogram.vue'
 import BaseButton from '/src/components/base/BaseButton.vue'
+
+defineProps({
+  takeValue: {
+    type: Number,
+    required: true,
+  },
+
+  repayValue: {
+    type: Number,
+    required: true,
+  },
+})
+
+defineEmits(['submitForm'])
 </script>
 
 <style lang="scss" scoped>
