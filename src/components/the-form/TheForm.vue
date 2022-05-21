@@ -7,19 +7,41 @@
           content="Сумма, которую вы хотите взять (с учетом первоначального взноса)"
         />
       </span>
-      <base-input-number v-model="mortgageAmount" :step="100000" :min="0" />
+      <el-input
+        v-model="mortgageAmount"
+        placeholder="50 000"
+        :formatter="numberWithSpaces"
+      >
+        <template #append>руб</template>
+      </el-input>
     </div>
     <div class="form__item">
       <span class="form__item__label">Первоначальный взнос</span>
-      <base-input-number v-model="initialPayment" :step="100000" :min="0" />
+      <el-input
+        v-model="initialPayment"
+        placeholder="20 000"
+        :formatter="numberWithSpaces"
+      >
+        <template #append>руб</template>
+      </el-input>
     </div>
     <div class="form__item">
       <span class="form__item__label">Срок ипотеки</span>
-      <base-input-number v-model="mortgageTerm" :step="1" :min="0" />
+      <el-input v-model="mortgageTerm" placeholder="10">
+        <template #append>
+          <base-select
+            v-model="select"
+            :options="TEMP_OPTIONS"
+            style="width: 70px"
+          />
+        </template>
+      </el-input>
     </div>
     <div class="form__item">
       <span class="form__item__label">Годовая ставка по ипотеке</span>
-      <base-input-number v-model="mortgageRate" :step="0.1" :min="0" />
+      <el-input v-model="mortgageRate" placeholder="6.5">
+        <template #append>%</template>
+      </el-input>
     </div>
     <div class="form__item">
       <span class="form__item__label">
@@ -29,7 +51,7 @@
         Дифференцированный тип – тело кредита одинаковое, а размер ежемесячного платежа постепенно уменьшается."
         />
       </span>
-      <base-select v-model="paymentType" :options="selectOptions" />
+      <base-select v-model="paymentType" :options="TYPE_MORTGAGE_OPTIONS" />
     </div>
   </form>
 </template>
@@ -37,20 +59,22 @@
 <script setup>
 import { ref } from 'vue'
 
-import BaseInputNumber from '../base/BaseInputNumber.vue'
+import {
+  TYPE_MORTGAGE_OPTIONS,
+  TEMP_OPTIONS,
+} from '/src/components/the-form/form-helpers.js'
+
+import numberWithSpaces from '/src/utils/numberWithSpaces.js'
+
 import BaseSelect from '../base/BaseSelect.vue'
 import BaseTooltip from '../base/BaseTooltip.vue'
 
-const selectOptions = [
-  { value: 'an', label: 'Аннуитетный' },
-  { value: 'dif', label: 'Дифференцированный' },
-]
-
-const paymentType = ref(selectOptions[0])
-const mortgageAmount = ref(50000)
-const initialPayment = ref(20000)
-const mortgageTerm = ref(10)
-const mortgageRate = ref(6.5)
+const paymentType = ref(TYPE_MORTGAGE_OPTIONS[0])
+const mortgageAmount = ref('')
+const initialPayment = ref('')
+const mortgageTerm = ref('')
+const mortgageRate = ref('')
+const select = ref('years')
 </script>
 
 <style lang="scss" scoped>
