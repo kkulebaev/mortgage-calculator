@@ -1,7 +1,7 @@
 <template>
   <el-input-number
-    class="base-input-number"
     v-model="value"
+    class="base-input-number"
     :step="step"
     :max="max"
     :min="min"
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { computed } from '@vue/reactivity'
+import { computed } from 'vue'
 
 const props = defineProps({
   modelValue: {

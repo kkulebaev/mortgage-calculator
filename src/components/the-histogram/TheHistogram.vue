@@ -3,12 +3,12 @@
     <div class="histogram__item">
       <span class="histogram__item__label"> Возьмете </span>
       <span class="histogram__item__value"> 50000 RUB </span>
-      <div class="histogram__item__scale"></div>
+      <div class="histogram__item__scale" />
     </div>
     <div class="histogram__item">
       <span class="histogram__item__label"> Вернете </span>
       <span class="histogram__item__value"> 50000 RUB </span>
-      <div class="histogram__item__scale"></div>
+      <div class="histogram__item__scale" />
     </div>
   </div>
 </template>
