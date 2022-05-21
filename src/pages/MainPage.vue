@@ -42,11 +42,11 @@ import TheForm from './../components/the-form/TheForm.vue'
 import TheResult from '../components/the-result/TheResult.vue'
 
 const inputValues = reactive({
-  mortgageAmount: 50000,
+  mortgageAmount: 30000,
   initialPayment: 10000,
-  mortgageTerm: 1,
+  mortgageTerm: 3,
   mortgagePeriod: PERIOD_OPTIONS[0].value,
-  mortgageRate: 6.5,
+  mortgageRate: 12,
   paymentType: TYPE_MORTGAGE_OPTIONS[0].value,
 })
 
@@ -59,11 +59,38 @@ const outputValues = reactive({
 })
 
 const submitForm = () => {
+  const {
+    mortgageAmount,
+    initialPayment,
+    mortgageTerm,
+    mortgagePeriod,
+    mortgageRate,
+    paymentType,
+  } = inputValues
   outputValues.takeValue = inputValues.mortgageAmount
-  outputValues.repayValue = inputValues.mortgageAmount
-  outputValues.overpaymentValue = inputValues.mortgageAmount
-  outputValues.monthlyPayment = inputValues.mortgageAmount
-  outputValues.totalCost = inputValues.mortgageAmount
+
+  // estMortgageBody - расчетное значение начального тела кредита.
+  const estMortgageBody = mortgageAmount - initialPayment
+
+  // estMortgageTerm - расчетное значение срока ипотеки выраженное в месяцах. Если пользователь выбрал ввод количества лет, то приводим значение к количеству месяцев
+  const estMortgageTerm =
+    mortgagePeriod === 'years' ? mortgageTerm * 12 : mortgageTerm
+
+  // estMortgageRate - расчетное значение месячной процентной ставки
+  const estMortgageRate = mortgageRate / 100 / 12
+
+  // Ежемесячный платеж по аннуитетному типу равен:
+  outputValues.monthlyPayment =
+    estMortgageBody *
+    (estMortgageRate / (1 - Math.pow(1 + estMortgageRate, -estMortgageTerm)))
+
+  // Переплата по ипотеке по аннуитетному типу равна:
+  outputValues.overpaymentValue =
+    outputValues.monthlyPayment * estMortgageTerm - estMortgageBody
+
+  outputValues.repayValue = outputValues.overpaymentValue + mortgageAmount
+
+  outputValues.totalCost = outputValues.repayValue
 }
 
 function handleEnterPress(event) {
