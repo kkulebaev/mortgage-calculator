@@ -2,6 +2,7 @@
   <el-table :data="data">
     <el-table-column
       v-for="field in fields"
+      :key="field.prop"
       :prop="field.prop"
       :label="field.label"
       :width="field.width"
