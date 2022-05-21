@@ -10,25 +10,28 @@
         <h1 class="title__title">Калькулятор ипотеки</h1>
       </div>
       <the-form
-        v-model:paymentType="paymentType"
-        v-model:mortgageAmount="mortgageAmount"
-        v-model:initialPayment="initialPayment"
-        v-model:mortgageTerm="mortgageTerm"
-        v-model:mortgagePeriod="mortgagePeriod"
-        v-model:mortgageRate="mortgageRate"
+        v-model:paymentType="inputValues.paymentType"
+        v-model:mortgageAmount="inputValues.mortgageAmount"
+        v-model:initialPayment="inputValues.initialPayment"
+        v-model:mortgageTerm="inputValues.mortgageTerm"
+        v-model:mortgagePeriod="inputValues.mortgagePeriod"
+        v-model:mortgageRate="inputValues.mortgageRate"
       />
     </div>
     <the-result
       class="main-page__result"
-      :take-value="takeValue"
-      :repay-value="repayValue"
+      :take-value="outputValues.takeValue"
+      :repay-value="outputValues.repayValue"
+      :overpayment-value="outputValues.overpaymentValue"
+      :monthly-payment="outputValues.monthlyPayment"
+      :total-cost="outputValues.totalCost"
       @submit-form="submitForm"
     />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { reactive, onMounted, onBeforeUnmount } from 'vue'
 
 import {
   TYPE_MORTGAGE_OPTIONS,
@@ -38,20 +41,44 @@ import {
 import TheForm from './../components/the-form/TheForm.vue'
 import TheResult from '../components/the-result/TheResult.vue'
 
-const mortgageAmount = ref(0)
-const initialPayment = ref(0)
-const mortgageTerm = ref(0)
-const mortgagePeriod = ref(PERIOD_OPTIONS[0].value)
-const mortgageRate = ref(0)
-const paymentType = ref(TYPE_MORTGAGE_OPTIONS[0].value)
+const inputValues = reactive({
+  mortgageAmount: 50000,
+  initialPayment: 10000,
+  mortgageTerm: 1,
+  mortgagePeriod: PERIOD_OPTIONS[0].value,
+  mortgageRate: 6.5,
+  paymentType: TYPE_MORTGAGE_OPTIONS[0].value,
+})
 
-const takeValue = ref(0)
-const repayValue = ref(0)
+const outputValues = reactive({
+  takeValue: 0,
+  repayValue: 0,
+  overpaymentValue: 0,
+  monthlyPayment: 0,
+  totalCost: 0,
+})
 
 const submitForm = () => {
-  takeValue.value = mortgageAmount.value
-  repayValue.value = mortgageAmount.value
+  outputValues.takeValue = inputValues.mortgageAmount
+  outputValues.repayValue = inputValues.mortgageAmount
+  outputValues.overpaymentValue = inputValues.mortgageAmount
+  outputValues.monthlyPayment = inputValues.mortgageAmount
+  outputValues.totalCost = inputValues.mortgageAmount
 }
+
+function handleEnterPress(event) {
+  if (event.key === 'Enter') {
+    submitForm()
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('keypress', handleEnterPress)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('keypress', handleEnterPress)
+})
 </script>
 
 <style lang="scss">
