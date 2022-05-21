@@ -1,14 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@vitejs/plugin-vue': 2.3.1
+  '@vitejs/plugin-vue': 2.3.3
   element-plus: 2.1.11
   eslint: 8.16.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-vue: 9.0.1
   sass: 1.50.1
   sass-loader: 12.6.0
-  vite: 2.9.5
+  vite: 2.9.9
   vue: 3.2.25
   vue-router: 4.0.14
 
@@ -18,13 +18,13 @@ dependencies:
   vue-router: 4.0.14_vue@3.2.25
 
 devDependencies:
-  '@vitejs/plugin-vue': 2.3.1_vite@2.9.5+vue@3.2.25
+  '@vitejs/plugin-vue': 2.3.3_vite@2.9.9+vue@3.2.25
   eslint: 8.16.0
   eslint-config-prettier: 8.5.0_eslint@8.16.0
   eslint-plugin-vue: 9.0.1_eslint@8.16.0
   sass: 1.50.1
   sass-loader: 12.6.0_sass@1.50.1
-  vite: 2.9.5_sass@1.50.1
+  vite: 2.9.9_sass@1.50.1
 
 packages:
 
@@ -118,14 +118,14 @@ packages:
     resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
     dev: false
 
-  /@vitejs/plugin-vue/2.3.1_vite@2.9.5+vue@3.2.25:
-    resolution: {integrity: sha512-YNzBt8+jt6bSwpt7LP890U1UcTOIZZxfpE5WOJ638PNxSEKOqAi0+FSKS0nVeukfdZ0Ai/H7AFd6k3hayfGZqQ==}
+  /@vitejs/plugin-vue/2.3.3_vite@2.9.9+vue@3.2.25:
+    resolution: {integrity: sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.5_sass@1.50.1
+      vite: 2.9.9_sass@1.50.1
       vue: 3.2.25
     dev: true
 
@@ -1319,8 +1319,8 @@ packages:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
     dev: true
 
-  /vite/2.9.5_sass@1.50.1:
-    resolution: {integrity: sha512-dvMN64X2YEQgSXF1lYabKXw3BbN6e+BL67+P3Vy4MacnY+UzT1AfkHiioFSi9+uiDUiaDy7Ax/LQqivk6orilg==}
+  /vite/2.9.9_sass@1.50.1:
+    resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
