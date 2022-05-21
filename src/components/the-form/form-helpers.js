@@ -3,7 +3,7 @@ export const TYPE_MORTGAGE_OPTIONS = [
   { value: 'dif', label: 'Дифференцированный' },
 ]
 
-export const TEMP_OPTIONS = [
+export const PERIOD_OPTIONS = [
   { value: 'years', label: 'лет' },
   { value: 'months', label: 'мес' },
 ]
