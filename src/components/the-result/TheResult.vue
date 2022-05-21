@@ -5,15 +5,21 @@
     <div class="info-block">
       <div class="info-block__item">
         <span class="info-block__item__label"> Переплата по ипотеке: </span>
-        <span class="info-block__item__label"> 10000 RUB </span>
+        <span class="info-block__item__label">
+          {{ numberWithSpaces(overpaymentValue) }} RUB
+        </span>
       </div>
       <div class="info-block__item">
         <span class="info-block__item__label"> Ежемесячный платеж: </span>
-        <span class="info-block__item__label"> 10000 RUB </span>
+        <span class="info-block__item__label">
+          {{ numberWithSpaces(monthlyPayment) }} RUB
+        </span>
       </div>
       <div class="info-block__item">
         <span class="info-block__item__label"> Общая стоимость ипотеки: </span>
-        <span class="info-block__item__label"> 10000 RUB </span>
+        <span class="info-block__item__label">
+          {{ numberWithSpaces(totalCost) }} RUB
+        </span>
       </div>
     </div>
 
@@ -22,6 +28,8 @@
 </template>
 
 <script setup>
+import numberWithSpaces from '/src/utils/numberWithSpaces.js'
+
 import TheHistogram from '/src/components/the-histogram/TheHistogram.vue'
 import BaseButton from '/src/components/base/BaseButton.vue'
 
@@ -32,6 +40,21 @@ defineProps({
   },
 
   repayValue: {
+    type: Number,
+    required: true,
+  },
+
+  overpaymentValue: {
+    type: Number,
+    required: true,
+  },
+
+  monthlyPayment: {
+    type: Number,
+    required: true,
+  },
+
+  totalCost: {
     type: Number,
     required: true,
   },

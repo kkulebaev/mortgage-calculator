@@ -2,18 +2,24 @@
   <div class="histogram">
     <div class="histogram__item">
       <span class="histogram__item__label"> Возьмете </span>
-      <span class="histogram__item__value"> {{ takeValue }} RUB </span>
+      <span class="histogram__item__value">
+        {{ numberWithSpaces(takeValue) }} RUB
+      </span>
       <div class="histogram__item__scale" />
     </div>
     <div class="histogram__item">
       <span class="histogram__item__label"> Вернете </span>
-      <span class="histogram__item__value"> {{ repayValue }} RUB </span>
+      <span class="histogram__item__value">
+        {{ numberWithSpaces(repayValue) }} RUB
+      </span>
       <div class="histogram__item__scale" />
     </div>
   </div>
 </template>
 
 <script setup>
+import numberWithSpaces from '/src/utils/numberWithSpaces.js'
+
 defineProps({
   takeValue: {
     type: Number,
