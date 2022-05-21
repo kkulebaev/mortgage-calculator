@@ -1,8 +1,3 @@
-<script setup>
-import TheForm from './../components/the-form/TheForm.vue'
-import TheResult from '../components/the-result/TheResult.vue'
-</script>
-
 <template>
   <div class="main-page">
     <div class="main-page__data">
@@ -14,11 +9,50 @@ import TheResult from '../components/the-result/TheResult.vue'
         />
         <h1 class="title__title">Калькулятор ипотеки</h1>
       </div>
-      <the-form />
+      <the-form
+        v-model:paymentType="paymentType"
+        v-model:mortgageAmount="mortgageAmount"
+        v-model:initialPayment="initialPayment"
+        v-model:mortgageTerm="mortgageTerm"
+        v-model:mortgagePeriod="mortgagePeriod"
+        v-model:mortgageRate="mortgageRate"
+      />
     </div>
-    <the-result class="main-page__result" />
+    <the-result
+      class="main-page__result"
+      :take-value="takeValue"
+      :repay-value="repayValue"
+      @submit-form="submitForm"
+    />
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+import {
+  TYPE_MORTGAGE_OPTIONS,
+  PERIOD_OPTIONS,
+} from '/src/components/the-form/form-helpers.js'
+
+import TheForm from './../components/the-form/TheForm.vue'
+import TheResult from '../components/the-result/TheResult.vue'
+
+const mortgageAmount = ref(0)
+const initialPayment = ref(0)
+const mortgageTerm = ref(0)
+const mortgagePeriod = ref(PERIOD_OPTIONS[0].value)
+const mortgageRate = ref(0)
+const paymentType = ref(TYPE_MORTGAGE_OPTIONS[0].value)
+
+const takeValue = ref(0)
+const repayValue = ref(0)
+
+const submitForm = () => {
+  takeValue.value = mortgageAmount.value
+  repayValue.value = mortgageAmount.value
+}
+</script>
 
 <style lang="scss">
 .main-page {
@@ -26,6 +60,7 @@ import TheResult from '../components/the-result/TheResult.vue'
   justify-content: space-between;
   height: 100%;
   padding: 2rem;
+  gap: 4rem;
 
   &__data {
     display: flex;

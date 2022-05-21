@@ -1,5 +1,5 @@
 <template>
-  <form class="form" action="/">
+  <form class="form">
     <div class="form__item">
       <span class="form__item__label">
         Сумма ипотеки
@@ -8,40 +8,39 @@
         />
       </span>
       <el-input
-        v-model="mortgageAmount"
+        v-model="mortgageAmountValue"
         placeholder="50 000"
-        :formatter="numberWithSpaces"
+        :maxlength="13"
       >
         <template #append>руб</template>
       </el-input>
     </div>
     <div class="form__item">
       <span class="form__item__label">Первоначальный взнос</span>
-      <el-input
-        v-model="initialPayment"
-        placeholder="20 000"
-        :formatter="numberWithSpaces"
-      >
+      <el-input v-model="initialPaymentValue" placeholder="20 000">
         <template #append>руб</template>
       </el-input>
     </div>
     <div class="form__item">
       <span class="form__item__label">Срок ипотеки</span>
-      <el-input v-model="mortgageTerm" placeholder="10">
+      <el-input v-model="mortgageTermValue" placeholder="10" :maxlength="3">
         <template #append>
           <base-select
-            v-model="select"
-            :options="TEMP_OPTIONS"
-            style="width: 70px"
+            v-model="mortgagePeriodValue"
+            class="form__item__select"
+            :options="PERIOD_OPTIONS"
           />
         </template>
       </el-input>
     </div>
     <div class="form__item">
       <span class="form__item__label">Годовая ставка по ипотеке</span>
-      <el-input v-model="mortgageRate" placeholder="6.5">
-        <template #append>%</template>
-      </el-input>
+      <el-input-number
+        v-model="mortgageRateValue"
+        :min="0.1"
+        :step="0.1"
+        controls-position="right"
+      />
     </div>
     <div class="form__item">
       <span class="form__item__label">
@@ -51,30 +50,127 @@
         Дифференцированный тип – тело кредита одинаковое, а размер ежемесячного платежа постепенно уменьшается."
         />
       </span>
-      <base-select v-model="paymentType" :options="TYPE_MORTGAGE_OPTIONS" />
+      <base-select
+        v-model="paymentTypeValue"
+        :options="TYPE_MORTGAGE_OPTIONS"
+      />
     </div>
   </form>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
+import { computed } from 'vue'
 import {
   TYPE_MORTGAGE_OPTIONS,
-  TEMP_OPTIONS,
+  PERIOD_OPTIONS,
 } from '/src/components/the-form/form-helpers.js'
 
 import numberWithSpaces from '/src/utils/numberWithSpaces.js'
+import toNumber from '/src/utils/toNumber.js'
 
 import BaseSelect from '../base/BaseSelect.vue'
 import BaseTooltip from '../base/BaseTooltip.vue'
 
-const paymentType = ref(TYPE_MORTGAGE_OPTIONS[0])
-const mortgageAmount = ref('')
-const initialPayment = ref('')
-const mortgageTerm = ref('')
-const mortgageRate = ref('')
-const select = ref('years')
+const props = defineProps({
+  mortgageAmount: {
+    type: Number,
+    required: true,
+  },
+
+  initialPayment: {
+    type: Number,
+    required: true,
+  },
+
+  mortgageTerm: {
+    type: Number,
+    required: true,
+  },
+
+  mortgagePeriod: {
+    type: String,
+    required: true,
+    validator(val) {
+      return !!PERIOD_OPTIONS.find(x => x.value === val)
+    },
+  },
+
+  mortgageRate: {
+    type: Number,
+    required: true,
+  },
+
+  paymentType: {
+    type: String,
+    required: true,
+    validator(val) {
+      return !!TYPE_MORTGAGE_OPTIONS.find(x => x.value === val)
+    },
+  },
+})
+
+const emit = defineEmits([
+  'update:paymentType',
+  'update:mortgageAmount',
+  'update:initialPayment',
+  'update:mortgageTerm',
+  'update:mortgagePeriod',
+  'update:mortgageRate',
+])
+
+const mortgageAmountValue = computed({
+  get() {
+    return numberWithSpaces(props.mortgageAmount)
+  },
+  set(value) {
+    emit('update:mortgageAmount', toNumber(value))
+  },
+})
+
+const initialPaymentValue = computed({
+  get() {
+    return numberWithSpaces(props.initialPayment)
+  },
+  set(value) {
+    emit('update:initialPayment', toNumber(value))
+  },
+})
+
+const mortgageTermValue = computed({
+  get() {
+    return numberWithSpaces(props.mortgageTerm)
+  },
+  set(value) {
+    emit('update:mortgageTerm', toNumber(value))
+  },
+})
+
+const mortgagePeriodValue = computed({
+  get() {
+    return props.mortgagePeriod
+  },
+  set(value) {
+    emit('update:mortgagePeriod', value)
+  },
+})
+
+const mortgageRateValue = computed({
+  get() {
+    return props.mortgageRate
+  },
+  set(value) {
+    emit('update:mortgageRate', value)
+  },
+})
+
+const paymentTypeValue = computed({
+  get() {
+    return props.paymentType
+  },
+  set(value) {
+    emit('update:paymentType', value)
+  },
+})
 </script>
 
 <style lang="scss" scoped>
@@ -95,6 +191,10 @@ const select = ref('years')
       width: fit-content;
       cursor: default;
       position: relative;
+    }
+
+    &__select {
+      max-width: 7rem;
     }
   }
 }
