@@ -12,13 +12,22 @@
       </nav>
 
       <div class="container">
-        <router-view />
+        <router-view v-slot="{ Component }">
+          <transition
+            class="transition"
+            enter-active-class="animated fadeIn"
+            leave-active-class="animated fadeOut"
+            mode="out-in"
+          >
+            <component :is="Component" />
+          </transition>
+        </router-view>
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app {
   display: flex;
   align-items: center;
@@ -63,5 +72,9 @@
   &__icon {
     width: 3.2rem;
   }
+}
+
+.transition {
+  --animate-duration: 0.2s;
 }
 </style>
