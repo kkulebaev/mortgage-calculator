@@ -1,5 +1,5 @@
 <template>
-  <el-select v-model="value">
+  <el-select v-model="value" @change="$emit('change')">
     <el-option
       v-for="item in options"
       :key="item.value"
@@ -24,7 +24,7 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change'])
 
 const value = computed({
   get() {
