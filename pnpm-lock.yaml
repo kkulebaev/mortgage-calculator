@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@vitejs/plugin-vue': 2.3.3
+  animate.css: ^4.1.1
   element-plus: 2.2.2
   eslint: 8.16.0
   eslint-config-prettier: 8.5.0
@@ -13,6 +14,7 @@ specifiers:
   vue-router: 4.0.15
 
 dependencies:
+  animate.css: 4.1.1
   element-plus: 2.2.2_vue@3.2.36
   vue: 3.2.36
   vue-router: 4.0.15_vue@3.2.36
@@ -274,6 +276,10 @@ packages:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
     dev: true
+
+  /animate.css/4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
+    dev: false
 
   /ansi-regex/5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
