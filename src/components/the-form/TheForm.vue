@@ -11,19 +11,29 @@
         v-model="mortgageAmountValue"
         placeholder="50 000"
         :maxlength="13"
+        @input="$emit('change')"
       >
         <template #append>руб</template>
       </el-input>
     </div>
     <div class="form__item">
       <span class="form__item__label">Первоначальный взнос</span>
-      <el-input v-model="initialPaymentValue" placeholder="20 000">
+      <el-input
+        v-model="initialPaymentValue"
+        placeholder="20 000"
+        @input="$emit('change')"
+      >
         <template #append>руб</template>
       </el-input>
     </div>
     <div class="form__item">
       <span class="form__item__label">Срок ипотеки</span>
-      <el-input v-model="mortgageTermValue" placeholder="10" :maxlength="3">
+      <el-input
+        v-model="mortgageTermValue"
+        placeholder="10"
+        :maxlength="3"
+        @input="$emit('change')"
+      >
         <template #append>
           <base-select
             v-model="mortgagePeriodValue"
@@ -40,6 +50,7 @@
         :min="0.1"
         :step="0.1"
         controls-position="right"
+        @input="$emit('change')"
       />
     </div>
     <div class="form__item">
@@ -53,6 +64,7 @@
       <base-select
         v-model="paymentTypeValue"
         :options="TYPE_MORTGAGE_OPTIONS"
+        @change="$emit('change')"
       />
     </div>
   </form>
@@ -116,6 +128,7 @@ const emit = defineEmits([
   'update:mortgageTerm',
   'update:mortgagePeriod',
   'update:mortgageRate',
+  'change',
 ])
 
 const mortgageAmountValue = computed({

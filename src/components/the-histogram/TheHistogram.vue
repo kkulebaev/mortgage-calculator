@@ -1,29 +1,41 @@
 <template>
   <div class="histogram">
-    <div class="histogram__item">
-      <span class="histogram__item__label"> Возьмете </span>
-      <span class="histogram__item__value">
-        {{ numberWithSpaces(takeValue) }} RUB
-      </span>
-      <div class="histogram__item__scale">
-        <div
-          class="histogram__item__scale__bar"
-          :style="{ height: `${takeHistogramHeight}%` }"
-        />
+    <transition
+      enter-active-class="animated bounceInUp"
+      leave-active-class="animated bounceOutUp"
+    >
+      <div v-if="takeValue" class="histogram__item">
+        <span class="histogram__item__label"> Возьмете </span>
+        <span class="histogram__item__value">
+          {{ numberWithSpaces(takeValue) }} RUB
+        </span>
+
+        <div class="histogram__item__scale">
+          <div
+            class="histogram__item__scale__bar"
+            :style="{ height: `${takeHistogramHeight}%` }"
+          />
+        </div>
       </div>
-    </div>
-    <div class="histogram__item">
-      <span class="histogram__item__label"> Вернете </span>
-      <span class="histogram__item__value">
-        {{ numberWithSpaces(repayValue) }} RUB
-      </span>
-      <div class="histogram__item__scale">
-        <div
-          class="histogram__item__scale__bar"
-          :style="{ height: `${repayHistogramHeight}%` }"
-        />
+    </transition>
+    <transition
+      enter-active-class="animated bounceInUp"
+      leave-active-class="animated bounceOutUp"
+    >
+      <div v-if="repayValue" class="histogram__item">
+        <span class="histogram__item__label"> Вернете </span>
+        <span class="histogram__item__value">
+          {{ numberWithSpaces(repayValue) }} RUB
+        </span>
+
+        <div class="histogram__item__scale">
+          <div
+            class="histogram__item__scale__bar"
+            :style="{ height: `${repayHistogramHeight}%` }"
+          />
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -62,6 +74,7 @@ const takeHistogramHeight = computed(
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    flex: 1;
 
     &__label {
       color: $black;

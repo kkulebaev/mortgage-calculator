@@ -16,6 +16,8 @@
         v-model:mortgageTerm="inputValues.mortgageTerm"
         v-model:mortgagePeriod="inputValues.mortgagePeriod"
         v-model:mortgageRate="inputValues.mortgageRate"
+        @change="clearOutput"
+      />
       <img
         class="intro-picture"
         src="./../assets/img/owl.png"
@@ -97,6 +99,12 @@ const submitForm = () => {
   outputValues.repayValue = outputValues.overpaymentValue + mortgageAmount
 
   outputValues.totalCost = outputValues.repayValue
+}
+
+const clearOutput = () => {
+  for (const prop of Object.getOwnPropertyNames(outputValues)) {
+    delete outputValues[prop]
+  }
 }
 
 function handleEnterPress(event) {
