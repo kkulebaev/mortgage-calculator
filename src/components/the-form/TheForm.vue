@@ -44,7 +44,7 @@
       </el-input>
     </div>
     <div class="form__item">
-      <span class="form__item__label">Годовая ставка по ипотеке</span>
+      <span class="form__item__label">Годовая процентная ставка</span>
       <el-input-number
         v-model="mortgageRateValue"
         :min="0.1"
