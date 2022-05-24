@@ -16,6 +16,12 @@
         v-model:mortgageTerm="inputValues.mortgageTerm"
         v-model:mortgagePeriod="inputValues.mortgagePeriod"
         v-model:mortgageRate="inputValues.mortgageRate"
+      <img
+        class="intro-picture"
+        src="./../assets/img/owl.png"
+        width="957"
+        height="1060"
+        alt="owl"
       />
     </div>
     <the-result
@@ -132,21 +138,26 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   gap: 2rem;
+
+  &__logo {
+    display: block;
+    padding: 1rem;
+    width: 48px;
+
+    background-color: $primary;
+    border-radius: 9px;
+  }
+
+  &__title {
+    font-size: 3.6rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: $black;
+  }
 }
 
-.title__logo {
-  display: block;
-  padding: 1rem;
-  width: 48px;
-
-  background-color: $primary;
-  border-radius: 9px;
-}
-
-.title__title {
-  font-size: 3.6rem;
-  line-height: 1.15;
-  font-weight: 700;
-  color: $black;
+.intro-picture {
+  max-width: 25rem;
+  margin-left: auto;
 }
 </style>
