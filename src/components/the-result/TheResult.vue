@@ -3,24 +3,47 @@
     <the-histogram :take-value="takeValue" :repay-value="repayValue" />
 
     <div class="info-block">
-      <div class="info-block__item">
-        <span class="info-block__item__label"> Переплата по ипотеке: </span>
-        <span class="info-block__item__label">
-          {{ numberWithSpaces(overpaymentValue) }} RUB
-        </span>
-      </div>
-      <div class="info-block__item">
-        <span class="info-block__item__label"> Ежемесячный платеж: </span>
-        <span class="info-block__item__label">
-          {{ numberWithSpaces(monthlyPayment) }} RUB
-        </span>
-      </div>
-      <div class="info-block__item">
-        <span class="info-block__item__label"> Общая стоимость ипотеки: </span>
-        <span class="info-block__item__label">
-          {{ numberWithSpaces(totalCost) }} RUB
-        </span>
-      </div>
+      <transition
+        class="transition"
+        enter-active-class="animated bounceInUp"
+        leave-active-class="animated bounceOutUp"
+      >
+        <div v-if="overpaymentValue" class="info-block__item">
+          <span class="info-block__item__label"> Переплата по ипотеке: </span>
+
+          <span class="info-block__item__label">
+            {{ numberWithSpaces(overpaymentValue) }} RUB
+          </span>
+        </div>
+      </transition>
+      <transition
+        class="transition"
+        enter-active-class="animated bounceInUp"
+        leave-active-class="animated bounceOutUp"
+      >
+        <div v-if="monthlyPayment" class="info-block__item">
+          <span class="info-block__item__label"> Ежемесячный платеж: </span>
+
+          <span class="info-block__item__label">
+            {{ numberWithSpaces(monthlyPayment) }} RUB
+          </span>
+        </div>
+      </transition>
+      <transition
+        class="transition"
+        enter-active-class="animated bounceInUp"
+        leave-active-class="animated bounceOutUp"
+      >
+        <div v-if="totalCost" class="info-block__item">
+          <span class="info-block__item__label">
+            Общая стоимость ипотеки:
+          </span>
+
+          <span class="info-block__item__label">
+            {{ numberWithSpaces(totalCost) }} RUB
+          </span>
+        </div>
+      </transition>
     </div>
 
     <base-button @click="$emit('submitForm')"> Рассчитать ипотеку </base-button>
@@ -85,5 +108,9 @@ defineEmits(['submitForm'])
       font-size: 1.8rem;
     }
   }
+}
+
+.transition {
+  --animate-duration: 1s;
 }
 </style>
