@@ -1,6 +1,7 @@
 <template>
   <div class="histogram">
     <transition
+      class="transition"
       enter-active-class="animated bounceInUp"
       leave-active-class="animated bounceOutUp"
     >
@@ -19,6 +20,7 @@
       </div>
     </transition>
     <transition
+      class="transition"
       enter-active-class="animated bounceInUp"
       leave-active-class="animated bounceOutUp"
     >
@@ -104,5 +106,9 @@ const takeHistogramHeight = computed(
       }
     }
   }
+}
+
+.transition {
+  --animate-duration: 1s;
 }
 </style>
