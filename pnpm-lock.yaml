@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@vitejs/plugin-vue': 2.3.3
-  element-plus: 2.2.1
+  element-plus: 2.2.2
   eslint: 8.16.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-vue: 9.0.1
@@ -13,7 +13,7 @@ specifiers:
   vue-router: 4.0.15
 
 dependencies:
-  element-plus: 2.2.1_vue@3.2.35
+  element-plus: 2.2.2_vue@3.2.35
   vue: 3.2.35
   vue-router: 4.0.15_vue@3.2.35
 
@@ -419,8 +419,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /element-plus/2.2.1_vue@3.2.35:
-    resolution: {integrity: sha512-+U3Rq6S2lrzgFWlO1IvqBRtWuOGfyA84OSJOTDC8DHG6XkbNE507Thueb+9Ghk8eIqjGtpvje5hEQRWOJ85+pA==}
+  /element-plus/2.2.2_vue@3.2.35:
+    resolution: {integrity: sha512-yGcj2Ayb0jZO1WbI51tHJ4efhlfWKlBqqGtWbzhq+tcpfaKzJZN+IHRouuFasqn0ZV3tWCDu1jggDR1+9y7XfQ==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
