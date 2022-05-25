@@ -39,6 +39,7 @@
             v-model="mortgagePeriodValue"
             class="form__item__select"
             :options="PERIOD_OPTIONS"
+            @change="$emit('change')"
           />
         </template>
       </el-input>
