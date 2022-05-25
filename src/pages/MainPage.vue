@@ -41,22 +41,12 @@
 <script setup>
 import { reactive, onMounted, onBeforeUnmount } from 'vue'
 
-import {
-  TYPE_MORTGAGE_OPTIONS,
-  PERIOD_OPTIONS,
-} from '/src/components/the-form/form-helpers.js'
+import { useData } from '../composables/useData'
 
 import TheForm from './../components/the-form/TheForm.vue'
 import TheResult from '../components/the-result/TheResult.vue'
 
-const inputValues = reactive({
-  mortgageAmount: 30000,
-  initialPayment: 10000,
-  mortgageTerm: 3,
-  mortgagePeriod: PERIOD_OPTIONS[0].value,
-  mortgageRate: 12,
-  paymentType: TYPE_MORTGAGE_OPTIONS[0].value,
-})
+const { inputValues } = useData()
 
 const outputValues = reactive({
   takeValue: 0,
@@ -74,8 +64,9 @@ const submitForm = () => {
     mortgagePeriod,
     mortgageRate,
     paymentType,
-  } = inputValues
-  outputValues.takeValue = inputValues.mortgageAmount
+  } = inputValues.value
+
+  outputValues.takeValue = inputValues.value.mortgageAmount
 
   // estMortgageBody - расчетное значение начального тела кредита.
   const estMortgageBody = mortgageAmount - initialPayment
@@ -157,7 +148,6 @@ onBeforeUnmount(() => {
 
   &__title {
     font-size: 3.6rem;
-    line-height: 1.15;
     font-weight: 700;
     color: $black;
   }
