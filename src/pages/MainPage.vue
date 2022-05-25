@@ -127,7 +127,6 @@ onBeforeUnmount(() => {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  padding: 2rem;
   gap: 4rem;
 
   &__data {
