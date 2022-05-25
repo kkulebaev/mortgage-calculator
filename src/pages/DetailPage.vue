@@ -54,6 +54,10 @@ const tableData = [
 
 <style lang="scss" scoped>
 .detail-info {
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
 }
 </style>

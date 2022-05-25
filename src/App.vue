@@ -40,13 +40,13 @@
   width: 100%;
   max-width: 150rem;
   margin: auto;
-  min-height: 75rem;
+  min-height: 80rem;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
 }
 
 .container {
   width: 100%;
-  padding: 2rem;
+  padding: 4rem;
   margin: 0 auto;
 }
 
