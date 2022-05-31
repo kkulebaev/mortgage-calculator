@@ -18,13 +18,13 @@
         v-model:mortgageRate="inputValues.mortgageRate"
         @change="clearOutput"
       />
-      <img
+      <!-- <img
         class="intro-picture"
         src="./../assets/img/owl.png"
         width="957"
         height="1060"
         alt="owl"
-      />
+      /> -->
     </div>
     <the-result
       class="main-page__result"
