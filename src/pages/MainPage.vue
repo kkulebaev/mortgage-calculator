@@ -63,7 +63,6 @@ const submitForm = () => {
     mortgageTerm,
     mortgagePeriod,
     mortgageRate,
-    paymentType,
   } = inputValues.value
 
   outputValues.takeValue = inputValues.value.mortgageAmount
