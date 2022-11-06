@@ -1,40 +1,52 @@
 <template>
-  <el-select v-model="value" @change="$emit('change')">
-    <el-option
+  <ElSelect v-model="value" @change="$emit('change')">
+    <ElOption
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value"
     />
-  </el-select>
+  </ElSelect>
 </template>
 
-<script setup>
+<script>
 import { computed } from 'vue'
+import { ElSelect, ElOption } from 'element-plus'
 
-const props = defineProps({
-  modelValue: {
-    type: [String, Number, Boolean, Object],
-    required: true,
+export default {
+  components: {
+    ElSelect,
+    ElOption,
   },
 
-  options: {
-    type: Array,
-    default: () => [],
-  },
-})
+  props: {
+    modelValue: {
+      type: [String, Number, Boolean, Object],
+      required: true,
+    },
 
-const emit = defineEmits(['update:modelValue', 'change'])
-
-const value = computed({
-  get() {
-    return props.modelValue
+    options: {
+      type: Array,
+      default: () => [],
+    },
   },
 
-  set(val) {
-    return emit('update:modelValue', val)
+  emits: ['update:modelValue', 'change'],
+
+  setup(props, { emit }) {
+    const value = computed({
+      get() {
+        return props.modelValue
+      },
+
+      set(val) {
+        return emit('update:modelValue', val)
+      },
+    })
+
+    return { value }
   },
-})
+}
 </script>
 
 <style lang="scss" scoped></style>

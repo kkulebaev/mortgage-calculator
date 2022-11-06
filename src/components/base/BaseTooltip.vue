@@ -1,20 +1,28 @@
 <template>
-  <el-tooltip effect="dark" :content="content" placement="right-end">
+  <ElTooltip effect="dark" :content="content" placement="right-end">
     <img
       class="base-tooltip"
       src="./../../assets/img/question.svg"
       alt="question-icon"
     />
-  </el-tooltip>
+  </ElTooltip>
 </template>
 
-<script setup>
-defineProps({
-  content: {
-    type: String,
-    default: '',
+<script>
+import { ElTooltip } from 'element-plus'
+
+export default {
+  components: {
+    ElTooltip,
   },
-})
+
+  props: {
+    content: {
+      type: String,
+      default: '',
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

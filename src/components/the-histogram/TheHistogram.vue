@@ -1,6 +1,6 @@
 <template>
   <div class="histogram">
-    <transition
+    <Transition
       class="transition"
       enter-active-class="animated bounceInUp"
       leave-active-class="animated bounceOutUp"
@@ -18,8 +18,8 @@
           />
         </div>
       </div>
-    </transition>
-    <transition
+    </Transition>
+    <Transition
       class="transition"
       enter-active-class="animated bounceInUp"
       leave-active-class="animated bounceOutUp"
@@ -37,31 +37,41 @@
           />
         </div>
       </div>
-    </transition>
+    </Transition>
   </div>
 </template>
 
-<script setup>
+<script>
 import { computed } from 'vue'
 import numberWithSpaces from '/src/utils/numberWithSpaces.js'
 
-const props = defineProps({
-  takeValue: {
-    type: Number,
-    required: true,
+export default {
+  props: {
+    takeValue: {
+      type: Number,
+      required: true,
+    },
+
+    repayValue: {
+      type: Number,
+      required: true,
+    },
   },
 
-  repayValue: {
-    type: Number,
-    required: true,
+  setup(props) {
+    const repayHistogramHeight = 100
+
+    const takeHistogramHeight = computed(
+      () => (props.takeValue * 100) / props.repayValue
+    )
+
+    return {
+      repayHistogramHeight,
+      takeHistogramHeight,
+      numberWithSpaces,
+    }
   },
-})
-
-const repayHistogramHeight = 100
-
-const takeHistogramHeight = computed(
-  () => (props.takeValue * 100) / props.repayValue
-)
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,9 +1,9 @@
 <template>
   <div class="result-block">
-    <the-histogram :take-value="takeValue" :repay-value="repayValue" />
+    <TheHistogram :take-value="takeValue" :repay-value="repayValue" />
 
     <div class="info-block">
-      <transition
+      <Transition
         class="transition"
         enter-active-class="animated bounceInUp"
         leave-active-class="animated bounceOutUp"
@@ -15,8 +15,8 @@
             {{ numberWithSpaces(overpaymentValue) }} RUB
           </span>
         </div>
-      </transition>
-      <transition
+      </Transition>
+      <Transition
         class="transition"
         enter-active-class="animated bounceInUp"
         leave-active-class="animated bounceOutUp"
@@ -28,8 +28,8 @@
             {{ numberWithSpaces(monthlyPayment) }} RUB
           </span>
         </div>
-      </transition>
-      <transition
+      </Transition>
+      <Transition
         class="transition"
         enter-active-class="animated bounceInUp"
         leave-active-class="animated bounceOutUp"
@@ -43,47 +43,60 @@
             {{ numberWithSpaces(totalCost) }} RUB
           </span>
         </div>
-      </transition>
+      </Transition>
     </div>
 
-    <base-button @click="$emit('submitForm')"> Рассчитать ипотеку </base-button>
+    <BaseButton @click="$emit('submitForm')"> Рассчитать ипотеку </BaseButton>
   </div>
 </template>
 
-<script setup>
+<script>
 import numberWithSpaces from '/src/utils/numberWithSpaces.js'
 
 import TheHistogram from '/src/components/the-histogram/TheHistogram.vue'
 import BaseButton from '/src/components/base/BaseButton.vue'
 
-defineProps({
-  takeValue: {
-    type: Number,
-    required: true,
+export default {
+  components: {
+    TheHistogram,
+    BaseButton,
   },
 
-  repayValue: {
-    type: Number,
-    required: true,
+  props: {
+    takeValue: {
+      type: Number,
+      required: true,
+    },
+
+    repayValue: {
+      type: Number,
+      required: true,
+    },
+
+    overpaymentValue: {
+      type: Number,
+      required: true,
+    },
+
+    monthlyPayment: {
+      type: Number,
+      required: true,
+    },
+
+    totalCost: {
+      type: Number,
+      required: true,
+    },
   },
 
-  overpaymentValue: {
-    type: Number,
-    required: true,
-  },
+  emits: ['submitForm'],
 
-  monthlyPayment: {
-    type: Number,
-    required: true,
+  setup() {
+    return {
+      numberWithSpaces,
+    }
   },
-
-  totalCost: {
-    type: Number,
-    required: true,
-  },
-})
-
-defineEmits(['submitForm'])
+}
 </script>
 
 <style lang="scss" scoped>

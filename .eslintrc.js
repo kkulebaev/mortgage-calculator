@@ -9,4 +9,9 @@ module.exports = {
     sourceType: 'module',
   },
   extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'prettier'],
+  rules: {
+    'vue/component-options-name-casing': ['error', 'PascalCase'],
+    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+    'vue/component-api-style': ['error', ['composition']],
+  },
 }
