@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import numberWithSpaces from '@/utils/numberWithSpaces.js'
+import { numberWithSpaces } from '@/utils'
 
 import { BaseButton, TheHistogram } from '@/components'
 
