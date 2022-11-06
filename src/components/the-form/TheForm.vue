@@ -81,8 +81,7 @@ import {
 import numberWithSpaces from '/src/utils/numberWithSpaces.js'
 import toNumber from '/src/utils/toNumber.js'
 
-import BaseSelect from '../base/BaseSelect.vue'
-import BaseTooltip from '../base/BaseTooltip.vue'
+import { BaseSelect, BaseTooltip } from '/src/components'
 import { ElInput, ElInputNumber } from 'element-plus'
 
 export default {
