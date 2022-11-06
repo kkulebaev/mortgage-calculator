@@ -4,7 +4,7 @@ specifiers:
   '@vitejs/plugin-vue': 3.2.0
   '@vueuse/core': 9.4.0
   animate.css: 4.1.1
-  element-plus: 2.2.19
+  element-plus: 2.2.20
   eslint: 8.26.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-vue: 9.7.0
@@ -16,7 +16,7 @@ specifiers:
 dependencies:
   '@vueuse/core': 9.4.0_vue@3.2.41
   animate.css: 4.1.1
-  element-plus: 2.2.19_vue@3.2.41
+  element-plus: 2.2.20_vue@3.2.41
   vue: 3.2.41
   vue-router: 4.1.6_vue@3.2.41
 
@@ -453,8 +453,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /element-plus/2.2.19_vue@3.2.41:
-    resolution: {integrity: sha512-uN0gt9lUus/IHzu5J6vkbYoYJgUtU05osdtFv9RO27bHKOG5GN7dH6uA3OKfkQQ6R2sV8ZxY1rc9PH1X8Dgrow==}
+  /element-plus/2.2.20_vue@3.2.41:
+    resolution: {integrity: sha512-ludShd3f5kNRY4FLzeoNitLcwZ4qs2M/zwKeyeE7rUzZJAQ0BZtcT3SvZoEoBLmgxw9jHoonl4WIwon4UzhyRA==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
