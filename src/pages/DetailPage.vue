@@ -32,8 +32,8 @@
   </div>
 </template>
 
-<script>
-import { ref, computed } from 'vue'
+<script lang="ts">
+import { ref, computed, defineComponent } from 'vue'
 import {
   TYPE_MORTGAGE_OPTIONS,
   PERIOD_OPTIONS,
@@ -46,7 +46,7 @@ import { numberWithSpaces } from '@/utils'
 import { BaseTable } from '@/components'
 import { ElPagination } from 'element-plus'
 
-export default {
+export default defineComponent({
   components: {
     BaseTable,
     ElPagination,
@@ -133,7 +133,7 @@ export default {
       numberWithSpaces,
     }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

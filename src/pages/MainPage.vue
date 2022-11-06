@@ -38,14 +38,31 @@
   </div>
 </template>
 
-<script>
-import { reactive, onMounted, onBeforeUnmount } from 'vue'
+<script lang="ts">
+import { reactive, onMounted, onBeforeUnmount, defineComponent } from 'vue'
 
 import { useData } from '@/composables'
 
 import { TheForm, TheResult } from '@/components'
 
-export default {
+// interface Input {
+//   mortgageAmount: number
+//   initialPayment: number
+//   mortgageTerm: number
+//   mortgagePeriod: string
+//   mortgageRate: number
+//   paymentType: string
+// }
+
+interface Output {
+  takeValue: number
+  repayValue: number
+  overpaymentValue: number
+  monthlyPayment: number
+  totalCost: number
+}
+
+export default defineComponent({
   components: {
     TheForm,
     TheResult,
@@ -54,7 +71,7 @@ export default {
   setup() {
     const { inputValues } = useData()
 
-    const outputValues = reactive({
+    const outputValues: Output = reactive({
       takeValue: 0,
       repayValue: 0,
       overpaymentValue: 0,
@@ -99,12 +116,12 @@ export default {
     }
 
     const clearOutput = () => {
-      for (const prop of Object.getOwnPropertyNames(outputValues)) {
-        delete outputValues[prop]
-      }
+      Object.keys(outputValues).forEach(
+        (n: keyof Output) => delete outputValues[n]
+      )
     }
 
-    function handleEnterPress(event) {
+    function handleEnterPress(event: KeyboardEvent) {
       if (event.key === 'Enter') {
         submitForm()
       }
@@ -125,7 +142,7 @@ export default {
       submitForm,
     }
   },
-}
+})
 </script>
 
 <style lang="scss">

@@ -41,11 +41,11 @@
   </div>
 </template>
 
-<script>
-import { computed } from 'vue'
+<script lang="ts">
+import { computed, defineComponent } from 'vue'
 import { numberWithSpaces } from '@/utils'
 
-export default {
+export default defineComponent({
   props: {
     takeValue: {
       type: Number,
@@ -71,7 +71,7 @@ export default {
       numberWithSpaces,
     }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

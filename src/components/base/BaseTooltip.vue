@@ -8,10 +8,11 @@
   </ElTooltip>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { ElTooltip } from 'element-plus'
 
-export default {
+export default defineComponent({
   components: {
     ElTooltip,
   },
@@ -22,7 +23,7 @@ export default {
       default: '',
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

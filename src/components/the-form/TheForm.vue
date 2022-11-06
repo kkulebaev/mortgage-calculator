@@ -71,8 +71,8 @@
   </form>
 </template>
 
-<script>
-import { computed } from 'vue'
+<script lang="ts">
+import { computed, defineComponent } from 'vue'
 import { TYPE_MORTGAGE_OPTIONS, PERIOD_OPTIONS } from './form-helpers.js'
 
 import { toNumber, numberWithSpaces } from '@/utils'
@@ -80,7 +80,7 @@ import { toNumber, numberWithSpaces } from '@/utils'
 import { BaseSelect, BaseTooltip } from '@/components'
 import { ElInput, ElInputNumber } from 'element-plus'
 
-export default {
+export default defineComponent({
   components: {
     BaseSelect,
     BaseTooltip,
@@ -202,7 +202,7 @@ export default {
       PERIOD_OPTIONS,
     }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

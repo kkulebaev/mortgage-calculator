@@ -9,11 +9,18 @@
   </ElSelect>
 </template>
 
-<script>
-import { computed } from 'vue'
+<script lang="ts">
+import { computed, defineComponent } from 'vue'
+import type { PropType } from 'vue'
+
 import { ElSelect, ElOption } from 'element-plus'
 
-export default {
+interface Option {
+  value: string
+  label: string
+}
+
+export default defineComponent({
   components: {
     ElSelect,
     ElOption,
@@ -26,8 +33,8 @@ export default {
     },
 
     options: {
-      type: Array,
-      default: () => [],
+      type: Array as PropType<Option[]>,
+      required: true,
     },
   },
 
@@ -46,7 +53,7 @@ export default {
 
     return { value }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped></style>

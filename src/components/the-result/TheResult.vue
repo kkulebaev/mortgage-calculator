@@ -50,12 +50,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { numberWithSpaces } from '@/utils'
 
 import { BaseButton, TheHistogram } from '@/components'
 
-export default {
+export default defineComponent({
   components: {
     TheHistogram,
     BaseButton,
@@ -95,7 +96,7 @@ export default {
       numberWithSpaces,
     }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
