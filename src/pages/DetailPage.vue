@@ -43,7 +43,7 @@ import { useData } from '../composables/useData'
 
 import numberWithSpaces from '/src/utils/numberWithSpaces.js'
 
-import BaseTable from './../components/base/BaseTable.vue'
+import { BaseTable } from '/src/components'
 import { ElPagination } from 'element-plus'
 
 export default {

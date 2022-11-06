@@ -53,8 +53,7 @@
 <script>
 import numberWithSpaces from '/src/utils/numberWithSpaces.js'
 
-import TheHistogram from '/src/components/the-histogram/TheHistogram.vue'
-import BaseButton from '/src/components/base/BaseButton.vue'
+import { BaseButton, TheHistogram } from '/src/components'
 
 export default {
   components: {
