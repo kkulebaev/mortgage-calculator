@@ -35,5 +35,12 @@ module.exports = {
         minLineOfMultilineProperty: 2,
       },
     ],
+    'vue/no-potential-component-option-typo': [
+      'error',
+      {
+        presets: ['vue'],
+        threshold: 5,
+      },
+    ],
   },
 }
