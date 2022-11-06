@@ -37,13 +37,13 @@ import { ref, computed } from 'vue'
 import {
   TYPE_MORTGAGE_OPTIONS,
   PERIOD_OPTIONS,
-} from '/src/components/the-form/form-helpers.js'
+} from '@/components/the-form/form-helpers.js'
 
 import { useData } from '../composables/useData'
 
-import numberWithSpaces from '/src/utils/numberWithSpaces.js'
+import numberWithSpaces from '@/utils/numberWithSpaces.js'
 
-import { BaseTable } from '/src/components'
+import { BaseTable } from '@/components'
 import { ElPagination } from 'element-plus'
 
 export default {

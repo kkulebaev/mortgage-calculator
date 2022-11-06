@@ -43,7 +43,7 @@
 
 <script>
 import { computed } from 'vue'
-import numberWithSpaces from '/src/utils/numberWithSpaces.js'
+import numberWithSpaces from '@/utils/numberWithSpaces.js'
 
 export default {
   props: {

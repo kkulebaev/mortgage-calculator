@@ -2,7 +2,7 @@ import { useStorage } from '@vueuse/core'
 import {
   TYPE_MORTGAGE_OPTIONS,
   PERIOD_OPTIONS,
-} from '/src/components/the-form/form-helpers.js'
+} from '@/components/the-form/form-helpers.js'
 
 export function useData() {
   const inputValues = useStorage('input-values', {
