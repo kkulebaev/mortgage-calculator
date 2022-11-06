@@ -14,5 +14,13 @@ module.exports = {
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
     'vue/component-api-style': ['error', ['composition']],
     'vue/custom-event-name-casing': ['error', 'camelCase'],
+    'vue/html-button-has-type': [
+      'error',
+      {
+        button: true,
+        submit: true,
+        reset: true,
+      },
+    ],
   },
 }
