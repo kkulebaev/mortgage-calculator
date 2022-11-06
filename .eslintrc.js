@@ -22,5 +22,12 @@ module.exports = {
         reset: true,
       },
     ],
+    'vue/match-component-file-name': [
+      'error',
+      {
+        extensions: ['vue'],
+        shouldMatchCase: true,
+      },
+    ],
   },
 }
