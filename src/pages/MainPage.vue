@@ -43,7 +43,7 @@ import { reactive, onMounted, onBeforeUnmount } from 'vue'
 
 import { useData } from '../composables/useData'
 
-import { TheForm, TheResult } from '/src/components'
+import { TheForm, TheResult } from '@/components'
 
 export default {
   components: {
