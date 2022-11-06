@@ -39,7 +39,7 @@ import {
   PERIOD_OPTIONS,
 } from '@/components/the-form/form-helpers.js'
 
-import { useData } from '../composables/useData'
+import { useData } from '@/composables'
 
 import numberWithSpaces from '@/utils/numberWithSpaces.js'
 

@@ -41,7 +41,7 @@
 <script>
 import { reactive, onMounted, onBeforeUnmount } from 'vue'
 
-import { useData } from '../composables/useData'
+import { useData } from '@/composables'
 
 import { TheForm, TheResult } from '@/components'
 
