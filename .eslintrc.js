@@ -29,5 +29,11 @@ module.exports = {
         shouldMatchCase: true,
       },
     ],
+    'vue/new-line-between-multi-line-property': [
+      'error',
+      {
+        minLineOfMultilineProperty: 2,
+      },
+    ],
   },
 }
