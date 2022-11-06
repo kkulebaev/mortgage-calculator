@@ -4,16 +4,17 @@
   </ElButton>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { ElButton } from 'element-plus'
 
-export default {
+export default defineComponent({
   components: {
     ElButton,
   },
 
   emits: ['click'],
-}
+})
 </script>
 
 <style lang="scss" scoped>

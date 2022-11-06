@@ -11,10 +11,20 @@
   </ElTable>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+
 import { ElTable, ElTableColumn } from 'element-plus'
 
-export default {
+interface TableColumn {
+  prop: string
+  label: string
+  width?: number
+  align?: string
+}
+
+export default defineComponent({
   components: {
     ElTable,
     ElTableColumn,
@@ -27,11 +37,11 @@ export default {
     },
 
     fields: {
-      type: Array,
+      type: Array as PropType<TableColumn[]>,
       required: true,
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped></style>
