@@ -64,7 +64,7 @@
     width: 6rem;
     height: 6rem;
 
-    &.RouterLink-active {
+    &.router-link-active {
       background: $white;
     }
   }
