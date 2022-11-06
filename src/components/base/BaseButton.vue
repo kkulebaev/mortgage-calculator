@@ -1,11 +1,19 @@
 <template>
-  <el-button class="btn" type="primary" @click="$emit('click')">
+  <ElButton class="btn" type="primary" @click="$emit('click')">
     <slot />
-  </el-button>
+  </ElButton>
 </template>
 
-<script setup>
-defineEmits(['click'])
+<script>
+import { ElButton } from 'element-plus'
+
+export default {
+  components: {
+    ElButton,
+  },
+
+  emits: ['click'],
+}
 </script>
 
 <style lang="scss" scoped>

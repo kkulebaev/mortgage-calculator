@@ -9,7 +9,7 @@
         />
         <h1 class="title__title">Калькулятор ипотеки</h1>
       </div>
-      <the-form
+      <TheForm
         v-model:paymentType="inputValues.paymentType"
         v-model:mortgageAmount="inputValues.mortgageAmount"
         v-model:initialPayment="inputValues.initialPayment"
@@ -26,7 +26,7 @@
         alt="owl"
       />
     </div>
-    <the-result
+    <TheResult
       class="main-page__result"
       :take-value="outputValues.takeValue"
       :repay-value="outputValues.repayValue"
@@ -38,7 +38,7 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import { reactive, onMounted, onBeforeUnmount } from 'vue'
 
 import { useData } from '../composables/useData'
@@ -46,70 +46,87 @@ import { useData } from '../composables/useData'
 import TheForm from './../components/the-form/TheForm.vue'
 import TheResult from '../components/the-result/TheResult.vue'
 
-const { inputValues } = useData()
+export default {
+  components: {
+    TheForm,
+    TheResult,
+  },
 
-const outputValues = reactive({
-  takeValue: 0,
-  repayValue: 0,
-  overpaymentValue: 0,
-  monthlyPayment: 0,
-  totalCost: 0,
-})
+  setup() {
+    const { inputValues } = useData()
 
-const submitForm = () => {
-  const {
-    mortgageAmount,
-    initialPayment,
-    mortgageTerm,
-    mortgagePeriod,
-    mortgageRate,
-  } = inputValues.value
+    const outputValues = reactive({
+      takeValue: 0,
+      repayValue: 0,
+      overpaymentValue: 0,
+      monthlyPayment: 0,
+      totalCost: 0,
+    })
 
-  outputValues.takeValue = inputValues.value.mortgageAmount
+    const submitForm = () => {
+      const {
+        mortgageAmount,
+        initialPayment,
+        mortgageTerm,
+        mortgagePeriod,
+        mortgageRate,
+      } = inputValues.value
 
-  // estMortgageBody - расчетное значение начального тела кредита.
-  const estMortgageBody = mortgageAmount - initialPayment
+      outputValues.takeValue = inputValues.value.mortgageAmount
 
-  // estMortgageTerm - расчетное значение срока ипотеки выраженное в месяцах. Если пользователь выбрал ввод количества лет, то приводим значение к количеству месяцев
-  const estMortgageTerm =
-    mortgagePeriod === 'years' ? mortgageTerm * 12 : mortgageTerm
+      // estMortgageBody - расчетное значение начального тела кредита.
+      const estMortgageBody = mortgageAmount - initialPayment
 
-  // estMortgageRate - расчетное значение месячной процентной ставки
-  const estMortgageRate = mortgageRate / 100 / 12
+      // estMortgageTerm - расчетное значение срока ипотеки выраженное в месяцах. Если пользователь выбрал ввод количества лет, то приводим значение к количеству месяцев
+      const estMortgageTerm =
+        mortgagePeriod === 'years' ? mortgageTerm * 12 : mortgageTerm
 
-  // Ежемесячный платеж по аннуитетному типу равен:
-  outputValues.monthlyPayment =
-    estMortgageBody *
-    (estMortgageRate / (1 - Math.pow(1 + estMortgageRate, -estMortgageTerm)))
+      // estMortgageRate - расчетное значение месячной процентной ставки
+      const estMortgageRate = mortgageRate / 100 / 12
 
-  // Переплата по ипотеке по аннуитетному типу равна:
-  outputValues.overpaymentValue =
-    outputValues.monthlyPayment * estMortgageTerm - estMortgageBody
+      // Ежемесячный платеж по аннуитетному типу равен:
+      outputValues.monthlyPayment =
+        estMortgageBody *
+        (estMortgageRate /
+          (1 - Math.pow(1 + estMortgageRate, -estMortgageTerm)))
 
-  outputValues.repayValue = outputValues.overpaymentValue + mortgageAmount
+      // Переплата по ипотеке по аннуитетному типу равна:
+      outputValues.overpaymentValue =
+        outputValues.monthlyPayment * estMortgageTerm - estMortgageBody
 
-  outputValues.totalCost = outputValues.repayValue
+      outputValues.repayValue = outputValues.overpaymentValue + mortgageAmount
+
+      outputValues.totalCost = outputValues.repayValue
+    }
+
+    const clearOutput = () => {
+      for (const prop of Object.getOwnPropertyNames(outputValues)) {
+        delete outputValues[prop]
+      }
+    }
+
+    function handleEnterPress(event) {
+      if (event.key === 'Enter') {
+        submitForm()
+      }
+    }
+
+    onMounted(() => {
+      document.addEventListener('keypress', handleEnterPress)
+    })
+
+    onBeforeUnmount(() => {
+      document.removeEventListener('keypress', handleEnterPress)
+    })
+
+    return {
+      inputValues,
+      outputValues,
+      clearOutput,
+      submitForm,
+    }
+  },
 }
-
-const clearOutput = () => {
-  for (const prop of Object.getOwnPropertyNames(outputValues)) {
-    delete outputValues[prop]
-  }
-}
-
-function handleEnterPress(event) {
-  if (event.key === 'Enter') {
-    submitForm()
-  }
-}
-
-onMounted(() => {
-  document.addEventListener('keypress', handleEnterPress)
-})
-
-onBeforeUnmount(() => {
-  document.removeEventListener('keypress', handleEnterPress)
-})
 </script>
 
 <style lang="scss">

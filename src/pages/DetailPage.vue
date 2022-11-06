@@ -19,8 +19,8 @@
         <span> Тип платежей: {{ labelOfTypeMortgage }} </span>
       </div>
     </div>
-    <base-table :data="paginatedData" :fields="DETAIL_FIELDS" />
-    <el-pagination
+    <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
+    <ElPagination
       v-model:currentPage="pageNumber"
       class="pagination"
       layout="prev, pager, next"
@@ -32,7 +32,7 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import { ref, computed } from 'vue'
 import {
   TYPE_MORTGAGE_OPTIONS,
@@ -44,73 +44,96 @@ import { useData } from '../composables/useData'
 import numberWithSpaces from '/src/utils/numberWithSpaces.js'
 
 import BaseTable from './../components/base/BaseTable.vue'
+import { ElPagination } from 'element-plus'
 
-const { inputValues } = useData()
-
-const labelOfTypeMortgage = computed(
-  () =>
-    TYPE_MORTGAGE_OPTIONS.find(x => x.value === inputValues.value.paymentType)
-      ?.label
-)
-
-const labelOfTypePeriod = computed(
-  () =>
-    PERIOD_OPTIONS.find(x => x.value === inputValues.value.mortgagePeriod)
-      ?.label
-)
-
-const DETAIL_FIELDS = [
-  {
-    prop: 'id',
-    label: 'ID',
-    width: 80,
-    align: 'center',
+export default {
+  components: {
+    BaseTable,
+    ElPagination,
   },
-  {
-    prop: 'tdMonPay',
-    label: 'Ежемесячный платеж (р.)',
-    align: 'center',
-  },
-  {
-    prop: 'repayPer',
-    label: 'Погашение процентов (р.)',
-    align: 'center',
-  },
-  {
-    prop: 'repayBody',
-    label: 'Погашение тела кредита (р.)',
-    align: 'center',
-  },
-  {
-    prop: 'debtEnd',
-    label: 'Долг на конец месяца (р.)',
-    align: 'center',
-  },
-]
 
-const tableData = [
-  { id: 1, tdMonPay: 4680, repayPer: 917, repayBody: 3763, debtEnd: 46237 },
-  { id: 2, tdMonPay: 4680, repayPer: 848, repayBody: 3832, debtEnd: 42405 },
-  { id: 3, tdMonPay: 4680, repayPer: 777, repayBody: 3902, debtEnd: 38503 },
-  { id: 4, tdMonPay: 4680, repayPer: 706, repayBody: 3974, debtEnd: 34529 },
-  { id: 5, tdMonPay: 4680, repayPer: 633, repayBody: 4047, debtEnd: 30482 },
-  { id: 6, tdMonPay: 4680, repayPer: 559, repayBody: 4121, debtEnd: 26361 },
-  { id: 7, tdMonPay: 4680, repayPer: 483, repayBody: 4196, debtEnd: 22165 },
-  { id: 8, tdMonPay: 4680, repayPer: 406, repayBody: 4273, debtEnd: 17891 },
-  { id: 9, tdMonPay: 4680, repayPer: 328, repayBody: 4352, debtEnd: 13540 },
-  { id: 10, tdMonPay: 4680, repayPer: 248, repayBody: 4431, debtEnd: 9108 },
-  { id: 11, tdMonPay: 4680, repayPer: 167, repayBody: 4513, debtEnd: 4595 },
-  { id: 12, tdMonPay: 4680, repayPer: 84, repayBody: 4595, debtEnd: 0 },
-]
+  setup() {
+    const { inputValues } = useData()
 
-const pageNumber = ref(1)
-const size = ref(12)
+    const labelOfTypeMortgage = computed(
+      () =>
+        TYPE_MORTGAGE_OPTIONS.find(
+          x => x.value === inputValues.value.paymentType
+        )?.label
+    )
 
-const paginatedData = computed(() => {
-  const start = (pageNumber.value - 1) * size.value
-  const end = start + size.value
-  return tableData.slice(start, end)
-})
+    const labelOfTypePeriod = computed(
+      () =>
+        PERIOD_OPTIONS.find(x => x.value === inputValues.value.mortgagePeriod)
+          ?.label
+    )
+
+    const DETAIL_FIELDS = [
+      {
+        prop: 'id',
+        label: 'ID',
+        width: 80,
+        align: 'center',
+      },
+      {
+        prop: 'tdMonPay',
+        label: 'Ежемесячный платеж (р.)',
+        align: 'center',
+      },
+      {
+        prop: 'repayPer',
+        label: 'Погашение процентов (р.)',
+        align: 'center',
+      },
+      {
+        prop: 'repayBody',
+        label: 'Погашение тела кредита (р.)',
+        align: 'center',
+      },
+      {
+        prop: 'debtEnd',
+        label: 'Долг на конец месяца (р.)',
+        align: 'center',
+      },
+    ]
+
+    const tableData = [
+      { id: 1, tdMonPay: 4680, repayPer: 917, repayBody: 3763, debtEnd: 46237 },
+      { id: 2, tdMonPay: 4680, repayPer: 848, repayBody: 3832, debtEnd: 42405 },
+      { id: 3, tdMonPay: 4680, repayPer: 777, repayBody: 3902, debtEnd: 38503 },
+      { id: 4, tdMonPay: 4680, repayPer: 706, repayBody: 3974, debtEnd: 34529 },
+      { id: 5, tdMonPay: 4680, repayPer: 633, repayBody: 4047, debtEnd: 30482 },
+      { id: 6, tdMonPay: 4680, repayPer: 559, repayBody: 4121, debtEnd: 26361 },
+      { id: 7, tdMonPay: 4680, repayPer: 483, repayBody: 4196, debtEnd: 22165 },
+      { id: 8, tdMonPay: 4680, repayPer: 406, repayBody: 4273, debtEnd: 17891 },
+      { id: 9, tdMonPay: 4680, repayPer: 328, repayBody: 4352, debtEnd: 13540 },
+      { id: 10, tdMonPay: 4680, repayPer: 248, repayBody: 4431, debtEnd: 9108 },
+      { id: 11, tdMonPay: 4680, repayPer: 167, repayBody: 4513, debtEnd: 4595 },
+      { id: 12, tdMonPay: 4680, repayPer: 84, repayBody: 4595, debtEnd: 0 },
+    ]
+
+    const pageNumber = ref(1)
+    const size = ref(12)
+
+    const paginatedData = computed(() => {
+      const start = (pageNumber.value - 1) * size.value
+      const end = start + size.value
+      return tableData.slice(start, end)
+    })
+
+    return {
+      inputValues,
+      labelOfTypeMortgage,
+      labelOfTypePeriod,
+      DETAIL_FIELDS,
+      paginatedData,
+      pageNumber,
+      tableData,
+      size,
+      numberWithSpaces,
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>

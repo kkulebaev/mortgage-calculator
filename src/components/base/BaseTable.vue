@@ -1,6 +1,6 @@
 <template>
-  <el-table :data="data">
-    <el-table-column
+  <ElTable :data="data">
+    <ElTableColumn
       v-for="field in fields"
       :key="field.prop"
       :prop="field.prop"
@@ -8,21 +8,30 @@
       :width="field.width"
       :align="field.align"
     />
-  </el-table>
+  </ElTable>
 </template>
 
-<script setup>
-defineProps({
-  data: {
-    type: Array,
-    required: true,
+<script>
+import { ElTable, ElTableColumn } from 'element-plus'
+
+export default {
+  components: {
+    ElTable,
+    ElTableColumn,
   },
 
-  fields: {
-    type: Array,
-    required: true,
+  props: {
+    data: {
+      type: Array,
+      required: true,
+    },
+
+    fields: {
+      type: Array,
+      required: true,
+    },
   },
-})
+}
 </script>
 
 <style lang="scss" scoped></style>
