@@ -41,7 +41,7 @@ import {
 
 import { useData } from '@/composables'
 
-import numberWithSpaces from '@/utils/numberWithSpaces.js'
+import { numberWithSpaces } from '@/utils'
 
 import { BaseTable } from '@/components'
 import { ElPagination } from 'element-plus'

@@ -75,8 +75,7 @@
 import { computed } from 'vue'
 import { TYPE_MORTGAGE_OPTIONS, PERIOD_OPTIONS } from './form-helpers.js'
 
-import numberWithSpaces from '@/utils/numberWithSpaces.js'
-import toNumber from '@/utils/toNumber.js'
+import { toNumber, numberWithSpaces } from '@/utils'
 
 import { BaseSelect, BaseTooltip } from '@/components'
 import { ElInput, ElInputNumber } from 'element-plus'
