@@ -2,25 +2,25 @@
   <div class="app">
     <div class="app-wrapper">
       <nav class="nav">
-        <router-link class="nav__link" :to="{ name: 'mainPage' }">
+        <RouterLink class="nav__link" :to="{ name: 'mainPage' }">
           <img class="nav__icon" src="./assets/img/home.svg" alt="home-icon" />
-        </router-link>
-        <router-link class="nav__link" :to="{ name: 'detailPage' }">
+        </RouterLink>
+        <RouterLink class="nav__link" :to="{ name: 'detailPage' }">
           <img class="nav__icon" src="./assets/img/row.svg" alt="row-icon" />
-        </router-link>
+        </RouterLink>
       </nav>
 
       <div class="container">
-        <router-view v-slot="{ Component }">
-          <transition
+        <RouterView v-slot="{ Component }">
+          <Transition
             class="transition"
             enter-active-class="animated fadeIn"
             leave-active-class="animated fadeOut"
             mode="out-in"
           >
             <component :is="Component" />
-          </transition>
-        </router-view>
+          </Transition>
+        </RouterView>
       </div>
     </div>
   </div>
@@ -64,7 +64,7 @@
     width: 6rem;
     height: 6rem;
 
-    &.router-link-active {
+    &.RouterLink-active {
       background: $white;
     }
   }
