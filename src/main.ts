@@ -9,7 +9,7 @@ import 'animate.css/source/animate.css'
 
 import App from './App.vue'
 
-import routerConfig from './router/router.config.js'
+import routerConfig from './router/router.config'
 
 const app = createApp(App)
 
