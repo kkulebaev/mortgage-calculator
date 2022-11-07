@@ -81,7 +81,7 @@ import { BaseSelect, BaseTooltip } from '@/components'
 import { ElInput, ElInputNumber } from 'element-plus'
 
 export default defineComponent({
-  name: 'TheForm',
+  name: 'AppForm',
 
   components: {
     BaseSelect,
