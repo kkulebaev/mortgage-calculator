@@ -9,7 +9,7 @@
         />
         <h1 class="title__title">Калькулятор ипотеки</h1>
       </div>
-      <TheForm
+      <AppForm
         v-model:paymentType="inputValues.paymentType"
         v-model:mortgageAmount="inputValues.mortgageAmount"
         v-model:initialPayment="inputValues.initialPayment"
@@ -26,7 +26,7 @@
         alt="owl"
       />
     </div>
-    <TheResult
+    <AppResult
       class="main-page__result"
       :take-value="outputValues.takeValue"
       :repay-value="outputValues.repayValue"
@@ -43,7 +43,7 @@ import { reactive, onMounted, onBeforeUnmount, defineComponent } from 'vue'
 
 import { useData } from '@/composables'
 
-import { TheForm, TheResult } from '@/components'
+import { AppForm, AppResult } from '@/components'
 
 // interface Input {
 //   mortgageAmount: number
@@ -66,8 +66,8 @@ export default defineComponent({
   name: 'MainPage',
 
   components: {
-    TheForm,
-    TheResult,
+    AppForm,
+    AppResult,
   },
 
   setup() {

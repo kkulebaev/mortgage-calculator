@@ -1,6 +1,6 @@
 <template>
   <div class="result-block">
-    <TheHistogram :take-value="takeValue" :repay-value="repayValue" />
+    <HistogramChart :take-value="takeValue" :repay-value="repayValue" />
 
     <div class="info-block">
       <Transition
@@ -54,13 +54,13 @@
 import { defineComponent } from 'vue'
 import { numberWithSpaces } from '@/utils'
 
-import { BaseButton, TheHistogram } from '@/components'
+import { BaseButton, HistogramChart } from '@/components'
 
 export default defineComponent({
-  name: 'TheResult',
+  name: 'AppResult',
 
   components: {
-    TheHistogram,
+    HistogramChart,
     BaseButton,
   },
 
