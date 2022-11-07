@@ -73,7 +73,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { TYPE_MORTGAGE_OPTIONS, PERIOD_OPTIONS } from './form-helpers.js'
+import { TYPE_MORTGAGE_OPTIONS, PERIOD_OPTIONS } from '@/constants'
 
 import { toNumber, numberWithSpaces } from '@/utils'
 

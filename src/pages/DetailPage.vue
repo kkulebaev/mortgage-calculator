@@ -34,10 +34,7 @@
 
 <script lang="ts">
 import { ref, computed, defineComponent } from 'vue'
-import {
-  TYPE_MORTGAGE_OPTIONS,
-  PERIOD_OPTIONS,
-} from '@/components/form-helpers.js'
+import { TYPE_MORTGAGE_OPTIONS, PERIOD_OPTIONS } from '@/constants'
 
 import { useData } from '@/composables'
 
