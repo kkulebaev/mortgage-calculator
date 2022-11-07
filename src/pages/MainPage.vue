@@ -63,6 +63,8 @@ interface Output {
 }
 
 export default defineComponent({
+  name: 'MainPage',
+
   components: {
     TheForm,
     TheResult,

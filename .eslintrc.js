@@ -58,5 +58,6 @@ module.exports = {
         },
       },
     ],
+    'vue/require-name-property': 'error',
   },
 }

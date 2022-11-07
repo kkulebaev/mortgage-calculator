@@ -47,6 +47,8 @@ import { BaseTable } from '@/components'
 import { ElPagination } from 'element-plus'
 
 export default defineComponent({
+  name: 'DetailPage',
+
   components: {
     BaseTable,
     ElPagination,

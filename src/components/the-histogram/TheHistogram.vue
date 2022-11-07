@@ -46,6 +46,8 @@ import { computed, defineComponent } from 'vue'
 import { numberWithSpaces } from '@/utils'
 
 export default defineComponent({
+  name: 'TheHistogram',
+
   props: {
     takeValue: {
       type: Number,
