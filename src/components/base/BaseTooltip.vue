@@ -13,6 +13,8 @@ import { defineComponent } from 'vue'
 import { ElTooltip } from 'element-plus'
 
 export default defineComponent({
+  name: 'BaseTooltip',
+
   components: {
     ElTooltip,
   },

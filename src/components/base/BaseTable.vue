@@ -25,6 +25,8 @@ interface TableColumn {
 }
 
 export default defineComponent({
+  name: 'BaseTable',
+
   components: {
     ElTable,
     ElTableColumn,

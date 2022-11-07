@@ -57,6 +57,8 @@ import { numberWithSpaces } from '@/utils'
 import { BaseButton, TheHistogram } from '@/components'
 
 export default defineComponent({
+  name: 'TheResult',
+
   components: {
     TheHistogram,
     BaseButton,

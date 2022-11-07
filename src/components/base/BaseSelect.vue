@@ -21,6 +21,8 @@ interface Option {
 }
 
 export default defineComponent({
+  name: 'BaseSelect',
+
   components: {
     ElSelect,
     ElOption,
