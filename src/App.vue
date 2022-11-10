@@ -1,14 +1,7 @@
 <template>
   <div class="app">
     <div class="app-wrapper">
-      <nav class="nav">
-        <RouterLink class="nav__link" :to="{ name: 'mainPage' }">
-          <img class="nav__icon" src="./assets/img/home.svg" alt="home-icon" />
-        </RouterLink>
-        <RouterLink class="nav__link" :to="{ name: 'detailPage' }">
-          <img class="nav__icon" src="./assets/img/row.svg" alt="row-icon" />
-        </RouterLink>
-      </nav>
+      <AppNav />
 
       <div class="container">
         <RouterView v-slot="{ Component }">
@@ -25,6 +18,19 @@
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { AppNav } from '@/components'
+
+export default defineComponent({
+  name: 'App',
+
+  components: {
+    AppNav,
+  },
+})
+</script>
 
 <style lang="scss" scoped>
 .app {
@@ -48,30 +54,6 @@
   width: 100%;
   padding: 4rem;
   margin: 0 auto;
-}
-
-.nav {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 6rem;
-  background: #fafafa;
-
-  &__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 6rem;
-    height: 6rem;
-
-    &.router-link-active {
-      background: $white;
-    }
-  }
-
-  &__icon {
-    width: 3.2rem;
-  }
 }
 
 .transition {
