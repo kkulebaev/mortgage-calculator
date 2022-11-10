@@ -35,7 +35,7 @@ export default defineComponent({
     },
 
     options: {
-      type: Array as PropType<Option[]>,
+      type: Array as PropType<Readonly<Option[]>>,
       required: true,
     },
   },
