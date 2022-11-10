@@ -36,10 +36,10 @@
 </template>
 
 <script lang="ts">
-import { ref, computed, defineComponent } from 'vue'
+import { ref, defineComponent } from 'vue'
 import { MORTGAGE_TYPE_LABEL, PERIOD_LABEL, DETAIL_FIELDS } from '@/helpers'
 
-import { useData } from '@/composables'
+import { useData, usePagination } from '@/composables'
 
 import { numberWithSpaces } from '@/utils'
 
@@ -57,7 +57,7 @@ export default defineComponent({
   setup() {
     const { inputValues } = useData()
 
-    const tableData = [
+    const tableData = ref([
       { id: 1, tdMonPay: 4680, repayPer: 917, repayBody: 3763, debtEnd: 46237 },
       { id: 2, tdMonPay: 4680, repayPer: 848, repayBody: 3832, debtEnd: 42405 },
       { id: 3, tdMonPay: 4680, repayPer: 777, repayBody: 3902, debtEnd: 38503 },
@@ -70,16 +70,12 @@ export default defineComponent({
       { id: 10, tdMonPay: 4680, repayPer: 248, repayBody: 4431, debtEnd: 9108 },
       { id: 11, tdMonPay: 4680, repayPer: 167, repayBody: 4513, debtEnd: 4595 },
       { id: 12, tdMonPay: 4680, repayPer: 84, repayBody: 4595, debtEnd: 0 },
-    ]
+    ])
 
     const pageNumber = ref(1)
-    const size = ref(12)
+    const size = ref(2)
 
-    const paginatedData = computed(() => {
-      const start = (pageNumber.value - 1) * size.value
-      const end = start + size.value
-      return tableData.slice(start, end)
-    })
+    const { paginatedData } = usePagination(tableData, pageNumber, size)
 
     return {
       inputValues,
