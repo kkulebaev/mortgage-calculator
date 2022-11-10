@@ -39,28 +39,14 @@
 </template>
 
 <script lang="ts">
-import { reactive, onMounted, onBeforeUnmount, defineComponent } from 'vue'
+import { ref, onMounted, onBeforeUnmount, defineComponent } from 'vue'
+import type { Ref } from 'vue'
 
 import { useData } from '@/composables'
-
 import { AppForm, AppResult } from '@/components'
+import { calcMortgage } from '@/services'
 
-// interface Input {
-//   mortgageAmount: number
-//   initialPayment: number
-//   mortgageTerm: number
-//   mortgagePeriod: string
-//   mortgageRate: number
-//   paymentType: string
-// }
-
-interface Output {
-  takeValue: number
-  repayValue: number
-  overpaymentValue: number
-  monthlyPayment: number
-  totalCost: number
-}
+import type { Output } from '@/services'
 
 export default defineComponent({
   name: 'MainPage',
@@ -73,7 +59,7 @@ export default defineComponent({
   setup() {
     const { inputValues } = useData()
 
-    const outputValues: Output = reactive({
+    const outputValues: Ref<Output> = ref({
       takeValue: 0,
       repayValue: 0,
       overpaymentValue: 0,
@@ -82,44 +68,12 @@ export default defineComponent({
     })
 
     const submitForm = () => {
-      const {
-        mortgageAmount,
-        initialPayment,
-        mortgageTerm,
-        mortgagePeriod,
-        mortgageRate,
-      } = inputValues.value
-
-      outputValues.takeValue = inputValues.value.mortgageAmount
-
-      // estMortgageBody - расчетное значение начального тела кредита.
-      const estMortgageBody = mortgageAmount - initialPayment
-
-      // estMortgageTerm - расчетное значение срока ипотеки выраженное в месяцах. Если пользователь выбрал ввод количества лет, то приводим значение к количеству месяцев
-      const estMortgageTerm =
-        mortgagePeriod === 'years' ? mortgageTerm * 12 : mortgageTerm
-
-      // estMortgageRate - расчетное значение месячной процентной ставки
-      const estMortgageRate = mortgageRate / 100 / 12
-
-      // Ежемесячный платеж по аннуитетному типу равен:
-      outputValues.monthlyPayment =
-        estMortgageBody *
-        (estMortgageRate /
-          (1 - Math.pow(1 + estMortgageRate, -estMortgageTerm)))
-
-      // Переплата по ипотеке по аннуитетному типу равна:
-      outputValues.overpaymentValue =
-        outputValues.monthlyPayment * estMortgageTerm - estMortgageBody
-
-      outputValues.repayValue = outputValues.overpaymentValue + mortgageAmount
-
-      outputValues.totalCost = outputValues.repayValue
+      outputValues.value = calcMortgage(inputValues.value)
     }
 
     const clearOutput = () => {
-      Object.keys(outputValues).forEach(
-        (n: keyof Output) => delete outputValues[n]
+      Object.keys(outputValues.value).forEach(
+        (n: keyof Output) => delete outputValues.value[n]
       )
     }
 
