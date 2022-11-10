@@ -58,13 +58,13 @@ export default defineComponent({
       () =>
         TYPE_MORTGAGE_OPTIONS.find(
           x => x.value === inputValues.value.paymentType
-        )?.label
+        ).label
     )
 
     const labelOfTypePeriod = computed(
       () =>
         PERIOD_OPTIONS.find(x => x.value === inputValues.value.mortgagePeriod)
-          ?.label
+          .label
     )
 
     const DETAIL_FIELDS = [
