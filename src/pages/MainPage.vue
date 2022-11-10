@@ -39,8 +39,9 @@
 </template>
 
 <script lang="ts">
-import { ref, onMounted, onBeforeUnmount, defineComponent } from 'vue'
+import { ref, defineComponent } from 'vue'
 import type { Ref } from 'vue'
+import { onKeyStroke } from '@vueuse/core'
 
 import { useData } from '@/composables'
 import { AppForm, AppResult } from '@/components'
@@ -77,19 +78,7 @@ export default defineComponent({
       )
     }
 
-    function handleEnterPress(event: KeyboardEvent) {
-      if (event.key === 'Enter') {
-        submitForm()
-      }
-    }
-
-    onMounted(() => {
-      document.addEventListener('keypress', handleEnterPress)
-    })
-
-    onBeforeUnmount(() => {
-      document.removeEventListener('keypress', handleEnterPress)
-    })
+    onKeyStroke('Enter', submitForm)
 
     return {
       inputValues,
