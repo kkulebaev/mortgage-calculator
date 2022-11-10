@@ -12,4 +12,4 @@ export const NAV_ITEMS = [
     to: { name: 'detailPage' },
     icon: Rows,
   },
-]
+] as const
