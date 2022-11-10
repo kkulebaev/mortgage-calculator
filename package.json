@@ -14,7 +14,7 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "@vueuse/core": "9.4.0",
+    "@vueuse/core": "9.5.0",
     "animate.css": "4.1.1",
     "element-plus": "2.2.20",
     "vue": "3.2.41",
