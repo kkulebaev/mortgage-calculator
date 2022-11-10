@@ -11,12 +11,15 @@
           {{ numberWithSpaces(inputValues.initialPayment) }} RUB
         </span>
         <span>
-          Срок ипотеки: {{ inputValues.mortgageTerm }} {{ labelOfTypePeriod }}
+          Срок ипотеки: {{ inputValues.mortgageTerm }}
+          {{ PERIOD_LABEL[inputValues.mortgagePeriod] }}
         </span>
         <span>
           Годовая процентная ставка: {{ inputValues.mortgageRate }} %
         </span>
-        <span> Тип платежей: {{ labelOfTypeMortgage }} </span>
+        <span>
+          Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.paymentType] }}
+        </span>
       </div>
     </div>
     <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
@@ -34,7 +37,7 @@
 
 <script lang="ts">
 import { ref, computed, defineComponent } from 'vue'
-import { TYPE_MORTGAGE_OPTIONS, PERIOD_OPTIONS } from '@/helpers'
+import { MORTGAGE_TYPE_LABEL, PERIOD_LABEL } from '@/helpers'
 
 import { useData } from '@/composables'
 
@@ -53,19 +56,6 @@ export default defineComponent({
 
   setup() {
     const { inputValues } = useData()
-
-    const labelOfTypeMortgage = computed(
-      () =>
-        TYPE_MORTGAGE_OPTIONS.find(
-          x => x.value === inputValues.value.paymentType
-        ).label
-    )
-
-    const labelOfTypePeriod = computed(
-      () =>
-        PERIOD_OPTIONS.find(x => x.value === inputValues.value.mortgagePeriod)
-          .label
-    )
 
     const DETAIL_FIELDS = [
       {
@@ -122,8 +112,8 @@ export default defineComponent({
 
     return {
       inputValues,
-      labelOfTypeMortgage,
-      labelOfTypePeriod,
+      MORTGAGE_TYPE_LABEL,
+      PERIOD_LABEL,
       DETAIL_FIELDS,
       paginatedData,
       pageNumber,
