@@ -25,4 +25,4 @@ export const DETAIL_FIELDS = [
     label: 'Долг на конец месяца (р.)',
     align: 'center',
   },
-]
+] as const

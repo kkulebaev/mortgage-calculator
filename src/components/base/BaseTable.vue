@@ -39,7 +39,7 @@ export default defineComponent({
     },
 
     fields: {
-      type: Array as PropType<TableColumn[]>,
+      type: Array as PropType<Readonly<TableColumn[]>>,
       required: true,
     },
   },
