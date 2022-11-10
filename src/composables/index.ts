@@ -1,1 +1,1 @@
-export { default as useData } from './useData.js'
+export { default as useData } from './useData'
