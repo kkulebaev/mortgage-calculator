@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import { ref, computed, defineComponent } from 'vue'
-import { MORTGAGE_TYPE_LABEL, PERIOD_LABEL } from '@/helpers'
+import { MORTGAGE_TYPE_LABEL, PERIOD_LABEL, DETAIL_FIELDS } from '@/helpers'
 
 import { useData } from '@/composables'
 
@@ -56,35 +56,6 @@ export default defineComponent({
 
   setup() {
     const { inputValues } = useData()
-
-    const DETAIL_FIELDS = [
-      {
-        prop: 'id',
-        label: 'ID',
-        width: 80,
-        align: 'center',
-      },
-      {
-        prop: 'tdMonPay',
-        label: 'Ежемесячный платеж (р.)',
-        align: 'center',
-      },
-      {
-        prop: 'repayPer',
-        label: 'Погашение процентов (р.)',
-        align: 'center',
-      },
-      {
-        prop: 'repayBody',
-        label: 'Погашение тела кредита (р.)',
-        align: 'center',
-      },
-      {
-        prop: 'debtEnd',
-        label: 'Долг на конец месяца (р.)',
-        align: 'center',
-      },
-    ]
 
     const tableData = [
       { id: 1, tdMonPay: 4680, repayPer: 917, repayBody: 3763, debtEnd: 46237 },
