@@ -1,5 +1,5 @@
 import { useStorage } from '@vueuse/core'
-import { TYPE_MORTGAGE_OPTIONS, PERIOD_OPTIONS } from '@/constants'
+import { TYPE_MORTGAGE_OPTIONS, PERIOD_OPTIONS } from '@/helpers'
 
 export default function useData() {
   const inputValues = useStorage('input-values', {
