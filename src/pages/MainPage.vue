@@ -60,7 +60,7 @@ export default defineComponent({
   setup() {
     const { inputValues } = useData()
 
-    const outputValues: Ref<Output> = ref({
+    const DEFAULT_OUTPUT = () => ({
       takeValue: 0,
       repayValue: 0,
       overpaymentValue: 0,
@@ -68,14 +68,14 @@ export default defineComponent({
       totalCost: 0,
     })
 
+    const outputValues: Ref<Output> = ref(DEFAULT_OUTPUT())
+
     const submitForm = () => {
       outputValues.value = calcMortgage(inputValues.value)
     }
 
     const clearOutput = () => {
-      Object.keys(outputValues.value).forEach(
-        (n: keyof Output) => delete outputValues.value[n]
-      )
+      outputValues.value = DEFAULT_OUTPUT()
     }
 
     onKeyStroke('Enter', submitForm)
