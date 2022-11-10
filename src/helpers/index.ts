@@ -7,3 +7,4 @@ export {
   PERIOD,
   PERIOD_LABEL,
 } from './form'
+export { DETAIL_FIELDS } from './detail'
