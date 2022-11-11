@@ -1,3 +1,5 @@
+import { PERIOD } from '@/helpers'
+
 export interface Input {
   mortgageAmount: number
   initialPayment: number
@@ -29,7 +31,7 @@ export default function calcMortgage({
 
   // estMortgageTerm - расчетное значение срока ипотеки выраженное в месяцах. Если пользователь выбрал ввод количества лет, то приводим значение к количеству месяцев
   const estMortgageTerm =
-    mortgagePeriod === 'years' ? mortgageTerm * 12 : mortgageTerm
+    mortgagePeriod === PERIOD.years ? mortgageTerm * 12 : mortgageTerm
 
   // estMortgageRate - расчетное значение месячной процентной ставки
   const estMortgageRate = mortgageRate / 100 / 12
