@@ -1,21 +1,5 @@
 import { PERIOD } from '@/helpers'
-
-export interface Input {
-  mortgageAmount: number
-  initialPayment: number
-  mortgageTerm: number
-  mortgagePeriod: string
-  mortgageRate: number
-  paymentType: string
-}
-
-export interface Output {
-  takeValue: number
-  repayValue: number
-  overpaymentValue: number
-  monthlyPayment: number
-  totalCost: number
-}
+import type { Input, Output } from '@/store'
 
 export default function calcMortgage({
   mortgageAmount,
@@ -48,5 +32,12 @@ export default function calcMortgage({
 
   const totalCost = repayValue
 
-  return { takeValue, repayValue, overpaymentValue, monthlyPayment, totalCost }
+  return {
+    takeValue,
+    repayValue,
+    overpaymentValue,
+    monthlyPayment,
+    totalCost,
+    paymentTable: [],
+  }
 }
