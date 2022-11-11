@@ -1,6 +1,7 @@
 import { PERIOD } from '@/helpers'
 import type { Input, Output } from '@/store'
-import { calcPaymentDetail } from './calc-payment-detail'
+import { roundNumber } from '@/utils'
+import { calcPaymentDetailAn } from './calc-payment-detail'
 
 export function calcMortgageAn({
   mortgageAmount,
@@ -8,9 +9,8 @@ export function calcMortgageAn({
   mortgageTerm,
   mortgagePeriod,
   mortgageRate,
-  paymentType,
 }: Input): Output {
-  const takeValue = mortgageAmount
+  const takeValue = roundNumber(mortgageAmount)
 
   // estMortgageBody - расчетное значение начального тела кредита.
   const estMortgageBody = mortgageAmount - initialPayment
@@ -23,18 +23,25 @@ export function calcMortgageAn({
   const estMortgageRate = mortgageRate / 100 / 12
 
   // Ежемесячный платеж по аннуитетному типу равен:
-  const monthlyPayment =
+  const monthlyPayment = roundNumber(
     estMortgageBody *
-    (estMortgageRate / (1 - Math.pow(1 + estMortgageRate, -estMortgageTerm)))
+      (estMortgageRate / (1 - Math.pow(1 + estMortgageRate, -estMortgageTerm)))
+  )
 
   // Переплата по ипотеке по аннуитетному типу равна:
-  const overpaymentValue = monthlyPayment * estMortgageTerm - estMortgageBody
+  const overpaymentValue = roundNumber(
+    monthlyPayment * estMortgageTerm - estMortgageBody
+  )
 
-  const repayValue = overpaymentValue + mortgageAmount
+  const repayValue = roundNumber(overpaymentValue + mortgageAmount)
 
-  const totalCost = repayValue
+  const totalCost = roundNumber(repayValue)
 
-  const paymentTable = calcPaymentDetail(paymentType)
+  const paymentTable = calcPaymentDetailAn(
+    estMortgageBody,
+    estMortgageRate,
+    monthlyPayment
+  )
 
   return {
     takeValue,

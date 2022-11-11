@@ -1,26 +1,39 @@
-import { MORTGAGE_TYPE } from '@/helpers'
 import type { PaymentByMonth } from '@/store'
+import { roundNumber } from '@/utils'
 
-export function calcPaymentDetail(
-  paymentType: MORTGAGE_TYPE
+// estMortgageBody – сумма оставшейся задолженности по кредиту (остаток по кредиту);
+// estMortgageRate – ежемесячная процентная ставка;
+// monthPay - ежемесячный аннуитетный платёж;
+
+export function calcPaymentDetailAn(
+  estMortgageBody: number,
+  estMortgageRate: number,
+  monthPay: number
 ): PaymentByMonth[] {
-  let paymentDetail
+  const paymentDetail = []
+  let debtEnd = estMortgageBody
+  let i = 0
 
-  if (paymentType === MORTGAGE_TYPE.an) {
-    paymentDetail = calcPaymentDetailAn()
-  }
+  while (debtEnd > 0) {
+    i = i + 1
+    const repayPer = roundNumber(debtEnd * estMortgageRate)
+    const repayBody = roundNumber(monthPay - repayPer)
+    debtEnd = roundNumber(debtEnd - repayBody)
 
-  if (paymentType === MORTGAGE_TYPE.dif) {
-    paymentDetail = calcPaymentDetailDif()
+    const paymentByMonth: PaymentByMonth = {
+      id: i,
+      monthPay,
+      repayPer,
+      repayBody,
+      debtEnd,
+    }
+
+    paymentDetail.push(paymentByMonth)
   }
 
   return paymentDetail
 }
 
-function calcPaymentDetailAn(): PaymentByMonth[] {
-  return []
-}
-
-function calcPaymentDetailDif(): PaymentByMonth[] {
+export function calcPaymentDetailDif(): PaymentByMonth[] {
   return []
 }
