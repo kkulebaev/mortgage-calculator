@@ -6,7 +6,7 @@ export const DETAIL_FIELDS = [
     align: 'center',
   },
   {
-    prop: 'tdMonPay',
+    prop: 'monthPay',
     label: 'Ежемесячный платеж (р.)',
     align: 'center',
   },

@@ -27,7 +27,7 @@
       v-model:currentPage="pageNumber"
       class="pagination"
       layout="prev, pager, next"
-      :total="tableData.length"
+      :total="total"
       :page-size="size"
       background
       hide-on-single-page
@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
+import { ref, defineComponent, toRef } from 'vue'
 import { storeToRefs } from 'pinia'
 
 import { useMainStore } from '@/store'
@@ -57,27 +57,14 @@ export default defineComponent({
 
   setup() {
     const mainStore = useMainStore()
-    const { inputValues } = storeToRefs(mainStore)
-
-    const tableData = ref([
-      { id: 1, tdMonPay: 4680, repayPer: 917, repayBody: 3763, debtEnd: 46237 },
-      { id: 2, tdMonPay: 4680, repayPer: 848, repayBody: 3832, debtEnd: 42405 },
-      { id: 3, tdMonPay: 4680, repayPer: 777, repayBody: 3902, debtEnd: 38503 },
-      { id: 4, tdMonPay: 4680, repayPer: 706, repayBody: 3974, debtEnd: 34529 },
-      { id: 5, tdMonPay: 4680, repayPer: 633, repayBody: 4047, debtEnd: 30482 },
-      { id: 6, tdMonPay: 4680, repayPer: 559, repayBody: 4121, debtEnd: 26361 },
-      { id: 7, tdMonPay: 4680, repayPer: 483, repayBody: 4196, debtEnd: 22165 },
-      { id: 8, tdMonPay: 4680, repayPer: 406, repayBody: 4273, debtEnd: 17891 },
-      { id: 9, tdMonPay: 4680, repayPer: 328, repayBody: 4352, debtEnd: 13540 },
-      { id: 10, tdMonPay: 4680, repayPer: 248, repayBody: 4431, debtEnd: 9108 },
-      { id: 11, tdMonPay: 4680, repayPer: 167, repayBody: 4513, debtEnd: 4595 },
-      { id: 12, tdMonPay: 4680, repayPer: 84, repayBody: 4595, debtEnd: 0 },
-    ])
+    const { inputValues, outputValues } = storeToRefs(mainStore)
+    const paymentTable = toRef(outputValues.value, 'paymentTable')
 
     const pageNumber = ref(1)
     const size = ref(2)
+    const total = ref(paymentTable.value.length)
 
-    const { paginatedData } = usePagination(tableData, pageNumber, size)
+    const { paginatedData } = usePagination(paymentTable, pageNumber, size)
 
     return {
       inputValues,
@@ -86,7 +73,7 @@ export default defineComponent({
       DETAIL_FIELDS,
       paginatedData,
       pageNumber,
-      tableData,
+      total,
       size,
       numberWithSpaces,
     }
