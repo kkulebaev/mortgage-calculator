@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
 import { NAV_ITEMS } from '@/helpers'
 
 export default defineComponent({

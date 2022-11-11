@@ -1,5 +1,6 @@
 import { MORTGAGE_TYPE } from '@/helpers'
 import type { Input, Output } from '@/store'
+
 import { calcMortgageAn } from './calc-mortgage-an'
 import { calcMortgageDif } from './calc-mortgage-dif'
 

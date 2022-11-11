@@ -38,9 +38,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
 import { onKeyStroke } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
+import { defineComponent } from 'vue'
 
 import { AppForm, AppResult } from '@/components'
 import { useMainStore } from '@/store'
