@@ -61,7 +61,7 @@ export default defineComponent({
     const paymentTable = toRef(outputValues.value, 'paymentTable')
 
     const pageNumber = ref(1)
-    const size = ref(2)
+    const size = ref(12)
     const total = ref(paymentTable.value.length)
 
     const { paginatedData } = usePagination(paymentTable, pageNumber, size)
