@@ -21,19 +21,6 @@
         enter-active-class="animated bounceInUp"
         leave-active-class="animated bounceOutUp"
       >
-        <div v-if="monthlyPayment" class="info-block__item">
-          <span class="info-block__item__label"> Ежемесячный платеж: </span>
-
-          <span class="info-block__item__label">
-            {{ numberWithSpaces(monthlyPayment) }} RUB
-          </span>
-        </div>
-      </Transition>
-      <Transition
-        class="transition"
-        enter-active-class="animated bounceInUp"
-        leave-active-class="animated bounceOutUp"
-      >
         <div v-if="totalCost" class="info-block__item">
           <span class="info-block__item__label">
             Общая стоимость ипотеки:
@@ -76,11 +63,6 @@ export default defineComponent({
     },
 
     overpaymentValue: {
-      type: Number,
-      required: true,
-    },
-
-    monthlyPayment: {
       type: Number,
       required: true,
     },

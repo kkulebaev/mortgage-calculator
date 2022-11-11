@@ -47,7 +47,6 @@ export function calcMortgageAn({
     takeValue,
     repayValue,
     overpaymentValue,
-    monthlyPayment,
     totalCost,
     paymentTable,
   }

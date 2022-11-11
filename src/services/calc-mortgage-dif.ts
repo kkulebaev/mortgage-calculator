@@ -6,7 +6,6 @@ export function calcMortgageDif(input: Input): Output {
     takeValue: 0,
     repayValue: 0,
     overpaymentValue: 0,
-    monthlyPayment: 0,
     totalCost: 0,
     paymentTable: [],
   }

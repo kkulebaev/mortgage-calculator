@@ -14,7 +14,6 @@ export const outputValue: Output = {
   takeValue: 1500000,
   repayValue: 2085808.4,
   overpaymentValue: 585808.4,
-  monthlyPayment: 13215.07,
   totalCost: 2085808.4,
   paymentTable: [
     {
