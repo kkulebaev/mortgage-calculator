@@ -37,10 +37,11 @@
 
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
+import { storeToRefs } from 'pinia'
+
+import { useMainStore } from '@/store'
 import { MORTGAGE_TYPE_LABEL, PERIOD_LABEL, DETAIL_FIELDS } from '@/helpers'
-
-import { useData, usePagination } from '@/composables'
-
+import { usePagination } from '@/composables'
 import { numberWithSpaces } from '@/utils'
 
 import { BaseTable } from '@/components'
@@ -55,7 +56,8 @@ export default defineComponent({
   },
 
   setup() {
-    const { inputValues } = useData()
+    const mainStore = useMainStore()
+    const { inputValues } = storeToRefs(mainStore)
 
     const tableData = ref([
       { id: 1, tdMonPay: 4680, repayPer: 917, repayBody: 3763, debtEnd: 46237 },

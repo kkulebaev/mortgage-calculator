@@ -33,21 +33,18 @@
       :overpayment-value="outputValues.overpaymentValue"
       :monthly-payment="outputValues.monthlyPayment"
       :total-cost="outputValues.totalCost"
-      @submit-form="submitForm"
+      @submit-form="calcMortgage"
     />
   </div>
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
-import type { Ref } from 'vue'
+import { defineComponent } from 'vue'
 import { onKeyStroke } from '@vueuse/core'
+import { storeToRefs } from 'pinia'
 
-import { useData } from '@/composables'
 import { AppForm, AppResult } from '@/components'
-import { calcMortgage } from '@/services'
-
-import type { Output } from '@/services'
+import { useMainStore } from '@/store'
 
 export default defineComponent({
   name: 'MainPage',
@@ -58,33 +55,17 @@ export default defineComponent({
   },
 
   setup() {
-    const { inputValues } = useData()
+    const mainStore = useMainStore()
+    const { inputValues, outputValues } = storeToRefs(mainStore)
+    const { calcMortgage, clearOutput } = mainStore
 
-    const DEFAULT_OUTPUT = () => ({
-      takeValue: 0,
-      repayValue: 0,
-      overpaymentValue: 0,
-      monthlyPayment: 0,
-      totalCost: 0,
-    })
-
-    const outputValues: Ref<Output> = ref(DEFAULT_OUTPUT())
-
-    const submitForm = () => {
-      outputValues.value = calcMortgage(inputValues.value)
-    }
-
-    const clearOutput = () => {
-      outputValues.value = DEFAULT_OUTPUT()
-    }
-
-    onKeyStroke('Enter', submitForm)
+    onKeyStroke('Enter', calcMortgage)
 
     return {
       inputValues,
       outputValues,
+      calcMortgage,
       clearOutput,
-      submitForm,
     }
   },
 })
