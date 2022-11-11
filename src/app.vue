@@ -21,6 +21,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
 import { AppNav } from '@/components'
 
 export default defineComponent({

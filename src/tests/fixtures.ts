@@ -1,5 +1,5 @@
+import { MORTGAGE_TYPE,PERIOD } from '@/helpers'
 import type { Input, Output } from '@/store'
-import { PERIOD, MORTGAGE_TYPE } from '@/helpers'
 
 export const inputValue: Input = {
   mortgageAmount: 1500000,

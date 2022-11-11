@@ -10,10 +10,9 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { ElOption,ElSelect } from 'element-plus'
 import type { PropType } from 'vue'
-
-import { ElSelect, ElOption } from 'element-plus'
+import { computed, defineComponent } from 'vue'
 
 interface Option {
   value: string

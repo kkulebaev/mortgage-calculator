@@ -1,6 +1,7 @@
 import { PERIOD } from '@/helpers'
 import type { Input, Output } from '@/store'
 import { roundNumber } from '@/utils'
+
 import { calcPaymentDetailAn } from './calc-payment-detail'
 
 export function calcMortgageAn({

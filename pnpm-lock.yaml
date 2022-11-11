@@ -11,13 +11,14 @@ specifiers:
   element-plus: 2.2.20
   eslint: 8.27.0
   eslint-config-prettier: 8.5.0
+  eslint-plugin-simple-import-sort: 8.0.0
   eslint-plugin-unicorn: 44.0.2
   eslint-plugin-vue: 9.7.0
   jsdom: 20.0.2
-  nano-staged: ^0.8.0
-  pinia: ^2.0.23
+  nano-staged: 0.8.0
+  pinia: 2.0.23
   sass: 1.56.1
-  simple-git-hooks: ^2.8.1
+  simple-git-hooks: 2.8.1
   typescript: 4.8.4
   vite: 3.2.3
   vitest: 0.25.1
@@ -41,6 +42,7 @@ devDependencies:
   '@vue/test-utils': 2.2.1_vue@3.2.44
   eslint: 8.27.0
   eslint-config-prettier: 8.5.0_eslint@8.27.0
+  eslint-plugin-simple-import-sort: 8.0.0_eslint@8.27.0
   eslint-plugin-unicorn: 44.0.2_eslint@8.27.0
   eslint-plugin-vue: 9.7.0_eslint@8.27.0
   jsdom: 20.0.2
@@ -1167,6 +1169,14 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
+    dependencies:
+      eslint: 8.27.0
+    dev: true
+
+  /eslint-plugin-simple-import-sort/8.0.0_eslint@8.27.0:
+    resolution: {integrity: sha512-bXgJQ+lqhtQBCuWY/FUWdB27j4+lqcvXv5rUARkzbeWLwea+S5eBZEQrhnO+WgX3ZoJHVj0cn943iyXwByHHQw==}
+    peerDependencies:
+      eslint: '>=5.0.0'
     dependencies:
       eslint: 8.27.0
     dev: true

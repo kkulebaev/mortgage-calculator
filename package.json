@@ -29,6 +29,7 @@
     "@vue/test-utils": "2.2.1",
     "eslint": "8.27.0",
     "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-simple-import-sort": "8.0.0",
     "eslint-plugin-unicorn": "44.0.2",
     "eslint-plugin-vue": "9.7.0",
     "jsdom": "20.0.2",
