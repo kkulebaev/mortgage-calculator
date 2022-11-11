@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { PERIOD, MORTGAGE_TYPE } from '@/helpers'
 import { calcMortgage } from '@/services'
 
-interface PaymentByMonth {
+export interface PaymentByMonth {
   id: number
   monthPay: number
   repayPer: number
