@@ -14,8 +14,10 @@ specifiers:
   eslint-plugin-unicorn: 44.0.2
   eslint-plugin-vue: 9.7.0
   jsdom: 20.0.2
+  nano-staged: ^0.8.0
   pinia: ^2.0.23
   sass: 1.56.1
+  simple-git-hooks: ^2.8.1
   typescript: 4.8.4
   vite: 3.2.3
   vitest: 0.25.1
@@ -42,7 +44,9 @@ devDependencies:
   eslint-plugin-unicorn: 44.0.2_eslint@8.27.0
   eslint-plugin-vue: 9.7.0_eslint@8.27.0
   jsdom: 20.0.2
+  nano-staged: 0.8.0
   sass: 1.56.1
+  simple-git-hooks: 2.8.1
   typescript: 4.8.4
   vite: 3.2.3_sass@1.56.1
   vitest: 0.25.1_qmf3kdmeffdxtvhzholcvxotja
@@ -1848,6 +1852,14 @@ packages:
     resolution: {integrity: sha512-Tr1knR3d2mKvvWthlk7202rywKbiOm4rVFLsfAaSIhJ6dt9o47W4S+JMtWhd/PW9Wrdew2/S2fSvhz3E2gkfEg==}
     dev: true
 
+  /nano-staged/0.8.0:
+    resolution: {integrity: sha512-QSEqPGTCJbkHU2yLvfY6huqYPjdBrOaTMKatO1F8nCSrkQGXeKwtCiCnsdxnuMhbg3DTVywKaeWLGCE5oJpq0g==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    hasBin: true
+    dependencies:
+      picocolors: 1.0.0
+    dev: true
+
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -2207,6 +2219,12 @@ packages:
   /shebang-regex/3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
+    dev: true
+
+  /simple-git-hooks/2.8.1:
+    resolution: {integrity: sha512-DYpcVR1AGtSfFUNzlBdHrQGPsOhuuEJ/FkmPOOlFysP60AHd3nsEpkGq/QEOdtUyT1Qhk7w9oLmFoMG+75BDog==}
+    hasBin: true
+    requiresBuild: true
     dev: true
 
   /sirv/2.0.2:
