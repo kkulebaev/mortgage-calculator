@@ -1,3 +1,3 @@
-export { default as calcMortgage } from './calcMortgage'
+export { default as calcMortgage } from './calc-mortgage'
 
-export type { Input, Output } from './calcMortgage'
+export type { Input, Output } from './calc-mortgage'

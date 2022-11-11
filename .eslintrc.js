@@ -16,7 +16,7 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     'prettier',
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'unicorn'],
   rules: {
     'vue/component-options-name-casing': ['error', 'PascalCase'],
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
@@ -34,7 +34,7 @@ module.exports = {
       'error',
       {
         extensions: ['vue'],
-        shouldMatchCase: true,
+        shouldMatchCase: false,
       },
     ],
     'vue/new-line-between-multi-line-property': [
@@ -59,5 +59,11 @@ module.exports = {
       },
     ],
     'vue/require-name-property': 'error',
+    'unicorn/filename-case': [
+      'error',
+      {
+        case: 'kebabCase',
+      },
+    ],
   },
 }
