@@ -11,7 +11,7 @@
             leave-active-class="animated fadeOut"
             mode="out-in"
           >
-            <component :is="Component" />
+            <Component :is="Component" />
           </Transition>
         </RouterView>
       </div>
