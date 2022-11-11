@@ -11,8 +11,7 @@
     "lint:types": "vue-tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:ui": "vitest --ui",
-    "postinstall": "npx simple-git-hooks"
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "@vueuse/core": "9.5.0",
