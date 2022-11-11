@@ -43,12 +43,10 @@
   },
   "nano-staged": {
     "*.{js,ts,vue}": [
-      "eslint src",
-      "vue-tsc --noEmit",
-      "vitest run"
+      "eslint --fix"
     ]
   },
   "simple-git-hooks": {
-    "pre-commit": "./node_modules/.bin/nano-staged"
+    "pre-commit": "./node_modules/.bin/simple-git-hooks && ./node_modules/.bin/nano-staged"
   }
 }
