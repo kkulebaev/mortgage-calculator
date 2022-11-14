@@ -11,13 +11,13 @@ export const DETAIL_FIELDS = [
     align: 'center',
   },
   {
-    prop: 'repayPer',
-    label: 'Погашение процентов (р.)',
+    prop: 'repayBody',
+    label: 'Погашение тела кредита (р.)',
     align: 'center',
   },
   {
-    prop: 'repayBody',
-    label: 'Погашение тела кредита (р.)',
+    prop: 'repayPer',
+    label: 'Погашение процентов (р.)',
     align: 'center',
   },
   {
