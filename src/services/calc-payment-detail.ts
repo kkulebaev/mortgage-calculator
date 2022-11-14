@@ -8,14 +8,13 @@ import { roundNumber } from '@/utils'
 export function calcPaymentDetailAn(
   estMortgageBody: number,
   monthRate: number,
-  monthPay: number
+  monthPay: number,
+  monthTerm: number
 ): PaymentByMonth[] {
   const paymentDetail = []
   let debtEnd = estMortgageBody
-  let i = 0
 
-  while (roundNumber(debtEnd, 0) > 0) {
-    i = i + 1
+  for (let i = 1; i <= monthTerm; i++) {
     const repayPer = roundNumber(debtEnd * monthRate)
     const repayBody = roundNumber(monthPay - repayPer)
     debtEnd = roundNumber(debtEnd - repayBody)
@@ -37,14 +36,13 @@ export function calcPaymentDetailAn(
 export function calcPaymentDetailDif(
   estMortgageBody: number,
   monthRate: number,
-  repayBody: number
+  repayBody: number,
+  monthTerm: number
 ): PaymentByMonth[] {
   const paymentDetail = []
   let debtEnd = estMortgageBody
-  let i = 0
 
-  while (roundNumber(debtEnd, 0) > 0) {
-    i = i + 1
+  for (let i = 1; i <= monthTerm; i++) {
     const repayPer = roundNumber(debtEnd * monthRate)
     const monthPay = roundNumber(repayBody + repayPer)
     debtEnd = roundNumber(debtEnd - repayBody)

@@ -10,7 +10,12 @@ export function calcMortgageDif({
 }: InputPart): Output {
   const repayBody = roundNumber(takeValue / monthTerm)
 
-  const paymentTable = calcPaymentDetailDif(takeValue, monthRate, repayBody)
+  const paymentTable = calcPaymentDetailDif(
+    takeValue,
+    monthRate,
+    repayBody,
+    monthTerm
+  )
 
   const repayValue = paymentTable.reduce((acc, item) => acc + item.monthPay, 0)
 
