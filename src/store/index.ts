@@ -10,21 +10,6 @@ export interface PaymentByMonth {
   debtEnd: number
 }
 
-const paymentTable: PaymentByMonth[] = [
-  { id: 1, monthPay: 4680, repayPer: 917, repayBody: 3763, debtEnd: 46237 },
-  { id: 2, monthPay: 4680, repayPer: 848, repayBody: 3832, debtEnd: 42405 },
-  { id: 3, monthPay: 4680, repayPer: 777, repayBody: 3902, debtEnd: 38503 },
-  { id: 4, monthPay: 4680, repayPer: 706, repayBody: 3974, debtEnd: 34529 },
-  { id: 5, monthPay: 4680, repayPer: 633, repayBody: 4047, debtEnd: 30482 },
-  { id: 6, monthPay: 4680, repayPer: 559, repayBody: 4121, debtEnd: 26361 },
-  { id: 7, monthPay: 4680, repayPer: 483, repayBody: 4196, debtEnd: 22165 },
-  { id: 8, monthPay: 4680, repayPer: 406, repayBody: 4273, debtEnd: 17891 },
-  { id: 9, monthPay: 4680, repayPer: 328, repayBody: 4352, debtEnd: 13540 },
-  { id: 10, monthPay: 4680, repayPer: 248, repayBody: 4431, debtEnd: 9108 },
-  { id: 11, monthPay: 4680, repayPer: 167, repayBody: 4513, debtEnd: 4595 },
-  { id: 12, monthPay: 4680, repayPer: 84, repayBody: 4595, debtEnd: 0 },
-]
-
 export interface Input {
   amount: number
   term: number
@@ -45,22 +30,20 @@ interface State {
   outputValues: Output
 }
 
-const DEFAULT_INPUT = (): Input =>
-  ({
-    amount: 1000000,
-    term: 12,
-    period: PERIOD.months,
-    rate: 10,
-    type: MORTGAGE_TYPE.an,
-  } as const)
+export const DEFAULT_INPUT = (): Input => ({
+  amount: 1000000,
+  term: 12,
+  period: PERIOD.months,
+  rate: 10,
+  type: MORTGAGE_TYPE.an,
+})
 
-const DEFAULT_OUTPUT = (): Output =>
-  ({
-    takeValue: 0,
-    repayValue: 0,
-    overpaymentValue: 0,
-    paymentTable,
-  } as const)
+const DEFAULT_OUTPUT = (): Output => ({
+  takeValue: 0,
+  repayValue: 0,
+  overpaymentValue: 0,
+  paymentTable: [],
+})
 
 export const useMainStore = defineStore('main', {
   state: (): State => ({
@@ -69,8 +52,9 @@ export const useMainStore = defineStore('main', {
   }),
 
   actions: {
-    calcMortgage() {
-      this.outputValues = calcMortgage(this.inputValues)
+    calcMortgage(input: Input) {
+      this.inputValues = input
+      this.outputValues = calcMortgage(input)
     },
 
     clearOutput() {

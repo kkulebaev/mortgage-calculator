@@ -30,18 +30,18 @@
       :take-value="outputValues.takeValue"
       :repay-value="outputValues.repayValue"
       :overpayment-value="outputValues.overpaymentValue"
-      @submit-form="calcMortgage"
+      @submit-form="calcMortgage(inputValues)"
     />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { onKeyStroke } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
 import { AppForm, AppResult } from '@/components'
-import { useMainStore } from '@/store'
+import { useMainStore, DEFAULT_INPUT } from '@/store'
 
 export default defineComponent({
   name: 'MainPage',
@@ -53,10 +53,12 @@ export default defineComponent({
 
   setup() {
     const mainStore = useMainStore()
-    const { inputValues, outputValues } = storeToRefs(mainStore)
+    const { outputValues } = storeToRefs(mainStore)
     const { calcMortgage, clearOutput } = mainStore
 
-    onKeyStroke('Enter', calcMortgage)
+    const inputValues = ref(DEFAULT_INPUT())
+
+    onKeyStroke('Enter', () => calcMortgage(inputValues.value))
 
     return {
       inputValues,
