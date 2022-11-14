@@ -11,11 +11,11 @@ describe('BaseButton', () => {
 
   const findButton = () => wrapper.find('button')
 
-  it('should emit event "click" when clicked on it', () => {
+  it('should emit event "click" when clicked on it', async () => {
     createComponent()
     const button = findButton()
 
-    button.trigger('click')
+    await button.trigger('click')
 
     expect(wrapper.emitted('click')).toBeTruthy()
   })
