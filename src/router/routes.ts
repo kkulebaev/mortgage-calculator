@@ -1,5 +1,4 @@
-import MainPage from '@/pages/main-page.vue'
-import DetailPage from '@/pages/detail-page.vue'
+import { MainPage, DetailPage } from '@/pages'
 
 export const routes = [
   { path: '/', name: 'mainPage', component: MainPage },
