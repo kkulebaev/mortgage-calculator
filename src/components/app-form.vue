@@ -1,12 +1,7 @@
 <template>
   <form class="form">
     <div class="form__item">
-      <span class="form__item__label">
-        Сумма ипотеки
-        <BaseTooltip
-          content="Сумма, которую вы хотите взять (с учетом первоначального взноса)"
-        />
-      </span>
+      <span class="form__item__label"> Сумма ипотеки </span>
       <ElInput
         v-model="mortgageAmountValue"
         placeholder="50 000"
@@ -17,7 +12,7 @@
       </ElInput>
     </div>
     <div class="form__item">
-      <span class="form__item__label">Срок ипотеки</span>
+      <span class="form__item__label"> Срок ипотеки </span>
       <ElInput
         v-model="mortgageTermValue"
         placeholder="10"
@@ -35,7 +30,7 @@
       </ElInput>
     </div>
     <div class="form__item">
-      <span class="form__item__label">Годовая процентная ставка</span>
+      <span class="form__item__label"> Годовая процентная ставка </span>
       <ElInputNumber
         v-model="mortgageRateValue"
         :min="0.1"
@@ -45,13 +40,7 @@
       />
     </div>
     <div class="form__item">
-      <span class="form__item__label">
-        Тип платежей
-        <BaseTooltip
-          content="Аннуитетный тип – размер ежемесячного платежа одинаковый.
-        Дифференцированный тип – тело кредита одинаковое, а размер ежемесячного платежа постепенно уменьшается."
-        />
-      </span>
+      <span class="form__item__label"> Тип платежей </span>
       <BaseSelect
         v-model="paymentTypeValue"
         :options="TYPE_MORTGAGE_OPTIONS"
@@ -67,7 +56,7 @@ import { TYPE_MORTGAGE_OPTIONS, PERIOD_OPTIONS } from '@/helpers'
 
 import { toNumber, numberWithSpaces } from '@/utils'
 
-import { BaseSelect, BaseTooltip } from '@/components'
+import { BaseSelect } from '@/components'
 import { ElInput, ElInputNumber } from 'element-plus'
 
 export default defineComponent({
@@ -75,7 +64,6 @@ export default defineComponent({
 
   components: {
     BaseSelect,
-    BaseTooltip,
     ElInput,
     ElInputNumber,
   },
