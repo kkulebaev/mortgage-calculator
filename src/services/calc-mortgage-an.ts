@@ -3,20 +3,14 @@ import type { Input, Output } from '@/store'
 import { roundNumber } from '@/utils'
 import { calcPaymentDetailAn } from './calc-payment-detail'
 
-export function calcMortgageAn({
-  mortgageAmount,
-  mortgageTerm,
-  mortgagePeriod,
-  mortgageRate,
-}: Input): Output {
-  const takeValue = roundNumber(mortgageAmount)
+export function calcMortgageAn({ amount, term, period, rate }: Input): Output {
+  const takeValue = roundNumber(amount)
 
   // estMortgageTerm - расчетное значение срока ипотеки выраженное в месяцах. Если пользователь выбрал ввод количества лет, то приводим значение к количеству месяцев
-  const estMortgageTerm =
-    mortgagePeriod === PERIOD.years ? mortgageTerm * 12 : mortgageTerm
+  const estMortgageTerm = period === PERIOD.years ? term * 12 : term
 
   // estMortgageRate - расчетное значение месячной процентной ставки
-  const estMortgageRate = mortgageRate / 100 / 12
+  const estMortgageRate = rate / 100 / 12
 
   // Ежемесячный платеж по аннуитетному типу равен:
   const monthlyPayment = roundNumber(
@@ -29,7 +23,7 @@ export function calcMortgageAn({
     monthlyPayment * estMortgageTerm - takeValue
   )
 
-  const repayValue = roundNumber(overpaymentValue + mortgageAmount)
+  const repayValue = roundNumber(overpaymentValue + amount)
 
   const paymentTable = calcPaymentDetailAn(
     takeValue,

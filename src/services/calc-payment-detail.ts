@@ -2,12 +2,12 @@ import type { PaymentByMonth } from '@/store'
 import { roundNumber } from '@/utils'
 
 // estMortgageBody – сумма оставшейся задолженности по кредиту (остаток по кредиту);
-// estMortgageRate – ежемесячная процентная ставка;
+// monthRate – ежемесячная процентная ставка;
 // monthPay - ежемесячный аннуитетный платёж;
 
 export function calcPaymentDetailAn(
   estMortgageBody: number,
-  estMortgageRate: number,
+  monthRate: number,
   monthPay: number
 ): PaymentByMonth[] {
   const paymentDetail = []
@@ -16,7 +16,7 @@ export function calcPaymentDetailAn(
 
   while (roundNumber(debtEnd, 0) > 0) {
     i = i + 1
-    const repayPer = roundNumber(debtEnd * estMortgageRate)
+    const repayPer = roundNumber(debtEnd * monthRate)
     const repayBody = roundNumber(monthPay - repayPer)
     debtEnd = roundNumber(debtEnd - repayBody)
 
@@ -36,7 +36,7 @@ export function calcPaymentDetailAn(
 
 export function calcPaymentDetailDif(
   estMortgageBody: number,
-  estMortgageRate: number,
+  monthRate: number,
   repayBody: number
 ): PaymentByMonth[] {
   const paymentDetail = []
@@ -45,7 +45,7 @@ export function calcPaymentDetailDif(
 
   while (roundNumber(debtEnd, 0) > 0) {
     i = i + 1
-    const repayPer = roundNumber(debtEnd * estMortgageRate)
+    const repayPer = roundNumber(debtEnd * monthRate)
     const monthPay = roundNumber(repayBody + repayPer)
     debtEnd = roundNumber(debtEnd - repayBody)
 

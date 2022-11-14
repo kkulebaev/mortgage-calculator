@@ -10,11 +10,11 @@
         <h1 class="title__title">Калькулятор ипотеки</h1>
       </div>
       <AppForm
-        v-model:paymentType="inputValues.paymentType"
-        v-model:mortgageAmount="inputValues.mortgageAmount"
-        v-model:mortgageTerm="inputValues.mortgageTerm"
-        v-model:mortgagePeriod="inputValues.mortgagePeriod"
-        v-model:mortgageRate="inputValues.mortgageRate"
+        v-model:paymentType="inputValues.type"
+        v-model:mortgageAmount="inputValues.amount"
+        v-model:mortgageTerm="inputValues.term"
+        v-model:mortgagePeriod="inputValues.period"
+        v-model:mortgageRate="inputValues.rate"
         @change="clearOutput"
       />
       <img

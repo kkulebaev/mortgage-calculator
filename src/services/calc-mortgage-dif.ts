@@ -3,23 +3,17 @@ import type { Input, Output } from '@/store'
 import { roundNumber } from '@/utils'
 import { calcPaymentDetailDif } from './calc-payment-detail'
 
-export function calcMortgageDif({
-  mortgageAmount,
-  mortgageTerm,
-  mortgagePeriod,
-  mortgageRate,
-}: Input): Output {
-  const takeValue = roundNumber(mortgageAmount)
+export function calcMortgageDif({ amount, term, period, rate }: Input): Output {
+  const takeValue = roundNumber(amount)
 
   // estMortgageTerm - расчетное значение срока ипотеки выраженное в месяцах. Если пользователь выбрал ввод количества лет, то приводим значение к количеству месяцев
-  const estMortgageTerm =
-    mortgagePeriod === PERIOD.years ? mortgageTerm * 12 : mortgageTerm
+  const estMortgageTerm = period === PERIOD.years ? term * 12 : term
 
   // repayBody - сумма, которая идёт на погашение тела кредита;
   const repayBody = roundNumber(takeValue / estMortgageTerm)
 
   // estMortgageRate - расчетное значение месячной процентной ставки
-  const estMortgageRate = mortgageRate / 100 / 12
+  const estMortgageRate = rate / 100 / 12
 
   const paymentTable = calcPaymentDetailDif(
     takeValue,

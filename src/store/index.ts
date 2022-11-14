@@ -26,11 +26,11 @@ const paymentTable: PaymentByMonth[] = [
 ]
 
 export interface Input {
-  mortgageAmount: number
-  mortgageTerm: number
-  mortgagePeriod: PERIOD
-  mortgageRate: number
-  paymentType: MORTGAGE_TYPE
+  amount: number
+  term: number
+  period: PERIOD
+  rate: number
+  type: MORTGAGE_TYPE
 }
 
 export interface Output {
@@ -47,11 +47,11 @@ interface State {
 
 const DEFAULT_INPUT = (): Input =>
   ({
-    mortgageAmount: 1000000,
-    mortgageTerm: 12,
-    mortgagePeriod: PERIOD.months,
-    mortgageRate: 10,
-    paymentType: MORTGAGE_TYPE.an,
+    amount: 1000000,
+    term: 12,
+    period: PERIOD.months,
+    rate: 10,
+    type: MORTGAGE_TYPE.an,
   } as const)
 
 const DEFAULT_OUTPUT = (): Output =>
