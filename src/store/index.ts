@@ -27,7 +27,6 @@ const paymentTable: PaymentByMonth[] = [
 
 export interface Input {
   mortgageAmount: number
-  initialPayment: number
   mortgageTerm: number
   mortgagePeriod: PERIOD
   mortgageRate: number
@@ -49,7 +48,6 @@ interface State {
 const DEFAULT_INPUT = (): Input =>
   ({
     mortgageAmount: 1500000,
-    initialPayment: 500000,
     mortgageTerm: 10,
     mortgagePeriod: PERIOD.years,
     mortgageRate: 10,

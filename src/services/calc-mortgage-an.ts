@@ -5,15 +5,11 @@ import { calcPaymentDetailAn } from './calc-payment-detail'
 
 export function calcMortgageAn({
   mortgageAmount,
-  initialPayment,
   mortgageTerm,
   mortgagePeriod,
   mortgageRate,
 }: Input): Output {
   const takeValue = roundNumber(mortgageAmount)
-
-  // estMortgageBody - расчетное значение начального тела кредита.
-  const estMortgageBody = mortgageAmount - initialPayment
 
   // estMortgageTerm - расчетное значение срока ипотеки выраженное в месяцах. Если пользователь выбрал ввод количества лет, то приводим значение к количеству месяцев
   const estMortgageTerm =
@@ -24,19 +20,19 @@ export function calcMortgageAn({
 
   // Ежемесячный платеж по аннуитетному типу равен:
   const monthlyPayment = roundNumber(
-    estMortgageBody *
+    takeValue *
       (estMortgageRate / (1 - Math.pow(1 + estMortgageRate, -estMortgageTerm)))
   )
 
   // Переплата по ипотеке по аннуитетному типу равна:
   const overpaymentValue = roundNumber(
-    monthlyPayment * estMortgageTerm - estMortgageBody
+    monthlyPayment * estMortgageTerm - takeValue
   )
 
   const repayValue = roundNumber(overpaymentValue + mortgageAmount)
 
   const paymentTable = calcPaymentDetailAn(
-    estMortgageBody,
+    takeValue,
     estMortgageRate,
     monthlyPayment
   )
