@@ -17,16 +17,6 @@
       </ElInput>
     </div>
     <div class="form__item">
-      <span class="form__item__label">Первоначальный взнос</span>
-      <ElInput
-        v-model="initialPaymentValue"
-        placeholder="20 000"
-        @input="$emit('change')"
-      >
-        <template #append>руб</template>
-      </ElInput>
-    </div>
-    <div class="form__item">
       <span class="form__item__label">Срок ипотеки</span>
       <ElInput
         v-model="mortgageTermValue"
@@ -96,11 +86,6 @@ export default defineComponent({
       required: true,
     },
 
-    initialPayment: {
-      type: Number,
-      required: true,
-    },
-
     mortgageTerm: {
       type: Number,
       required: true,
@@ -131,7 +116,6 @@ export default defineComponent({
   emits: [
     'update:paymentType',
     'update:mortgageAmount',
-    'update:initialPayment',
     'update:mortgageTerm',
     'update:mortgagePeriod',
     'update:mortgageRate',
@@ -145,15 +129,6 @@ export default defineComponent({
       },
       set(value) {
         emit('update:mortgageAmount', toNumber(value))
-      },
-    })
-
-    const initialPaymentValue = computed({
-      get() {
-        return numberWithSpaces(props.initialPayment)
-      },
-      set(value) {
-        emit('update:initialPayment', toNumber(value))
       },
     })
 
@@ -195,7 +170,6 @@ export default defineComponent({
 
     return {
       mortgageAmountValue,
-      initialPaymentValue,
       mortgageTermValue,
       mortgagePeriodValue,
       mortgageRateValue,

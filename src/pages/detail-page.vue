@@ -7,10 +7,6 @@
           Сумма ипотеки: {{ numberWithSpaces(inputValues.mortgageAmount) }} RUB
         </span>
         <span>
-          Первоначальный взнос:
-          {{ numberWithSpaces(inputValues.initialPayment) }} RUB
-        </span>
-        <span>
           Срок ипотеки: {{ inputValues.mortgageTerm }}
           {{ PERIOD_LABEL[inputValues.mortgagePeriod] }}
         </span>

@@ -12,7 +12,6 @@
       <AppForm
         v-model:paymentType="inputValues.paymentType"
         v-model:mortgageAmount="inputValues.mortgageAmount"
-        v-model:initialPayment="inputValues.initialPayment"
         v-model:mortgageTerm="inputValues.mortgageTerm"
         v-model:mortgagePeriod="inputValues.mortgagePeriod"
         v-model:mortgageRate="inputValues.mortgageRate"
