@@ -16,7 +16,12 @@ export function calcMortgageAn({
 
   const repayValue = roundNumber(overpaymentValue + takeValue)
 
-  const paymentTable = calcPaymentDetailAn(takeValue, monthRate, monthPay)
+  const paymentTable = calcPaymentDetailAn(
+    takeValue,
+    monthRate,
+    monthPay,
+    monthTerm
+  )
 
   return {
     takeValue,
