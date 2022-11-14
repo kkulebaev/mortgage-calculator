@@ -1,7 +1,7 @@
 import type { Input, Output } from '@/store'
 import { PERIOD, MORTGAGE_TYPE } from '@/helpers'
 
-export const inputValue: Input = {
+export const inputAnMortgage: Input = {
   mortgageAmount: 1000000,
   mortgageTerm: 12,
   mortgagePeriod: PERIOD.months,
@@ -9,7 +9,7 @@ export const inputValue: Input = {
   paymentType: MORTGAGE_TYPE.an,
 }
 
-export const outputValue: Output = {
+export const outputAnMortgage: Output = {
   takeValue: 1000000,
   repayValue: 1054990.68,
   overpaymentValue: 54990.68,
@@ -97,6 +97,106 @@ export const outputValue: Output = {
       repayPer: 726.58,
       repayBody: 87189.31,
       debtEnd: -0.03,
+    },
+  ],
+}
+
+export const inputDifMortgage: Input = {
+  mortgageAmount: 1000000,
+  mortgageTerm: 12,
+  mortgagePeriod: PERIOD.months,
+  mortgageRate: 10,
+  paymentType: MORTGAGE_TYPE.dif,
+}
+
+export const outputDifMortgage: Output = {
+  takeValue: 1000000,
+  repayValue: 1054166.62,
+  overpaymentValue: 54166.62000000011,
+  paymentTable: [
+    {
+      id: 1,
+      monthPay: 91666.66,
+      repayPer: 8333.33,
+      repayBody: 83333.33,
+      debtEnd: 916666.67,
+    },
+    {
+      id: 2,
+      monthPay: 90972.22,
+      repayPer: 7638.89,
+      repayBody: 83333.33,
+      debtEnd: 833333.34,
+    },
+    {
+      id: 3,
+      monthPay: 90277.77,
+      repayPer: 6944.44,
+      repayBody: 83333.33,
+      debtEnd: 750000.01,
+    },
+    {
+      id: 4,
+      monthPay: 89583.33,
+      repayPer: 6250,
+      repayBody: 83333.33,
+      debtEnd: 666666.68,
+    },
+    {
+      id: 5,
+      monthPay: 88888.89,
+      repayPer: 5555.56,
+      repayBody: 83333.33,
+      debtEnd: 583333.35,
+    },
+    {
+      id: 6,
+      monthPay: 88194.44,
+      repayPer: 4861.11,
+      repayBody: 83333.33,
+      debtEnd: 500000.02,
+    },
+    {
+      id: 7,
+      monthPay: 87500,
+      repayPer: 4166.67,
+      repayBody: 83333.33,
+      debtEnd: 416666.69,
+    },
+    {
+      id: 8,
+      monthPay: 86805.55,
+      repayPer: 3472.22,
+      repayBody: 83333.33,
+      debtEnd: 333333.36,
+    },
+    {
+      id: 9,
+      monthPay: 86111.11,
+      repayPer: 2777.78,
+      repayBody: 83333.33,
+      debtEnd: 250000.03,
+    },
+    {
+      id: 10,
+      monthPay: 85416.66,
+      repayPer: 2083.33,
+      repayBody: 83333.33,
+      debtEnd: 166666.7,
+    },
+    {
+      id: 11,
+      monthPay: 84722.22,
+      repayPer: 1388.89,
+      repayBody: 83333.33,
+      debtEnd: 83333.37,
+    },
+    {
+      id: 12,
+      monthPay: 84027.77,
+      repayPer: 694.44,
+      repayBody: 83333.33,
+      debtEnd: 0.04,
     },
   ],
 }
