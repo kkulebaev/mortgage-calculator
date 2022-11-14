@@ -47,9 +47,9 @@ interface State {
 
 const DEFAULT_INPUT = (): Input =>
   ({
-    mortgageAmount: 1500000,
-    mortgageTerm: 10,
-    mortgagePeriod: PERIOD.years,
+    mortgageAmount: 1000000,
+    mortgageTerm: 12,
+    mortgagePeriod: PERIOD.months,
     mortgageRate: 10,
     paymentType: MORTGAGE_TYPE.an,
   } as const)
