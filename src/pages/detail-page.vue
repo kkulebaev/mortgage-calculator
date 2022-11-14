@@ -4,17 +4,17 @@
       <h1 class="title__title">График платежей</h1>
       <div class="title__desc">
         <span>
-          Сумма ипотеки: {{ numberWithSpaces(inputValues.mortgageAmount) }} RUB
+          Сумма ипотеки: {{ numberWithSpaces(inputValues.amount) }} RUB
         </span>
         <span>
-          Срок ипотеки: {{ inputValues.mortgageTerm }}
-          {{ PERIOD_LABEL[inputValues.mortgagePeriod] }}
+          Срок ипотеки: {{ inputValues.term }}
+          {{ PERIOD_LABEL[inputValues.period] }}
         </span>
         <span>
-          Годовая процентная ставка: {{ inputValues.mortgageRate }} %
+          Годовая процентная ставка: {{ inputValues.rate }} %
         </span>
         <span>
-          Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.paymentType] }}
+          Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.type] }}
         </span>
       </div>
     </div>

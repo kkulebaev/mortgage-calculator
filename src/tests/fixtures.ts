@@ -2,11 +2,11 @@ import type { Input, Output } from '@/store'
 import { PERIOD, MORTGAGE_TYPE } from '@/helpers'
 
 export const inputAnMortgage: Input = {
-  mortgageAmount: 1000000,
-  mortgageTerm: 12,
-  mortgagePeriod: PERIOD.months,
-  mortgageRate: 10,
-  paymentType: MORTGAGE_TYPE.an,
+  amount: 1000000,
+  term: 12,
+  period: PERIOD.months,
+  rate: 10,
+  type: MORTGAGE_TYPE.an,
 }
 
 export const outputAnMortgage: Output = {
@@ -102,11 +102,11 @@ export const outputAnMortgage: Output = {
 }
 
 export const inputDifMortgage: Input = {
-  mortgageAmount: 1000000,
-  mortgageTerm: 12,
-  mortgagePeriod: PERIOD.months,
-  mortgageRate: 10,
-  paymentType: MORTGAGE_TYPE.dif,
+  amount: 1000000,
+  term: 12,
+  period: PERIOD.months,
+  rate: 10,
+  type: MORTGAGE_TYPE.dif,
 }
 
 export const outputDifMortgage: Output = {

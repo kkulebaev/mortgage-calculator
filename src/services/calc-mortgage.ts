@@ -6,11 +6,11 @@ import { calcMortgageDif } from './calc-mortgage-dif'
 export default function calcMortgage(input: Input): Output {
   let mortgageOutput
 
-  if (input.paymentType === MORTGAGE_TYPE.an) {
+  if (input.type === MORTGAGE_TYPE.an) {
     mortgageOutput = calcMortgageAn(input)
   }
 
-  if (input.paymentType === MORTGAGE_TYPE.dif) {
+  if (input.type === MORTGAGE_TYPE.dif) {
     mortgageOutput = calcMortgageDif(input)
   }
 
