@@ -3,27 +3,21 @@ import type { Input, Output } from '@/store'
 import { roundNumber } from '@/utils'
 import { calcPaymentDetailDif } from './calc-payment-detail'
 
-export function calcMortgageDif({ amount, term, period, rate }: Input): Output {
-  const takeValue = roundNumber(amount)
+export function calcMortgageDif({
+  amount: takeValue,
+  term,
+  period,
+  rate,
+}: Input): Output {
+  const monthTerm = period === PERIOD.years ? term * 12 : term
 
-  // estMortgageTerm - расчетное значение срока ипотеки выраженное в месяцах. Если пользователь выбрал ввод количества лет, то приводим значение к количеству месяцев
-  const estMortgageTerm = period === PERIOD.years ? term * 12 : term
+  const monthRate = rate / 100 / 12
 
-  // repayBody - сумма, которая идёт на погашение тела кредита;
-  const repayBody = roundNumber(takeValue / estMortgageTerm)
+  const repayBody = roundNumber(takeValue / monthTerm)
 
-  // estMortgageRate - расчетное значение месячной процентной ставки
-  const estMortgageRate = rate / 100 / 12
+  const paymentTable = calcPaymentDetailDif(takeValue, monthRate, repayBody)
 
-  const paymentTable = calcPaymentDetailDif(
-    takeValue,
-    estMortgageRate,
-    repayBody
-  )
-
-  const repayValue = paymentTable.reduce((acc, item) => {
-    return acc + item.monthPay
-  }, 0)
+  const repayValue = paymentTable.reduce((acc, item) => acc + item.monthPay, 0)
 
   const overpaymentValue = repayValue - takeValue
 
