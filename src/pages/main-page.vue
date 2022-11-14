@@ -31,7 +31,6 @@
       :take-value="outputValues.takeValue"
       :repay-value="outputValues.repayValue"
       :overpayment-value="outputValues.overpaymentValue"
-      :total-cost="outputValues.totalCost"
       @submit-form="calcMortgage"
     />
   </div>
