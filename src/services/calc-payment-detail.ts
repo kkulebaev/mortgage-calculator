@@ -3,7 +3,7 @@ import { roundNumber } from '@/utils'
 
 // estMortgageBody – сумма оставшейся задолженности по кредиту (остаток по кредиту);
 // monthRate – ежемесячная процентная ставка;
-// monthPay - ежемесячный аннуитетный платёж;
+// monthPay - ежемесячный платёж;
 
 export function calcPaymentDetailAn(
   estMortgageBody: number,
