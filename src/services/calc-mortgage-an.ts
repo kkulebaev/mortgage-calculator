@@ -1,18 +1,13 @@
-import { PERIOD } from '@/helpers'
-import type { Input, Output } from '@/store'
+import type { Output } from '@/store'
+import type { InputPart } from './calc-mortgage'
 import { roundNumber } from '@/utils'
 import { calcPaymentDetailAn } from './calc-payment-detail'
 
 export function calcMortgageAn({
   amount: takeValue,
-  term,
-  period,
-  rate,
-}: Input): Output {
-  const monthTerm = period === PERIOD.years ? term * 12 : term
-
-  const monthRate = rate / 100 / 12
-
+  monthTerm,
+  monthRate,
+}: InputPart): Output {
   const monthPay = roundNumber(
     takeValue * (monthRate / (1 - Math.pow(1 + monthRate, -monthTerm)))
   )
