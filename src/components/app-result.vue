@@ -16,21 +16,6 @@
           </span>
         </div>
       </Transition>
-      <Transition
-        class="transition"
-        enter-active-class="animated bounceInUp"
-        leave-active-class="animated bounceOutUp"
-      >
-        <div v-if="totalCost" class="info-block__item">
-          <span class="info-block__item__label">
-            Общая стоимость ипотеки:
-          </span>
-
-          <span class="info-block__item__label">
-            {{ numberWithSpaces(totalCost) }} RUB
-          </span>
-        </div>
-      </Transition>
     </div>
 
     <BaseButton @click="$emit('submitForm')"> Рассчитать ипотеку </BaseButton>
@@ -63,11 +48,6 @@ export default defineComponent({
     },
 
     overpaymentValue: {
-      type: Number,
-      required: true,
-    },
-
-    totalCost: {
       type: Number,
       required: true,
     },

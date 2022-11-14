@@ -38,7 +38,6 @@ export interface Output {
   takeValue: number
   repayValue: number
   overpaymentValue: number
-  totalCost: number
   paymentTable: PaymentByMonth[]
 }
 
@@ -62,7 +61,6 @@ const DEFAULT_OUTPUT = (): Output =>
     takeValue: 0,
     repayValue: 0,
     overpaymentValue: 0,
-    totalCost: 0,
     paymentTable,
   } as const)
 
