@@ -14,7 +14,7 @@
       <h2 class="content-404__subtitle primary-word">THE PAGE</h2>
       <h2 class="content-404__subtitle secondary-word">WAS NOT FOUND</h2>
       <RouterLink class="content-404__back-to" :to="{ name: 'MainPage' }">
-        BACK TO MARS
+        BACK TO MAIN
       </RouterLink>
     </div>
   </div>
