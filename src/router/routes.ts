@@ -1,4 +1,4 @@
-import { MainPage, DetailPage } from '@/pages'
+import { MainPage, DetailPage, NotFoundPage } from '@/pages'
 
 export const routes = [
   {
@@ -10,5 +10,10 @@ export const routes = [
     path: '/detail',
     name: DetailPage.name,
     component: DetailPage,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: NotFoundPage.name,
+    component: NotFoundPage,
   },
 ]
