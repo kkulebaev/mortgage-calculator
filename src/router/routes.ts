@@ -1,6 +1,14 @@
 import { MainPage, DetailPage } from '@/pages'
 
 export const routes = [
-  { path: '/', name: 'mainPage', component: MainPage },
-  { path: '/detail', name: 'detailPage', component: DetailPage },
+  {
+    path: '/',
+    name: MainPage.name,
+    component: MainPage,
+  },
+  {
+    path: '/detail',
+    name: DetailPage.name,
+    component: DetailPage,
+  },
 ]
