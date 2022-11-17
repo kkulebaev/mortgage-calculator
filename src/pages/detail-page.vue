@@ -86,8 +86,8 @@ export default defineComponent({
 
   &__desc {
     display: flex;
+    flex-flow: row wrap;
     flex-direction: column;
-    flex-wrap: wrap;
     gap: 0.5rem;
     font-size: 1.4rem;
     color: #909399;
