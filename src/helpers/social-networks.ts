@@ -1,7 +1,7 @@
 export const SOCIAL_NETWORKS = [
   {
     icon: 'github',
-    link: 'https://github.com/kkulebaev',
+    link: 'https://github.com/kkulebaev/mortgage-calculator',
   },
   {
     icon: 'twitter',
