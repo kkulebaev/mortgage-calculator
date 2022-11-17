@@ -8,5 +8,6 @@ module.exports = {
   rules: {
     'scss/at-import-partial-extension': 'always',
     'color-hex-length': 'long',
+    'selector-class-pattern': null,
   },
 }
