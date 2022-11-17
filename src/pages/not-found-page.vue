@@ -68,7 +68,7 @@ export default defineComponent({
   max-width: 42rem;
   z-index: -10;
 
-  &:after {
+  &::after {
     content: '\2022';
     display: inline-block;
     position: relative;
@@ -110,12 +110,8 @@ export default defineComponent({
 .clouds__item {
   width: 35rem;
   height: 12rem;
-
   background: $primary;
-  background: linear-gradient(top, $primary 100%);
-
   border-radius: 10rem;
-
   position: absolute;
   margin: 12rem auto 2rem;
   z-index: -1;
@@ -134,7 +130,6 @@ export default defineComponent({
     height: 10rem;
     top: -5rem;
     left: 5rem;
-
     border-radius: 10rem;
   }
 
@@ -143,7 +138,6 @@ export default defineComponent({
     height: 18rem;
     top: -9rem;
     right: 5rem;
-
     border-radius: 20rem;
   }
 
@@ -173,30 +167,24 @@ export default defineComponent({
   &.x3 {
     left: 25rem;
     bottom: -17.5rem;
-
     transform: scale(0.6);
     opacity: 0.8;
-
     animation: moveclouds 25s linear infinite;
   }
 
   &.x4 {
     left: 47rem;
     bottom: 16rem;
-
     transform: scale(0.75);
     opacity: 0.75;
-
     animation: moveclouds 18s linear infinite;
   }
 
   &.x5 {
     left: 20rem;
     top: 30rem;
-
     transform: scale(0.5);
     opacity: 0.8;
-
     animation: moveclouds 20s linear infinite;
   }
 }
@@ -205,6 +193,7 @@ export default defineComponent({
   0% {
     margin-left: 100rem;
   }
+
   100% {
     margin-left: -100rem;
   }
