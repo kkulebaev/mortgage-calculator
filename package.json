@@ -12,7 +12,8 @@
     "lint:style": "stylelint \"**/*.{css,scss,vue}\"",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "print-config:stylelint": "stylelint \"./src/app.vue\" --print-config"
   },
   "dependencies": {
     "@vueuse/core": "9.5.0",
