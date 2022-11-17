@@ -24,6 +24,7 @@
         height="1060"
         alt="owl"
       />
+      <SocialNetworks class="network-icons" />
     </div>
     <AppResult
       class="main-page__result"
@@ -40,7 +41,7 @@ import { defineComponent, ref } from 'vue'
 import { onKeyStroke } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
-import { AppForm, AppResult } from '@/components'
+import { AppForm, AppResult, SocialNetworks } from '@/components'
 import { useMainStore, DEFAULT_INPUT } from '@/store'
 
 export default defineComponent({
@@ -49,6 +50,7 @@ export default defineComponent({
   components: {
     AppForm,
     AppResult,
+    SocialNetworks,
   },
 
   setup() {
@@ -113,5 +115,9 @@ export default defineComponent({
 .intro-picture {
   max-width: 25rem;
   margin-left: auto;
+}
+
+.network-icons {
+  margin-top: auto;
 }
 </style>

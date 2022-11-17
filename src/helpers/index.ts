@@ -8,3 +8,4 @@ export {
   PERIOD_LABEL,
 } from './form'
 export { DETAIL_FIELDS } from './detail'
+export { SOCIAL_NETWORKS } from './social-networks'
