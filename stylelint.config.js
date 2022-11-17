@@ -1,3 +1,7 @@
 module.exports = {
   extends: ['stylelint-config-standard-scss', 'stylelint-config-prettier'],
+
+  rules: {
+    'scss/at-import-partial-extension': 'always',
+  },
 }
