@@ -10,24 +10,12 @@
           Срок ипотеки: {{ inputValues.term }}
           {{ PERIOD_LABEL[inputValues.period] }}
         </span>
-        <span>
-          Годовая процентная ставка: {{ inputValues.rate }} %
-        </span>
-        <span>
-          Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.type] }}
-        </span>
+        <span> Годовая процентная ставка: {{ inputValues.rate }} % </span>
+        <span> Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.type] }} </span>
       </div>
     </div>
     <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
-    <ElPagination
-      v-model:currentPage="pageNumber"
-      class="pagination"
-      layout="prev, pager, next"
-      :total="total"
-      :page-size="size"
-      background
-      hide-on-single-page
-    />
+    <BasePagination v-model="pageNumber" :total="total" :page-size="size" />
   </div>
 </template>
 
@@ -40,15 +28,14 @@ import { MORTGAGE_TYPE_LABEL, PERIOD_LABEL, DETAIL_FIELDS } from '@/helpers'
 import { usePagination } from '@/composables'
 import { numberWithSpaces } from '@/utils'
 
-import { BaseTable } from '@/components'
-import { ElPagination } from 'element-plus'
+import { BaseTable, BasePagination } from '@/components'
 
 export default defineComponent({
   name: 'DetailPage',
 
   components: {
     BaseTable,
-    ElPagination,
+    BasePagination,
   },
 
   setup() {
