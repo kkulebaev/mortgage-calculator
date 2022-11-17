@@ -62,6 +62,7 @@ module.exports = {
       },
     ],
     'vue/require-name-property': 'error',
+    'vue/no-v-html': 'off',
     'unicorn/filename-case': [
       'error',
       {
