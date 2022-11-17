@@ -34,6 +34,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+/* stylelint-disable max-nesting-depth */
+
+// TODO: Пофиксить stylelint disable
 .not-found {
   position: relative;
 }
