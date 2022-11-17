@@ -1,5 +1,10 @@
 <template>
-  <i :style="{ width: `${size}px` }" v-html="currentIcon"></i>
+  <i
+    :class="{ clickable }"
+    :style="{ width: `${size}px` }"
+    @click="$emit('click')"
+    v-html="currentIcon"
+  ></i>
 </template>
 
 <!-- eslint-disable @typescript-eslint/no-unused-vars -->
@@ -33,7 +38,14 @@ export default defineComponent({
       type: [String, Number],
       default: '16',
     },
+
+    clickable: {
+      type: Boolean,
+      default: true,
+    },
   },
+
+  emits: ['click'],
 
   setup(props) {
     const currentIcon = ref('')
@@ -48,3 +60,13 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.clickable {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+</style>
