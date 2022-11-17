@@ -78,37 +78,37 @@ export default defineComponent({
   justify-content: space-between;
   height: 100%;
   gap: 4rem;
+}
 
-  &__data {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    flex: 2;
-  }
+.main-page__data {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  flex: 2;
+}
 
-  &__result {
-    flex: 1;
-  }
+.main-page__result {
+  flex: 1;
 }
 
 .title {
   display: flex;
   align-items: center;
   gap: 2rem;
+}
 
-  &__logo {
-    display: block;
-    padding: 1rem;
-    width: 48px;
-    background-color: $primary;
-    border-radius: 9px;
-  }
+.title__logo {
+  display: block;
+  padding: 1rem;
+  width: 48px;
+  background-color: $primary;
+  border-radius: 9px;
+}
 
-  &__title {
-    font-size: 3.6rem;
-    font-weight: 700;
-    color: $black;
-  }
+.title__title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: $black;
 }
 
 .intro-picture {

@@ -74,17 +74,17 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
 
-  &__item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.info-block__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    &__label {
-      color: $black;
-      font-size: 1.8rem;
-    }
-  }
+.info-block__item__label {
+  color: $black;
+  font-size: 1.8rem;
 }
 
 .transition {

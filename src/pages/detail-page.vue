@@ -77,21 +77,21 @@ export default defineComponent({
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
+}
 
-  &__title {
-    font-size: 3.6rem;
-    font-weight: 700;
-    color: $black;
-  }
+.title__title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: $black;
+}
 
-  &__desc {
-    display: flex;
-    flex-flow: row wrap;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 1.4rem;
-    color: #909399;
-  }
+.title__desc {
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  color: #909399;
 }
 
 // TODO: Перенести в компонент BasePagination

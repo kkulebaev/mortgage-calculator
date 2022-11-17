@@ -174,24 +174,24 @@ export default defineComponent({
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
+}
 
-  &__item {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: calc(50% - 2rem);
+.form__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: calc(50% - 2rem);
+}
 
-    &__label {
-      color: $black;
-      font-size: 1.8rem;
-      width: fit-content;
-      cursor: default;
-      position: relative;
-    }
+.form__item__label {
+  color: $black;
+  font-size: 1.8rem;
+  width: fit-content;
+  cursor: default;
+  position: relative;
+}
 
-    &__select {
-      max-width: 7rem;
-    }
-  }
+.form__item__select {
+  max-width: 7rem;
 }
 </style>
