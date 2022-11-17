@@ -10,10 +10,11 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
 
 import { ElSelect, ElOption } from 'element-plus'
+import { useVModel } from '@vueuse/core'
 
 interface Option {
   value: string
@@ -43,15 +44,7 @@ export default defineComponent({
   emits: ['update:modelValue', 'change'],
 
   setup(props, { emit }) {
-    const value = computed({
-      get() {
-        return props.modelValue
-      },
-
-      set(val) {
-        return emit('update:modelValue', val)
-      },
-    })
+    const value = useVModel(props, 'modelValue', emit)
 
     return { value }
   },
