@@ -94,6 +94,7 @@ export default defineComponent({
   }
 }
 
+// TODO: Перенести в компонент BasePagination
 .pagination {
   margin-top: auto;
   justify-content: end;
