@@ -85,16 +85,16 @@ export default defineComponent({
 .content-404__subtitle {
   font-weight: normal;
   position: relative;
+}
 
-  &.primary-word {
-    letter-spacing: 1.2rem;
-    font-size: 4em;
-    line-height: 80%;
-  }
+.content-404__subtitle.primary-word {
+  letter-spacing: 1.2rem;
+  font-size: 4em;
+  line-height: 80%;
+}
 
-  &.secondary-word {
-    font-size: 2rem;
-  }
+.content-404__subtitle.secondary-word {
+  font-size: 2rem;
 }
 
 .content-404__back-to {
@@ -143,53 +143,53 @@ export default defineComponent({
     right: 5rem;
     border-radius: 20rem;
   }
+}
 
-  &.x1 {
-    top: -5rem;
-    left: 10rem;
-    transform: scale(0.3);
-    opacity: 0.9;
-    animation: moveclouds 15s linear infinite;
-  }
+.clouds__item.x1 {
+  top: -5rem;
+  left: 10rem;
+  transform: scale(0.3);
+  opacity: 0.9;
+  animation: moveclouds 15s linear infinite;
+}
 
-  &.x1_5 {
-    top: -8rem;
-    left: 25rem;
-    transform: scale(0.3);
-    animation: moveclouds 17s linear infinite;
-  }
+.clouds__item.x1_5 {
+  top: -8rem;
+  left: 25rem;
+  transform: scale(0.3);
+  animation: moveclouds 17s linear infinite;
+}
 
-  &.x2 {
-    left: 25rem;
-    top: -1rem;
-    transform: scale(0.6);
-    opacity: 0.6;
-    animation: moveclouds 25s linear infinite;
-  }
+.clouds__item.x2 {
+  left: 25rem;
+  top: -1rem;
+  transform: scale(0.6);
+  opacity: 0.6;
+  animation: moveclouds 25s linear infinite;
+}
 
-  &.x3 {
-    left: 25rem;
-    bottom: -17.5rem;
-    transform: scale(0.6);
-    opacity: 0.8;
-    animation: moveclouds 25s linear infinite;
-  }
+.clouds__item.x3 {
+  left: 25rem;
+  bottom: -17.5rem;
+  transform: scale(0.6);
+  opacity: 0.8;
+  animation: moveclouds 25s linear infinite;
+}
 
-  &.x4 {
-    left: 47rem;
-    bottom: 16rem;
-    transform: scale(0.75);
-    opacity: 0.75;
-    animation: moveclouds 18s linear infinite;
-  }
+.clouds__item.x4 {
+  left: 47rem;
+  bottom: 16rem;
+  transform: scale(0.75);
+  opacity: 0.75;
+  animation: moveclouds 18s linear infinite;
+}
 
-  &.x5 {
-    left: 20rem;
-    top: 30rem;
-    transform: scale(0.5);
-    opacity: 0.8;
-    animation: moveclouds 20s linear infinite;
-  }
+.clouds__item.x5 {
+  left: 20rem;
+  top: 30rem;
+  transform: scale(0.5);
+  opacity: 0.8;
+  animation: moveclouds 20s linear infinite;
 }
 
 @keyframes moveclouds {

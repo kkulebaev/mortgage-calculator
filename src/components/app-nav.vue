@@ -33,21 +33,21 @@ export default defineComponent({
   width: 100%;
   max-width: 6rem;
   background: #fafafa;
+}
 
-  &__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 6rem;
-    height: 6rem;
+.nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+}
 
-    &.router-link-active {
-      background: $white;
-    }
-  }
+.nav__icon {
+  width: 3.2rem;
+}
 
-  &__icon {
-    width: 3.2rem;
-  }
+.router-link-active {
+  background: $white;
 }
 </style>
