@@ -94,7 +94,6 @@ export default defineComponent({
   color: #909399;
 }
 
-// TODO: Перенести в компонент BasePagination
 .pagination {
   margin-top: auto;
   justify-content: end;
