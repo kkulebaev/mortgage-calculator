@@ -1,12 +1,7 @@
 module.exports = {
-  extends: [
-    'stylelint-config-standard-scss',
-    'stylelint-config-prettier',
-    'stylelint-config-html/vue',
-  ],
+  extends: ['@gitlab/stylelint-config', 'stylelint-config-html/vue'],
 
   rules: {
-    'scss/at-import-partial-extension': 'always',
     'color-hex-length': 'long',
     'selector-class-pattern': null,
     'max-nesting-depth': [
