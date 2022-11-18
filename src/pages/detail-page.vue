@@ -91,7 +91,7 @@ export default defineComponent({
   flex-direction: column;
   gap: 0.5rem;
   font-size: 1.4rem;
-  color: #909399;
+  color: $dark-gray;
 }
 
 .pagination {

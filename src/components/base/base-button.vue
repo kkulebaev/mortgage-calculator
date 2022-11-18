@@ -34,7 +34,7 @@ export default defineComponent({
   font-weight: 900;
   color: $white;
   cursor: pointer;
-  border: none;
+  border: 0;
   transition: all 0.3s ease-in-out;
 
   &:focus {
