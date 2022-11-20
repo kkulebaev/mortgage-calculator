@@ -1,12 +1,12 @@
-import { mount, type VueWrapper } from '@vue/test-utils'
+import { shallowMount, type VueWrapper } from '@vue/test-utils'
 import { it, describe, expect } from 'vitest'
 import { BaseButton } from '@/components'
 
 describe('BaseButton', () => {
-  let wrapper: VueWrapper
+  let wrapper: VueWrapper<any>
 
   const createComponent = (options = {}) => {
-    wrapper = mount(BaseButton, options)
+    wrapper = shallowMount(BaseButton, options)
   }
 
   const findButton = () => wrapper.find('button')
