@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "lint": "eslint --ext .js,.ts,.vue src",
     "lint:fix": "eslint --ext .js,.ts,.vue src --fix",
-    "lint:types": "vue-tsc --noEmit",
+    "lint:types": "vue-tsc",
     "lint:style": "stylelint \"**/*.{css,scss,vue}\"",
     "test": "vitest run",
     "test:watch": "vitest watch",
