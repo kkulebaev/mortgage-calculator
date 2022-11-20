@@ -1,4 +1,4 @@
-import { shallowMount, type VueWrapper } from '@vue/test-utils'
+import { mount, type VueWrapper } from '@vue/test-utils'
 import { it, describe, expect } from 'vitest'
 import { AppResult } from '@/components'
 
@@ -12,7 +12,7 @@ describe('AppResult', () => {
   let wrapper: VueWrapper<any>
 
   const createComponent = (options = { props: DEFAULT_PROPS }) => {
-    wrapper = shallowMount(AppResult, options)
+    wrapper = mount(AppResult, options)
   }
 
   it('should emit event "submitForm" when clicked on submit button', async () => {
