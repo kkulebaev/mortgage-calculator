@@ -116,7 +116,9 @@ export default defineComponent({
         return numberWithSpaces(props.mortgageAmount)
       },
       set(value) {
-        emit('update:mortgageAmount', toNumber(value))
+        if (typeof value === 'number') {
+          emit('update:mortgageAmount', toNumber(value))
+        }
       },
     })
 
@@ -125,7 +127,9 @@ export default defineComponent({
         return numberWithSpaces(props.mortgageTerm)
       },
       set(value) {
-        emit('update:mortgageTerm', toNumber(value))
+        if (typeof value === 'number') {
+          emit('update:mortgageTerm', toNumber(value))
+        }
       },
     })
 

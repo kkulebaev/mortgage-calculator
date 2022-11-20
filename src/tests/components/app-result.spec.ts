@@ -9,7 +9,7 @@ const DEFAULT_PROPS = {
 }
 
 describe('AppResult', () => {
-  let wrapper: VueWrapper
+  let wrapper: VueWrapper<any>
 
   const createComponent = (options = { props: DEFAULT_PROPS }) => {
     wrapper = mount(AppResult, options)

@@ -16,19 +16,14 @@ export default function calcMortgage({
   rate,
   type,
 }: Input): Output {
-  let mortgageOutput
-
   const monthTerm = period === PERIOD.years ? term * 12 : term
 
   const monthRate = rate / 100 / 12
 
-  if (type === MORTGAGE_TYPE.an) {
-    mortgageOutput = calcMortgageAn({ amount, monthTerm, monthRate })
-  }
-
-  if (type === MORTGAGE_TYPE.dif) {
-    mortgageOutput = calcMortgageDif({ amount, monthTerm, monthRate })
-  }
+  const mortgageOutput =
+    type === MORTGAGE_TYPE.an
+      ? calcMortgageAn({ amount, monthTerm, monthRate })
+      : calcMortgageDif({ amount, monthTerm, monthRate })
 
   return mortgageOutput
 }

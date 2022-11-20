@@ -3,7 +3,7 @@ import { it, describe, expect } from 'vitest'
 import { BaseButton } from '@/components'
 
 describe('BaseButton', () => {
-  let wrapper: VueWrapper
+  let wrapper: VueWrapper<any>
 
   const createComponent = (options = {}) => {
     wrapper = mount(BaseButton, options)
