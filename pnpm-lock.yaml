@@ -9,7 +9,7 @@ specifiers:
   '@vue/test-utils': 2.2.3
   '@vueuse/core': 9.5.0
   animate.css: 4.1.1
-  element-plus: 2.2.21
+  element-plus: 2.2.22
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-unicorn: 44.0.2
@@ -34,7 +34,7 @@ specifiers:
 dependencies:
   '@vueuse/core': 9.5.0_vue@3.2.45
   animate.css: 4.1.1
-  element-plus: 2.2.21_vue@3.2.45
+  element-plus: 2.2.22_vue@3.2.45
   pinia: 2.0.24_mgnvym7yiazkylwwogi5r767ue
   vue: 3.2.45
   vue-router: 4.1.6_vue@3.2.45
@@ -1037,8 +1037,8 @@ packages:
       domhandler: 5.0.3
     dev: true
 
-  /element-plus/2.2.21_vue@3.2.45:
-    resolution: {integrity: sha512-wZUePoXZ1zuCkzENK/8mn+mekuLJ9OoGYiudjUujzCf+T8HfOQl+TKQStwOkGBNk93fK8e9YdFIty4jH4AX6dg==}
+  /element-plus/2.2.22_vue@3.2.45:
+    resolution: {integrity: sha512-gg2g2WOMNpWf0wGesymUvTV0VZDF/4khQKroSNeCV/vWJ/cqssPYdtqfGxTiFRt/f+JpyFkV7O1mo0yzMCzrBg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
