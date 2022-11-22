@@ -47,9 +47,9 @@ export default defineComponent({
 .app-wrapper {
   display: flex;
   width: 100%;
-  max-width: 150rem;
+  max-width: 152rem;
+  min-height: 72rem;
   margin: auto;
-  min-height: 80rem;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 15%);
   overflow: hidden;
 }
