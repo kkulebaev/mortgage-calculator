@@ -16,7 +16,7 @@
     "print-config:stylelint": "stylelint \"./src/app.vue\" --print-config"
   },
   "dependencies": {
-    "@vueuse/core": "9.5.0",
+    "@vueuse/core": "9.6.0",
     "animate.css": "4.1.1",
     "element-plus": "2.2.22",
     "pinia": "2.0.25",
