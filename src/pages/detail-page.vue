@@ -1,7 +1,7 @@
 <template>
   <div class="detail-info">
     <div class="title">
-      <h1 class="title__title">График платежей</h1>
+      <PageTitle title="График платежей" />
       <div class="title__desc">
         <span>
           Сумма ипотеки: {{ numberWithSpaces(inputValues.amount) }} RUB
@@ -28,7 +28,7 @@ import { MORTGAGE_TYPE_LABEL, PERIOD_LABEL, DETAIL_FIELDS } from '@/helpers'
 import { usePagination } from '@/composables'
 import { numberWithSpaces } from '@/utils'
 
-import { BaseTable, BasePagination } from '@/components'
+import { BaseTable, BasePagination, PageTitle } from '@/components'
 
 export default defineComponent({
   name: 'DetailPage',
@@ -36,6 +36,7 @@ export default defineComponent({
   components: {
     BaseTable,
     BasePagination,
+    PageTitle,
   },
 
   setup() {
@@ -77,12 +78,6 @@ export default defineComponent({
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
-}
-
-.title__title {
-  font-size: 3.6rem;
-  font-weight: 700;
-  color: $black;
 }
 
 .title__desc {

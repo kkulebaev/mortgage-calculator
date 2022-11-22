@@ -7,7 +7,7 @@
           src="../assets/img/calculator.svg"
           alt="logo-calculator"
         />
-        <h1 class="title__title">Калькулятор ипотеки</h1>
+        <PageTitle title="Калькулятор ипотеки" />
       </div>
       <AppForm
         v-model:paymentType="inputValues.type"
@@ -41,7 +41,7 @@ import { defineComponent, ref } from 'vue'
 import { onKeyStroke } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
-import { AppForm, AppResult, SocialNetworks } from '@/components'
+import { AppForm, AppResult, SocialNetworks, PageTitle } from '@/components'
 import { useMainStore, DEFAULT_INPUT } from '@/store'
 
 export default defineComponent({
@@ -51,6 +51,7 @@ export default defineComponent({
     AppForm,
     AppResult,
     SocialNetworks,
+    PageTitle,
   },
 
   setup() {
@@ -103,12 +104,6 @@ export default defineComponent({
   width: 48px;
   background-color: $primary;
   border-radius: 9px;
-}
-
-.title__title {
-  font-size: 3.6rem;
-  font-weight: 700;
-  color: $black;
 }
 
 .intro-picture {
