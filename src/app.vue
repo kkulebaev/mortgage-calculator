@@ -33,10 +33,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-/* stylelint-disable color-function-notation */
-
-// TODO: Пофиксить stylelint disable
-
 .app {
   display: flex;
   align-items: center;
@@ -50,7 +46,7 @@ export default defineComponent({
   max-width: 152rem;
   min-height: 72rem;
   margin: auto;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 15%);
+  box-shadow: 0 0 2rem rgba(0 0 0 / 15%);
   overflow: hidden;
 }
 
