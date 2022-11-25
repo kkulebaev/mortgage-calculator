@@ -1,4 +1,4 @@
-name: Checks
+name: checks
 
 on:
   push:
@@ -38,3 +38,18 @@ jobs:
         run: corepack pnpm install
       - name: Run tests
         run: npm run test
+
+  typescript-compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.9
+      - name: Install dependencies
+        run: corepack pnpm install
+      - name: Run tests
+        run: npm run lint:types
