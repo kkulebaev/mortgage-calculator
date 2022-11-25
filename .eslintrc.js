@@ -63,6 +63,7 @@ module.exports = {
     ],
     'vue/require-name-property': 'error',
     'vue/no-v-html': 'off',
+    'vue/prefer-true-attribute-shorthand': ['error', 'never'],
     'unicorn/filename-case': [
       'error',
       {

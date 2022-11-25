@@ -5,8 +5,8 @@
     layout="prev, pager, next"
     :total="total"
     :page-size="size"
-    background
-    hide-on-single-page
+    :background="true"
+    :hide-on-single-page="true"
   />
 </template>
 
