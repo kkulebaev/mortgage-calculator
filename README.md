@@ -18,4 +18,4 @@ Demo available on https://calculator-mortgage.netlify.app/
 - [ ] Сделать адаптив для мобильных
 - [x] Добавить ссылки на соц сети
 - [x] Добавить robots.txt и sitemap.xml
-- [ ] Настроить CI/CD
+- [x] Настроить CI/CD
