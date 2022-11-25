@@ -14,8 +14,11 @@
         <span> Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.type] }} </span>
       </div>
     </div>
-    <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
-    <BasePagination v-model="pageNumber" :total="total" :page-size="size" />
+    <template v-if="paginatedData.length">
+      <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
+      <BasePagination v-model="pageNumber" :total="total" :page-size="size" />
+    </template>
+    <ElEmpty description="Нет данных" />
   </div>
 </template>
 
@@ -29,6 +32,7 @@ import { usePagination } from '@/composables'
 import { numberWithSpaces } from '@/utils'
 
 import { BaseTable, BasePagination, PageTitle } from '@/components'
+import { ElEmpty } from 'element-plus'
 
 export default defineComponent({
   name: 'DetailPage',
@@ -37,6 +41,7 @@ export default defineComponent({
     BaseTable,
     BasePagination,
     PageTitle,
+    ElEmpty,
   },
 
   setup() {
