@@ -13,7 +13,7 @@ specifiers:
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-unicorn: 45.0.0
-  eslint-plugin-vue: 9.7.0
+  eslint-plugin-vue: 9.8.0
   jsdom: 20.0.3
   nano-staged: 0.8.0
   pinia: 2.0.25
@@ -49,7 +49,7 @@ devDependencies:
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0_eslint@8.28.0
   eslint-plugin-unicorn: 45.0.0_eslint@8.28.0
-  eslint-plugin-vue: 9.7.0_eslint@8.28.0
+  eslint-plugin-vue: 9.8.0_eslint@8.28.0
   jsdom: 20.0.3
   nano-staged: 0.8.0
   postcss: 8.4.19
@@ -1353,8 +1353,8 @@ packages:
       strip-indent: 3.0.0
     dev: true
 
-  /eslint-plugin-vue/9.7.0_eslint@8.28.0:
-    resolution: {integrity: sha512-DrOO3WZCZEwcLsnd3ohFwqCoipGRSTKTBTnLwdhqAbYZtzWl0o7D+D8ZhlmiZvABKTEl8AFsqH1GHGdybyoQmw==}
+  /eslint-plugin-vue/9.8.0_eslint@8.28.0:
+    resolution: {integrity: sha512-E/AXwcTzunyzM83C2QqDHxepMzvI2y6x+mmeYHbVDQlKFqmKYvRrhaVixEeeG27uI44p9oKDFiyCRw4XxgtfHA==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
