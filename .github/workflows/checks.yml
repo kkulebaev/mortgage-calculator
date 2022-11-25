@@ -34,6 +34,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.9
+      - name: Cache pnpm modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-
       - name: Install dependencies
         run: corepack pnpm install
       - name: Run tests
@@ -49,6 +55,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.9
+      - name: Cache pnpm modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-
       - name: Install dependencies
         run: corepack pnpm install
       - name: Run tests
