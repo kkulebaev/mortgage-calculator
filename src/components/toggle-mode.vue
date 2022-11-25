@@ -1,5 +1,11 @@
 <template>
-  <input id="toggle" class="toggle" type="checkbox" />
+  <input
+    id="toggle"
+    class="toggle"
+    type="checkbox"
+    :checked="val"
+    @input="toggleHandler"
+  />
   <label class="toggle__label" for="toggle">
     <FontAwesomeIcon
       class="toggle__icon sun"
@@ -15,15 +21,35 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+import { useSettingsStore } from '@/store'
 
 export default defineComponent({
   name: 'ToggleMode',
 
   components: {
     FontAwesomeIcon,
+  },
+
+  setup() {
+    const settingsStore = useSettingsStore()
+
+    const { setMode, isDarkMode } = settingsStore
+    const initialValue = () => isDarkMode
+    const val = ref(initialValue())
+
+    function toggleHandler(e: Event) {
+      const el = e.target as HTMLInputElement
+      setMode(el.checked)
+    }
+
+    return {
+      val,
+      toggleHandler,
+    }
   },
 })
 </script>
