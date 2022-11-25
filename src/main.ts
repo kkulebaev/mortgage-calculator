@@ -10,6 +10,8 @@ import 'animate.css/source/animate.css'
 
 import App from './app.vue'
 
+import './plugins/fontawesome'
+
 import routerConfig from './router/router.config'
 
 const pinia = createPinia()
