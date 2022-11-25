@@ -18,7 +18,7 @@
       <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
       <BasePagination v-model="pageNumber" :total="total" :page-size="size" />
     </template>
-    <ElEmpty description="Нет данных" />
+    <ElEmpty v-else description="Нет данных" />
   </div>
 </template>
 
