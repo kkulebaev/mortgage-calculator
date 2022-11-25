@@ -1,5 +1,5 @@
 <template>
-  <form class="form">
+  <form class="form" netlify>
     <div class="form__item">
       <span class="form__item__label"> Сумма ипотеки </span>
       <ElInput
