@@ -19,7 +19,7 @@ jobs:
           node-version: 16.9
       - name: Install dependencies
         run: corepack pnpm install
-      - name: Run linter
+      - name: Run eslint
         uses: reviewdog/action-eslint@v1
         with:
           reporter: github-check
@@ -42,7 +42,7 @@ jobs:
           restore-keys: ${{ runner.os }}-
       - name: Install dependencies
         run: corepack pnpm install
-      - name: Run tests
+      - name: Run stylelint
         run: npm run lint:style
 
   test:
@@ -84,5 +84,5 @@ jobs:
           restore-keys: ${{ runner.os }}-
       - name: Install dependencies
         run: corepack pnpm install
-      - name: Run tests
+      - name: Run typescript compiler
         run: npm run lint:types
