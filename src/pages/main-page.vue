@@ -25,7 +25,7 @@
         height="1060"
         alt="owl"
       />
-      <SocialNetworks class="network-icons" />
+      <SocialNetworks />
     </div>
     <AppResult
       class="main-page__result"
@@ -123,7 +123,7 @@ export default defineComponent({
   margin-left: auto;
 }
 
-.network-icons {
+.social-networks {
   margin-top: auto;
 }
 </style>
