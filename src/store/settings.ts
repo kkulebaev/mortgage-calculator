@@ -1,30 +1,27 @@
 import { defineStore } from 'pinia'
 
-enum COLOR_MODES {
+export enum COLOR_SCHEME {
   dark = 'dark',
   light = 'light',
+  auto = 'auto',
 }
 
 interface State {
-  mode: COLOR_MODES
+  colorScheme: COLOR_SCHEME
 }
 
 export const useSettingsStore = defineStore('settings', {
   state: (): State => ({
-    mode: COLOR_MODES.light,
+    colorScheme: COLOR_SCHEME.auto,
   }),
 
   getters: {
-    isDarkMode: state => state.mode === COLOR_MODES.dark,
+    isDarkScheme: state => state.colorScheme === COLOR_SCHEME.dark,
   },
 
   actions: {
-    setMode(mode: COLOR_MODES | boolean) {
-      if (typeof mode === 'boolean') {
-        this.mode = mode ? COLOR_MODES.dark : COLOR_MODES.light
-        return
-      }
-      this.mode = mode
+    setColorScheme(mode: COLOR_SCHEME) {
+      this.colorScheme = mode
     },
   },
 })

@@ -1,5 +1,5 @@
 <template>
-  <div class="app" :class="{ dark: isDarkMode }">
+  <div class="app" :class="{ dark: isDarkScheme }">
     <div class="app-wrapper">
       <AppNav />
 
@@ -33,10 +33,10 @@ export default defineComponent({
   },
 
   setup() {
-    const { isDarkMode } = storeToRefs(useSettingsStore())
+    const { isDarkScheme } = storeToRefs(useSettingsStore())
 
     return {
-      isDarkMode,
+      isDarkScheme,
     }
   },
 })
