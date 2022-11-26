@@ -9,3 +9,4 @@ export {
 } from './form'
 export { DETAIL_FIELDS } from './detail'
 export { SOCIAL_NETWORKS } from './social-networks'
+export { FAQ } from './faq'

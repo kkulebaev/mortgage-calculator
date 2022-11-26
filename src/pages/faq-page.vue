@@ -1,25 +1,30 @@
 <template>
-  <PageTitle title="FAQ" />
+  <div class="faq-page">
+    <PageTitle title="FAQ" />
+    <FaqList />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { PageTitle } from '@/components'
+import { PageTitle, FaqList } from '@/components'
 
 export default defineComponent({
   name: 'FaqPage',
 
   components: {
     PageTitle,
-  },
-
-  props: {},
-
-  setup() {
-    return {}
+    FaqList,
   },
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.faq-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
+</style>
