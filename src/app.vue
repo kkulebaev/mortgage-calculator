@@ -1,5 +1,5 @@
 <template>
-  <div class="app" :class="{ dark: isDarkScheme }">
+  <div class="app">
     <div class="app-wrapper">
       <AppNav />
 
@@ -21,23 +21,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { storeToRefs } from 'pinia'
 import { AppNav } from '@/components'
-import { useSettingsStore } from '@/store/settings'
 
 export default defineComponent({
   name: 'App',
 
   components: {
     AppNav,
-  },
-
-  setup() {
-    const { isDarkScheme } = storeToRefs(useSettingsStore())
-
-    return {
-      isDarkScheme,
-    }
   },
 })
 </script>
