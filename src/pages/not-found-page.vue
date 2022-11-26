@@ -38,15 +38,6 @@ export default defineComponent({
   position: relative;
 }
 
-.clouds {
-  min-height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .content-404 {
   text-align: center;
   display: block;
