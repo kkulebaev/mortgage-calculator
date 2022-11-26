@@ -60,9 +60,9 @@ export default defineComponent({
 <style scoped>
 .clickable {
   cursor: pointer;
+}
 
-  &:hover {
-    opacity: 0.6;
-  }
+.clickable:hover {
+  opacity: 0.6;
 }
 </style>
