@@ -2,8 +2,26 @@
   --primary: #2e424d;
   --secondary: #5b8291;
   --additional: #98dad9;
+
   --gray: #eaebed;
   --dark-gray: #909399;
+
   --black: #222222;
   --white: #ffffff;
+
+  --bg-primary: #eaebed;
+}
+
+html.dark {
+  --primary: #98dad9;
+  --secondary: #5b8291;
+  --additional: #2e424d;
+
+  --gray: #eaebed;
+  --dark-gray: #909399;
+
+  --white: #222222;
+  --black: #ffffff;
+
+  --bg-primary: #00000026;
 }
