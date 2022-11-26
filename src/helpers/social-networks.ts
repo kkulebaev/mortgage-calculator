@@ -1,14 +1,17 @@
 export const SOCIAL_NETWORKS = [
   {
-    icon: 'github',
+    id: 'github',
+    icon: ['fab', 'github'],
     link: 'https://github.com/kkulebaev/mortgage-calculator',
   },
   {
-    icon: 'twitter',
+    id: 'twitter',
+    icon: ['fab', 'twitter'],
     link: 'https://twitter.com/kkulebaev',
   },
   {
-    icon: 'telegram',
+    id: 'telegram',
+    icon: ['fab', 'telegram'],
     link: 'https://t.me/kulebaev_official',
   },
 ] as const

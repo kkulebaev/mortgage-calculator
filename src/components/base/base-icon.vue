@@ -11,10 +11,6 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 
-import GitHub from '@/assets/img/icons/github.svg'
-import Twitter from '@/assets/img/icons/twitter.svg'
-import Telegram from '@/assets/img/icons/telegram.svg'
-
 export default defineComponent({
   name: 'BaseIcon',
 

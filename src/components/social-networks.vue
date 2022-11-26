@@ -2,26 +2,27 @@
   <div class="social-networks">
     <a
       v-for="item in SOCIAL_NETWORKS"
-      :key="item.icon"
+      :key="item.id"
       class="social-networks__item"
       :href="item.link"
       target="_blank"
     >
-      <BaseIcon :icon="item.icon" />
+      <FontAwesomeIcon :icon="item.icon" size="3x" />
     </a>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { BaseIcon } from '@/components'
 import { SOCIAL_NETWORKS } from '@/helpers'
+
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 export default defineComponent({
   name: 'SocialNetworks',
 
   components: {
-    BaseIcon,
+    FontAwesomeIcon,
   },
 
   setup() {
@@ -39,6 +40,11 @@ export default defineComponent({
 }
 
 .social-networks__item {
-  width: 32px;
+  color: var(--primary);
+  transition: color 0.2s ease-in-out;
+}
+
+.social-networks__item:hover {
+  color: var(--additional);
 }
 </style>
