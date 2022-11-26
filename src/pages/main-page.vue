@@ -8,6 +8,7 @@
           alt="logo-calculator"
         />
         <PageTitle title="Калькулятор ипотеки" />
+        <ColorSchemeSwitcher />
       </div>
       <AppForm
         v-model:paymentType="inputValues.type"
@@ -41,7 +42,13 @@ import { defineComponent, ref } from 'vue'
 import { onKeyStroke } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
-import { AppForm, AppResult, SocialNetworks, PageTitle } from '@/components'
+import {
+  AppForm,
+  AppResult,
+  SocialNetworks,
+  PageTitle,
+  ColorSchemeSwitcher,
+} from '@/components'
 import { useMainStore, DEFAULT_INPUT } from '@/store'
 
 export default defineComponent({
@@ -52,6 +59,7 @@ export default defineComponent({
     AppResult,
     SocialNetworks,
     PageTitle,
+    ColorSchemeSwitcher,
   },
 
   setup() {
