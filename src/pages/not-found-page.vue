@@ -34,9 +34,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* stylelint-disable max-nesting-depth */
-
-/* TODO: Пофиксить stylelint disable */
 .not-found {
   position: relative;
 }
@@ -101,10 +98,10 @@ export default defineComponent({
   font-size: 2.5rem;
   color: var(--additional);
   transition: color 0.2s linear;
+}
 
-  &:hover {
-    color: var(--primary);
-  }
+.content-404__back-to:hover {
+  color: var(--primary);
 }
 
 .clouds__item {
@@ -116,30 +113,30 @@ export default defineComponent({
   margin: 12rem auto 2rem;
   z-index: -1;
   transition: ease 1s;
+}
 
-  &::after,
-  &::before {
-    content: '';
-    position: absolute;
-    background: var(--primary);
-    z-index: -1;
-  }
+.clouds__item::after,
+.clouds__item::before {
+  content: '';
+  position: absolute;
+  background: var(--primary);
+  z-index: -1;
+}
 
-  &::after {
-    width: 10rem;
-    height: 10rem;
-    top: -5rem;
-    left: 5rem;
-    border-radius: 10rem;
-  }
+.clouds__item::after {
+  width: 10rem;
+  height: 10rem;
+  top: -5rem;
+  left: 5rem;
+  border-radius: 10rem;
+}
 
-  &::before {
-    width: 18rem;
-    height: 18rem;
-    top: -9rem;
-    right: 5rem;
-    border-radius: 20rem;
-  }
+.clouds__item::before {
+  width: 18rem;
+  height: 18rem;
+  top: -9rem;
+  right: 5rem;
+  border-radius: 20rem;
 }
 
 .clouds__item.x1 {

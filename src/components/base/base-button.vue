@@ -36,13 +36,13 @@ export default defineComponent({
   cursor: pointer;
   border: 0;
   transition: all 0.3s ease-in-out;
+}
 
-  &:focus {
-    outline: none;
-  }
+.btn:focus {
+  outline: none;
+}
 
-  &:hover:not(:disabled) {
-    background: var(--black);
-  }
+.btn:hover:not(:disabled) {
+  background: var(--black);
 }
 </style>
