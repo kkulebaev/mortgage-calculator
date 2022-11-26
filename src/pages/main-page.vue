@@ -2,10 +2,10 @@
   <div class="main-page">
     <div class="main-page__data">
       <div class="title">
-        <img
+        <FontAwesomeIcon
           class="title__logo"
-          src="../assets/img/calculator.svg"
-          alt="logo-calculator"
+          :icon="['fas', 'calculator']"
+          size="4x"
         />
         <PageTitle title="Калькулятор ипотеки" />
         <ColorSchemeSwitcher />
@@ -42,6 +42,8 @@ import { defineComponent, ref } from 'vue'
 import { onKeyStroke } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 import {
   AppForm,
   AppResult,
@@ -60,6 +62,7 @@ export default defineComponent({
     SocialNetworks,
     PageTitle,
     ColorSchemeSwitcher,
+    FontAwesomeIcon,
   },
 
   setup() {
@@ -111,6 +114,7 @@ export default defineComponent({
   padding: 1rem;
   width: 48px;
   background-color: var(--primary);
+  color: var(--white);
   border-radius: 9px;
 }
 
