@@ -61,7 +61,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 :root {
   color-scheme: light dark;
 }
@@ -84,7 +84,7 @@ export default defineComponent({
   padding: 2px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border: none;
+  border: 0;
 }
 
 .switcher__legend {
@@ -103,14 +103,14 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-size: 24px;
   transition: all 0.1s ease-in;
+}
 
-  &:hover {
-    opacity: 0.7;
-  }
+.switcher__radio:hover {
+  opacity: 0.7;
+}
 
-  &:focus {
-    outline: none;
-  }
+.switcher__radio:focus {
+  outline: none;
 }
 
 .switcher__radio--light {
@@ -143,7 +143,7 @@ export default defineComponent({
 }
 
 .switcher__radio:focus-visible ~ .switcher__status {
-  box-shadow: 0 0 0 2px black;
+  box-shadow: 0 0 0 2px var(--black);
 }
 
 .switcher__radio--light:checked ~ .switcher__status {

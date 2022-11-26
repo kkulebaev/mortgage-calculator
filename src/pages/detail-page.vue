@@ -70,7 +70,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .detail-info {
   display: flex;
   flex-direction: column;
@@ -91,7 +91,7 @@ export default defineComponent({
   flex-direction: column;
   gap: 0.5rem;
   font-size: 1.4rem;
-  color: $dark-gray;
+  color: var(--dark-gray);
 }
 
 .pagination {

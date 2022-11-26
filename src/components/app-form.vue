@@ -173,7 +173,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .form {
   display: flex;
   flex-wrap: wrap;
@@ -188,7 +188,7 @@ export default defineComponent({
 }
 
 .form__item__label {
-  color: $black;
+  color: var(--black);
   font-size: 1.8rem;
   width: fit-content;
   cursor: default;

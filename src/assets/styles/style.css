@@ -1,4 +1,5 @@
 @import './vars';
 @import './normalize';
 @import './common';
+@import 'animate.css/source/animate.css';
 @import './element-ui';
