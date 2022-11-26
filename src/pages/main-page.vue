@@ -73,7 +73,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style>
 .main-page {
   display: flex;
   justify-content: space-between;
@@ -102,7 +102,7 @@ export default defineComponent({
   display: block;
   padding: 1rem;
   width: 48px;
-  background-color: $primary;
+  background-color: var(--primary);
   border-radius: 9px;
 }
 

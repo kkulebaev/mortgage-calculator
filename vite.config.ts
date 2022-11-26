@@ -15,14 +15,6 @@ export default defineConfig({
     },
   },
 
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: '@import "./src/assets/styles/vars.scss";',
-      },
-    },
-  },
-
   test: {
     environment: 'jsdom',
     coverage: {

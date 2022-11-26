@@ -19,20 +19,20 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2.5rem 3.5rem;
-  background: $primary;
+  background: var(--primary);
   border-radius: 0 9rem 0 6.1rem;
   text-transform: uppercase;
   text-align: center;
   font-size: 1.5rem;
   line-height: 1.15;
   font-weight: 900;
-  color: $white;
+  color: var(--white);
   cursor: pointer;
   border: 0;
   transition: all 0.3s ease-in-out;
@@ -42,7 +42,7 @@ export default defineComponent({
   }
 
   &:hover:not(:disabled) {
-    background: $black;
+    background: var(--black);
   }
 }
 </style>

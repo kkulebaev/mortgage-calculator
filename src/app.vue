@@ -42,7 +42,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .app {
   display: flex;
   align-items: center;

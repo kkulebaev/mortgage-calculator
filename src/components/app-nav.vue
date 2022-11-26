@@ -26,7 +26,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .nav {
   display: flex;
   flex-direction: column;
@@ -48,6 +48,6 @@ export default defineComponent({
 }
 
 .router-link-active {
-  background: $white;
+  background: var(--white);
 }
 </style>

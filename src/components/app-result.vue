@@ -63,7 +63,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .result-block {
   display: flex;
   flex-direction: column;
@@ -83,7 +83,7 @@ export default defineComponent({
 }
 
 .info-block__item__label {
-  color: $black;
+  color: var(--black);
   font-size: 1.8rem;
 }
 

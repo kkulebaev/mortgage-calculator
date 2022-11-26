@@ -76,7 +76,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .histogram {
   display: flex;
   flex: 1;
@@ -93,14 +93,14 @@ export default defineComponent({
 }
 
 .histogram__item__label {
-  color: $black;
+  color: var(--black);
   font-size: 1.8rem;
 }
 
 .histogram__item__value {
   font-size: 2rem;
   font-weight: 900;
-  color: $black;
+  color: var(--black);
 }
 
 .histogram__item__scale {
@@ -110,12 +110,12 @@ export default defineComponent({
 .histogram__item__scale__bar {
   width: 100%;
   min-width: 18rem;
-  background-color: $primary;
+  background-color: var(--primary);
   border-radius: 15px;
 }
 
 .histogram__item__scale__bar.secondary {
-  background-color: $secondary;
+  background-color: var(--secondary);
 }
 
 .transition {

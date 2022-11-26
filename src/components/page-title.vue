@@ -22,10 +22,10 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .page-title {
   font-size: 3.6rem;
   font-weight: 700;
-  color: $black;
+  color: var(--black);
 }
 </style>

@@ -33,10 +33,10 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 /* stylelint-disable max-nesting-depth */
 
-// TODO: Пофиксить stylelint disable
+/* TODO: Пофиксить stylelint disable */
 .not-found {
   position: relative;
 }
@@ -66,20 +66,17 @@ export default defineComponent({
 }
 
 .content-404__hr {
-  border-top: 0.5rem solid $black;
-  color: $black;
+  border-top: 0.5rem solid var(--black);
+  color: var(--black);
   max-width: 42rem;
   z-index: -10;
+}
 
-  &::after {
-    content: '\2022';
-    display: inline-block;
-    position: relative;
-    top: -0.75em;
-    font-size: 2em;
-    padding: 0 0.2em;
-    background: $white;
-  }
+.content-404__hr::after {
+  border-top: 0.5rem solid var(--black);
+  color: var(--black);
+  max-width: 42rem;
+  z-index: -10;
 }
 
 .content-404__subtitle {
@@ -102,18 +99,18 @@ export default defineComponent({
   padding: 0.5rem;
   z-index: 5;
   font-size: 2.5rem;
-  color: $additional;
+  color: var(--additional);
   transition: color 0.2s linear;
 
   &:hover {
-    color: $primary;
+    color: var(--primary);
   }
 }
 
 .clouds__item {
   width: 35rem;
   height: 12rem;
-  background: $primary;
+  background: var(--primary);
   border-radius: 10rem;
   position: absolute;
   margin: 12rem auto 2rem;
@@ -124,7 +121,7 @@ export default defineComponent({
   &::before {
     content: '';
     position: absolute;
-    background: $primary;
+    background: var(--primary);
     z-index: -1;
   }
 
