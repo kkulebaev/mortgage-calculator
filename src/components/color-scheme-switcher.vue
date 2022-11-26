@@ -2,7 +2,7 @@
   <fieldset class="switcher">
     <legend class="switcher__legend">Схема</legend>
     <input
-      v-model="colorSchemeValue"
+      v-model="colorScheme"
       :value="COLOR_SCHEME.light"
       class="switcher__radio switcher__radio--light"
       type="radio"
@@ -10,7 +10,7 @@
       aria-label="Светлая"
     />
     <input
-      v-model="colorSchemeValue"
+      v-model="colorScheme"
       :value="COLOR_SCHEME.dark"
       class="switcher__radio switcher__radio--dark"
       type="radio"
@@ -22,32 +22,20 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { storeToRefs } from 'pinia'
+import { defineComponent } from 'vue'
 
-import { useSettingsStore, COLOR_SCHEME } from '@/store'
+import { COLOR_SCHEME } from '@/helpers'
+import { useColorMode } from '@vueuse/core'
 
 export default defineComponent({
   name: 'ColorSchemeSwitcher',
 
   setup() {
-    const settingsStore = useSettingsStore()
-    const { setColorScheme } = settingsStore
-    const { colorScheme } = storeToRefs(settingsStore)
-
-    const colorSchemeValue = computed({
-      get() {
-        return colorScheme.value
-      },
-
-      set(colorScheme: COLOR_SCHEME) {
-        setColorScheme(colorScheme)
-      },
-    })
+    const colorScheme = useColorMode<COLOR_SCHEME>()
 
     return {
       COLOR_SCHEME,
-      colorSchemeValue,
+      colorScheme,
     }
   },
 })
