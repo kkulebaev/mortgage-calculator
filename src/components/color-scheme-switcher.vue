@@ -31,7 +31,10 @@ export default defineComponent({
   name: 'ColorSchemeSwitcher',
 
   setup() {
-    const colorScheme = useColorMode<COLOR_SCHEME>()
+    const colorScheme = useColorMode<COLOR_SCHEME>({
+      initialValue: COLOR_SCHEME.light,
+      storageKey: 'color-scheme',
+    })
 
     return {
       COLOR_SCHEME,
