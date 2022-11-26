@@ -6,7 +6,7 @@
       class="nav__link"
       :to="item.to"
     >
-      <img class="nav__icon" :src="item.icon" :alt="`${item.id}-icon`" />
+      <FontAwesomeIcon class="nav__icon" :icon="item.icon" size="3x" />
     </RouterLink>
   </nav>
 </template>
@@ -15,8 +15,14 @@
 import { defineComponent } from 'vue'
 import { NAV_ITEMS } from '@/helpers'
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 export default defineComponent({
   name: 'AppNav',
+
+  components: {
+    FontAwesomeIcon,
+  },
 
   setup() {
     return {
@@ -44,7 +50,7 @@ export default defineComponent({
 }
 
 .nav__icon {
-  width: 3.2rem;
+  color: var(--black);
 }
 
 .router-link-active {

@@ -1,5 +1,9 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+import {
+  faCircleQuestion,
+  faHouse,
+  faTable,
+} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faSun, faMoon)
+library.add(faHouse, faTable, faCircleQuestion)
