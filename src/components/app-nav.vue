@@ -32,7 +32,7 @@ export default defineComponent({
   flex-direction: column;
   width: 100%;
   max-width: 6rem;
-  background: #fafafa;
+  background: var(--bg-primary);
 }
 
 .nav__link {
