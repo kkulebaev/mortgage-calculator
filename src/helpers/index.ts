@@ -10,3 +10,4 @@ export {
 export { DETAIL_FIELDS } from './detail'
 export { SOCIAL_NETWORKS } from './social-networks'
 export { FAQ } from './faq'
+export { COLOR_SCHEME } from './color-scheme'
