@@ -25,8 +25,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { BaseButton, HistogramChart } from '@/components'
 import { numberWithSpaces } from '@/utils'
+
+import BaseButton from './base/base-button.vue'
+import HistogramChart from './histogram-chart.vue'
 
 export default defineComponent({
   name: 'AppResult',
