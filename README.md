@@ -1,3 +1,4 @@
+[![checks](https://github.com/kkulebaev/mortgage-calculator/actions/workflows/checks.yml/badge.svg?branch=master)](https://github.com/kkulebaev/mortgage-calculator/actions/workflows/checks.yml)
 # Mortgage Calculator
 
 > A modern app that allows you to calculate your mortgage
