@@ -23,16 +23,15 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, toRef } from 'vue'
-import { storeToRefs } from 'pinia'
-
-import { useMainStore } from '@/store'
-import { MORTGAGE_TYPE_LABEL, PERIOD_LABEL, DETAIL_FIELDS } from '@/helpers'
-import { usePagination } from '@/composables'
-import { numberWithSpaces } from '@/utils'
-
-import { BaseTable, BasePagination, PageTitle } from '@/components'
 import { ElEmpty } from 'element-plus'
+import { storeToRefs } from 'pinia'
+import { defineComponent, ref, toRef } from 'vue'
+
+import { BasePagination, BaseTable, PageTitle } from '@/components'
+import { usePagination } from '@/composables'
+import { DETAIL_FIELDS, MORTGAGE_TYPE_LABEL, PERIOD_LABEL } from '@/helpers'
+import { useMainStore } from '@/store'
+import { numberWithSpaces } from '@/utils'
 
 export default defineComponent({
   name: 'DetailPage',

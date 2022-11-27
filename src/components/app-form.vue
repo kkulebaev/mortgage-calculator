@@ -53,20 +53,19 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { useVModel } from '@vueuse/core'
+import { ElInput, ElInputNumber } from 'element-plus'
 import type { PropType } from 'vue'
-import {
-  TYPE_MORTGAGE_OPTIONS,
-  PERIOD_OPTIONS,
-  MORTGAGE_TYPE,
-  PERIOD,
-} from '@/helpers'
-
-import { toNumber, numberWithSpaces } from '@/utils'
+import { computed, defineComponent } from 'vue'
 
 import { BaseSelect } from '@/components'
-import { ElInput, ElInputNumber } from 'element-plus'
-import { useVModel } from '@vueuse/core'
+import {
+  MORTGAGE_TYPE,
+  PERIOD,
+  PERIOD_OPTIONS,
+  TYPE_MORTGAGE_OPTIONS,
+} from '@/helpers'
+import { numberWithSpaces, toNumber } from '@/utils'
 
 export default defineComponent({
   name: 'AppForm',

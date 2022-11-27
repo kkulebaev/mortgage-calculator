@@ -1,4 +1,4 @@
-import { MainPage, DetailPage, FAQPage, NotFoundPage } from '@/pages'
+import { DetailPage, FAQPage, MainPage, NotFoundPage } from '@/pages'
 
 export const routes = [
   {

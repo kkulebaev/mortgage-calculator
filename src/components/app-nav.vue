@@ -12,10 +12,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { NAV_ITEMS } from '@/helpers'
-
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { defineComponent } from 'vue'
+
+import { NAV_ITEMS } from '@/helpers'
 
 export default defineComponent({
   name: 'AppNav',

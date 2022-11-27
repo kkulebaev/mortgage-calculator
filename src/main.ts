@@ -1,11 +1,10 @@
-import { createApp } from 'vue'
-import { createRouter } from 'vue-router'
-import { createPinia } from 'pinia'
-
-import App from './app.vue'
-
 import './plugins/fontawesome'
 
+import { createPinia } from 'pinia'
+import { createApp } from 'vue'
+import { createRouter } from 'vue-router'
+
+import App from './app.vue'
 import routerConfig from './router/router.config'
 
 const pinia = createPinia()
