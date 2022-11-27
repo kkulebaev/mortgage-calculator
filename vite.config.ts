@@ -6,20 +6,27 @@ import path from 'path'
 import Sitemap from 'vite-plugin-sitemap'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue(), Sitemap()],
+export default defineConfig(() => {
+  const plugins = [vue()]
+  if (!process.env.VITEST) {
+    plugins.push(Sitemap())
+  }
 
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
+  return {
+    plugins,
 
-  test: {
-    environment: 'jsdom',
-    coverage: {
-      reporter: ['text', 'json', 'html'],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+      },
     },
-    setupFiles: ['./src/tests/setup-file'],
-  },
+
+    test: {
+      environment: 'jsdom',
+      coverage: {
+        reporter: ['text', 'json', 'html'],
+      },
+      setupFiles: ['./src/tests/setup-file'],
+    },
+  }
 })
