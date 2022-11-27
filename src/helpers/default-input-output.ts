@@ -1,4 +1,4 @@
-import { PERIOD, MORTGAGE_TYPE } from '@/helpers'
+import { MORTGAGE_TYPE, PERIOD } from '@/helpers'
 
 export interface PaymentByMonth {
   id: number

@@ -11,9 +11,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { ElPagination } from 'element-plus'
 import { useVModel } from '@vueuse/core'
+import { ElPagination } from 'element-plus'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'BasePagination',

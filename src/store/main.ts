@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
-import { calcMortgage } from '@/services'
-import { DEFAULT_INPUT, DEFAULT_OUTPUT } from '@/helpers'
+
 import type { Input, Output } from '@/helpers'
+import { DEFAULT_INPUT, DEFAULT_OUTPUT } from '@/helpers'
+import { calcMortgage } from '@/services'
 
 interface State {
   inputValues: Input

@@ -8,7 +8,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { PageTitle, FaqList } from '@/components'
+import { FaqList, PageTitle } from '@/components'
 
 export default defineComponent({
   name: 'FaqPage',

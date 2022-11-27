@@ -1,9 +1,10 @@
-import { it, describe, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
+
 import { calcMortgage } from '@/services'
 import {
   inputAnMortgage,
-  outputAnMortgage,
   inputDifMortgage,
+  outputAnMortgage,
   outputDifMortgage,
 } from '@/tests/fixtures'
 

@@ -12,10 +12,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import type { PropType } from 'vue'
-
 import { ElTable, ElTableColumn } from 'element-plus'
+import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
 
 interface TableColumn {
   prop: string

@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
 import { ElButton } from 'element-plus'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'BaseButton',

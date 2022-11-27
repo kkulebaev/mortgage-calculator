@@ -1,5 +1,6 @@
-import { mount, type VueWrapper } from '@vue/test-utils'
-import { it, describe, expect } from 'vitest'
+import { type VueWrapper, mount } from '@vue/test-utils'
+import { describe, expect, it } from 'vitest'
+
 import { AppResult } from '@/components'
 
 const DEFAULT_PROPS = {

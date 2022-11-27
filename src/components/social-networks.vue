@@ -13,10 +13,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { SOCIAL_NETWORKS } from '@/helpers'
-
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { defineComponent } from 'vue'
+
+import { SOCIAL_NETWORKS } from '@/helpers'
 
 export default defineComponent({
   name: 'SocialNetworks',

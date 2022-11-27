@@ -19,6 +19,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
+
 import HistogramBar, { HistogramTypes } from './histogram-bar.vue'
 
 export default defineComponent({

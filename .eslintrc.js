@@ -67,6 +67,7 @@ module.exports = {
         case: 'kebabCase',
       },
     ],
+    'simple-import-sort/imports': 'error',
   },
   overrides: [
     {

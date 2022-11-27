@@ -1,6 +1,7 @@
 import type { Output } from '@/helpers'
-import type { InputPart } from './calc-mortgage'
 import { roundNumber } from '@/utils'
+
+import type { InputPart } from './calc-mortgage'
 import { calcPaymentDetailAn } from './calc-payment-detail'
 
 export function calcMortgageAn({

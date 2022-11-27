@@ -38,21 +38,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { onKeyStroke } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
-
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { defineComponent, ref } from 'vue'
 
 import {
   AppForm,
   AppResult,
-  SocialNetworks,
-  PageTitle,
   ColorSchemeSwitcher,
+  PageTitle,
+  SocialNetworks,
 } from '@/components'
-import { useMainStore } from '@/store'
 import { DEFAULT_INPUT } from '@/helpers'
+import { useMainStore } from '@/store'
 
 export default defineComponent({
   name: 'MainPage',
