@@ -34,7 +34,9 @@
       <ElInputNumber
         v-model="mortgageRateValue"
         :min="0.1"
+        :max="1000"
         :step="0.1"
+        :value-on-clear="0.1"
         controls-position="right"
         @input="$emit('change')"
       />
