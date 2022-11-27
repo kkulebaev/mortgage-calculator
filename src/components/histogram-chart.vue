@@ -1,52 +1,32 @@
 <template>
-  <div class="histogram">
+  <div class="histogram-chart">
     <Transition
+      v-for="(item, index) in histograms"
+      :key="index"
       class="transition"
       enter-active-class="animated bounceInUp"
       leave-active-class="animated bounceOutUp"
     >
-      <div v-if="takeValue" class="histogram__item">
-        <span class="histogram__item__label"> Возьмете </span>
-        <span class="histogram__item__value">
-          {{ numberWithSpaces(takeValue) }} RUB
-        </span>
-
-        <div class="histogram__item__scale">
-          <div
-            class="histogram__item__scale__bar"
-            :style="{ height: `${takeHistogramHeight}%` }"
-          />
-        </div>
-      </div>
-    </Transition>
-    <Transition
-      class="transition"
-      enter-active-class="animated bounceInUp"
-      leave-active-class="animated bounceOutUp"
-    >
-      <div v-if="repayValue" class="histogram__item">
-        <span class="histogram__item__label"> Вернете </span>
-        <span class="histogram__item__value">
-          {{ numberWithSpaces(repayValue) }} RUB
-        </span>
-
-        <div class="histogram__item__scale">
-          <div
-            class="histogram__item__scale__bar secondary"
-            :style="{ height: `${repayHistogramHeight}%` }"
-          />
-        </div>
-      </div>
+      <HistogramBar
+        :height="item.height"
+        :value="item.value"
+        :label="item.label"
+        :type="item.type"
+      />
     </Transition>
   </div>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { numberWithSpaces } from '@/utils'
+import HistogramBar, { HistogramTypes } from './histogram-bar.vue'
 
 export default defineComponent({
   name: 'HistogramChart',
+
+  components: {
+    HistogramBar,
+  },
 
   props: {
     takeValue: {
@@ -61,61 +41,35 @@ export default defineComponent({
   },
 
   setup(props) {
-    const repayHistogramHeight = 100
+    const histograms = computed(() => [
+      {
+        height: (props.takeValue * 100) / props.repayValue || 0,
+        value: props.takeValue,
+        label: 'Возьмете',
+        type: HistogramTypes.primary,
+      },
 
-    const takeHistogramHeight = computed(
-      () => (props.takeValue * 100) / props.repayValue
-    )
+      {
+        height: 100,
+        value: props.repayValue,
+        label: 'Вернете',
+        type: HistogramTypes.secondary,
+      },
+    ])
 
     return {
-      repayHistogramHeight,
-      takeHistogramHeight,
-      numberWithSpaces,
+      histograms,
     }
   },
 })
 </script>
 
 <style scoped>
-.histogram {
+.histogram-chart {
   display: flex;
   flex: 1;
   justify-content: space-evenly;
   gap: 2rem;
-}
-
-.histogram__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  flex: 1;
-}
-
-.histogram__item__label {
-  color: var(--black);
-  font-size: 1.8rem;
-}
-
-.histogram__item__value {
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--black);
-}
-
-.histogram__item__scale {
-  height: 100%;
-}
-
-.histogram__item__scale__bar {
-  width: 100%;
-  min-width: 18rem;
-  background-color: var(--primary);
-  border-radius: 15px;
-}
-
-.histogram__item__scale__bar.secondary {
-  background-color: var(--secondary);
 }
 
 .transition {

@@ -1,8 +1,8 @@
 <template>
   <div class="detail-info">
-    <div class="title">
+    <header class="header">
       <PageTitle title="График платежей" />
-      <div class="title__desc">
+      <div class="description">
         <span>
           Сумма ипотеки: {{ numberWithSpaces(inputValues.amount) }} RUB
         </span>
@@ -13,7 +13,7 @@
         <span> Годовая процентная ставка: {{ inputValues.rate }} % </span>
         <span> Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.type] }} </span>
       </div>
-    </div>
+    </header>
     <template v-if="paginatedData.length">
       <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
       <BasePagination v-model="pageNumber" :total="total" :page-size="size" />
@@ -78,14 +78,14 @@ export default defineComponent({
   height: 100%;
 }
 
-.title {
+.header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
 }
 
-.title__desc {
+.description {
   display: flex;
   flex-flow: row wrap;
   flex-direction: column;
