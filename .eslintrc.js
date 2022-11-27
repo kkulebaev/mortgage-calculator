@@ -16,7 +16,7 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     'prettier',
   ],
-  plugins: ['@typescript-eslint', 'unicorn'],
+  plugins: ['@typescript-eslint', 'unicorn', 'simple-import-sort'],
   rules: {
     'vue/component-options-name-casing': ['error', 'PascalCase'],
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
