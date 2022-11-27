@@ -1,15 +1,15 @@
 <template>
   <div class="main-page">
     <div class="main-page__data">
-      <div class="title">
+      <header class="header">
         <FontAwesomeIcon
-          class="title__logo"
+          class="app-logo"
           :icon="['fas', 'calculator']"
           size="4x"
         />
         <PageTitle title="Калькулятор ипотеки" />
         <ColorSchemeSwitcher />
-      </div>
+      </header>
       <AppForm
         v-model:paymentType="inputValues.type"
         v-model:mortgageAmount="inputValues.amount"
@@ -104,13 +104,13 @@ export default defineComponent({
   flex: 1;
 }
 
-.title {
+.header {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-.title__logo {
+.app-logo {
   display: block;
   padding: 1rem;
   width: 48px;

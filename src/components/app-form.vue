@@ -1,7 +1,7 @@
 <template>
   <form class="form" netlify>
-    <div class="form__item">
-      <span class="form__item__label"> Сумма ипотеки </span>
+    <div class="form-item">
+      <span class="form-item__label"> Сумма ипотеки </span>
       <ElInput
         v-model="mortgageAmountValue"
         placeholder="50 000"
@@ -11,8 +11,8 @@
         <template #append>руб</template>
       </ElInput>
     </div>
-    <div class="form__item">
-      <span class="form__item__label"> Срок ипотеки </span>
+    <div class="form-item">
+      <span class="form-item__label"> Срок ипотеки </span>
       <ElInput
         v-model="mortgageTermValue"
         placeholder="10"
@@ -22,15 +22,15 @@
         <template #append>
           <BaseSelect
             v-model="mortgagePeriodValue"
-            class="form__item__select"
+            class="form-item__select"
             :options="PERIOD_OPTIONS"
             @change="$emit('change')"
           />
         </template>
       </ElInput>
     </div>
-    <div class="form__item">
-      <span class="form__item__label"> Годовая процентная ставка </span>
+    <div class="form-item">
+      <span class="form-item__label"> Годовая процентная ставка </span>
       <ElInputNumber
         v-model="mortgageRateValue"
         :min="0.1"
@@ -41,8 +41,8 @@
         @input="$emit('change')"
       />
     </div>
-    <div class="form__item">
-      <span class="form__item__label"> Тип платежей </span>
+    <div class="form-item">
+      <span class="form-item__label"> Тип платежей </span>
       <BaseSelect
         v-model="paymentTypeValue"
         :options="TYPE_MORTGAGE_OPTIONS"
@@ -160,14 +160,14 @@ export default defineComponent({
   gap: 4rem;
 }
 
-.form__item {
+.form-item {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: calc(50% - 2rem);
 }
 
-.form__item__label {
+.form-item__label {
   color: var(--black);
   font-size: 1.8rem;
   width: fit-content;
@@ -175,7 +175,7 @@ export default defineComponent({
   position: relative;
 }
 
-.form__item__select {
+.form-item__select {
   max-width: 7rem;
 }
 </style>

@@ -4,7 +4,7 @@
     <input
       v-model="colorScheme"
       :value="COLOR_SCHEME.light"
-      class="switcher__radio switcher__radio--light"
+      class="switcher__radio light"
       type="radio"
       name="color-scheme"
       aria-label="Светлая"
@@ -12,7 +12,7 @@
     <input
       v-model="colorScheme"
       :value="COLOR_SCHEME.dark"
-      class="switcher__radio switcher__radio--dark"
+      class="switcher__radio dark"
       type="radio"
       name="color-scheme"
       aria-label="Тёмная"
@@ -92,11 +92,11 @@ export default defineComponent({
   outline: none;
 }
 
-.switcher__radio--light {
+.switcher__radio.light {
   background-image: url('../assets/img/light.svg');
 }
 
-.switcher__radio--dark {
+.switcher__radio.dark {
   background-image: url('../assets/img/dark.svg');
 }
 
@@ -121,11 +121,11 @@ export default defineComponent({
   box-shadow: 0 0 0 2px var(--black);
 }
 
-.switcher__radio--light:checked ~ .switcher__status {
+.switcher__radio.light:checked ~ .switcher__status {
   background-position: left 2px center;
 }
 
-.switcher__radio--dark:checked ~ .switcher__status {
+.switcher__radio.dark:checked ~ .switcher__status {
   background-position: right 2px center;
 }
 </style>
