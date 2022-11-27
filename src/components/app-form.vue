@@ -64,6 +64,7 @@ import { toNumber, numberWithSpaces } from '@/utils'
 
 import { BaseSelect } from '@/components'
 import { ElInput, ElInputNumber } from 'element-plus'
+import { useVModel } from '@vueuse/core'
 
 export default defineComponent({
   name: 'AppForm',
@@ -133,32 +134,9 @@ export default defineComponent({
       },
     })
 
-    const mortgagePeriodValue = computed({
-      get() {
-        return props.mortgagePeriod
-      },
-      set(value) {
-        emit('update:mortgagePeriod', value)
-      },
-    })
-
-    const mortgageRateValue = computed({
-      get() {
-        return props.mortgageRate
-      },
-      set(value) {
-        emit('update:mortgageRate', value)
-      },
-    })
-
-    const paymentTypeValue = computed({
-      get() {
-        return props.paymentType
-      },
-      set(value) {
-        emit('update:paymentType', value)
-      },
-    })
+    const mortgagePeriodValue = useVModel(props, 'mortgagePeriod', emit)
+    const mortgageRateValue = useVModel(props, 'mortgageRate', emit)
+    const paymentTypeValue = useVModel(props, 'paymentType', emit)
 
     return {
       mortgageAmountValue,
