@@ -58,7 +58,6 @@ import { ElInput, ElInputNumber } from 'element-plus'
 import type { PropType } from 'vue'
 import { computed, defineComponent } from 'vue'
 
-import { BaseSelect } from '@/components'
 import {
   MORTGAGE_TYPE,
   PERIOD,
@@ -66,6 +65,8 @@ import {
   TYPE_MORTGAGE_OPTIONS,
 } from '@/helpers'
 import { numberWithSpaces, toNumber } from '@/utils'
+
+import BaseSelect from './base/base-select.vue'
 
 export default defineComponent({
   name: 'AppForm',
