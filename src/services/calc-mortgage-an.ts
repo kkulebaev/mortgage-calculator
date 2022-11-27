@@ -1,4 +1,4 @@
-import type { Output } from '@/store'
+import type { Output } from '@/helpers'
 import type { InputPart } from './calc-mortgage'
 import { roundNumber } from '@/utils'
 import { calcPaymentDetailAn } from './calc-payment-detail'

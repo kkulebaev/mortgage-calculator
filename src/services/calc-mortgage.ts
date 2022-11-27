@@ -1,5 +1,5 @@
 import { MORTGAGE_TYPE, PERIOD } from '@/helpers'
-import type { Input, Output } from '@/store'
+import type { Input, Output } from '@/helpers'
 import { calcMortgageAn } from './calc-mortgage-an'
 import { calcMortgageDif } from './calc-mortgage-dif'
 

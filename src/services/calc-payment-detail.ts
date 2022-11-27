@@ -1,4 +1,4 @@
-import type { PaymentByMonth } from '@/store'
+import type { PaymentByMonth } from '@/helpers'
 import { roundNumber } from '@/utils'
 
 // estMortgageBody – сумма оставшейся задолженности по кредиту (остаток по кредиту);

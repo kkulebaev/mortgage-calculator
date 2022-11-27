@@ -1,4 +1,4 @@
-import type { Input, Output } from '@/store'
+import type { Input, Output } from '@/helpers'
 import { PERIOD, MORTGAGE_TYPE } from '@/helpers'
 
 export const inputAnMortgage: Input = {

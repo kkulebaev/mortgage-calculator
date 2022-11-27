@@ -51,7 +51,8 @@ import {
   PageTitle,
   ColorSchemeSwitcher,
 } from '@/components'
-import { useMainStore, DEFAULT_INPUT } from '@/store'
+import { useMainStore } from '@/store'
+import { DEFAULT_INPUT } from '@/helpers'
 
 export default defineComponent({
   name: 'MainPage',
