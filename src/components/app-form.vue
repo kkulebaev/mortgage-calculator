@@ -52,7 +52,13 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { TYPE_MORTGAGE_OPTIONS, PERIOD_OPTIONS } from '@/helpers'
+import type { PropType } from 'vue'
+import {
+  TYPE_MORTGAGE_OPTIONS,
+  PERIOD_OPTIONS,
+  MORTGAGE_TYPE,
+  PERIOD,
+} from '@/helpers'
 
 import { toNumber, numberWithSpaces } from '@/utils'
 
@@ -80,11 +86,8 @@ export default defineComponent({
     },
 
     mortgagePeriod: {
-      type: String,
+      type: String as PropType<PERIOD>,
       required: true,
-      validator(val) {
-        return !!PERIOD_OPTIONS.find(x => x.value === val)
-      },
     },
 
     mortgageRate: {
@@ -93,11 +96,8 @@ export default defineComponent({
     },
 
     paymentType: {
-      type: String,
+      type: String as PropType<MORTGAGE_TYPE>,
       required: true,
-      validator(val) {
-        return !!TYPE_MORTGAGE_OPTIONS.find(x => x.value === val)
-      },
     },
   },
 
