@@ -24,6 +24,7 @@ specifiers:
   nano-staged: 0.8.0
   pinia: 2.0.27
   postcss: 8.4.19
+  postcss-custom-media: 9.0.1
   postcss-html: 1.5.0
   simple-git-hooks: 2.8.1
   stylelint: 14.15.0
@@ -64,6 +65,7 @@ devDependencies:
   jsdom: 20.0.3
   nano-staged: 0.8.0
   postcss: 8.4.19
+  postcss-custom-media: 9.0.1_postcss@8.4.19
   postcss-html: 1.5.0
   simple-git-hooks: 2.8.1
   stylelint: 14.15.0
@@ -114,6 +116,31 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+
+  /@csstools/css-parser-algorithms/1.0.0_yc2lywpo4a5sk4h3mmwqkmetvu:
+    resolution: {integrity: sha512-lPphY34yfV15tEXiz/SYaU8hwqAhbAwqiTExv5tOfc7QZxT70VVYrsiPBaX1osdWZFowrDEAhHe4H3JnyzbjhA==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-tokenizer': ^1.0.0
+    dependencies:
+      '@csstools/css-tokenizer': 1.0.0
+    dev: true
+
+  /@csstools/css-tokenizer/1.0.0:
+    resolution: {integrity: sha512-xdFjdQ+zqqkOsmee+kYRieZD9Cqh4hr01YBQ2/8NtTkMMxbtRX18MC50LX6cMrtaLryqmIdZHN9e16/l0QqnQw==}
+    engines: {node: ^14 || ^16 || >=18}
+    dev: true
+
+  /@csstools/media-query-list-parser/1.0.0_oycmb73qbeg4xspzoh5ywrqikm:
+    resolution: {integrity: sha512-HsTj5ejI8NKKZ4IEd6kK2kQZA/JmIVlUV8+XvO/YS9ntrlYPnbmFT3rkqtbxOVfEafblYCNOpeNw1c+fKGkAqw==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-parser-algorithms': ^1.0.0
+      '@csstools/css-tokenizer': ^1.0.0
+    dependencies:
+      '@csstools/css-parser-algorithms': 1.0.0_yc2lywpo4a5sk4h3mmwqkmetvu
+      '@csstools/css-tokenizer': 1.0.0
+    dev: true
 
   /@csstools/selector-specificity/2.0.2_45y636a2vqremknoajyxd5nkzy:
     resolution: {integrity: sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==}
@@ -2388,6 +2415,18 @@ packages:
   /pluralize/8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
+    dev: true
+
+  /postcss-custom-media/9.0.1_postcss@8.4.19:
+    resolution: {integrity: sha512-CimS72gZZ0V4WPFg7t7EqFVLxJ0mqwAJSsuk+LNHSo9ApC7d/SuOr65sKrUY/D8locOh+3s4yO7IdqQ9cRSR7Q==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      '@csstools/css-parser-algorithms': 1.0.0_yc2lywpo4a5sk4h3mmwqkmetvu
+      '@csstools/css-tokenizer': 1.0.0
+      '@csstools/media-query-list-parser': 1.0.0_oycmb73qbeg4xspzoh5ywrqikm
+      postcss: 8.4.19
     dev: true
 
   /postcss-html/1.5.0:
