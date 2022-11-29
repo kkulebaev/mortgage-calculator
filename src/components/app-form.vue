@@ -153,7 +153,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang='postcss' scoped>
 .form {
   display: flex;
   flex-wrap: wrap;

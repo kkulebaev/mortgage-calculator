@@ -56,6 +56,9 @@ module.exports = {
         script: {
           lang: 'ts',
         },
+        style: {
+          lang: 'postcss',
+        },
       },
     ],
     'vue/require-name-property': 'error',

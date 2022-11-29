@@ -69,7 +69,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang='postcss' scoped>
 .detail-info {
   display: flex;
   flex-direction: column;

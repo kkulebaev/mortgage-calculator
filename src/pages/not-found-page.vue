@@ -33,7 +33,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .not-found {
   position: relative;
 }

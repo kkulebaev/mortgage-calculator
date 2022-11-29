@@ -19,7 +19,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .btn {
   display: flex;
   align-items: center;

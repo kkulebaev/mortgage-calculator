@@ -84,7 +84,7 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="postcss">
 .main-page {
   display: flex;
   justify-content: space-between;
@@ -121,6 +121,7 @@ export default defineComponent({
 .intro-picture {
   max-width: 25rem;
   margin-left: auto;
+  margin-top: auto;
 }
 
 .social-networks {
