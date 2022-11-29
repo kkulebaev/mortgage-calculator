@@ -1,3 +1,9 @@
+@custom-media --mobile screen and (max-width: 767.5px);
+@custom-media --mobile-tablet screen and (max-width: 1024px);
+@custom-media --tablet screen and (min-width: 768px) and (max-width: 1024px);
+@custom-media --tablet-desktop screen and (min-width: 768px);
+@custom-media --desktop screen and (min-width: 1025px);
+
 :root {
   --primary: #2e424d;
   --secondary: #5b8291;
