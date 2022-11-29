@@ -33,7 +33,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .social-networks {
   display: flex;
   gap: 1rem;

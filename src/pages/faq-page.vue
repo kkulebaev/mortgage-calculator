@@ -20,7 +20,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .faq-page {
   display: flex;
   flex-direction: column;

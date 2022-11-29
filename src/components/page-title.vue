@@ -22,7 +22,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .page-title {
   font-size: 3.6rem;
   font-weight: 700;

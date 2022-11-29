@@ -5,7 +5,7 @@
 
     <div
       class="histogram__scale-bar"
-      :class="{ secondary: type === HistogramTypes.secondary}"
+      :class="{ secondary: type === HistogramTypes.secondary }"
       :style="{ height: `${height}%` }"
     />
   </div>
@@ -18,7 +18,7 @@ import { numberWithSpaces } from '@/utils'
 
 export enum HistogramTypes {
   primary = 'primary',
-  secondary = 'secondary'
+  secondary = 'secondary',
 }
 
 export default defineComponent({
@@ -49,13 +49,13 @@ export default defineComponent({
   setup() {
     return {
       numberWithSpaces,
-      HistogramTypes
+      HistogramTypes,
     }
   },
 })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .histogram {
   display: flex;
   flex-direction: column;

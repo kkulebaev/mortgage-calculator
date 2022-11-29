@@ -65,7 +65,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .result-block {
   display: flex;
   flex-direction: column;

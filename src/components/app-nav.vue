@@ -32,7 +32,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .nav {
   display: flex;
   flex-direction: column;

@@ -65,7 +65,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .histogram-chart {
   display: flex;
   flex: 1;
