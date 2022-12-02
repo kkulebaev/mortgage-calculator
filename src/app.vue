@@ -1,9 +1,9 @@
 <template>
   <div class="app">
     <div class="app-wrapper">
-      <AppNav />
-
+      <AppNav class="app__nav" />
       <div class="container">
+        <MobileHeader v-if="isMobile" />
         <RouterView v-slot="{ Component }">
           <Transition
             class="transition"
@@ -22,18 +22,30 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { AppNav } from '@/components'
+import { AppNav, MobileHeader } from '@/components'
+import { useBreakpoints } from '@/composables'
 
 export default defineComponent({
   name: 'App',
 
   components: {
     AppNav,
+    MobileHeader,
+  },
+
+  setup() {
+    const { isMobile } = useBreakpoints()
+
+    return {
+      isMobile,
+    }
   },
 })
 </script>
 
 <style lang="postcss" scoped>
+@import './assets/styles/vars.css';
+
 .app {
   display: flex;
   align-items: center;
@@ -59,5 +71,25 @@ export default defineComponent({
 
 .transition {
   --animate-duration: 0.2s;
+}
+
+@media (--mobile-tablet) {
+  .app-wrapper {
+    height: 100%;
+  }
+}
+
+@media (--mobile) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 2rem;
+  }
+
+  .nav.app__nav {
+    display: none;
+  }
 }
 </style>

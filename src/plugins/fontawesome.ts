@@ -5,18 +5,22 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import {
+  faBars,
   faCalculator,
   faCircleQuestion,
   faHouse,
   faTable,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
+  faBars,
   faHouse,
   faTable,
   faCircleQuestion,
   faCalculator,
   faTwitter,
   faGithub,
-  faTelegram
+  faTelegram,
+  faXmark
 )

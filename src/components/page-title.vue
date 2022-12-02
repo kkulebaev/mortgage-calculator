@@ -23,9 +23,17 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
+@import '@/assets/styles/vars.css';
+
 .page-title {
-  font-size: 3.6rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: var(--black);
+}
+
+@media (--mobile) {
+  .page-title {
+    font-size: 2.8rem;
+  }
 }
 </style>

@@ -5,10 +5,10 @@
         <FontAwesomeIcon
           class="app-logo"
           :icon="['fas', 'calculator']"
-          size="4x"
+          :size="isMobile ? '3x' : '4x'"
         />
         <PageTitle title="Калькулятор ипотеки" />
-        <ColorSchemeSwitcher />
+        <ColorSchemeSwitcher v-if="!isMobile" class="header__switcher" />
       </header>
       <AppForm
         v-model:paymentType="inputValues.type"
@@ -19,16 +19,16 @@
         @change="clearOutput"
       />
       <img
+        v-if="isDesktop"
         class="intro-picture"
         src="./../assets/img/owl.png"
         width="957"
         height="1060"
         alt="owl"
       />
-      <SocialNetworks />
+      <SocialNetworks v-if="isDesktop" />
     </div>
     <AppResult
-      class="main-page__result"
       :take-value="outputValues.takeValue"
       :repay-value="outputValues.repayValue"
       :overpayment-value="outputValues.overpaymentValue"
@@ -50,6 +50,7 @@ import {
   PageTitle,
   SocialNetworks,
 } from '@/components'
+import { useBreakpoints } from '@/composables'
 import { DEFAULT_INPUT } from '@/helpers'
 import { useMainStore } from '@/store'
 
@@ -74,17 +75,23 @@ export default defineComponent({
 
     onKeyStroke('Enter', () => calcMortgage(inputValues.value))
 
+    const { isDesktop, isMobile } = useBreakpoints()
+
     return {
       inputValues,
       outputValues,
       calcMortgage,
       clearOutput,
+      isDesktop,
+      isMobile,
     }
   },
 })
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
+@import '@/assets/styles/vars.css';
+
 .main-page {
   display: flex;
   justify-content: space-between;
@@ -99,7 +106,7 @@ export default defineComponent({
   flex: 2;
 }
 
-.main-page__result {
+.result-block {
   flex: 1;
 }
 
@@ -112,7 +119,7 @@ export default defineComponent({
 .app-logo {
   display: block;
   padding: 1rem;
-  width: 48px;
+  /* width: 48px; */
   background-color: var(--primary);
   color: var(--white);
   border-radius: 9px;
@@ -126,5 +133,26 @@ export default defineComponent({
 
 .social-networks {
   margin-top: auto;
+}
+
+@media (--mobile-tablet) {
+  .main-page {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .main-page__data {
+    flex: 1;
+  }
+
+  .header__switcher.switcher {
+    margin-left: auto;
+  }
+}
+
+@media (--mobile) {
+  .header {
+    gap: 1rem;
+  }
 }
 </style>
