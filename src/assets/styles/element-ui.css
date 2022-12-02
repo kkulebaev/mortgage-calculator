@@ -1,5 +1,6 @@
 /* stylelint-disable selector-class-pattern */
 @import 'element-plus/dist/index.css';
+@import 'element-plus/theme-chalk/dark/css-vars.css';
 
 .el-input-number span[role='button'] {
   background-color: transparent;
