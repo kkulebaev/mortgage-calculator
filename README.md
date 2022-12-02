@@ -1,4 +1,5 @@
 [![checks](https://github.com/kkulebaev/mortgage-calculator/actions/workflows/checks.yml/badge.svg?branch=master)](https://github.com/kkulebaev/mortgage-calculator/actions/workflows/checks.yml)
+
 # Mortgage Calculator
 
 > A modern app that allows you to calculate your mortgage
@@ -36,7 +37,7 @@ pnpm dev
 - [x] Сделать темную тему
 - [x] Сделать страницу FAQ
 - [x] Написать тест на ColorSchemeSwitcher
-- [ ] Сделать адаптив для мобильных
+- [x] Сделать адаптив для мобильных
 - [x] Пофиксить robots.txt при тестах
 - [ ] Наполнить FAQ контентом
 - [ ] Продумать систему переменных для светлой и темной темы
