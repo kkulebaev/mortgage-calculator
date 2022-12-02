@@ -45,15 +45,23 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 6rem;
-  height: 6rem;
+  padding: 1.5rem;
+}
+
+.nav__link:hover > .nav__icon {
+  color: var(--secondary);
 }
 
 .nav__icon {
   color: var(--black);
+  transition: all 0.2s ease-in-out;
 }
 
 .router-link-active {
   background: var(--white);
+}
+
+.router-link-active > .nav__icon {
+  color: var(--secondary);
 }
 </style>

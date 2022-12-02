@@ -69,7 +69,9 @@ export default defineComponent({
 })
 </script>
 
-<style lang='postcss' scoped>
+<style lang="postcss" scoped>
+@import '@/assets/styles/vars.css';
+
 .detail-info {
   display: flex;
   flex-direction: column;
@@ -96,5 +98,16 @@ export default defineComponent({
 .pagination {
   margin-top: auto;
   justify-content: end;
+}
+
+@media (--mobile) {
+  .header {
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .base-table {
+    margin: auto;
+  }
 }
 </style>

@@ -153,7 +153,9 @@ export default defineComponent({
 })
 </script>
 
-<style lang='postcss' scoped>
+<style lang="postcss" scoped>
+@import '@/assets/styles/vars.css';
+
 .form {
   display: flex;
   flex-wrap: wrap;
@@ -169,7 +171,7 @@ export default defineComponent({
 
 .form-item__label {
   color: var(--black);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   width: fit-content;
   cursor: default;
   position: relative;
@@ -177,5 +179,16 @@ export default defineComponent({
 
 .form-item__select {
   max-width: 7rem;
+}
+
+@media (--mobile-tablet) {
+  .form {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .form-item {
+    width: 100%;
+  }
 }
 </style>

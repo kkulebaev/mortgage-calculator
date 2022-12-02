@@ -56,6 +56,8 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
+@import '@/assets/styles/vars.css';
+
 .histogram {
   display: flex;
   flex-direction: column;
@@ -85,5 +87,11 @@ export default defineComponent({
 
 .histogram__scale-bar.secondary {
   background-color: var(--secondary);
+}
+
+@media (--mobile) {
+  .histogram__scale-bar {
+    min-width: auto;
+  }
 }
 </style>

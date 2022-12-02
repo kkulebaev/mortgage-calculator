@@ -1,5 +1,5 @@
 <template>
-  <ElTable :data="data" empty-text="Нет данных">
+  <ElTable class="base-table" :data="data" empty-text="Нет данных">
     <ElTableColumn
       v-for="field in fields"
       :key="field.prop"

@@ -66,6 +66,8 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
+@import '@/assets/styles/vars.css';
+
 .result-block {
   display: flex;
   flex-direction: column;
@@ -91,5 +93,11 @@ export default defineComponent({
 
 .transition {
   --animate-duration: 1s;
+}
+
+@media (--mobile-tablet) {
+  .result-block {
+    gap: 1rem;
+  }
 }
 </style>
