@@ -1,6 +1,6 @@
 import { type Ref, computed } from 'vue'
 
-export default function usePagination<T>(
+export function usePagination<T>(
   items: Ref<Array<T>>,
   pageNumber: Ref<number>,
   size: Ref<number>

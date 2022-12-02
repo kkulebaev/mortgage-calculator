@@ -1,1 +1,2 @@
-export { default as usePagination } from './use-pagination'
+export { useBreakpoints } from './use-breakpoints'
+export { usePagination } from './use-pagination'
