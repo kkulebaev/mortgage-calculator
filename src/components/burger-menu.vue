@@ -51,6 +51,7 @@ export default defineComponent({
   justify-content: center;
   width: 6rem;
 }
+
 .burger {
   padding: 1.5rem;
   cursor: pointer;
