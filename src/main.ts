@@ -1,3 +1,4 @@
+import './plugins/color-scheme'
 import './plugins/fontawesome'
 
 import { createPinia } from 'pinia'
