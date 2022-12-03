@@ -48,20 +48,20 @@ export default defineComponent({
   padding: 1.5rem;
 }
 
-.nav__link:hover > .nav__icon {
-  color: var(--secondary);
-}
-
 .nav__icon {
   color: var(--black);
   transition: all 0.2s ease-in-out;
 }
 
-.router-link-active {
-  background: var(--white);
-}
-
 .router-link-active > .nav__icon {
   color: var(--secondary);
+}
+
+.nav__link:hover > .nav__icon {
+  color: var(--secondary);
+}
+
+.router-link-active {
+  background: var(--white);
 }
 </style>

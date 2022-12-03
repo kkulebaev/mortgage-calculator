@@ -45,18 +45,6 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
-.switcher__radio {
-  filter: invert(0);
-}
-
-.switcher__radio:checked {
-  filter: invert(1);
-}
-
-.switcher__status {
-  filter: invert(0);
-}
-
 .switcher {
   position: relative;
   margin: 0;
@@ -82,6 +70,11 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-size: 24px;
   transition: all 0.1s ease-in;
+  filter: invert(0);
+}
+
+.switcher__radio:checked {
+  filter: invert(1);
 }
 
 .switcher__radio:hover {
@@ -115,6 +108,7 @@ export default defineComponent({
   background-size: 32px;
   background-position: center;
   transition: background-position 0.1s ease-in;
+  filter: invert(0);
 }
 
 .switcher__radio:focus-visible ~ .switcher__status {

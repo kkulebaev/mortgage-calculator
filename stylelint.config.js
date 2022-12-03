@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@gitlab/stylelint-config', 'stylelint-config-html/vue'],
+  extends: ['@gitlab/stylelint-config', 'stylelint-config-recommended-vue'],
 
   rules: {
     'color-hex-length': 'long',
