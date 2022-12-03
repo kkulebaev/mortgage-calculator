@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="mortgage-calculator">
     <div class="app-wrapper">
       <AppNav class="app__nav" />
       <div class="container">
@@ -46,7 +46,7 @@ export default defineComponent({
 <style lang="postcss" scoped>
 @import './assets/styles/vars.css';
 
-.app {
+.mortgage-calculator {
   display: flex;
   align-items: center;
   justify-content: center;
