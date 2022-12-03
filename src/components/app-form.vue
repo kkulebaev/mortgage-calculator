@@ -2,49 +2,49 @@
   <form class="form" netlify>
     <div class="form-item">
       <span class="form-item__label"> Сумма ипотеки </span>
-      <ElInput
-        v-model="mortgageAmountValue"
-        placeholder="50 000"
-        :maxlength="13"
+      <ElInputNumber
+        v-model="curAmount"
+        :min="1"
+        :max="100000000000"
+        :step="100000"
+        :value-on-clear="100000"
         @input="$emit('change')"
-      >
-        <template #append>руб</template>
-      </ElInput>
+      />
     </div>
     <div class="form-item">
       <span class="form-item__label"> Срок ипотеки </span>
-      <ElInput
-        v-model="mortgageTermValue"
-        placeholder="10"
-        :maxlength="3"
-        @input="$emit('change')"
-      >
-        <template #append>
-          <BaseSelect
-            v-model="mortgagePeriodValue"
-            class="form-item__select"
-            :options="PERIOD_OPTIONS"
-            @change="$emit('change')"
-          />
-        </template>
-      </ElInput>
+      <div class="form-item__group">
+        <ElInputNumber
+          v-model="curTerm"
+          :min="1"
+          :max="1000"
+          :step="1"
+          :value-on-clear="1"
+          @input="$emit('change')"
+        />
+        <BaseSelect
+          v-model="curPeriod"
+          class="form-item__select"
+          :options="PERIOD_OPTIONS"
+          @change="$emit('change')"
+        />
+      </div>
     </div>
     <div class="form-item">
       <span class="form-item__label"> Годовая процентная ставка </span>
       <ElInputNumber
-        v-model="mortgageRateValue"
+        v-model="curRate"
         :min="0.1"
         :max="1000"
         :step="0.1"
         :value-on-clear="0.1"
-        controls-position="right"
         @input="$emit('change')"
       />
     </div>
     <div class="form-item">
       <span class="form-item__label"> Тип платежей </span>
       <BaseSelect
-        v-model="paymentTypeValue"
+        v-model="curPaymentType"
         :options="TYPE_MORTGAGE_OPTIONS"
         @change="$emit('change')"
       />
@@ -53,10 +53,10 @@
 </template>
 
 <script lang="ts">
-import { useVModel } from '@vueuse/core'
-import { ElInput, ElInputNumber } from 'element-plus'
+import { useVModels } from '@vueuse/core'
+import { ElInputNumber } from 'element-plus'
 import type { PropType } from 'vue'
-import { computed, defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 
 import {
   MORTGAGE_TYPE,
@@ -64,7 +64,6 @@ import {
   PERIOD_OPTIONS,
   TYPE_MORTGAGE_OPTIONS,
 } from '@/helpers'
-import { numberWithSpaces, toNumber } from '@/utils'
 
 import BaseSelect from './base/base-select.vue'
 
@@ -73,27 +72,26 @@ export default defineComponent({
 
   components: {
     BaseSelect,
-    ElInput,
     ElInputNumber,
   },
 
   props: {
-    mortgageAmount: {
+    amount: {
       type: Number,
       required: true,
     },
 
-    mortgageTerm: {
+    term: {
       type: Number,
       required: true,
     },
 
-    mortgagePeriod: {
+    period: {
       type: String as PropType<PERIOD>,
       required: true,
     },
 
-    mortgageRate: {
+    rate: {
       type: Number,
       required: true,
     },
@@ -105,47 +103,29 @@ export default defineComponent({
   },
 
   emits: [
+    'update:amount',
+    'update:term',
+    'update:period',
+    'update:rate',
     'update:paymentType',
-    'update:mortgageAmount',
-    'update:mortgageTerm',
-    'update:mortgagePeriod',
-    'update:mortgageRate',
     'change',
   ],
 
   setup(props, { emit }) {
-    const mortgageAmountValue = computed({
-      get() {
-        return numberWithSpaces(props.mortgageAmount)
-      },
-      set(value) {
-        if (typeof value === 'number') {
-          emit('update:mortgageAmount', toNumber(value))
-        }
-      },
-    })
-
-    const mortgageTermValue = computed({
-      get() {
-        return numberWithSpaces(props.mortgageTerm)
-      },
-      set(value) {
-        if (typeof value === 'number') {
-          emit('update:mortgageTerm', toNumber(value))
-        }
-      },
-    })
-
-    const mortgagePeriodValue = useVModel(props, 'mortgagePeriod', emit)
-    const mortgageRateValue = useVModel(props, 'mortgageRate', emit)
-    const paymentTypeValue = useVModel(props, 'paymentType', emit)
+    const {
+      amount: curAmount,
+      term: curTerm,
+      period: curPeriod,
+      rate: curRate,
+      paymentType: curPaymentType,
+    } = useVModels(props, emit)
 
     return {
-      mortgageAmountValue,
-      mortgageTermValue,
-      mortgagePeriodValue,
-      mortgageRateValue,
-      paymentTypeValue,
+      curAmount,
+      curTerm,
+      curPeriod,
+      curRate,
+      curPaymentType,
       TYPE_MORTGAGE_OPTIONS,
       PERIOD_OPTIONS,
     }
@@ -175,6 +155,11 @@ export default defineComponent({
   width: fit-content;
   cursor: default;
   position: relative;
+}
+
+.form-item__group {
+  display: flex;
+  gap: 1rem;
 }
 
 .form-item__select {

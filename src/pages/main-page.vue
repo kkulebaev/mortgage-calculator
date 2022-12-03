@@ -11,11 +11,11 @@
         <ColorSchemeSwitcher v-if="!isMobile" class="header__switcher" />
       </header>
       <AppForm
+        v-model:amount="inputValues.amount"
+        v-model:term="inputValues.term"
+        v-model:period="inputValues.period"
+        v-model:rate="inputValues.rate"
         v-model:paymentType="inputValues.type"
-        v-model:mortgageAmount="inputValues.amount"
-        v-model:mortgageTerm="inputValues.term"
-        v-model:mortgagePeriod="inputValues.period"
-        v-model:mortgageRate="inputValues.rate"
         @change="clearOutput"
       />
       <img
@@ -32,7 +32,7 @@
       :take-value="outputValues.takeValue"
       :repay-value="outputValues.repayValue"
       :overpayment-value="outputValues.overpaymentValue"
-      @submit-form="calcMortgage(inputValues)"
+      @submit-form="onCalcHandler(inputValues)"
     />
   </div>
 </template>
@@ -40,6 +40,7 @@
 <script lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { onKeyStroke } from '@vueuse/core'
+import { ElNotification } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { defineComponent, ref } from 'vue'
 
@@ -51,6 +52,7 @@ import {
   SocialNetworks,
 } from '@/components'
 import { useBreakpoints } from '@/composables'
+import type { Input } from '@/helpers'
 import { DEFAULT_INPUT } from '@/helpers'
 import { useMainStore } from '@/store'
 
@@ -67,20 +69,46 @@ export default defineComponent({
   },
 
   setup() {
+    type ErrorTuple = [true] | [false, string]
+
     const mainStore = useMainStore()
     const { outputValues } = storeToRefs(mainStore)
     const { calcMortgage, clearOutput } = mainStore
 
     const inputValues = ref(DEFAULT_INPUT())
 
-    onKeyStroke('Enter', () => calcMortgage(inputValues.value))
+    onKeyStroke('Enter', () => onCalcHandler(inputValues.value))
+
+    const onCalcHandler = (inputValues: Input): void => {
+      const [isValid, error] = isValidForm(inputValues)
+      if (!isValid) {
+        ElNotification.error(error)
+        return
+      }
+
+      calcMortgage(inputValues)
+    }
+
+    const isValidForm = (inputValues: Input): ErrorTuple => {
+      if (inputValues.amount <= 0)
+        return [false, 'Введите корректное значение в поле "Сумма ипотеки"']
+      if (inputValues.term <= 0)
+        return [false, 'Введите корректное значение в поле "Срок ипотеки"']
+      if (inputValues.rate <= 0)
+        return [
+          false,
+          'Введите корректное значение в поле "Годовая процентная ставка"',
+        ]
+
+      return [true]
+    }
 
     const { isDesktop, isMobile } = useBreakpoints()
 
     return {
       inputValues,
       outputValues,
-      calcMortgage,
+      onCalcHandler,
       clearOutput,
       isDesktop,
       isMobile,
