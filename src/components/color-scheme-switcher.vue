@@ -22,19 +22,16 @@
 </template>
 
 <script lang="ts">
-import { useColorMode } from '@vueuse/core'
 import { defineComponent } from 'vue'
 
+import { useColorScheme } from '@/composables'
 import { COLOR_SCHEME } from '@/helpers'
 
 export default defineComponent({
   name: 'ColorSchemeSwitcher',
 
   setup() {
-    const colorScheme = useColorMode<COLOR_SCHEME>({
-      initialValue: COLOR_SCHEME.light,
-      storageKey: 'color-scheme',
-    })
+    const { colorScheme } = useColorScheme()
 
     return {
       COLOR_SCHEME,
