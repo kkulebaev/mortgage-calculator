@@ -22,7 +22,7 @@ specifiers:
   eslint-plugin-vue: 9.8.0
   jsdom: 20.0.3
   nano-staged: 0.8.0
-  pinia: 2.0.27
+  pinia: 2.0.28
   postcss: 8.4.19
   postcss-custom-media: 9.0.1
   postcss-html: 1.5.0
@@ -46,7 +46,7 @@ dependencies:
   '@vueuse/core': 9.6.0_vue@3.2.45
   animate.css: 4.1.1
   element-plus: 2.2.26_vue@3.2.45
-  pinia: 2.0.27_mgnvym7yiazkylwwogi5r767ue
+  pinia: 2.0.28_mgnvym7yiazkylwwogi5r767ue
   vue: 3.2.45
   vue-router: 4.1.6_vue@3.2.45
 
@@ -2404,8 +2404,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /pinia/2.0.27_mgnvym7yiazkylwwogi5r767ue:
-    resolution: {integrity: sha512-nOnXP0OFeL8R4WjAHsterU+11vptda643gH02xKNtSCDPiRzVfRYodOLihLDoa0gL1KKuQKV+KOzEgdt3YvqEw==}
+  /pinia/2.0.28_mgnvym7yiazkylwwogi5r767ue:
+    resolution: {integrity: sha512-YClq9DkqCblq9rlyUual7ezMu/iICWdBtfJrDt4oWU9Zxpijyz7xB2xTwx57DaBQ96UGvvTMORzALr+iO5PVMw==}
     peerDependencies:
       '@vue/composition-api': ^1.4.0
       typescript: '>=4.4.4'
