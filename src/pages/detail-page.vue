@@ -18,7 +18,10 @@
       <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
       <BasePagination v-model="pageNumber" :total="total" :page-size="size" />
     </template>
-    <ElEmpty v-else description="Нет данных" />
+    <ElEmpty
+      v-else
+      description="Выполните расчет, чтобы увидеть график платежей"
+    />
   </div>
 </template>
 
