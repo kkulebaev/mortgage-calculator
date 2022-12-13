@@ -2,17 +2,7 @@
   <div class="detail-info">
     <header class="header">
       <PageTitle title="График платежей" />
-      <div class="description">
-        <span>
-          Сумма ипотеки: {{ numberWithSpaces(inputValues.amount) }} RUB
-        </span>
-        <span>
-          Срок ипотеки: {{ inputValues.term }}
-          {{ PERIOD_LABEL[inputValues.period] }}
-        </span>
-        <span> Годовая процентная ставка: {{ inputValues.rate }} % </span>
-        <span> Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.type] }} </span>
-      </div>
+      <DetailDescription :input-values="inputValues" />
     </header>
     <template v-if="paginatedData.length">
       <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
@@ -20,6 +10,7 @@
     </template>
     <ElEmpty
       v-else
+      class="detail-info__empty"
       description="Выполните расчет, чтобы увидеть график платежей"
     />
   </div>
@@ -30,11 +21,15 @@ import { ElEmpty } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { defineComponent, ref, toRef } from 'vue'
 
-import { BasePagination, BaseTable, PageTitle } from '@/components'
+import {
+  BasePagination,
+  BaseTable,
+  DetailDescription,
+  PageTitle,
+} from '@/components'
 import { usePagination } from '@/composables'
 import { DETAIL_FIELDS, MORTGAGE_TYPE_LABEL, PERIOD_LABEL } from '@/helpers'
 import { useMainStore } from '@/store'
-import { numberWithSpaces } from '@/utils'
 
 export default defineComponent({
   name: 'DetailPage',
@@ -42,6 +37,7 @@ export default defineComponent({
   components: {
     BaseTable,
     BasePagination,
+    DetailDescription,
     PageTitle,
     ElEmpty,
   },
@@ -66,7 +62,6 @@ export default defineComponent({
       pageNumber,
       total,
       size,
-      numberWithSpaces,
     }
   },
 })
@@ -82,20 +77,19 @@ export default defineComponent({
   height: 100%;
 }
 
+.detail-info__empty {
+  margin: auto;
+}
+
 .header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 2rem;
 }
 
 .description {
-  display: flex;
-  flex-flow: row wrap;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 1.4rem;
-  color: var(--dark-gray);
+  text-align: right;
 }
 
 .pagination {
@@ -107,10 +101,15 @@ export default defineComponent({
   .header {
     gap: 1rem;
     flex-direction: column;
+    align-items: stretch;
   }
 
   .base-table {
-    margin: auto;
+    font-size: inherit;
+  }
+
+  .description {
+    text-align: justify;
   }
 }
 </style>
