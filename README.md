@@ -6,7 +6,7 @@
 
 ## App Preview
 
-Demo available on https://calculator-mortgage.netlify.app/
+Demo available on https://calculator-mortgage.netlify.app
 
 ## Installation Steps for Development
 
