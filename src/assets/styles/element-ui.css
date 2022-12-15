@@ -2,6 +2,14 @@
 @import 'element-plus/dist/index.css';
 @import 'element-plus/theme-chalk/dark/css-vars.css';
 
+:root {
+  --el-color-primary: var(--primary);
+}
+
+html.dark {
+  --el-color-primary: var(--primary);
+}
+
 .el-input-number span[role='button'] {
   background-color: transparent;
 }
@@ -12,9 +20,4 @@
 
 .el-input-number {
   width: 100%;
-}
-
-.el-popper[role='tooltip'] {
-  max-width: 45rem;
-  text-align: justify;
 }
