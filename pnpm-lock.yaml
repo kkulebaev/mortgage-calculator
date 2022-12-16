@@ -14,7 +14,7 @@ specifiers:
   '@vue/test-utils': 2.2.6
   '@vueuse/core': 9.6.0
   animate.css: 4.1.1
-  element-plus: 2.2.26
+  element-plus: 2.2.27
   eslint: 8.29.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-simple-import-sort: 8.0.0
@@ -45,7 +45,7 @@ dependencies:
   '@fortawesome/vue-fontawesome': 3.0.2_bd5ipvhrqmkjz6wvo6sgrei224
   '@vueuse/core': 9.6.0_vue@3.2.45
   animate.css: 4.1.1
-  element-plus: 2.2.26_vue@3.2.45
+  element-plus: 2.2.27_vue@3.2.45
   pinia: 2.0.28_prq2uz4lho2pwp6irk4cfkrxwu
   vue: 3.2.45
   vue-router: 4.1.6_vue@3.2.45
@@ -1284,8 +1284,8 @@ packages:
       domhandler: 5.0.3
     dev: true
 
-  /element-plus/2.2.26_vue@3.2.45:
-    resolution: {integrity: sha512-O/rdY5m9DkclpVg8r3GynyqCunm7MxSR142xSsjrZA77bi7bcwA3SIy6SPEDqHi5R4KqgkGYgKSp4Q4e3irbYg==}
+  /element-plus/2.2.27_vue@3.2.45:
+    resolution: {integrity: sha512-P04HDOZBYDdvlYuleuCZRULzAc5xJVOBfLDK9xWxVo0vyo8ntdaXS5sTU+/76vrNzuO3FhLn9kvrsbiJEVa1jg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
