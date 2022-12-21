@@ -12,7 +12,7 @@ specifiers:
   '@vitejs/plugin-vue': 4.0.0
   '@vitest/ui': 0.25.8
   '@vue/test-utils': 2.2.6
-  '@vueuse/core': 9.6.0
+  '@vueuse/core': 9.8.2
   animate.css: 4.1.1
   element-plus: 2.2.26
   eslint: 8.29.0
@@ -43,7 +43,7 @@ dependencies:
   '@fortawesome/free-regular-svg-icons': 6.2.1
   '@fortawesome/free-solid-svg-icons': 6.2.1
   '@fortawesome/vue-fontawesome': 3.0.2_bd5ipvhrqmkjz6wvo6sgrei224
-  '@vueuse/core': 9.6.0_vue@3.2.45
+  '@vueuse/core': 9.8.2_vue@3.2.45
   animate.css: 4.1.1
   element-plus: 2.2.26_vue@3.2.45
   pinia: 2.0.28_prq2uz4lho2pwp6irk4cfkrxwu
@@ -835,24 +835,24 @@ packages:
       vue: 3.2.45
     dev: true
 
-  /@vueuse/core/9.6.0_vue@3.2.45:
-    resolution: {integrity: sha512-qGUcjKQXHgN+jqXEgpeZGoxdCbIDCdVPz3QiF1uyecVGbMuM63o96I1GjYx5zskKgRI0FKSNsVWM7rwrRMTf6A==}
+  /@vueuse/core/9.8.2_vue@3.2.45:
+    resolution: {integrity: sha512-aWiCmcYIpPt7xjuqYiceODEMHchDYthrJ4AqI+FXPZrR23PZOqdiktbUVyQl2kGlR3H4i9UJ/uimQrwhz9UouQ==}
     dependencies:
       '@types/web-bluetooth': 0.0.16
-      '@vueuse/metadata': 9.6.0
-      '@vueuse/shared': 9.6.0_vue@3.2.45
+      '@vueuse/metadata': 9.8.2
+      '@vueuse/shared': 9.8.2_vue@3.2.45
       vue-demi: 0.13.11_vue@3.2.45
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
     dev: false
 
-  /@vueuse/metadata/9.6.0:
-    resolution: {integrity: sha512-sIC8R+kWkIdpi5X2z2Gk8TRYzmczDwHRhEFfCu2P+XW2JdPoXrziqsGpDDsN7ykBx4ilwieS7JUIweVGhvZ93w==}
+  /@vueuse/metadata/9.8.2:
+    resolution: {integrity: sha512-N4E/BKS+9VsUeD4WLVRU1J2kCOLh+iikBcMtipFcTyL204132vDYHs27zLAVabJYGnhC0dIVGdhg9pbOZiY2TQ==}
     dev: false
 
-  /@vueuse/shared/9.6.0_vue@3.2.45:
-    resolution: {integrity: sha512-/eDchxYYhkHnFyrb00t90UfjCx94kRHxc7J1GtBCqCG4HyPMX+krV9XJgVtWIsAMaxKVU4fC8NSUviG1JkwhUQ==}
+  /@vueuse/shared/9.8.2_vue@3.2.45:
+    resolution: {integrity: sha512-ACjrPQzowd5dnabNJt9EoGVobco9/ENiA5qP53vjiuxndlJYuc/UegwhXC7KdQbPX4F45a50+45K3g1wNqOzmA==}
     dependencies:
       vue-demi: 0.13.11_vue@3.2.45
     transitivePeerDependencies:
@@ -1295,7 +1295,7 @@ packages:
       '@popperjs/core': /@sxzz/popperjs-es/2.11.7
       '@types/lodash': 4.14.188
       '@types/lodash-es': 4.17.6
-      '@vueuse/core': 9.6.0_vue@3.2.45
+      '@vueuse/core': 9.8.2_vue@3.2.45
       async-validator: 4.2.5
       dayjs: 1.11.6
       escape-html: 1.0.3
