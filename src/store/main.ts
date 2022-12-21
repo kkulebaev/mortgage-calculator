@@ -20,12 +20,7 @@ export const useMainStore = defineStore('main', {
       this.inputValues = input
       const response = await this.postCalculateMortgage(input)
       if (response) {
-        this.outputValues = {
-          takeValue: response.take_value,
-          repayValue: response.repay_value,
-          overpaymentValue: response.overpayment_value,
-          paymentTable: response.payment_table,
-        }
+        this.outputValues = response
       }
     },
 

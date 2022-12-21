@@ -7,7 +7,7 @@
     </span>
     <span> Годовая процентная ставка: {{ inputValues.rate }} % </span>
     <span>
-      Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.mortgage_type] }}
+      Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.mortgageType] }}
     </span>
   </div>
 </template>
