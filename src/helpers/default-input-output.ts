@@ -2,10 +2,10 @@ import { MORTGAGE_TYPE, PERIOD } from '@/helpers'
 
 export interface PaymentByMonth {
   id: number
-  monthPay: number
-  repayPer: number
-  repayBody: number
-  debtEnd: number
+  month_pay: number
+  repay_per: number
+  repay_body: number
+  debt_end: number
 }
 
 export interface Input {
@@ -13,7 +13,7 @@ export interface Input {
   term: number
   period: PERIOD
   rate: number
-  type: MORTGAGE_TYPE
+  mortgage_type: MORTGAGE_TYPE
 }
 
 export interface Output {
@@ -28,7 +28,7 @@ export const DEFAULT_INPUT = (): Input => ({
   term: 12,
   period: PERIOD.months,
   rate: 10,
-  type: MORTGAGE_TYPE.an,
+  mortgage_type: MORTGAGE_TYPE.an,
 })
 
 export const DEFAULT_OUTPUT = (): Output => ({
