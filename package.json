@@ -23,6 +23,7 @@
     "@fortawesome/vue-fontawesome": "3.0.2",
     "@vueuse/core": "9.8.2",
     "animate.css": "4.1.1",
+    "axios": "1.2.1",    
     "element-plus": "2.2.27",
     "pinia": "2.0.28",
     "vue": "3.2.45",
