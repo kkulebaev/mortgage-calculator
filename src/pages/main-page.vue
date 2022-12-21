@@ -15,7 +15,7 @@
         v-model:term="inputValues.term"
         v-model:period="inputValues.period"
         v-model:rate="inputValues.rate"
-        v-model:paymentType="inputValues.mortgage_type"
+        v-model:paymentType="inputValues.mortgageType"
         @change="clearOutput"
       />
       <img
