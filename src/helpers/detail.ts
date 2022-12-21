@@ -6,22 +6,22 @@ export const DETAIL_FIELDS = [
     align: 'center',
   },
   {
-    prop: 'monthPay',
+    prop: 'month_pay',
     label: 'Ежемесячный платеж (р.)',
     align: 'center',
   },
   {
-    prop: 'repayBody',
+    prop: 'repay_body',
     label: 'Погашение тела кредита (р.)',
     align: 'center',
   },
   {
-    prop: 'repayPer',
+    prop: 'repay_per',
     label: 'Погашение процентов (р.)',
     align: 'center',
   },
   {
-    prop: 'debtEnd',
+    prop: 'debt_end',
     label: 'Долг на конец месяца (р.)',
     align: 'center',
   },
