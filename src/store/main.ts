@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 
+import { apiClient } from '@/api'
 import type { Input, Output } from '@/helpers'
 import { DEFAULT_INPUT, DEFAULT_OUTPUT } from '@/helpers'
-import { calcMortgage } from '@/services'
 
 interface State {
   inputValues: Input
@@ -16,9 +16,26 @@ export const useMainStore = defineStore('main', {
   }),
 
   actions: {
-    calcMortgage(input: Input) {
+    async calcMortgage(input: Input) {
       this.inputValues = input
-      this.outputValues = calcMortgage(input)
+      const response = await this.postCalculateMortgage(input)
+      if (response) {
+        this.outputValues = {
+          takeValue: response.take_value,
+          repayValue: response.repay_value,
+          overpaymentValue: response.overpayment_value,
+          paymentTable: response.payment_table,
+        }
+      }
+    },
+
+    async postCalculateMortgage(input: Input) {
+      try {
+        const { data } = await apiClient.calculate.calculateMortgage(input)
+        return data
+      } catch (error) {
+        return null
+      }
     },
 
     clearOutput() {

@@ -4,6 +4,7 @@
       v-for="field in fields"
       :key="field.prop"
       :prop="field.prop"
+      :formatter="getFormatter(field.type)"
       :label="field.label"
       :width="field.width"
       :align="field.align"
@@ -16,9 +17,13 @@ import { ElTable, ElTableColumn } from 'element-plus'
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 
+import { CellType } from '@/helpers'
+import { numberWithSpaces } from '@/utils'
+
 interface TableColumn {
   prop: string
   label: string
+  type: CellType
   width?: number
   align?: string
 }
@@ -41,6 +46,23 @@ export default defineComponent({
       type: Array as PropType<Readonly<TableColumn[]>>,
       required: true,
     },
+  },
+
+  setup() {
+    const numberWithSpacesFormatter = (row: any, col: any, cellValue: any) =>
+      numberWithSpaces(cellValue)
+
+    function getFormatter(cellType: string): any {
+      if (cellType === CellType.number) {
+        return numberWithSpacesFormatter
+      }
+
+      return undefined
+    }
+
+    return {
+      getFormatter,
+    }
   },
 })
 </script>
