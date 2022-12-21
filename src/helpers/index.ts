@@ -1,7 +1,7 @@
 export { COLOR_SCHEME } from './color-scheme'
 export type { Input, Output, PaymentByMonth } from './default-input-output'
 export { DEFAULT_INPUT, DEFAULT_OUTPUT } from './default-input-output'
-export { DETAIL_FIELDS } from './detail'
+export { CellType, DETAIL_FIELDS } from './detail'
 export { FAQ } from './faq'
 export {
   MORTGAGE_TYPE,
