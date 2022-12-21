@@ -1,27 +1,37 @@
+export enum CellType {
+  string = 'string',
+  number = 'number',
+}
+
 export const DETAIL_FIELDS = [
   {
     prop: 'id',
+    type: CellType.number,
     label: 'ID',
     width: 80,
     align: 'center',
   },
   {
-    prop: 'monthPay',
+    prop: 'month_pay',
+    type: CellType.number,
     label: 'Ежемесячный платеж (р.)',
     align: 'center',
   },
   {
-    prop: 'repayBody',
+    prop: 'repay_body',
+    type: CellType.number,
     label: 'Погашение тела кредита (р.)',
     align: 'center',
   },
   {
-    prop: 'repayPer',
+    prop: 'repay_per',
+    type: CellType.number,
     label: 'Погашение процентов (р.)',
     align: 'center',
   },
   {
-    prop: 'debtEnd',
+    prop: 'debt_end',
+    type: CellType.number,
     label: 'Долг на конец месяца (р.)',
     align: 'center',
   },
