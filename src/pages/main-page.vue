@@ -32,6 +32,7 @@
       :take-value="outputValues.takeValue"
       :repay-value="outputValues.repayValue"
       :overpayment-value="outputValues.overpaymentValue"
+      :is-loading="isLoading"
       @submit-form="onCalcHandler(inputValues)"
     />
   </div>
@@ -72,7 +73,7 @@ export default defineComponent({
     type ErrorTuple = [true] | [false, string]
 
     const mainStore = useMainStore()
-    const { outputValues } = storeToRefs(mainStore)
+    const { outputValues, isLoading } = storeToRefs(mainStore)
     const { calcMortgage, clearOutput } = mainStore
 
     const inputValues = ref(DEFAULT_INPUT())
@@ -86,7 +87,9 @@ export default defineComponent({
         return
       }
 
-      calcMortgage(inputValues)
+      calcMortgage(inputValues).catch(() => {
+        ElNotification.error('Не удалось получить ответ с сервера')
+      })
     }
 
     const isValidForm = (inputValues: Input): ErrorTuple => {
@@ -110,6 +113,7 @@ export default defineComponent({
       outputValues,
       onCalcHandler,
       clearOutput,
+      isLoading,
       isDesktop,
       isMobile,
     }

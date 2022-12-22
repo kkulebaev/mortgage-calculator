@@ -7,30 +7,31 @@ import { DEFAULT_INPUT, DEFAULT_OUTPUT } from '@/helpers'
 interface State {
   inputValues: Input
   outputValues: Output
+  isLoading: boolean
 }
 
 export const useMainStore = defineStore('main', {
   state: (): State => ({
     inputValues: DEFAULT_INPUT(),
     outputValues: DEFAULT_OUTPUT(),
+    isLoading: false,
   }),
 
   actions: {
     async calcMortgage(input: Input) {
-      this.inputValues = input
-      const response = await this.postCalculateMortgage(input)
-      if (response) {
-        this.outputValues = response
-      }
-    },
+      this.isLoading = true
 
-    async postCalculateMortgage(input: Input) {
-      try {
-        const { data } = await apiClient.calculate.calculateMortgage(input)
-        return data
-      } catch (error) {
-        return null
-      }
+      const { data } = await apiClient.calculate
+        .calculateMortgage(input)
+        .catch(error => {
+          throw Error(error)
+        })
+        .finally(() => {
+          this.isLoading = false
+        })
+
+      this.inputValues = input
+      this.outputValues = data
     },
 
     clearOutput() {
