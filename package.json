@@ -33,7 +33,7 @@
     "@gitlab/stylelint-config": "4.1.0",
     "@typescript-eslint/eslint-plugin": "5.58.0",
     "@typescript-eslint/parser": "5.58.0",
-    "@vitejs/plugin-vue": "4.0.0",
+    "@vitejs/plugin-vue": "4.1.0",
     "@vitest/ui": "0.30.1",
     "@vue/test-utils": "2.2.6",
     "eslint": "8.38.0",
