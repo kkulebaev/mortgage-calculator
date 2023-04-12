@@ -10,6 +10,7 @@
     "lint:fix": "eslint --ext .js,.ts,.vue src --fix",
     "lint:types": "vue-tsc",
     "lint:style": "stylelint \"**/*.{css,vue}\"",
+    "stylelint:fix": "stylelint \"**/*.{css,vue}\" --fix",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:ui": "vitest --ui",
