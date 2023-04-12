@@ -134,7 +134,7 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
-@import '@/assets/styles/vars.css';
+@import url('@/assets/styles/vars.css');
 
 .form {
   display: flex;

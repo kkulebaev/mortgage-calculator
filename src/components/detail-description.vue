@@ -43,8 +43,7 @@ export default defineComponent({
 <style lang="postcss" scoped>
 .description {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   gap: 0.5rem;
   font-size: 1.2rem;
   color: var(--dark-gray);

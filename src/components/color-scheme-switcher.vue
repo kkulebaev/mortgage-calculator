@@ -92,14 +92,11 @@ export default defineComponent({
 
 .switcher__status {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: -1;
-  box-shadow: 0 0 0 2px rgb(0 0 0 / 0.2);
+  box-shadow: 0 0 0 2px rgb(0 0 0 / 20%);
   border-radius: 18px;
-  background-color: rgb(255 255 255 / 0.5);
+  background-color: rgb(255 255 255 / 50%);
   background-repeat: no-repeat;
   background-image: url('../assets/img/status.svg');
   background-size: 32px;
