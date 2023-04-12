@@ -1,6 +1,6 @@
 /* stylelint-disable selector-class-pattern */
-@import 'element-plus/dist/index.css';
-@import 'element-plus/theme-chalk/dark/css-vars.css';
+@import url('element-plus/dist/index.css');
+@import url('element-plus/theme-chalk/dark/css-vars.css');
 
 :root {
   --el-color-primary: var(--primary);

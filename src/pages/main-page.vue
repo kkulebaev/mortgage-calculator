@@ -122,7 +122,7 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
-@import '@/assets/styles/vars.css';
+@import url('@/assets/styles/vars.css');
 
 .main-page {
   display: flex;
@@ -151,6 +151,7 @@ export default defineComponent({
 .app-logo {
   display: block;
   padding: 1rem;
+
   /* width: 48px; */
   background-color: var(--primary);
   color: var(--white);

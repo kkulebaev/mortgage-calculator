@@ -44,7 +44,7 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
-@import './assets/styles/vars.css';
+@import url('./assets/styles/vars.css');
 
 .mortgage-calculator {
   display: flex;
@@ -84,7 +84,6 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
     padding: 2rem;
   }
 

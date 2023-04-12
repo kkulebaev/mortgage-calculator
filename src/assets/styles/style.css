@@ -1,5 +1,5 @@
-@import './vars';
-@import './normalize';
-@import './common';
-@import 'animate.css/source/animate.css';
-@import './element-ui';
+@import url('./vars');
+@import url('./normalize');
+@import url('./common');
+@import url('animate.css/source/animate.css');
+@import url('./element-ui');
