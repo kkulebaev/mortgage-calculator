@@ -1,4 +1,4 @@
-import { type Ref, computed } from 'vue'
+import { computed,type Ref } from 'vue'
 
 export function usePagination<T>(
   items: Ref<Array<T>>,
