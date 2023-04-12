@@ -43,7 +43,7 @@ jobs:
       - name: Install dependencies
         run: corepack pnpm install
       - name: Run stylelint
-        run: npm run lint:style
+        run: npm run stylelint
 
   test:
     runs-on: ubuntu-latest
