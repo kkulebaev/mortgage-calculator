@@ -15,7 +15,7 @@
         v-model:term="inputValues.term"
         v-model:period="inputValues.period"
         v-model:rate="inputValues.rate"
-        v-model:paymentType="inputValues.mortgageType"
+        v-model:paymentType="inputValues.type"
         @change="clearOutput"
       />
       <img
@@ -32,7 +32,6 @@
       :take-value="outputValues.takeValue"
       :repay-value="outputValues.repayValue"
       :overpayment-value="outputValues.overpaymentValue"
-      :is-loading="isLoading"
       @submit-form="onCalcHandler(inputValues)"
     />
   </div>
@@ -73,7 +72,7 @@ export default defineComponent({
     type ErrorTuple = [true] | [false, string]
 
     const mainStore = useMainStore()
-    const { outputValues, isLoading } = storeToRefs(mainStore)
+    const { outputValues } = storeToRefs(mainStore)
     const { calcMortgage, clearOutput } = mainStore
 
     const inputValues = ref(DEFAULT_INPUT())
@@ -87,9 +86,7 @@ export default defineComponent({
         return
       }
 
-      calcMortgage(inputValues).catch(() => {
-        ElNotification.error('Не удалось получить ответ с сервера')
-      })
+      calcMortgage(inputValues)
     }
 
     const isValidForm = (inputValues: Input): ErrorTuple => {
@@ -113,7 +110,6 @@ export default defineComponent({
       outputValues,
       onCalcHandler,
       clearOutput,
-      isLoading,
       isDesktop,
       isMobile,
     }
@@ -122,7 +118,7 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
-@import url('@/assets/styles/vars.css');
+@import '@/assets/styles/vars.css';
 
 .main-page {
   display: flex;

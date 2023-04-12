@@ -13,7 +13,7 @@ export interface Input {
   term: number
   period: PERIOD
   rate: number
-  mortgageType: MORTGAGE_TYPE
+  type: MORTGAGE_TYPE
 }
 
 export interface Output {
@@ -28,7 +28,7 @@ export const DEFAULT_INPUT = (): Input => ({
   term: 12,
   period: PERIOD.months,
   rate: 10,
-  mortgageType: MORTGAGE_TYPE.an,
+  type: MORTGAGE_TYPE.an,
 })
 
 export const DEFAULT_OUTPUT = (): Output => ({
