@@ -1,26 +1,22 @@
 <template>
   <div class="result-block">
-    <BaseSpinner v-if="isLoading" />
+    <HistogramChart :take-value="takeValue" :repay-value="repayValue" />
 
-    <template v-else>
-      <HistogramChart :take-value="takeValue" :repay-value="repayValue" />
+    <div class="info-block">
+      <Transition
+        class="transition"
+        enter-active-class="animated bounceInUp"
+        leave-active-class="animated bounceOutUp"
+      >
+        <div v-if="overpaymentValue" class="info-block__item">
+          <span class="info-block__item__label"> Переплата по ипотеке: </span>
 
-      <div class="info-block">
-        <Transition
-          class="transition"
-          enter-active-class="animated bounceInUp"
-          leave-active-class="animated bounceOutUp"
-        >
-          <div v-if="overpaymentValue" class="info-block__item">
-            <span class="info-block__item__label"> Переплата по ипотеке: </span>
-
-            <span class="info-block__item__label">
-              {{ numberWithSpaces(overpaymentValue) }} RUB
-            </span>
-          </div>
-        </Transition>
-      </div>
-    </template>
+          <span class="info-block__item__label">
+            {{ numberWithSpaces(overpaymentValue) }} RUB
+          </span>
+        </div>
+      </Transition>
+    </div>
 
     <BaseButton @click="$emit('submitForm')"> Рассчитать ипотеку </BaseButton>
   </div>
@@ -32,7 +28,6 @@ import { defineComponent } from 'vue'
 import { numberWithSpaces } from '@/utils'
 
 import BaseButton from './base/base-button.vue'
-import BaseSpinner from './base/base-spinner.vue'
 import HistogramChart from './histogram-chart.vue'
 
 export default defineComponent({
@@ -41,7 +36,6 @@ export default defineComponent({
   components: {
     HistogramChart,
     BaseButton,
-    BaseSpinner,
   },
 
   props: {
@@ -58,11 +52,6 @@ export default defineComponent({
     overpaymentValue: {
       type: Number,
       required: true,
-    },
-
-    isLoading: {
-      type: Boolean,
-      default: false,
     },
   },
 
@@ -83,7 +72,6 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  position: relative;
 }
 
 .info-block {
@@ -101,17 +89,6 @@ export default defineComponent({
 .info-block__item__label {
   color: var(--black);
   font-size: 1.8rem;
-}
-
-.spinner {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.btn {
-  margin-top: auto;
 }
 
 .transition {
