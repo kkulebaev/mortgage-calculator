@@ -118,7 +118,7 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
-@import '@/assets/styles/vars.css';
+@import url('@/assets/styles/vars.css');
 
 .main-page {
   display: flex;
