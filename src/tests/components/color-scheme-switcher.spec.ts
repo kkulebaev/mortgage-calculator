@@ -1,4 +1,4 @@
-import { mount,type VueWrapper } from '@vue/test-utils'
+import { mount, type VueWrapper } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 
 import { ColorSchemeSwitcher } from '@/components'
