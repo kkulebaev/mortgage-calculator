@@ -33,7 +33,7 @@ export default defineComponent({
 
 @media (--mobile) {
   .page-title {
-    font-size: 2.8rem;
+    font-size: 2rem;
   }
 }
 </style>
