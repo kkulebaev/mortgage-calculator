@@ -36,5 +36,6 @@ export default defineComponent({
 <style lang="postcss" scoped>
 .lang-switcher {
   width: 7rem;
+  min-width: 7rem;
 }
 </style>
