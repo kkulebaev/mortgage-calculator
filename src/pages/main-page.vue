@@ -7,7 +7,7 @@
           :icon="['fas', 'calculator']"
           :size="isMobile ? '3x' : '4x'"
         />
-        <PageTitle title="Калькулятор ипотеки" />
+        <PageTitle :title="t('app-title')" />
         <ColorSchemeSwitcher v-if="!isMobile" class="header__switcher" />
       </header>
       <AppForm
@@ -43,6 +43,7 @@ import { onKeyStroke } from '@vueuse/core'
 import { ElNotification } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { defineComponent, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import {
   AppForm,
@@ -70,6 +71,8 @@ export default defineComponent({
 
   setup() {
     type ErrorTuple = [true] | [false, string]
+
+    const { t } = useI18n()
 
     const mainStore = useMainStore()
     const { outputValues } = storeToRefs(mainStore)
@@ -110,8 +113,10 @@ export default defineComponent({
       outputValues,
       onCalcHandler,
       clearOutput,
+
       isDesktop,
       isMobile,
+      t,
     }
   },
 })
