@@ -1,7 +1,13 @@
+import { i18n } from '@/plugins/i18n'
+
+const { t } = i18n.global
+
 export enum CellType {
   string = 'string',
   number = 'number',
 }
+
+const CURRENCY_IN_BRACKETS = `(${t('currency')})`
 
 export const DETAIL_FIELDS = [
   {
@@ -14,25 +20,25 @@ export const DETAIL_FIELDS = [
   {
     prop: 'monthPay',
     type: CellType.number,
-    label: 'Ежемесячный платеж (р.)',
+    label: t('detail.monthly-payment') + ' ' + CURRENCY_IN_BRACKETS,
     align: 'center',
   },
   {
     prop: 'repayBody',
     type: CellType.number,
-    label: 'Погашение тела кредита (р.)',
+    label: t('detail.repayment-body') + ' ' + CURRENCY_IN_BRACKETS,
     align: 'center',
   },
   {
     prop: 'repayPer',
     type: CellType.number,
-    label: 'Погашение процентов (р.)',
+    label: t('detail.repayment-interest') + ' ' + CURRENCY_IN_BRACKETS,
     align: 'center',
   },
   {
     prop: 'debtEnd',
     type: CellType.number,
-    label: 'Долг на конец месяца (р.)',
+    label: t('detail.debt-end') + ' ' + CURRENCY_IN_BRACKETS,
     align: 'center',
   },
 ] as const

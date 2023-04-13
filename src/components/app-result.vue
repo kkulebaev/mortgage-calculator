@@ -9,21 +9,26 @@
         leave-active-class="animated bounceOutUp"
       >
         <div v-if="overpaymentValue" class="info-block__item">
-          <span class="info-block__item__label"> Переплата по ипотеке: </span>
+          <span class="info-block__item__label">
+            {{ t('mortgage-overpayment') }}:
+          </span>
 
           <span class="info-block__item__label">
-            {{ numberWithSpaces(overpaymentValue) }} RUB
+            {{ numberWithSpaces(overpaymentValue) }} {{ t('currency') }}
           </span>
         </div>
       </Transition>
     </div>
 
-    <BaseButton @click="$emit('submitForm')"> Рассчитать ипотеку </BaseButton>
+    <BaseButton @click="$emit('submitForm')">
+      {{ t('mortgage-calculate') }}
+    </BaseButton>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import { numberWithSpaces } from '@/utils'
 
@@ -58,8 +63,11 @@ export default defineComponent({
   emits: ['submitForm'],
 
   setup() {
+    const { t } = useI18n()
+
     return {
       numberWithSpaces,
+      t,
     }
   },
 })

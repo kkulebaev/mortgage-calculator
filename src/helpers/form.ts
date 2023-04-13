@@ -1,11 +1,15 @@
+import { i18n } from '@/plugins/i18n'
+
+const { t } = i18n.global
+
 export enum MORTGAGE_TYPE {
   an = 'an',
   dif = 'dif',
 }
 
-export enum MORTGAGE_TYPE_LABEL {
-  an = 'Аннуитетный',
-  dif = 'Дифференцированный',
+export const MORTGAGE_TYPE_LABEL = {
+  an: t('type.an'),
+  dif: t('type.dif'),
 }
 
 export enum PERIOD {
@@ -13,9 +17,9 @@ export enum PERIOD {
   months = 'months',
 }
 
-export enum PERIOD_LABEL {
-  years = 'лет',
-  months = 'мес',
+export const PERIOD_LABEL = {
+  years: t('period.years'),
+  months: t('period.months'),
 }
 
 export const TYPE_MORTGAGE_OPTIONS = [

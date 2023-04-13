@@ -1,6 +1,6 @@
 <template>
   <div class="faq-page">
-    <PageTitle title="FAQ" />
+    <PageTitle :title="FAQ_PAGE_TITLE" />
     <FaqList />
   </div>
 </template>
@@ -16,6 +16,14 @@ export default defineComponent({
   components: {
     PageTitle,
     FaqList,
+  },
+
+  setup() {
+    const FAQ_PAGE_TITLE = 'FAQ'
+
+    return {
+      FAQ_PAGE_TITLE,
+    }
   },
 })
 </script>
