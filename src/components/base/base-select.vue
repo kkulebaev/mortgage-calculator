@@ -15,7 +15,7 @@ import { ElOption, ElSelect } from 'element-plus'
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 
-interface Option {
+export interface Option {
   value: string
   label: string
 }
@@ -35,7 +35,7 @@ export default defineComponent({
     },
 
     options: {
-      type: Array as PropType<Readonly<Option[]>>,
+      type: Array as PropType<Option[]>,
       required: true,
     },
   },

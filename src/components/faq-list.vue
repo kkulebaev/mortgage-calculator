@@ -1,12 +1,12 @@
 <template>
   <div v-for="(item, index) in FAQ" :key="index" class="faq-list">
-    <h3 class="faq-list__question">{{ item.question }}</h3>
+    <h3 class="faq-list__question">{{ item.question() }}</h3>
     <p
-      v-for="(p, i) in item.answer"
+      v-for="(p, i) in item.answer()"
       :key="i"
       class="faq-list__answer"
       v-html="p"
-    ></p>
+    />
   </div>
 </template>
 

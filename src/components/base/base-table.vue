@@ -5,7 +5,7 @@
       :key="field.prop"
       :prop="field.prop"
       :formatter="getFormatter(field.type)"
-      :label="field.label"
+      :label="field.label()"
       :width="field.width"
       :align="field.align"
     />
@@ -22,7 +22,7 @@ import { numberWithSpaces } from '@/utils'
 
 interface TableColumn {
   prop: string
-  label: string
+  label: () => string
   type: CellType
   width?: number
   align?: string

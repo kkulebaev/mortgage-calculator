@@ -25,7 +25,7 @@
         <BaseSelect
           v-model="curPeriod"
           class="form-item__select"
-          :options="PERIOD_OPTIONS"
+          :options="PERIOD_OPTIONS_NORMALIZED"
           @change="$emit('change')"
         />
       </div>
@@ -45,7 +45,7 @@
       <span class="form-item__label"> {{ t('mortgage-payment-type') }} </span>
       <BaseSelect
         v-model="curPaymentType"
-        :options="TYPE_MORTGAGE_OPTIONS"
+        :options="TYPE_MORTGAGE_OPTIONS_NORMALIZED"
         @change="$emit('change')"
       />
     </div>
@@ -56,11 +56,13 @@
 import { useVModels } from '@vueuse/core'
 import { ElInputNumber } from 'element-plus'
 import type { PropType } from 'vue'
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import { Option } from '@/components/base/base-select.vue'
 import {
   MORTGAGE_TYPE,
+  OptionRaw,
   PERIOD,
   PERIOD_OPTIONS,
   TYPE_MORTGAGE_OPTIONS,
@@ -123,14 +125,29 @@ export default defineComponent({
 
     const { t } = useI18n()
 
+    const TYPE_MORTGAGE_OPTIONS_NORMALIZED = computed(() =>
+      normalizedData(TYPE_MORTGAGE_OPTIONS)
+    )
+
+    const PERIOD_OPTIONS_NORMALIZED = computed(() =>
+      normalizedData(PERIOD_OPTIONS)
+    )
+
+    function normalizedData(arr: OptionRaw[]): Option[] {
+      return arr.map(x => ({
+        label: x.label(),
+        value: x.value,
+      }))
+    }
+
     return {
       curAmount,
       curTerm,
       curPeriod,
       curRate,
       curPaymentType,
-      TYPE_MORTGAGE_OPTIONS,
-      PERIOD_OPTIONS,
+      TYPE_MORTGAGE_OPTIONS_NORMALIZED,
+      PERIOD_OPTIONS_NORMALIZED,
       t,
     }
   },
