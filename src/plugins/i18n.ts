@@ -19,13 +19,5 @@ function getUserLocale() {
     return savedLocale
   }
 
-  const language = window.navigator
-    ? window.navigator.language ||
-      window.navigator.systemLanguage ||
-      window.navigator.userLanguage
-    : 'ru'
-
-  return language.search('-') > 0
-    ? language.substring(0, language.search('-')).toLowerCase()
-    : language.toLowerCase()
+  return 'en'
 }
