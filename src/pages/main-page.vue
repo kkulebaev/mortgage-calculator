@@ -9,6 +9,7 @@
         />
         <PageTitle :title="t('app-title')" />
         <ColorSchemeSwitcher v-if="!isMobile" class="header__switcher" />
+        <LangSwitcher />
       </header>
       <AppForm
         v-model:amount="inputValues.amount"
@@ -52,6 +53,7 @@ import {
   PageTitle,
   SocialNetworks,
 } from '@/components'
+import LangSwitcher from '@/components/lang-switcher.vue'
 import { useBreakpoints } from '@/composables'
 import type { Input } from '@/helpers'
 import { DEFAULT_INPUT } from '@/helpers'
@@ -61,6 +63,7 @@ export default defineComponent({
   name: 'MainPage',
 
   components: {
+    LangSwitcher,
     AppForm,
     AppResult,
     SocialNetworks,
@@ -147,6 +150,10 @@ export default defineComponent({
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+
+.lang-switcher {
+  margin-left: auto;
 }
 
 .app-logo {
