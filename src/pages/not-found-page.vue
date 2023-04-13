@@ -9,12 +9,16 @@
       <div class="clouds__item x5"></div>
     </div>
     <div class="content-404">
-      <h1 class="content-404__title">404</h1>
+      <h1 class="content-404__title">{{ NOT_FOUND_STATUS_CODE }}</h1>
       <hr class="content-404__hr" />
-      <h2 class="content-404__subtitle primary-word">THE PAGE</h2>
-      <h2 class="content-404__subtitle secondary-word">WAS NOT FOUND</h2>
+      <h2 class="content-404__subtitle primary-word">
+        {{ t('notFound.page') }}
+      </h2>
+      <h2 class="content-404__subtitle secondary-word">
+        {{ t('notFound.notFound') }}
+      </h2>
       <RouterLink class="content-404__back-to" :to="{ name: 'MainPage' }">
-        BACK TO MAIN
+        {{ t('notFound.back') }}
       </RouterLink>
     </div>
   </div>
@@ -22,6 +26,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { RouterLink } from 'vue-router'
 
 export default defineComponent({
@@ -29,6 +34,17 @@ export default defineComponent({
 
   components: {
     RouterLink,
+  },
+
+  setup() {
+    const NOT_FOUND_STATUS_CODE = '404'
+
+    const { t } = useI18n()
+
+    return {
+      NOT_FOUND_STATUS_CODE,
+      t,
+    }
   },
 })
 </script>
@@ -40,6 +56,7 @@ export default defineComponent({
 
 .content-404 {
   text-align: center;
+  text-transform: uppercase;
   display: block;
   position: relative;
   margin: 10rem auto;

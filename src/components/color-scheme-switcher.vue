@@ -1,13 +1,13 @@
 <template>
   <fieldset class="switcher">
-    <legend class="switcher__legend">Схема</legend>
+    <legend class="switcher__legend">{{ t('color-scheme') }}</legend>
     <input
       v-model="colorScheme"
       :value="COLOR_SCHEME.light"
       class="switcher__radio light"
       type="radio"
       name="color-scheme"
-      aria-label="Светлая"
+      :aria-label="t('light')"
     />
     <input
       v-model="colorScheme"
@@ -15,7 +15,7 @@
       class="switcher__radio dark"
       type="radio"
       name="color-scheme"
-      aria-label="Тёмная"
+      :aria-label="t('dark')"
     />
     <div class="switcher__status"></div>
   </fieldset>
@@ -23,6 +23,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import { useColorScheme } from '@/composables'
 import { COLOR_SCHEME } from '@/helpers'
@@ -32,10 +33,12 @@ export default defineComponent({
 
   setup() {
     const { colorScheme } = useColorScheme()
+    const { t } = useI18n()
 
     return {
       COLOR_SCHEME,
       colorScheme,
+      t,
     }
   },
 })

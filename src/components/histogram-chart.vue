@@ -19,6 +19,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import HistogramBar, { HistogramTypes } from './histogram-bar.vue'
 
@@ -42,18 +43,20 @@ export default defineComponent({
   },
 
   setup(props) {
+    const { t } = useI18n()
+
     const histograms = computed(() => [
       {
         height: (props.takeValue * 100) / props.repayValue || 0,
         value: props.takeValue,
-        label: 'Возьмете',
+        label: t('take'),
         type: HistogramTypes.primary,
       },
 
       {
         height: 100,
         value: props.repayValue,
-        label: 'Вернете',
+        label: t('return'),
         type: HistogramTypes.secondary,
       },
     ])

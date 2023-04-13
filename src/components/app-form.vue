@@ -1,7 +1,7 @@
 <template>
   <form class="form" netlify>
     <div class="form-item">
-      <span class="form-item__label"> Сумма ипотеки </span>
+      <span class="form-item__label"> {{ t('mortgage-amount') }} </span>
       <ElInputNumber
         v-model="curAmount"
         :min="1"
@@ -12,7 +12,7 @@
       />
     </div>
     <div class="form-item">
-      <span class="form-item__label"> Срок ипотеки </span>
+      <span class="form-item__label"> {{ t('mortgage-term') }} </span>
       <div class="form-item__group">
         <ElInputNumber
           v-model="curTerm"
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="form-item">
-      <span class="form-item__label"> Годовая процентная ставка </span>
+      <span class="form-item__label"> {{ t('mortgage-rate') }} </span>
       <ElInputNumber
         v-model="curRate"
         :min="0.1"
@@ -42,7 +42,7 @@
       />
     </div>
     <div class="form-item">
-      <span class="form-item__label"> Тип платежей </span>
+      <span class="form-item__label"> {{ t('mortgage-payment-type') }} </span>
       <BaseSelect
         v-model="curPaymentType"
         :options="TYPE_MORTGAGE_OPTIONS"
@@ -57,6 +57,7 @@ import { useVModels } from '@vueuse/core'
 import { ElInputNumber } from 'element-plus'
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import {
   MORTGAGE_TYPE,
@@ -120,6 +121,8 @@ export default defineComponent({
       paymentType: curPaymentType,
     } = useVModels(props, emit)
 
+    const { t } = useI18n()
+
     return {
       curAmount,
       curTerm,
@@ -128,6 +131,7 @@ export default defineComponent({
       curPaymentType,
       TYPE_MORTGAGE_OPTIONS,
       PERIOD_OPTIONS,
+      t,
     }
   },
 })
@@ -160,10 +164,6 @@ export default defineComponent({
 .form-item__group {
   display: flex;
   gap: 1rem;
-}
-
-.form-item__select {
-  max-width: 7rem;
 }
 
 @media (--mobile-tablet) {

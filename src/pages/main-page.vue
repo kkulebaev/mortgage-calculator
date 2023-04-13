@@ -24,7 +24,7 @@
         src="./../assets/img/owl.png"
         width="957"
         height="1060"
-        alt="owl"
+        :alt="t('owl')"
       />
       <SocialNetworks v-if="isDesktop" />
     </div>

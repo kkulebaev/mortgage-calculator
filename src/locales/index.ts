@@ -1,8 +1,7 @@
-export const locales = {
-  en: {
-    'app-title': 'Mortgage Calculator',
-  },
-  ru: {
-    'app-title': 'Калькулятор ипотеки',
-  },
+import { en } from '@/locales/en'
+import { ru } from '@/locales/ru'
+
+export const LOCALES = {
+  en,
+  ru,
 }
