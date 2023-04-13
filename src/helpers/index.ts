@@ -6,6 +6,7 @@ export { FAQ } from './faq'
 export {
   MORTGAGE_TYPE,
   MORTGAGE_TYPE_LABEL,
+  type OptionRaw,
   PERIOD,
   PERIOD_LABEL,
   PERIOD_OPTIONS,

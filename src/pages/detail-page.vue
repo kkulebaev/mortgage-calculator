@@ -29,7 +29,7 @@ import {
   PageTitle,
 } from '@/components'
 import { usePagination } from '@/composables'
-import { DETAIL_FIELDS, MORTGAGE_TYPE_LABEL, PERIOD_LABEL } from '@/helpers'
+import { DETAIL_FIELDS } from '@/helpers'
 import { useMainStore } from '@/store'
 
 export default defineComponent({
@@ -58,8 +58,6 @@ export default defineComponent({
 
     return {
       inputValues,
-      MORTGAGE_TYPE_LABEL,
-      PERIOD_LABEL,
       DETAIL_FIELDS,
       paginatedData,
       pageNumber,

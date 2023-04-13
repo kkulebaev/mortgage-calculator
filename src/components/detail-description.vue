@@ -6,12 +6,12 @@
     </span>
     <span>
       {{ t('mortgage-term') }}: {{ inputValues.term }}
-      {{ PERIOD_LABEL[inputValues.period] }}
+      {{ PERIOD_LABEL[inputValues.period]() }}
     </span>
     <span> {{ t('mortgage-rate') }}: {{ inputValues.rate }} % </span>
     <span>
       {{ t('mortgage-payment-type') }}:
-      {{ MORTGAGE_TYPE_LABEL[inputValues.type] }}
+      {{ MORTGAGE_TYPE_LABEL[inputValues.type]() }}
     </span>
   </div>
 </template>
