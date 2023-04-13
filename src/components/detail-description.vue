@@ -6,9 +6,7 @@
       {{ PERIOD_LABEL[inputValues.period] }}
     </span>
     <span> Годовая процентная ставка: {{ inputValues.rate }} % </span>
-    <span>
-      Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.type] }}
-    </span>
+    <span> Тип платежей: {{ MORTGAGE_TYPE_LABEL[inputValues.type] }} </span>
   </div>
 </template>
 
