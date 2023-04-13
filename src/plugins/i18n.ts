@@ -14,10 +14,5 @@ export const i18n = createI18n<[MessageSchema], 'en' | 'ru'>({
 })
 
 function getUserLocale() {
-  const savedLocale = localStorage.getItem('locale')
-  if (savedLocale) {
-    return savedLocale
-  }
-
-  return 'en'
+  return localStorage.getItem('locale') ?? 'en'
 }

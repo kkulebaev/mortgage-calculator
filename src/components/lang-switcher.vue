@@ -1,10 +1,10 @@
 <template>
   <ElSelect v-model="lang" class="lang-switcher">
     <ElOption
-      v-for="loc in availableLocales"
-      :key="`locale-${loc}`"
-      :label="loc.toUpperCase()"
-      :value="loc"
+      v-for="locale in availableLocales"
+      :key="`locale-${locale}`"
+      :label="locale.toUpperCase()"
+      :value="locale"
     />
   </ElSelect>
 </template>
