@@ -20,10 +20,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { useTitle } from '@vueuse/core'
+import { computed, defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import { AppNav, MobileHeader } from '@/components'
 import { useBreakpoints } from '@/composables'
+import { LANG } from '@/plugins/i18n'
 
 export default defineComponent({
   name: 'App',
@@ -35,6 +38,15 @@ export default defineComponent({
 
   setup() {
     const { isMobile } = useBreakpoints()
+
+    const { locale } = useI18n()
+
+    const TITLE_EN = 'Mortgage calculator'
+    const TITLE_RU = 'Калькулятор ипотеки'
+    const titleText = computed(() =>
+      locale.value === LANG.ru ? TITLE_RU : TITLE_EN
+    )
+    useTitle(titleText)
 
     return {
       isMobile,
