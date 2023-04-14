@@ -28,6 +28,15 @@ interface TableColumn {
   align?: string
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+type FormatterFunction = (
+  row: any,
+  column: any,
+  cellValue: any,
+  index: number
+) => string
+/* eslint-enable @typescript-eslint/no-explicit-any */
+
 export default defineComponent({
   name: 'BaseTable',
 
@@ -49,10 +58,13 @@ export default defineComponent({
   },
 
   setup() {
-    const numberWithSpacesFormatter = (row: any, col: any, cellValue: any) =>
-      numberWithSpaces(cellValue)
+    const numberWithSpacesFormatter: FormatterFunction = (
+      row,
+      col,
+      cellValue
+    ) => numberWithSpaces(cellValue)
 
-    function getFormatter(cellType: string): any {
+    function getFormatter(cellType: string): FormatterFunction | undefined {
       if (cellType === CellType.number) {
         return numberWithSpacesFormatter
       }
