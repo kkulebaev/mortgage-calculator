@@ -1,4 +1,4 @@
 export const COMMON = {
-  'app-title': 'Mortgage Calculator',
+  'app-title': 'Mortgage calculator',
   currency: 'USD',
 }
