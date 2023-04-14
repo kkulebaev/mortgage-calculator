@@ -1,6 +1,3 @@
-export default function numberWithSpaces(val: number | null | undefined) {
-  if (val === null || val === undefined) {
-    return null
-  }
+export default function numberWithSpaces(val: number) {
   return val.toLocaleString()
 }
