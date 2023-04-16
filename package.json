@@ -40,7 +40,7 @@
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-unicorn": "46.0.0",
-    "eslint-plugin-vue": "9.10.0",
+    "eslint-plugin-vue": "9.11.0",
     "jsdom": "21.1.1",
     "nano-staged": "0.8.0",
     "postcss": "8.4.21",
