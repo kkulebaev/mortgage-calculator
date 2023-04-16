@@ -91,14 +91,14 @@ devDependencies:
     specifier: 2.8.1
     version: 2.8.1
   stylelint:
-    specifier: 15.4.0
-    version: 15.4.0
+    specifier: 15.5.0
+    version: 15.5.0
   stylelint-config-recommended-vue:
     specifier: 1.4.0
-    version: 1.4.0(postcss-html@1.5.0)(stylelint@15.4.0)
+    version: 1.4.0(postcss-html@1.5.0)(stylelint@15.5.0)
   stylelint-config-standard:
     specifier: 32.0.0
-    version: 32.0.0(stylelint@15.4.0)
+    version: 32.0.0(stylelint@15.5.0)
   typescript:
     specifier: 5.0.4
     version: 5.0.4
@@ -2000,8 +2000,8 @@ packages:
       whatwg-encoding: 2.0.0
     dev: true
 
-  /html-tags@3.2.0:
-    resolution: {integrity: sha512-vy7ClnArOZwCnqZgvv+ddgHgJiAFXe3Ge9ML5/mBctVJoUoYPCdxVucOywjDARn6CVoh3dRSFdPHy2sX80L0Wg==}
+  /html-tags@3.3.1:
+    resolution: {integrity: sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==}
     engines: {node: '>=8'}
     dev: true
 
@@ -3109,7 +3109,7 @@ packages:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
     dev: true
 
-  /stylelint-config-html@1.1.0(postcss-html@1.5.0)(stylelint@15.4.0):
+  /stylelint-config-html@1.1.0(postcss-html@1.5.0)(stylelint@15.5.0):
     resolution: {integrity: sha512-IZv4IVESjKLumUGi+HWeb7skgO6/g4VMuAYrJdlqQFndgbj6WJAXPhaysvBiXefX79upBdQVumgYcdd17gCpjQ==}
     engines: {node: ^12 || >=14}
     peerDependencies:
@@ -3117,10 +3117,10 @@ packages:
       stylelint: '>=14.0.0'
     dependencies:
       postcss-html: 1.5.0
-      stylelint: 15.4.0
+      stylelint: 15.5.0
     dev: true
 
-  /stylelint-config-recommended-vue@1.4.0(postcss-html@1.5.0)(stylelint@15.4.0):
+  /stylelint-config-recommended-vue@1.4.0(postcss-html@1.5.0)(stylelint@15.5.0):
     resolution: {integrity: sha512-DVJqyX2KvMCn9U0+keL12r7xlsH26K4Vg8NrIZuq5MoF7g82DpMp326Om4E0Q+Il1o+bTHuUyejf2XAI0iD04Q==}
     engines: {node: ^12 || >=14}
     peerDependencies:
@@ -3129,38 +3129,38 @@ packages:
     dependencies:
       postcss-html: 1.5.0
       semver: 7.3.8
-      stylelint: 15.4.0
-      stylelint-config-html: 1.1.0(postcss-html@1.5.0)(stylelint@15.4.0)
-      stylelint-config-recommended: 9.0.0(stylelint@15.4.0)
+      stylelint: 15.5.0
+      stylelint-config-html: 1.1.0(postcss-html@1.5.0)(stylelint@15.5.0)
+      stylelint-config-recommended: 9.0.0(stylelint@15.5.0)
     dev: true
 
-  /stylelint-config-recommended@11.0.0(stylelint@15.4.0):
+  /stylelint-config-recommended@11.0.0(stylelint@15.5.0):
     resolution: {integrity: sha512-SoGIHNI748OCZn6BxFYT83ytWoYETCINVHV3LKScVAWQQauWdvmdDqJC5YXWjpBbxg2E761Tg5aUGKLFOVhEkA==}
     peerDependencies:
       stylelint: ^15.3.0
     dependencies:
-      stylelint: 15.4.0
+      stylelint: 15.5.0
     dev: true
 
-  /stylelint-config-recommended@9.0.0(stylelint@15.4.0):
+  /stylelint-config-recommended@9.0.0(stylelint@15.5.0):
     resolution: {integrity: sha512-9YQSrJq4NvvRuTbzDsWX3rrFOzOlYBmZP+o513BJN/yfEmGSr0AxdvrWs0P/ilSpVV/wisamAHu5XSk8Rcf4CQ==}
     peerDependencies:
       stylelint: ^14.10.0
     dependencies:
-      stylelint: 15.4.0
+      stylelint: 15.5.0
     dev: true
 
-  /stylelint-config-standard@32.0.0(stylelint@15.4.0):
+  /stylelint-config-standard@32.0.0(stylelint@15.5.0):
     resolution: {integrity: sha512-UnGJxYDyYFrIE9CjDMZRkrNh2o4lOtO+MVZ9qG5b8yARfsWho0GMx4YvhHfsv8zKKgHeWX2wfeyxmuoqcaYZ4w==}
     peerDependencies:
       stylelint: ^15.4.0
     dependencies:
-      stylelint: 15.4.0
-      stylelint-config-recommended: 11.0.0(stylelint@15.4.0)
+      stylelint: 15.5.0
+      stylelint-config-recommended: 11.0.0(stylelint@15.5.0)
     dev: true
 
-  /stylelint@15.4.0:
-    resolution: {integrity: sha512-TlOvpG3MbcFwHmK0q2ykhmpKo7Dq892beJit0NPdpyY9b1tFah/hGhqnAz/bRm2PDhDbJLKvjzkEYYBEz7Dxcg==}
+  /stylelint@15.5.0:
+    resolution: {integrity: sha512-jyMO3R1QtE5mUS4v40+Gg+sIQBqe7CF1xPslxycDzNVkIBCUD4O+5F1vLPq16VmunUTv4qG9o2rUKLnU5KkVeQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -3180,7 +3180,7 @@ packages:
       global-modules: 2.0.0
       globby: 11.1.0
       globjoin: 0.1.4
-      html-tags: 3.2.0
+      html-tags: 3.3.1
       ignore: 5.2.4
       import-lazy: 4.0.0
       imurmurhash: 0.1.4
