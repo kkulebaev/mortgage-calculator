@@ -10,6 +10,20 @@ Demo available on
 - Netlify - https://calculator-mortgage.netlify.app
 - Render - https://mortgage-calculator-t849.onrender.com/
 
+## Technologies used in the project
+- Vue 3
+- Typescript
+- Vue Router
+- Pinia
+- Unit test (Vitest, Vue Test Utils)
+- PostCSS
+- Vite
+- i18n
+- GitHub Actions
+- Element Plus
+- Eslint && Stylelint && Prettier
+- Pre commit hooks (simple-git-hooks && nano-staged)
+
 ## Installation Steps for Development
 
 Clone repository
