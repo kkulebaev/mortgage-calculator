@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "lint": "pnpm run eslint && pnpm run stylelint && pnpm run lint:types && pnpm run test",
     "eslint": "eslint --ext .js,.ts,.vue src",
     "eslint:fix": "eslint --ext .js,.ts,.vue src --fix",
     "lint:types": "vue-tsc",
