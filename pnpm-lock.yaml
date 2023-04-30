@@ -106,8 +106,8 @@ devDependencies:
     specifier: 4.3.3
     version: 4.3.3(@types/node@18.11.9)
   vite-plugin-sitemap:
-    specifier: 0.3.0
-    version: 0.3.0
+    specifier: 0.4.0
+    version: 0.4.0
   vitest:
     specifier: 0.30.1
     version: 0.30.1(@vitest/ui@0.30.1)(jsdom@21.1.1)
@@ -3446,8 +3446,8 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-sitemap@0.3.0:
-    resolution: {integrity: sha512-ZGKbJDAfj7KG75LSCYPLof92/4MJBmy5OPll8trGWYx1M1ewXonAmdautKzHcYQARPy5u73zhuETNvIRzyviAw==}
+  /vite-plugin-sitemap@0.4.0:
+    resolution: {integrity: sha512-AgDIdvWNKttvAQoBm2dYaGXPlPlMwpfkkKXwsU1iFbEqReK001mvYt9feIn8IoVA8T/ElHZyYFeGSRieSQiitA==}
     dev: true
 
   /vite@4.3.3(@types/node@18.11.9):
