@@ -85,4 +85,4 @@ jobs:
       - name: Install dependencies
         run: corepack pnpm install
       - name: Run typescript compiler
-        run: npm run lint:types
+        run: npm run compile
