@@ -1,19 +1,18 @@
 <template>
   <div class="histogram-chart">
-    <Transition
-      v-for="(item, index) in histograms"
-      :key="index"
-      class="transition"
-      enter-active-class="animated bounceInUp"
-      leave-active-class="animated bounceOutUp"
-    >
-      <HistogramBar
-        :height="item.height"
-        :value="item.value"
-        :label="item.label"
-        :type="item.type"
-      />
-    </Transition>
+    <template v-for="(item, index) in histograms" :key="index">
+      <Transition
+        enter-active-class="animated bounceInUp"
+        leave-active-class="animated bounceOutUp"
+      >
+        <HistogramBar
+          :height="item.height"
+          :value="item.value"
+          :label="item.label"
+          :type="item.type"
+        />
+      </Transition>
+    </template>
   </div>
 </template>
 
@@ -70,13 +69,11 @@ export default defineComponent({
 
 <style lang="postcss" scoped>
 .histogram-chart {
+  --animate-duration: 1s;
+
   display: flex;
   flex: 1;
   justify-content: space-evenly;
   gap: 2rem;
-}
-
-.transition {
-  --animate-duration: 1s;
 }
 </style>

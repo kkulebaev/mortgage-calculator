@@ -4,7 +4,6 @@
 
     <div class="info-block">
       <Transition
-        class="transition"
         enter-active-class="animated bounceInUp"
         leave-active-class="animated bounceOutUp"
       >
@@ -83,6 +82,8 @@ export default defineComponent({
 }
 
 .info-block {
+  --animate-duration: 1s;
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -97,10 +98,6 @@ export default defineComponent({
 .info-block__item__label {
   color: var(--black);
   font-size: 1.8rem;
-}
-
-.transition {
-  --animate-duration: 1s;
 }
 
 @media (--mobile-tablet) {
