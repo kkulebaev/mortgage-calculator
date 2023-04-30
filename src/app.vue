@@ -6,7 +6,6 @@
         <MobileHeader v-if="isMobile" />
         <RouterView v-slot="{ Component }">
           <Transition
-            class="transition"
             enter-active-class="animated fadeIn"
             leave-active-class="animated fadeOut"
             mode="out-in"
@@ -59,6 +58,8 @@ export default defineComponent({
 @import url('./assets/styles/vars.css');
 
 .mortgage-calculator {
+  --animate-duration: 200ms;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,10 +80,6 @@ export default defineComponent({
   width: 100%;
   padding: 4rem;
   margin: 0 auto;
-}
-
-.transition {
-  --animate-duration: 0.2s;
 }
 
 @media (--mobile-tablet) {
