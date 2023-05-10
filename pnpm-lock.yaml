@@ -67,8 +67,8 @@ devDependencies:
     specifier: 47.0.0
     version: 47.0.0(eslint@8.40.0)
   eslint-plugin-vue:
-    specifier: 9.11.1
-    version: 9.11.1(eslint@8.40.0)
+    specifier: 9.12.0
+    version: 9.12.0(eslint@8.40.0)
   jsdom:
     specifier: 22.0.0
     version: 22.0.0
@@ -1686,8 +1686,8 @@ packages:
       strip-indent: 3.0.0
     dev: true
 
-  /eslint-plugin-vue@9.11.1(eslint@8.40.0):
-    resolution: {integrity: sha512-SNtBGDrRkPUFsREswPceqdvZ7YVdWY+iCYiDC+RoxwVieeQ7GJU1FLDlkcaYTOD2os/YuVgI1Fdu8YGM7fmoow==}
+  /eslint-plugin-vue@9.12.0(eslint@8.40.0):
+    resolution: {integrity: sha512-xH8PgpDW2WwmFSmRfs/3iWogef1CJzQqX264I65zz77jDuxF2yLy7+GA2diUM8ZNATuSl1+UehMQkb5YEyau5w==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
