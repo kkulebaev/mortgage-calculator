@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.59",
+  "version": "1.0.60",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -35,7 +35,7 @@
     "@typescript-eslint/eslint-plugin": "5.59.8",
     "@typescript-eslint/parser": "5.59.8",
     "@vitejs/plugin-vue": "4.2.3",
-    "@vitest/ui": "0.31.3",
+    "@vitest/ui": "0.31.4",
     "@vue/test-utils": "2.3.2",
     "eslint": "8.41.0",
     "eslint-config-prettier": "8.8.0",
@@ -55,7 +55,7 @@
     "typescript": "5.0.4",
     "vite": "4.3.9",
     "vite-plugin-sitemap": "0.4.2",
-    "vitest": "0.31.3",
+    "vitest": "0.31.4",
     "vue-tsc": "1.6.5"
   },
   "nano-staged": {
