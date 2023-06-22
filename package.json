@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.80",
+  "version": "1.0.81",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -36,7 +36,7 @@
     "@typescript-eslint/parser": "5.60.0",
     "@vitejs/plugin-vue": "4.2.3",
     "@vitest/ui": "0.32.2",
-    "@vue/test-utils": "2.3.2",
+    "@vue/test-utils": "2.4.0",
     "eslint": "8.43.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-simple-import-sort": "10.0.0",
