@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.122",
+  "version": "1.0.123",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -48,7 +48,7 @@
     "postcss-custom-media": "10.0.0",
     "postcss-html": "1.5.0",
     "prettier": "3.0.0",
-    "simple-git-hooks": "2.8.1",
+    "simple-git-hooks": "2.9.0",
     "stylelint": "15.10.2",
     "stylelint-config-recommended-vue": "1.5.0",
     "stylelint-config-standard": "34.0.0",
