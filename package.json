@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.133",
+  "version": "1.0.134",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -32,8 +32,8 @@
     "vue-router": "4.2.4"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "6.2.0",
-    "@typescript-eslint/parser": "6.2.0",
+    "@typescript-eslint/eslint-plugin": "6.2.1",
+    "@typescript-eslint/parser": "6.2.1",
     "@vitejs/plugin-vue": "4.2.3",
     "@vitest/ui": "0.33.0",
     "@vue/test-utils": "2.4.1",
