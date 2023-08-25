@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.158",
+  "version": "1.0.159",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -37,7 +37,7 @@
     "@vitejs/plugin-vue": "4.3.3",
     "@vitest/ui": "0.34.3",
     "@vue/test-utils": "2.4.1",
-    "eslint": "8.47.0",
+    "eslint": "8.48.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-unicorn": "48.0.1",
