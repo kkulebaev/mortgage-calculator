@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.173",
+  "version": "1.0.174",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -44,7 +44,7 @@
     "eslint-plugin-vue": "9.17.0",
     "jsdom": "22.1.0",
     "nano-staged": "0.8.0",
-    "postcss": "8.4.29",
+    "postcss": "8.4.30",
     "postcss-custom-media": "10.0.0",
     "postcss-html": "1.5.0",
     "prettier": "3.0.3",
