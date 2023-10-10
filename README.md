@@ -5,7 +5,6 @@
 > A modern app that allows you to calculate your mortgage
 
 ## App Preview
-
 Demo available on
 - Netlify - https://calculator-mortgage.netlify.app
 - Render - https://mortgage-calculator-t849.onrender.com/
