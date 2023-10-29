@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.210",
+  "version": "1.0.211",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -40,7 +40,7 @@
     "eslint": "8.52.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-simple-import-sort": "10.0.0",
-    "eslint-plugin-unicorn": "48.0.1",
+    "eslint-plugin-unicorn": "49.0.0",
     "eslint-plugin-vue": "9.18.1",
     "jsdom": "22.1.0",
     "nano-staged": "0.8.0",
