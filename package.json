@@ -2,6 +2,9 @@
   "name": "package.json",
   "private": true,
   "version": "1.0.217",
+  "engines": {
+    "node": ">=16.14"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
