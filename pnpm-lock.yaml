@@ -27,8 +27,8 @@ dependencies:
     specifier: 4.1.1
     version: 4.1.1
   element-plus:
-    specifier: 2.4.2
-    version: 2.4.2(vue@3.3.9)
+    specifier: 2.4.3
+    version: 2.4.3(vue@3.3.9)
   pinia:
     specifier: 2.1.7
     version: 2.1.7(typescript@5.3.2)(vue@3.3.9)
@@ -223,8 +223,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /@element-plus/icons-vue@2.0.10(vue@3.3.9):
-    resolution: {integrity: sha512-ygEZ1mwPjcPo/OulhzLE7mtDrQBWI8vZzEWSNB2W/RNCRjoQGwbaK4N8lV4rid7Ts4qvySU3njMN7YCiSlSaTQ==}
+  /@element-plus/icons-vue@2.3.1(vue@3.3.9):
+    resolution: {integrity: sha512-XxVUZv48RZAd87ucGS48jPf6pKu0yV5UCg9f4FFwtrYxXOwWuVJo6wOvSLKEoMQKjv8GsX/mhP6UsC1lRwbUWg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
@@ -1612,13 +1612,13 @@ packages:
       semver: 7.5.4
     dev: true
 
-  /element-plus@2.4.2(vue@3.3.9):
-    resolution: {integrity: sha512-E/HwXX7JF1LPvQSjs0fZ8WblIoc0quoXsRXQZiL7QDq7xJdNGSUaXtdk7xiEv7axPmLfEFtxE5du9fFspDrmJw==}
+  /element-plus@2.4.3(vue@3.3.9):
+    resolution: {integrity: sha512-b3q26j+lM4SBqiyzw8HybybGnP2pk4MWgrnzzzYW5qKQUgV6EG1Zg7nMCfgCVccI8tNvZoTiUHb2mFaiB9qT8w==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
       '@ctrl/tinycolor': 3.4.1
-      '@element-plus/icons-vue': 2.0.10(vue@3.3.9)
+      '@element-plus/icons-vue': 2.3.1(vue@3.3.9)
       '@floating-ui/dom': 1.0.4
       '@popperjs/core': /@sxzz/popperjs-es@2.11.7
       '@types/lodash': 4.14.188
