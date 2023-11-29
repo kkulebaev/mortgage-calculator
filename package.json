@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.239",
+  "version": "1.0.240",
   "engines": {
     "node": ">=16.14"
   },
@@ -59,7 +59,7 @@
     "vite": "5.0.4",
     "vite-plugin-sitemap": "0.5.3",
     "vitest": "0.34.6",
-    "vue-tsc": "1.8.22"
+    "vue-tsc": "1.8.24"
   },
   "nano-staged": {
     "*.{js,ts,vue}": [
