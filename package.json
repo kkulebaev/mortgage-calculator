@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.260",
+  "version": "1.0.261",
   "engines": {
     "node": ">=16.14"
   },
@@ -50,7 +50,7 @@
     "postcss": "8.4.32",
     "postcss-custom-media": "10.0.2",
     "postcss-html": "1.5.0",
-    "prettier": "3.1.0",
+    "prettier": "3.1.1",
     "simple-git-hooks": "2.9.0",
     "stylelint": "16.0.1",
     "stylelint-config-recommended-vue": "1.5.0",
