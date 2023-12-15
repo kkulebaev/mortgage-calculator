@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.265",
+  "version": "1.0.266",
   "engines": {
     "node": ">=16.14"
   },
@@ -28,7 +28,7 @@
     "@fortawesome/vue-fontawesome": "3.0.5",
     "@vueuse/core": "10.7.0",
     "animate.css": "4.1.1",
-    "element-plus": "2.4.3",
+    "element-plus": "2.4.4",
     "pinia": "2.1.7",
     "vue": "3.3.11",
     "vue-i18n": "9",
