@@ -2,6 +2,7 @@
   "name": "package.json",
   "private": true,
   "version": "1.0.270",
+  "type": "module",
   "engines": {
     "node": ">=16.14"
   },
