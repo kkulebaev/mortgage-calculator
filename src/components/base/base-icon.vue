@@ -46,9 +46,11 @@ export default defineComponent({
   setup(props) {
     const currentIcon = ref('')
 
+    /* TODO: Расскоментировать, когда будет добавлена хотя бы одна иконка в директорию */
+    /*
     import(`../../assets/img/icons/${props.icon}.svg?raw`).then(val => {
       currentIcon.value = val.default
-    })
+    })*/
 
     return {
       currentIcon,
