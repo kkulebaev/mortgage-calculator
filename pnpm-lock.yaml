@@ -27,8 +27,8 @@ dependencies:
     specifier: 4.1.1
     version: 4.1.1
   element-plus:
-    specifier: 2.5.1
-    version: 2.5.1(vue@3.4.15)
+    specifier: 2.5.2
+    version: 2.5.2(vue@3.4.15)
   pinia:
     specifier: 2.1.7
     version: 2.1.7(typescript@5.3.3)(vue@3.4.15)
@@ -1651,8 +1651,8 @@ packages:
     resolution: {integrity: sha512-/bKPPcgZVUziECqDc+0HkT87+0zhaWSZHNXqF8FLd2lQcptpmUFwoCSWjCdOng9Gdq+afKArPdEg/0ZW461Eng==}
     dev: true
 
-  /element-plus@2.5.1(vue@3.4.15):
-    resolution: {integrity: sha512-ylX9h2U125/nesPlLWgfPkI1rID9EiGROlgf0QkzBUjx+/d4w/YqS+IqZZZC5yvQPhKYu9aMDqEBzOurwn4Cnw==}
+  /element-plus@2.5.2(vue@3.4.15):
+    resolution: {integrity: sha512-0Xbihy5CvpdH+OZeRPnZlfkbZS8uyLvHJiALehvw6n7nvHGrujCmdiw8NXvYhkLpRtwue/N6oBfAvMJvQSPoNA==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
