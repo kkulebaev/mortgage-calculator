@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.338",
+  "version": "1.0.339",
   "type": "module",
   "engines": {
     "node": ">=16.14"
@@ -36,8 +36,8 @@
     "vue-router": "4.2.5"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "6.20.0",
-    "@typescript-eslint/parser": "6.20.0",
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
     "@vitejs/plugin-vue": "5.0.3",
     "@vitest/ui": "1.2.2",
     "@vue/test-utils": "2.4.4",
