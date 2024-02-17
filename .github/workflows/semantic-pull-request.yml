@@ -69,8 +69,9 @@ jobs:
           echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.cjs
 
       - name: Validate PR commits with commitlint
-        id: commitlint
-        run: npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+        run: |
+          output=$(npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose) 
+          echo "::set-output name=output::$output"
 
       - name: Pull Request Comment
         uses: marocchino/sticky-pull-request-comment@v2
@@ -91,5 +92,5 @@ jobs:
             Details:
 
             ```
-            ${{ steps.commitlint.outputs }}
+            ${{ steps.commitlint.outputs. }}
             ```
