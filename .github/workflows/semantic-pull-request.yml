@@ -76,6 +76,8 @@ jobs:
         if: failure()
         with:
           header: commitlint-error
+          hide_and_recreate: true
+          hide_classify: "OUTDATED"
           message: |
             Hey there and thank you for opening this pull request! 👋🏼
 
