@@ -23,6 +23,7 @@ Demo available on
 - Eslint && Stylelint && Prettier
 - Pre commit hooks (simple-git-hooks && nano-staged)
 - Netlify
+- Render.com
 
 ## Installation Steps for Development
 
