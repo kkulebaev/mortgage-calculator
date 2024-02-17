@@ -88,5 +88,5 @@ jobs:
             Details:
 
             ```
-            ${{ steps.commitlint.outputs.stdout }}
+            ${{ steps.commitlint }}
             ```
