@@ -102,10 +102,6 @@ jobs:
           npm install commitlint@latest
           npm install @commitlint/{config-conventional,cli}
 
-      - name: Set up configuration for commitlint
-        run: |
-          echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.cjs
-
       - name: Git log commits
         run: git log --oneline
 
