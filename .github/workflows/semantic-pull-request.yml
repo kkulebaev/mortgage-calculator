@@ -64,7 +64,6 @@ jobs:
         run: git log --oneline -n 10
 
       - name: Validate PR commits with commitlint
-        if: github.event_name == 'pull_request'
         run: |
           echo "head sha: ${{ github.event.pull_request.head.sha }}"
           echo "commits: ${{ github.event.pull_request.commits }}"
