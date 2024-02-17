@@ -71,4 +71,4 @@ jobs:
         run: |
           echo "head sha: ${{ github.event.pull_request.head.sha }}"
           echo "commits: ${{ github.event.pull_request.commits }}"
-          npx commitlint --from ${{ github.event.pull_request.head.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+          npx commitlint --from ${{ github.event.pull_request.head.sha }}~1 --to ${{ github.event.pull_request.head.sha }} --verbose
