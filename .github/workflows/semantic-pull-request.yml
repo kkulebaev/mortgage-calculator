@@ -91,5 +91,5 @@ jobs:
             Details:
 
             ```
-            ${{ steps.commitlint.outputs.output }}
+            ${{ steps.commitlint.outputs }}
             ```
