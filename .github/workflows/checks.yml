@@ -103,7 +103,7 @@ jobs:
           npm install @commitlint/{config-conventional,cli}
 
       - name: Git log commits
-        run: git log --oneline
+        run: git log --oneline -n 10
 
       - name: Validate PR commits with commitlint
         if: github.event_name == 'pull_request'
