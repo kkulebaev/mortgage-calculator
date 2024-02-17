@@ -70,3 +70,23 @@ jobs:
 
       - name: Validate PR commits with commitlint
         run: npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+      - name: Pull Request Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: failure()
+        with:
+          header: commitlint-error
+          message: |
+            Hey there and thank you for opening this pull request! 👋🏼
+
+            We require commit messages to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) and it looks like your proposed commit messages need to be adjusted.
+
+            Please make sure to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) and update your commit messages accordingly.
+
+            If you need help, please refer to the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) for more information.
+
+            Details:
+
+            ```
+            ${{ steps.commitlint.outputs.stdout }}
+            ```
