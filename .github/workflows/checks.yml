@@ -103,7 +103,7 @@ jobs:
 
       - name: Set up configuration for commitlint
         run: |
-          echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+          echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.cjs
 
       - name: Validate current commit (last commit) with commitlint
         if: github.event_name == 'push'
