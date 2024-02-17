@@ -22,6 +22,7 @@ Demo available on
 - Element Plus
 - Eslint && Stylelint && Prettier
 - Pre commit hooks (simple-git-hooks && nano-staged)
+- Commitizen
 
 ## Installation Steps for Development
 
