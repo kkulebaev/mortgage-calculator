@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.379",
+  "version": "1.0.380",
   "type": "module",
   "engines": {
     "node": ">=16.14"
@@ -49,7 +49,7 @@
     "jsdom": "24.0.0",
     "nano-staged": "0.8.0",
     "postcss": "8.4.35",
-    "postcss-custom-media": "10.0.3",
+    "postcss-custom-media": "10.0.4",
     "postcss-html": "1.6.0",
     "prettier": "3.2.5",
     "simple-git-hooks": "2.10.0",
