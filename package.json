@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.386",
+  "version": "1.0.387",
   "type": "module",
   "engines": {
     "node": ">=16.14"
@@ -48,7 +48,7 @@
     "eslint-plugin-vue": "9.23.0",
     "jsdom": "24.0.0",
     "nano-staged": "0.8.0",
-    "postcss": "8.4.36",
+    "postcss": "8.4.37",
     "postcss-custom-media": "10.0.4",
     "postcss-html": "1.6.0",
     "prettier": "3.2.5",
