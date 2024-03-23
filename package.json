@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "private": true,
-  "version": "1.0.393",
+  "version": "1.0.394",
   "type": "module",
   "engines": {
     "node": ">=16.14"
@@ -57,7 +57,7 @@
     "stylelint-config-recommended-vue": "1.5.0",
     "stylelint-config-standard": "36.0.0",
     "typescript": "5.4.3",
-    "vite": "5.2.3",
+    "vite": "5.2.4",
     "vite-plugin-sitemap": "0.5.3",
     "vitest": "1.4.0",
     "vue-tsc": "2.0.7"
