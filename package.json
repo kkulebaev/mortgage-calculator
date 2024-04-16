@@ -3,7 +3,8 @@
   "version": "1.0.421",
   "type": "module",
   "engines": {
-    "node": ">=16.14"
+    "node": ">=20.12.2",
+    "pnpm": ">=8.14.1"
   },
   "scripts": {
     "dev": "vite",
@@ -68,5 +69,6 @@
   },
   "simple-git-hooks": {
     "pre-commit": "./node_modules/.bin/simple-git-hooks && ./node_modules/.bin/nano-staged"
-  }
+  },
+  "packageManager": "pnpm@8.15.0+sha256.fd1eab68a6d403f35cf3259c53780d70b0f14bd74e39da2f917d201f554d8665"
 }
