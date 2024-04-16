@@ -3,5 +3,11 @@
     "config:base"
   ],
   "automerge": true,
-  "bumpVersion": "patch"
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["patch"],
+      "enabled": false
+    }
+  ]
 }
