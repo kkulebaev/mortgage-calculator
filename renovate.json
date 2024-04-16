@@ -8,6 +8,10 @@
     {
       "matchUpdateTypes": ["patch"],
       "enabled": false
+    },
+    {
+      "matchDepTypes": ["engines"],
+      "enabled": false
     }
   ]
 }
