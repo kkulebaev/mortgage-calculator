@@ -112,8 +112,8 @@ importers:
         specifier: 5.2.9
         version: 5.2.9
       vite-plugin-sitemap:
-        specifier: 0.5.3
-        version: 0.5.3
+        specifier: 0.6.2
+        version: 0.6.2
       vitest:
         specifier: 1.6.0
         version: 1.6.0(@vitest/ui@1.6.0)(jsdom@24.0.0)
@@ -2057,8 +2057,8 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite-plugin-sitemap@0.5.3:
-    resolution: {integrity: sha512-DSqZLAkXaNgoJLcaxjJHrfWjIIiZRSuZIseE7ihJYUvPFG4OsvXn/+Oujmzbs+6tV7yu1dn7uhWXpV7QuiH/1g==}
+  vite-plugin-sitemap@0.6.2:
+    resolution: {integrity: sha512-tvqxNnkWEKPKCWnYPUSfTJC/Yjg+HrdrBIBTtGVfgKzvqX/EQr9aqk4UDr3qN+3hD0Z/yMKVfSpa8TjdGoWsJg==}
 
   vite@5.2.9:
     resolution: {integrity: sha512-uOQWfuZBlc6Y3W/DTuQ1Sr+oIXWvqljLvS881SVmAj00d5RdgShLcuXWxseWPd4HXwiYBFW/vXHfKFeqj9uQnw==}
@@ -4213,7 +4213,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-sitemap@0.5.3: {}
+  vite-plugin-sitemap@0.6.2: {}
 
   vite@5.2.9:
     dependencies:
