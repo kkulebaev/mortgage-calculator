@@ -4,19 +4,10 @@ import { roundNumber } from '@/utils'
 import type { InputPart } from './calc-mortgage'
 import { calcPaymentDetailDif } from './calc-payment-detail'
 
-export function calcMortgageDif({
-  amount: takeValue,
-  monthTerm,
-  monthRate,
-}: InputPart): Output {
+export function calcMortgageDif({ amount: takeValue, monthTerm, monthRate }: InputPart): Output {
   const repayBody = roundNumber(takeValue / monthTerm)
 
-  const paymentTable = calcPaymentDetailDif(
-    takeValue,
-    monthRate,
-    repayBody,
-    monthTerm
-  )
+  const paymentTable = calcPaymentDetailDif(takeValue, monthRate, repayBody, monthTerm)
 
   const repayValue = paymentTable.reduce((acc, item) => acc + item.monthPay, 0)
 

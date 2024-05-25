@@ -42,9 +42,7 @@ export default defineComponent({
 
     const TITLE_EN = 'Mortgage calculator'
     const TITLE_RU = 'Калькулятор ипотеки'
-    const titleText = computed(() =>
-      locale.value === LANG.ru ? TITLE_RU : TITLE_EN
-    )
+    const titleText = computed(() => (locale.value === LANG.ru ? TITLE_RU : TITLE_EN))
     useTitle(titleText)
 
     return {

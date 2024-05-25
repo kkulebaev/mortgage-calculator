@@ -8,11 +8,7 @@
       <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
       <BasePagination v-model="pageNumber" :total="total" :page-size="size" />
     </template>
-    <ElEmpty
-      v-else
-      class="detail-info__empty"
-      :description="t('empty-description')"
-    />
+    <ElEmpty v-else class="detail-info__empty" :description="t('empty-description')" />
   </div>
 </template>
 
@@ -22,12 +18,7 @@ import { storeToRefs } from 'pinia'
 import { defineComponent, ref, toRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import {
-  BasePagination,
-  BaseTable,
-  DetailDescription,
-  PageTitle,
-} from '@/components'
+import { BasePagination, BaseTable, DetailDescription, PageTitle } from '@/components'
 import { usePagination } from '@/composables'
 import { DETAIL_FIELDS } from '@/helpers'
 import { useMainStore } from '@/store'

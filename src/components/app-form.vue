@@ -60,13 +60,7 @@ import { computed, defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import { Option } from '@/components/base/base-select.vue'
-import {
-  MORTGAGE_TYPE,
-  OptionRaw,
-  PERIOD,
-  PERIOD_OPTIONS,
-  TYPE_MORTGAGE_OPTIONS,
-} from '@/helpers'
+import { MORTGAGE_TYPE, OptionRaw, PERIOD, PERIOD_OPTIONS, TYPE_MORTGAGE_OPTIONS } from '@/helpers'
 
 import BaseSelect from './base/base-select.vue'
 
@@ -125,13 +119,9 @@ export default defineComponent({
 
     const { t } = useI18n()
 
-    const TYPE_MORTGAGE_OPTIONS_NORMALIZED = computed(() =>
-      normalizedData(TYPE_MORTGAGE_OPTIONS)
-    )
+    const TYPE_MORTGAGE_OPTIONS_NORMALIZED = computed(() => normalizedData(TYPE_MORTGAGE_OPTIONS))
 
-    const PERIOD_OPTIONS_NORMALIZED = computed(() =>
-      normalizedData(PERIOD_OPTIONS)
-    )
+    const PERIOD_OPTIONS_NORMALIZED = computed(() => normalizedData(PERIOD_OPTIONS))
 
     function normalizedData(arr: OptionRaw[]): Option[] {
       return arr.map(x => ({

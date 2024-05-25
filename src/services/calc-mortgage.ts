@@ -10,13 +10,7 @@ export interface InputPart {
   monthRate: number
 }
 
-export default function calcMortgage({
-  amount,
-  term,
-  period,
-  rate,
-  type,
-}: Input): Output {
+export default function calcMortgage({ amount, term, period, rate, type }: Input): Output {
   const monthTerm = period === PERIOD.years ? term * 12 : term
 
   const monthRate = rate / 100 / 12

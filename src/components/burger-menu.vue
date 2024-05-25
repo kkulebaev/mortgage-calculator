@@ -1,16 +1,7 @@
 <template>
   <div class="burger-menu">
-    <FontAwesomeIcon
-      class="burger"
-      :icon="icon"
-      size="3x"
-      @click="isShowMenu = !isShowMenu"
-    />
-    <AppNav
-      class="mobile-menu"
-      :class="{ open: isShowMenu }"
-      @click="isShowMenu = false"
-    />
+    <FontAwesomeIcon class="burger" :icon="icon" size="3x" @click="isShowMenu = !isShowMenu" />
+    <AppNav class="mobile-menu" :class="{ open: isShowMenu }" @click="isShowMenu = false" />
   </div>
 </template>
 
@@ -31,9 +22,7 @@ export default defineComponent({
   setup() {
     const isShowMenu = ref(false)
 
-    const icon = computed(() =>
-      isShowMenu.value ? ['fas', 'xmark'] : ['fas', 'bars']
-    )
+    const icon = computed(() => (isShowMenu.value ? ['fas', 'xmark'] : ['fas', 'bars']))
 
     return {
       isShowMenu,

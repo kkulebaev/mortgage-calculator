@@ -8,9 +8,7 @@
         leave-active-class="animated bounceOutUp"
       >
         <div v-if="overpaymentValue" class="info-block__item">
-          <span class="info-block__item__label">
-            {{ t('mortgage-overpayment') }}:
-          </span>
+          <span class="info-block__item__label"> {{ t('mortgage-overpayment') }}: </span>
 
           <span class="info-block__item__label">
             {{ numberWithSpaces(overpaymentValue) }} {{ t('currency') }}

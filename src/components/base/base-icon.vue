@@ -23,9 +23,7 @@ export default defineComponent({
         const ICONS_FORMAT = '.svg'
 
         const dirObj = import.meta.glob('../../assets/img/icons/*.svg')
-        const iconNames = Object.keys(dirObj).map(
-          x => x.split(ICONS_DIR)[1].split(ICONS_FORMAT)[0]
-        )
+        const iconNames = Object.keys(dirObj).map(x => x.split(ICONS_DIR)[1].split(ICONS_FORMAT)[0])
         return iconNames.includes(val)
       },
     },

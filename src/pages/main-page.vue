@@ -46,13 +46,7 @@ import { storeToRefs } from 'pinia'
 import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import {
-  AppForm,
-  AppResult,
-  ColorSchemeSwitcher,
-  PageTitle,
-  SocialNetworks,
-} from '@/components'
+import { AppForm, AppResult, ColorSchemeSwitcher, PageTitle, SocialNetworks } from '@/components'
 import LangSwitcher from '@/components/lang-switcher.vue'
 import { useBreakpoints } from '@/composables'
 import type { Input } from '@/helpers'
@@ -98,13 +92,9 @@ export default defineComponent({
     const isValidForm = (inputValues: Input): ErrorTuple => {
       if (inputValues.amount <= 0)
         return [false, 'Введите корректное значение в поле "Сумма ипотеки"']
-      if (inputValues.term <= 0)
-        return [false, 'Введите корректное значение в поле "Срок ипотеки"']
+      if (inputValues.term <= 0) return [false, 'Введите корректное значение в поле "Срок ипотеки"']
       if (inputValues.rate <= 0)
-        return [
-          false,
-          'Введите корректное значение в поле "Годовая процентная ставка"',
-        ]
+        return [false, 'Введите корректное значение в поле "Годовая процентная ставка"']
 
       return [true]
     }
