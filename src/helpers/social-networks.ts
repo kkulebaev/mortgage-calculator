@@ -12,6 +12,6 @@ export const SOCIAL_NETWORKS = [
   {
     id: 'telegram',
     icon: ['fab', 'telegram'],
-    link: 'https://t.me/kulebaev_official',
+    link: 'https://t.me/kkulebaev',
   },
 ] as const
