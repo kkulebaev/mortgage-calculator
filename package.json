@@ -28,7 +28,7 @@
     "@fortawesome/free-regular-svg-icons": "6.5.2",
     "@fortawesome/free-solid-svg-icons": "6.5.2",
     "@fortawesome/vue-fontawesome": "3.0.6",
-    "@vueuse/core": "10.9.0",
+    "@vueuse/core": "10.10.0",
     "animate.css": "4.1.1",
     "element-plus": "2.7.0",
     "pinia": "2.1.7",
