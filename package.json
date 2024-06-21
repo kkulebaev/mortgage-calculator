@@ -34,7 +34,7 @@
     "pinia": "2.1.7",
     "vue": "3.4.22",
     "vue-i18n": "9.13.0",
-    "vue-router": "4.3.0"
+    "vue-router": "4.4.0"
   },
   "devDependencies": {
     "@kkulebaev/prettier-config": "^0.2.0",
