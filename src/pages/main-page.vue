@@ -43,12 +43,13 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { onKeyStroke } from '@vueuse/core'
 import { ElNotification } from 'element-plus'
 import { storeToRefs } from 'pinia'
+import * as v from 'valibot'
 import { defineComponent } from 'vue'
 
 import { AppForm, AppResult, ColorSchemeSwitcher, PageTitle, SocialNetworks } from '@/components'
 import LangSwitcher from '@/components/lang-switcher.vue'
 import { useBreakpoints } from '@/composables'
-import type { Input } from '@/helpers'
+import { Input, MORTGAGE_TYPE, PERIOD } from '@/helpers'
 import { useMainStore } from '@/store'
 
 export default defineComponent({
@@ -65,32 +66,31 @@ export default defineComponent({
   },
 
   setup() {
-    type ErrorTuple = [true] | [false, string]
-
     const mainStore = useMainStore()
     const { outputValues, inputValues } = storeToRefs(mainStore)
     const { calcMortgage, clearOutput } = mainStore
 
+    const NotZeroNumber = v.pipe(v.number(), v.minValue(1))
+
+    const InputSchema = v.object({
+      amount: NotZeroNumber,
+      term: NotZeroNumber,
+      period: v.enum(PERIOD),
+      rate: NotZeroNumber,
+      type: v.enum(MORTGAGE_TYPE),
+    })
+
     onKeyStroke('Enter', () => onCalcHandler(inputValues.value))
 
     const onCalcHandler = (inputValues: Input): void => {
-      const [isValid, error] = isValidForm(inputValues)
-      if (!isValid) {
-        ElNotification.error(error)
+      const { success, issues } = v.safeParse(InputSchema, inputValues, { abortPipeEarly: true })
+
+      if (!success) {
+        ElNotification.error(issues[0].message)
         return
       }
 
       calcMortgage(inputValues)
-    }
-
-    const isValidForm = (inputValues: Input): ErrorTuple => {
-      if (inputValues.amount <= 0)
-        return [false, 'Введите корректное значение в поле "Сумма ипотеки"']
-      if (inputValues.term <= 0) return [false, 'Введите корректное значение в поле "Срок ипотеки"']
-      if (inputValues.rate <= 0)
-        return [false, 'Введите корректное значение в поле "Годовая процентная ставка"']
-
-      return [true]
     }
 
     const { isDesktop, isMobile } = useBreakpoints()

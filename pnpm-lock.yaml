@@ -41,6 +41,9 @@ importers:
       pinia:
         specifier: 2.1.7
         version: 2.1.7(typescript@5.5.2)(vue@3.4.22(typescript@5.5.2))
+      valibot:
+        specifier: ^0.35.0
+        version: 0.35.0
       vue:
         specifier: 3.4.22
         version: 3.4.22(typescript@5.5.2)
@@ -2082,6 +2085,9 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  valibot@0.35.0:
+    resolution: {integrity: sha512-+i2aCRkReTrd5KBN/dW2BrPOvFnU5LXTV2xjZnjnqUIO8YUx6P2+MgRrkwF2FhkexgyKq/NIZdPdknhHf5A/Ww==}
 
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
@@ -4263,6 +4269,8 @@ snapshots:
       requires-port: 1.0.0
 
   util-deprecate@1.0.2: {}
+
+  valibot@0.35.0: {}
 
   validate-npm-package-license@3.0.4:
     dependencies:
