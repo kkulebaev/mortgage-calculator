@@ -1,9 +1,9 @@
-import { useBreakpoints as vueUseBreakpoint } from '@vueuse/core'
+import { breakpointsTailwind, useBreakpoints as vueUseBreakpoint } from '@vueuse/core'
 
 export function useBreakpoints() {
   const breakpoints = vueUseBreakpoint({
-    mobile: 768,
-    tablet: 1024,
+    mobile: breakpointsTailwind.md,
+    tablet: breakpointsTailwind.lg,
   })
 
   const isMobile = breakpoints.smaller('mobile')
