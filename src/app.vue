@@ -26,7 +26,7 @@ import { useTitle } from '@vueuse/core'
 import { computed, defineComponent } from 'vue'
 
 import { AppNav, MobileHeader } from '@/components'
-import { useBreakpoints } from '@/composables'
+import { useBreakpoints, useColorScheme } from '@/composables'
 
 export default defineComponent({
   name: 'App',
@@ -38,6 +38,7 @@ export default defineComponent({
   },
 
   setup() {
+    useColorScheme()
     const { isMobile } = useBreakpoints()
 
     const { t } = useTranslate()
