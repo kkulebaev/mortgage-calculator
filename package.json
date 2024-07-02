@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@kkulebaev/prettier-config": "^0.2.0",
-    "@typescript-eslint/eslint-plugin": "7.14.1",
-    "@typescript-eslint/parser": "7.14.1",
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitest/ui": "1.6.0",
     "@vue/test-utils": "2.4.5",
