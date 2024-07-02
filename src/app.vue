@@ -42,7 +42,7 @@ export default defineComponent({
 
     const { t } = useTranslate()
 
-    const title = computed(() => t.value('app-title', 'Mortgage Calculator'))
+    const title = computed(() => t.value('app-title', 'Mortgage calculator'))
     useTitle(title)
 
     return {
