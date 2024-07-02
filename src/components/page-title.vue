@@ -1,5 +1,7 @@
 <template>
-  <h1 class="page-title">{{ title }}</h1>
+  <h1 class="page-title">
+    {{ title }}
+  </h1>
 </template>
 
 <script lang="ts">

@@ -5,10 +5,21 @@
       <DetailDescription :input-values="inputValues" />
     </header>
     <template v-if="paginatedData.length">
-      <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
-      <BasePagination v-model="pageNumber" :total="total" :page-size="size" />
+      <BaseTable
+        :data="paginatedData"
+        :fields="DETAIL_FIELDS"
+      />
+      <BasePagination
+        v-model="pageNumber"
+        :total="total"
+        :page-size="size"
+      />
     </template>
-    <ElEmpty v-else class="detail-info__empty" :description="$t('empty-description')" />
+    <ElEmpty
+      v-else
+      class="detail-info__empty"
+      :description="$t('empty-description')"
+    />
   </div>
 </template>
 

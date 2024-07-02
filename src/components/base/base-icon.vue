@@ -4,7 +4,7 @@
     :style="{ width: `${size}px` }"
     @click="$emit('click')"
     v-html="currentIcon"
-  ></i>
+  />
 </template>
 
 <!-- eslint-disable @typescript-eslint/no-unused-vars -->

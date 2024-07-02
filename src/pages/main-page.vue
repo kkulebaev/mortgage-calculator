@@ -8,7 +8,10 @@
           :size="isMobile ? '3x' : '4x'"
         />
         <PageTitle :title="$t('app-title')" />
-        <ColorSchemeSwitcher v-if="!isMobile" class="header__switcher" />
+        <ColorSchemeSwitcher
+          v-if="!isMobile"
+          class="header__switcher"
+        />
         <LangSwitcher />
       </header>
       <AppForm
@@ -26,7 +29,7 @@
         width="957"
         height="1060"
         alt="logo"
-      />
+      >
       <SocialNetworks v-if="isDesktop" />
     </div>
     <AppResult
