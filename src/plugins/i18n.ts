@@ -1,21 +1,23 @@
 import { createI18n } from 'vue-i18n'
 
-import { LOCALES } from '@/locales'
-import { en } from '@/locales/en'
+import EN from '@/locales/en.json'
+import RU from '@/locales/ru.json'
 
-type MessageSchema = typeof en
+type MessageSchema = typeof EN
 
 export const enum LANG {
   en = 'en',
   ru = 'ru',
 }
-export const i18n = createI18n<[MessageSchema], LANG.en | LANG.ru>({
-  legacy: false, // you must set `false`, to use Composition API
-  locale: getUserLocale(), // set locale
-  fallbackLocale: LANG.en, // set fallback locale
-  messages: LOCALES, // set locale messages
-  // If you need to specify other options, you can set other options
-  // ...
+
+export const i18n = createI18n<[MessageSchema], LANG, false>({
+  legacy: false,
+  locale: getUserLocale(),
+  fallbackLocale: LANG.en,
+  messages: {
+    [LANG.en]: EN,
+    [LANG.ru]: RU,
+  },
 })
 
 function getUserLocale() {
