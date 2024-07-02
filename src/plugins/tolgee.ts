@@ -12,7 +12,7 @@ const tolgee = Tolgee()
   .use(DevTools())
   .use(FormatIcu())
   .use(LanguageStorage())
-  .use(BackendFetch({ prefix: 'https://cdn.tolg.ee/585d9283cc54953be971b3997c848c00' }))
+  .use(BackendFetch({ prefix: import.meta.env.VITE_APP_TOLGEE_CDN_URL }))
   .init({
     apiUrl: import.meta.env.VITE_APP_TOLGEE_API_URL,
     apiKey: import.meta.env.VITE_APP_TOLGEE_API_KEY,
