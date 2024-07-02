@@ -25,8 +25,7 @@ export default defineComponent({
 
     function changeLang(value: string) {
       lang.value = value
-      tolgee.changeLanguage(value)
-      window.location.reload()
+      tolgee.changeLanguage(value).then(() => window.location.reload())
     }
 
     return {
