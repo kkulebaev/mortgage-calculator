@@ -1,3 +1,3 @@
 export default function numberWithSpaces(val: number) {
-  return val.toLocaleString()
+  return new Intl.NumberFormat('ru').format(val)
 }
