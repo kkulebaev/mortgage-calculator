@@ -24,10 +24,10 @@ export interface Output {
 }
 
 export const DEFAULT_INPUT = (): Input => ({
-  amount: 1000000,
-  term: 12,
-  period: PERIOD.months,
-  rate: 10,
+  amount: 10_000_000,
+  term: 20,
+  period: PERIOD.years,
+  rate: 15,
   type: MORTGAGE_TYPE.an,
 })
 
