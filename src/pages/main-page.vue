@@ -43,13 +43,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { onKeyStroke } from '@vueuse/core'
 import { ElNotification } from 'element-plus'
 import { storeToRefs } from 'pinia'
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 
 import { AppForm, AppResult, ColorSchemeSwitcher, PageTitle, SocialNetworks } from '@/components'
 import LangSwitcher from '@/components/lang-switcher.vue'
 import { useBreakpoints } from '@/composables'
 import type { Input } from '@/helpers'
-import { DEFAULT_INPUT } from '@/helpers'
 import { useMainStore } from '@/store'
 
 export default defineComponent({
@@ -69,10 +68,8 @@ export default defineComponent({
     type ErrorTuple = [true] | [false, string]
 
     const mainStore = useMainStore()
-    const { outputValues } = storeToRefs(mainStore)
+    const { outputValues, inputValues } = storeToRefs(mainStore)
     const { calcMortgage, clearOutput } = mainStore
-
-    const inputValues = ref(DEFAULT_INPUT())
 
     onKeyStroke('Enter', () => onCalcHandler(inputValues.value))
 
