@@ -3,8 +3,7 @@
   "version": "1.0.421",
   "type": "module",
   "engines": {
-    "node": ">=20.12.2",
-    "pnpm": ">=8.14.1"
+    "node": ">=20.12.2"
   },
   "scripts": {
     "dev": "vite",
