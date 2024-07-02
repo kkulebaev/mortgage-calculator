@@ -17,8 +17,8 @@
 </template>
 
 <script lang="ts">
+import { useTranslate } from '@tolgee/vue'
 import { computed, defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 import HistogramBar, { HistogramTypes } from './histogram-bar.vue'
 
@@ -42,20 +42,20 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { t } = useI18n()
+    const { t } = useTranslate()
 
     const histograms = computed(() => [
       {
         height: (props.takeValue * 100) / props.repayValue || 0,
         value: props.takeValue,
-        label: t('take'),
+        label: t.value('take'),
         type: HistogramTypes.primary,
       },
 
       {
         height: 100,
         value: props.repayValue,
-        label: t('return'),
+        label: t.value('return'),
         type: HistogramTypes.secondary,
       },
     ])

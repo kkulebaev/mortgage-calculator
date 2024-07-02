@@ -1,16 +1,16 @@
 <template>
   <div class="description">
     <span>
-      {{ t('mortgage-amount') }}: {{ numberWithSpaces(inputValues.amount) }}
-      {{ t('currency') }}
+      {{ $t('mortgage-amount') }}: {{ numberWithSpaces(inputValues.amount) }}
+      {{ $t('currency') }}
     </span>
     <span>
-      {{ t('mortgage-term') }}: {{ inputValues.term }}
+      {{ $t('mortgage-term') }}: {{ inputValues.term }}
       {{ PERIOD_LABEL[inputValues.period]() }}
     </span>
-    <span> {{ t('mortgage-rate') }}: {{ inputValues.rate }} % </span>
+    <span> {{ $t('mortgage-rate') }}: {{ inputValues.rate }} % </span>
     <span>
-      {{ t('mortgage-payment-type') }}:
+      {{ $t('mortgage-payment-type') }}:
       {{ MORTGAGE_TYPE_LABEL[inputValues.type]() }}
     </span>
   </div>
@@ -19,7 +19,6 @@
 <script lang="ts">
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 import type { Input } from '@/helpers'
 import { MORTGAGE_TYPE_LABEL, PERIOD_LABEL } from '@/helpers'
@@ -36,13 +35,10 @@ export default defineComponent({
   },
 
   setup() {
-    const { t } = useI18n()
-
     return {
       PERIOD_LABEL,
       MORTGAGE_TYPE_LABEL,
       numberWithSpaces,
-      t,
     }
   },
 })

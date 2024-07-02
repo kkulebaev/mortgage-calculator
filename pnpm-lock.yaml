@@ -23,6 +23,9 @@ importers:
       '@fortawesome/vue-fontawesome':
         specifier: 3.0.6
         version: 3.0.6(@fortawesome/fontawesome-svg-core@6.5.2)(vue@3.4.22(typescript@5.5.2))
+      '@tolgee/vue':
+        specifier: ^5.28.4
+        version: 5.28.4(vue@3.4.22(typescript@5.5.2))
       '@vueuse/core':
         specifier: 10.11.0
         version: 10.11.0(vue@3.4.22(typescript@5.5.2))
@@ -38,9 +41,6 @@ importers:
       vue:
         specifier: 3.4.22
         version: 3.4.22(typescript@5.5.2)
-      vue-i18n:
-        specifier: 9.13.0
-        version: 9.13.0(vue@3.4.22(typescript@5.5.2))
       vue-router:
         specifier: 4.4.0
         version: 4.4.0(vue@3.4.22(typescript@5.5.2))
@@ -404,18 +404,6 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
 
-  '@intlify/core-base@9.13.0':
-    resolution: {integrity: sha512-Lx8+YTrFpom7AtdbbuJHzgmr612/bceHU92v8ZPU9HU9/rczf+TmCs95BxWPIR4K42xh4MVMLsNzLUWiXcNaLg==}
-    engines: {node: '>= 16'}
-
-  '@intlify/message-compiler@9.13.0':
-    resolution: {integrity: sha512-zhESuudiDpFQhUOx/qrSMd7ZYHbmgCc0QzBc27cDUxaaAj3olbYJnsx3osiHPQyYnv/LuC+WTqoNOEBoHP6dqQ==}
-    engines: {node: '>= 16'}
-
-  '@intlify/shared@9.13.0':
-    resolution: {integrity: sha512-fUwWcpDz9Wm4dSaz+6XmjoNXWBjZLJtT1Zf1cpLBELbCAOS8WBRscPtgOSfzm6JCqf5KgMI4g917f5TtEeez3A==}
-    engines: {node: '>= 16'}
-
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
@@ -537,6 +525,17 @@ packages:
 
   '@sxzz/popperjs-es@2.11.7':
     resolution: {integrity: sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==}
+
+  '@tolgee/core@5.28.4':
+    resolution: {integrity: sha512-bON5Pw0Keo5SgeZF6VyNtbSaRjDf/agj03IdX8l+pxaPx46kdftdFnVbBYOycecYfYHIQc3+0j4YnAePde5HWA==}
+
+  '@tolgee/vue@5.28.4':
+    resolution: {integrity: sha512-VJOpeCr3bSzVTzIZEniLWiv2y2JguvEJrZMphzshRcshCpXVZzz7bz1VQtQmXTYPzoDu5kfU3j1YuyhQkwmteg==}
+    peerDependencies:
+      vue: ^3.0.0
+
+  '@tolgee/web@5.28.4':
+    resolution: {integrity: sha512-m1bcL392AV9R/xKyXTHxAdFrgH1jxBTvjoOElSryR3N2Kl+33vXR+XUc+u66vRhBhOP47XVbqXYsPkTtSXD/ng==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -2173,12 +2172,6 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  vue-i18n@9.13.0:
-    resolution: {integrity: sha512-NlZ+e8rhGSGNk/Vfh4IUvlPRjljPCRslbNYgQmYZY+sLXZgahw8fylQguZU3e8ntJDvitfe40f8p3udOiKMS0A==}
-    engines: {node: '>= 16'}
-    peerDependencies:
-      vue: ^3.0.0
-
   vue-router@4.4.0:
     resolution: {integrity: sha512-HB+t2p611aIZraV2aPSRNXf0Z/oLZFrlygJm+sZbdJaW6lcFqEDQwnzUBXn+DApw+/QzDU/I9TeWx9izEjTmsA==}
     peerDependencies:
@@ -2493,18 +2486,6 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
-  '@intlify/core-base@9.13.0':
-    dependencies:
-      '@intlify/message-compiler': 9.13.0
-      '@intlify/shared': 9.13.0
-
-  '@intlify/message-compiler@9.13.0':
-    dependencies:
-      '@intlify/shared': 9.13.0
-      source-map-js: 1.2.0
-
-  '@intlify/shared@9.13.0': {}
-
   '@isaacs/cliui@8.0.2':
     dependencies:
       string-width: 5.1.2
@@ -2592,6 +2573,17 @@ snapshots:
   '@sinclair/typebox@0.27.8': {}
 
   '@sxzz/popperjs-es@2.11.7': {}
+
+  '@tolgee/core@5.28.4': {}
+
+  '@tolgee/vue@5.28.4(vue@3.4.22(typescript@5.5.2))':
+    dependencies:
+      '@tolgee/web': 5.28.4
+      vue: 3.4.22(typescript@5.5.2)
+
+  '@tolgee/web@5.28.4':
+    dependencies:
+      '@tolgee/core': 5.28.4
 
   '@types/estree@1.0.5': {}
 
@@ -4354,13 +4346,6 @@ snapshots:
       semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
-
-  vue-i18n@9.13.0(vue@3.4.22(typescript@5.5.2)):
-    dependencies:
-      '@intlify/core-base': 9.13.0
-      '@intlify/shared': 9.13.0
-      '@vue/devtools-api': 6.6.1
-      vue: 3.4.22(typescript@5.5.2)
 
   vue-router@4.4.0(vue@3.4.22(typescript@5.5.2)):
     dependencies:

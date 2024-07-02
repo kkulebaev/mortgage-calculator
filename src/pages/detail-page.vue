@@ -1,14 +1,14 @@
 <template>
   <div class="detail-info">
     <header class="header">
-      <PageTitle :title="t('mortgage-payment-schedule')" />
+      <PageTitle :title="$t('mortgage-payment-schedule')" />
       <DetailDescription :input-values="inputValues" />
     </header>
     <template v-if="paginatedData.length">
       <BaseTable :data="paginatedData" :fields="DETAIL_FIELDS" />
       <BasePagination v-model="pageNumber" :total="total" :page-size="size" />
     </template>
-    <ElEmpty v-else class="detail-info__empty" :description="t('empty-description')" />
+    <ElEmpty v-else class="detail-info__empty" :description="$t('empty-description')" />
   </div>
 </template>
 
@@ -16,7 +16,6 @@
 import { ElEmpty } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { defineComponent, ref, toRef } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 import { BasePagination, BaseTable, DetailDescription, PageTitle } from '@/components'
 import { usePagination } from '@/composables'
@@ -35,8 +34,6 @@ export default defineComponent({
   },
 
   setup() {
-    const { t } = useI18n()
-
     const mainStore = useMainStore()
     const { inputValues, outputValues } = storeToRefs(mainStore)
     const paymentTable = toRef(outputValues.value, 'paymentTable')
@@ -54,7 +51,6 @@ export default defineComponent({
       pageNumber,
       total,
       size,
-      t,
     }
   },
 })

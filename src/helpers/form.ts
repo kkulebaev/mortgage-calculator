@@ -1,6 +1,4 @@
-import { i18n } from '@/plugins/i18n'
-
-const { t } = i18n.global
+import { tolgee } from '@/plugins/tolgee'
 
 export interface OptionRaw {
   label: () => string
@@ -13,8 +11,8 @@ export enum MORTGAGE_TYPE {
 }
 
 export const MORTGAGE_TYPE_LABEL = {
-  an: () => t('type.an'),
-  dif: () => t('type.dif'),
+  an: () => tolgee.t('type.an'),
+  dif: () => tolgee.t('type.dif'),
 }
 
 export enum PERIOD {
@@ -23,8 +21,8 @@ export enum PERIOD {
 }
 
 export const PERIOD_LABEL = {
-  years: () => t('period.years'),
-  months: () => t('period.months'),
+  years: () => tolgee.t('period.years'),
+  months: () => tolgee.t('period.months'),
 }
 
 export const TYPE_MORTGAGE_OPTIONS: OptionRaw[] = [
