@@ -1,23 +1,28 @@
 <template>
   <div class="not-found">
     <div id="clouds">
-      <div class="clouds__item x1"></div>
-      <div class="clouds__item x1_5"></div>
-      <div class="clouds__item x2"></div>
-      <div class="clouds__item x3"></div>
-      <div class="clouds__item x4"></div>
-      <div class="clouds__item x5"></div>
+      <div class="clouds__item x1" />
+      <div class="clouds__item x1_5" />
+      <div class="clouds__item x2" />
+      <div class="clouds__item x3" />
+      <div class="clouds__item x4" />
+      <div class="clouds__item x5" />
     </div>
     <div class="content-404">
-      <h1 class="content-404__title">{{ NOT_FOUND_STATUS_CODE }}</h1>
-      <hr class="content-404__hr" />
+      <h1 class="content-404__title">
+        {{ NOT_FOUND_STATUS_CODE }}
+      </h1>
+      <hr class="content-404__hr">
       <h2 class="content-404__subtitle primary-word">
         {{ $t('notFound.page') }}
       </h2>
       <h2 class="content-404__subtitle secondary-word">
         {{ $t('notFound.notFound') }}
       </h2>
-      <RouterLink class="content-404__back-to" :to="{ name: 'MainPage' }">
+      <RouterLink
+        class="content-404__back-to"
+        :to="{ name: 'MainPage' }"
+      >
         {{ $t('notFound.back') }}
       </RouterLink>
     </div>

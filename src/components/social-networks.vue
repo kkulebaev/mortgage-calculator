@@ -7,7 +7,10 @@
       :href="item.link"
       target="_blank"
     >
-      <FontAwesomeIcon :icon="item.icon" size="3x" />
+      <FontAwesomeIcon
+        :icon="item.icon"
+        size="3x"
+      />
     </a>
   </div>
 </template>

@@ -1,6 +1,14 @@
 <template>
-  <ElSelect v-model="value" @change="$emit('change')">
-    <ElOption v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
+  <ElSelect
+    v-model="value"
+    @change="$emit('change')"
+  >
+    <ElOption
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value"
+    />
   </ElSelect>
 </template>
 

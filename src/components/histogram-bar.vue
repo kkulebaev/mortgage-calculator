@@ -1,5 +1,8 @@
 <template>
-  <div v-if="value" class="histogram">
+  <div
+    v-if="value"
+    class="histogram"
+  >
     <span class="histogram__label"> {{ label }} </span>
     <span class="histogram__value"> {{ numberWithSpaces(value) }} {{ $t('currency') }} </span>
 
