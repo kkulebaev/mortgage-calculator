@@ -1,6 +1,8 @@
+import { RouteRecordRaw } from 'vue-router'
+
 import { DetailPage, FAQPage, MainPage, NotFoundPage } from '@/pages'
 
-export const routes = [
+export const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: MainPage.name,
