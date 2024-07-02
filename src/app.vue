@@ -1,36 +1,38 @@
 <template>
-  <div class="mortgage-calculator">
-    <div class="app-wrapper">
-      <AppNav class="app__nav" />
-      <div class="container">
-        <MobileHeader v-if="isMobile" />
-        <RouterView v-slot="{ Component }">
-          <Transition
-            enter-active-class="animated fadeIn"
-            leave-active-class="animated fadeOut"
-            mode="out-in"
-          >
-            <Component :is="Component" />
-          </Transition>
-        </RouterView>
+  <TolgeeProvider>
+    <div class="mortgage-calculator">
+      <div class="app-wrapper">
+        <AppNav class="app__nav" />
+        <div class="container">
+          <MobileHeader v-if="isMobile" />
+          <RouterView v-slot="{ Component }">
+            <Transition
+              enter-active-class="animated fadeIn"
+              leave-active-class="animated fadeOut"
+              mode="out-in"
+            >
+              <Component :is="Component" />
+            </Transition>
+          </RouterView>
+        </div>
       </div>
     </div>
-  </div>
+  </TolgeeProvider>
 </template>
 
 <script lang="ts">
+import { TolgeeProvider, useTranslate } from '@tolgee/vue'
 import { useTitle } from '@vueuse/core'
 import { computed, defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 import { AppNav, MobileHeader } from '@/components'
 import { useBreakpoints } from '@/composables'
-import { Language } from '@/plugins/i18n'
 
 export default defineComponent({
   name: 'App',
 
   components: {
+    TolgeeProvider,
     AppNav,
     MobileHeader,
   },
@@ -38,12 +40,10 @@ export default defineComponent({
   setup() {
     const { isMobile } = useBreakpoints()
 
-    const { locale } = useI18n()
+    const { t } = useTranslate()
 
-    const TITLE_EN = 'Mortgage calculator'
-    const TITLE_RU = 'Калькулятор ипотеки'
-    const titleText = computed(() => (locale.value === Language.RU ? TITLE_RU : TITLE_EN))
-    useTitle(titleText)
+    const title = computed(() => t.value('app-title', 'Mortgage Calculator'))
+    useTitle(title)
 
     return {
       isMobile,

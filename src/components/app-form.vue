@@ -1,7 +1,7 @@
 <template>
   <form class="form" netlify>
     <div class="form-item">
-      <span class="form-item__label"> {{ t('mortgage-amount') }} </span>
+      <span class="form-item__label"> {{ $t('mortgage-amount') }} </span>
       <ElInputNumber
         v-model="curAmount"
         :min="1"
@@ -12,7 +12,7 @@
       />
     </div>
     <div class="form-item">
-      <span class="form-item__label"> {{ t('mortgage-term') }} </span>
+      <span class="form-item__label"> {{ $t('mortgage-term') }} </span>
       <div class="form-item__group">
         <ElInputNumber
           v-model="curTerm"
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="form-item">
-      <span class="form-item__label"> {{ t('mortgage-rate') }} </span>
+      <span class="form-item__label"> {{ $t('mortgage-rate') }} </span>
       <ElInputNumber
         v-model="curRate"
         :min="0.1"
@@ -42,7 +42,7 @@
       />
     </div>
     <div class="form-item">
-      <span class="form-item__label"> {{ t('mortgage-payment-type') }} </span>
+      <span class="form-item__label"> {{ $t('mortgage-payment-type') }} </span>
       <BaseSelect
         v-model="curPaymentType"
         :options="TYPE_MORTGAGE_OPTIONS_NORMALIZED"
@@ -57,7 +57,6 @@ import { useVModels } from '@vueuse/core'
 import { ElInputNumber } from 'element-plus'
 import type { PropType } from 'vue'
 import { computed, defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 import { Option } from '@/components/base/base-select.vue'
 import { MORTGAGE_TYPE, OptionRaw, PERIOD, PERIOD_OPTIONS, TYPE_MORTGAGE_OPTIONS } from '@/helpers'
@@ -117,8 +116,6 @@ export default defineComponent({
       paymentType: curPaymentType,
     } = useVModels(props, emit)
 
-    const { t } = useI18n()
-
     const TYPE_MORTGAGE_OPTIONS_NORMALIZED = computed(() => normalizedData(TYPE_MORTGAGE_OPTIONS))
 
     const PERIOD_OPTIONS_NORMALIZED = computed(() => normalizedData(PERIOD_OPTIONS))
@@ -138,7 +135,6 @@ export default defineComponent({
       curPaymentType,
       TYPE_MORTGAGE_OPTIONS_NORMALIZED,
       PERIOD_OPTIONS_NORMALIZED,
-      t,
     }
   },
 })

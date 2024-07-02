@@ -64,7 +64,6 @@ module.exports = {
     'vue/require-name-property': 'error',
     'vue/no-v-html': 'off',
     'vue/prefer-true-attribute-shorthand': ['error', 'never'],
-    'vue/no-bare-strings-in-template': 'error',
     'unicorn/filename-case': [
       'error',
       {

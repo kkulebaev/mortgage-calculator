@@ -7,7 +7,7 @@
           :icon="['fas', 'calculator']"
           :size="isMobile ? '3x' : '4x'"
         />
-        <PageTitle :title="t('app-title')" />
+        <PageTitle :title="$t('app-title')" />
         <ColorSchemeSwitcher v-if="!isMobile" class="header__switcher" />
         <LangSwitcher />
       </header>
@@ -25,7 +25,7 @@
         src="./../assets/img/owl.png"
         width="957"
         height="1060"
-        :alt="t('owl')"
+        alt="logo"
       />
       <SocialNetworks v-if="isDesktop" />
     </div>
@@ -44,7 +44,6 @@ import { onKeyStroke } from '@vueuse/core'
 import { ElNotification } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { defineComponent, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 import { AppForm, AppResult, ColorSchemeSwitcher, PageTitle, SocialNetworks } from '@/components'
 import LangSwitcher from '@/components/lang-switcher.vue'
@@ -68,8 +67,6 @@ export default defineComponent({
 
   setup() {
     type ErrorTuple = [true] | [false, string]
-
-    const { t } = useI18n()
 
     const mainStore = useMainStore()
     const { outputValues } = storeToRefs(mainStore)
@@ -109,7 +106,6 @@ export default defineComponent({
 
       isDesktop,
       isMobile,
-      t,
     }
   },
 })

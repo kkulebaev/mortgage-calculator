@@ -12,13 +12,13 @@
       <h1 class="content-404__title">{{ NOT_FOUND_STATUS_CODE }}</h1>
       <hr class="content-404__hr" />
       <h2 class="content-404__subtitle primary-word">
-        {{ t('notFound.page') }}
+        {{ $t('notFound.page') }}
       </h2>
       <h2 class="content-404__subtitle secondary-word">
-        {{ t('notFound.notFound') }}
+        {{ $t('notFound.notFound') }}
       </h2>
       <RouterLink class="content-404__back-to" :to="{ name: 'MainPage' }">
-        {{ t('notFound.back') }}
+        {{ $t('notFound.back') }}
       </RouterLink>
     </div>
   </div>
@@ -26,7 +26,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { RouterLink } from 'vue-router'
 
 export default defineComponent({
@@ -39,11 +38,8 @@ export default defineComponent({
   setup() {
     const NOT_FOUND_STATUS_CODE = '404'
 
-    const { t } = useI18n()
-
     return {
       NOT_FOUND_STATUS_CODE,
-      t,
     }
   },
 })

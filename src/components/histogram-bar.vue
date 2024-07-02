@@ -1,7 +1,7 @@
 <template>
   <div v-if="value" class="histogram">
     <span class="histogram__label"> {{ label }} </span>
-    <span class="histogram__value"> {{ numberWithSpaces(value) }} {{ t('currency') }} </span>
+    <span class="histogram__value"> {{ numberWithSpaces(value) }} {{ $t('currency') }} </span>
 
     <div
       class="histogram__scale-bar"
@@ -13,7 +13,6 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 import { numberWithSpaces } from '@/utils'
 
@@ -48,12 +47,9 @@ export default defineComponent({
   },
 
   setup() {
-    const { t } = useI18n()
-
     return {
       numberWithSpaces,
       HistogramTypes,
-      t,
     }
   },
 })
