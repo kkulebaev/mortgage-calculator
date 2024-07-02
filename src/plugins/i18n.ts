@@ -5,26 +5,26 @@ import RU from '@/locales/ru.json'
 
 type MessageSchema = typeof EN
 
-export const enum LANG {
-  en = 'en',
-  ru = 'ru',
+export const enum Language {
+  EN = 'EN',
+  RU = 'RU',
 }
 
-export const i18n = createI18n<[MessageSchema], LANG, false>({
+export const i18n = createI18n<[MessageSchema], Language, false>({
   legacy: false,
   locale: getUserLocale(),
-  fallbackLocale: LANG.en,
+  fallbackLocale: Language.EN,
   messages: {
-    [LANG.en]: EN,
-    [LANG.ru]: RU,
+    [Language.EN]: EN,
+    [Language.RU]: RU,
   },
   pluralRules: {
-    [LANG.ru]: slavicLangPluralRule,
+    [Language.RU]: slavicLangPluralRule,
   },
 })
 
 function getUserLocale() {
-  return localStorage.getItem('locale') ?? LANG.en
+  return localStorage.getItem('locale') ?? Language.EN
 }
 
 /* https://vue-i18n.intlify.dev/guide/essentials/pluralization.html#custom-pluralization */
