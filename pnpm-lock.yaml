@@ -23,6 +23,9 @@ importers:
       '@fortawesome/vue-fontawesome':
         specifier: 3.0.6
         version: 3.0.6(@fortawesome/fontawesome-svg-core@6.5.2)(vue@3.4.22(typescript@5.5.2))
+      '@tolgee/format-icu':
+        specifier: ^5.28.4
+        version: 5.28.4
       '@tolgee/vue':
         specifier: ^5.28.4
         version: 5.28.4(vue@3.4.22(typescript@5.5.2))
@@ -528,6 +531,9 @@ packages:
 
   '@tolgee/core@5.28.4':
     resolution: {integrity: sha512-bON5Pw0Keo5SgeZF6VyNtbSaRjDf/agj03IdX8l+pxaPx46kdftdFnVbBYOycecYfYHIQc3+0j4YnAePde5HWA==}
+
+  '@tolgee/format-icu@5.28.4':
+    resolution: {integrity: sha512-PYdxS7Fll4Koc3JMtzjb/Ocn3l2ch66fMHCR761tSU9Ho/PRao6kwQ8UYPLYwSOL1Oe49KQV806CmwKD0pq9nA==}
 
   '@tolgee/vue@5.28.4':
     resolution: {integrity: sha512-VJOpeCr3bSzVTzIZEniLWiv2y2JguvEJrZMphzshRcshCpXVZzz7bz1VQtQmXTYPzoDu5kfU3j1YuyhQkwmteg==}
@@ -2575,6 +2581,8 @@ snapshots:
   '@sxzz/popperjs-es@2.11.7': {}
 
   '@tolgee/core@5.28.4': {}
+
+  '@tolgee/format-icu@5.28.4': {}
 
   '@tolgee/vue@5.28.4(vue@3.4.22(typescript@5.5.2))':
     dependencies:

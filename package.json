@@ -28,6 +28,7 @@
     "@fortawesome/free-regular-svg-icons": "6.5.2",
     "@fortawesome/free-solid-svg-icons": "6.5.2",
     "@fortawesome/vue-fontawesome": "3.0.6",
+    "@tolgee/format-icu": "^5.28.4",
     "@tolgee/vue": "^5.28.4",
     "@vueuse/core": "10.11.0",
     "animate.css": "4.1.1",

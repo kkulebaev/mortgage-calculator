@@ -1,11 +1,5 @@
-import {
-  BackendFetch,
-  DevTools,
-  FormatSimple,
-  LanguageStorage,
-  Tolgee,
-  VueTolgee,
-} from '@tolgee/vue'
+import { FormatIcu } from '@tolgee/format-icu'
+import { BackendFetch, DevTools, LanguageStorage, Tolgee, VueTolgee } from '@tolgee/vue'
 
 export const enum Language {
   EN = 'en',
@@ -16,7 +10,7 @@ const availableLocales = [Language.EN, Language.RU]
 
 const tolgee = Tolgee()
   .use(DevTools())
-  .use(FormatSimple())
+  .use(FormatIcu())
   .use(LanguageStorage())
   .use(BackendFetch({ prefix: 'https://cdn.tolg.ee/585d9283cc54953be971b3997c848c00' }))
   .init({
