@@ -37,5 +37,6 @@ export default defineComponent({
 .lang-switcher {
   width: 7rem;
   min-width: 7rem;
+  text-transform: uppercase;
 }
 </style>
