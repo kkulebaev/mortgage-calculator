@@ -37,8 +37,8 @@
     "vue-router": "4.4.0"
   },
   "devDependencies": {
-    "@kkulebaev/prettier-config": "^0.2.0",
-    "@types/node": "^20.14.9",
+    "@kkulebaev/prettier-config": "0.2.0",
+    "@types/node": "20.14.9",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
     "@vitejs/plugin-vue": "5.0.4",

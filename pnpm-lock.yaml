@@ -46,10 +46,10 @@ importers:
         version: 4.4.0(vue@3.4.22(typescript@5.5.2))
     devDependencies:
       '@kkulebaev/prettier-config':
-        specifier: ^0.2.0
+        specifier: 0.2.0
         version: 0.2.0
       '@types/node':
-        specifier: ^20.14.9
+        specifier: 20.14.9
         version: 20.14.9
       '@typescript-eslint/eslint-plugin':
         specifier: 6.21.0
