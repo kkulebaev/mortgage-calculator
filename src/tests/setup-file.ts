@@ -1,12 +1,8 @@
 import { config, enableAutoUnmount } from '@vue/test-utils'
 import { afterEach } from 'vitest'
 
-import { tolgee, VueTolgee } from '@/plugins/tolgee'
+import { i18n } from '@/plugins/i18n'
 
 enableAutoUnmount(afterEach)
 
-config.global.plugins.push({
-  install: app => {
-    app.use(VueTolgee, { tolgee })
-  },
-})
+config.global.plugins = [i18n]

@@ -1,8 +1,7 @@
 <template>
   <ElSelect
-    :model-value="lang"
+    v-model="lang"
     class="lang-switcher"
-    @change="changeLang"
   >
     <ElOption
       v-for="locale in availableLocales"
@@ -14,10 +13,10 @@
 </template>
 
 <script lang="ts">
+import { useStorage } from '@vueuse/core'
 import { ElOption, ElSelect } from 'element-plus'
-import { defineComponent, ref } from 'vue'
-
-import { availableLocales, tolgee } from '@/plugins/tolgee'
+import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
   name: 'LangSwitcher',
@@ -25,17 +24,13 @@ export default defineComponent({
   components: { ElOption, ElSelect },
 
   setup() {
-    const lang = ref(tolgee.getLanguage())
+    const { availableLocales, locale } = useI18n()
 
-    function changeLang(value: string) {
-      lang.value = value
-      tolgee.changeLanguage(value).then(() => window.location.reload())
-    }
+    const lang = useStorage('locale', locale)
 
     return {
       availableLocales,
       lang,
-      changeLang,
     }
   },
 })

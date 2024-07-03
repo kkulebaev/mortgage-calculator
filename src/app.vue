@@ -1,29 +1,27 @@
 <template>
-  <TolgeeProvider>
-    <div class="mortgage-calculator">
-      <div class="app-wrapper">
-        <AppNav class="app__nav" />
-        <div class="container">
-          <MobileHeader v-if="isMobile" />
-          <RouterView v-slot="{ Component }">
-            <Transition
-              enter-active-class="animated fadeIn"
-              leave-active-class="animated fadeOut"
-              mode="out-in"
-            >
-              <Component :is="Component" />
-            </Transition>
-          </RouterView>
-        </div>
+  <div class="mortgage-calculator">
+    <div class="app-wrapper">
+      <AppNav class="app__nav" />
+      <div class="container">
+        <MobileHeader v-if="isMobile" />
+        <RouterView v-slot="{ Component }">
+          <Transition
+            enter-active-class="animated fadeIn"
+            leave-active-class="animated fadeOut"
+            mode="out-in"
+          >
+            <Component :is="Component" />
+          </Transition>
+        </RouterView>
       </div>
     </div>
-  </TolgeeProvider>
+  </div>
 </template>
 
 <script lang="ts">
-import { TolgeeProvider, useTranslate } from '@tolgee/vue'
 import { useTitle } from '@vueuse/core'
 import { computed, defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import { AppNav, MobileHeader } from '@/components'
 import { useBreakpoints, useColorScheme } from '@/composables'
@@ -32,7 +30,6 @@ export default defineComponent({
   name: 'App',
 
   components: {
-    TolgeeProvider,
     AppNav,
     MobileHeader,
   },
@@ -41,9 +38,9 @@ export default defineComponent({
     useColorScheme()
     const { isMobile } = useBreakpoints()
 
-    const { t } = useTranslate()
+    const { t } = useI18n()
 
-    const title = computed(() => t.value('app-title', 'Mortgage calculator'))
+    const title = computed(() => t('app-title', 'Mortgage calculator'))
     useTitle(title)
 
     return {
