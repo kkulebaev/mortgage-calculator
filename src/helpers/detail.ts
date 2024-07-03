@@ -1,11 +1,11 @@
-import { tolgee } from '@/plugins/tolgee'
+import { i18n } from '@/plugins/i18n'
 
 export enum CellType {
   string = 'string',
   number = 'number',
 }
 
-const CURRENCY_IN_BRACKETS = () => `(${tolgee.t('currency')})`
+const CURRENCY_IN_BRACKETS = () => `(${i18n.global.t('currency')})`
 
 export const DETAIL_FIELDS = [
   {
@@ -18,25 +18,25 @@ export const DETAIL_FIELDS = [
   {
     prop: 'monthPay',
     type: CellType.number,
-    label: () => tolgee.t('detail.monthly-payment') + ' ' + CURRENCY_IN_BRACKETS(),
+    label: () => i18n.global.t('detail.monthly-payment') + ' ' + CURRENCY_IN_BRACKETS(),
     align: 'center',
   },
   {
     prop: 'repayBody',
     type: CellType.number,
-    label: () => tolgee.t('detail.repayment-body') + ' ' + CURRENCY_IN_BRACKETS(),
+    label: () => i18n.global.t('detail.repayment-body') + ' ' + CURRENCY_IN_BRACKETS(),
     align: 'center',
   },
   {
     prop: 'repayPer',
     type: CellType.number,
-    label: () => tolgee.t('detail.repayment-interest') + ' ' + CURRENCY_IN_BRACKETS(),
+    label: () => i18n.global.t('detail.repayment-interest') + ' ' + CURRENCY_IN_BRACKETS(),
     align: 'center',
   },
   {
     prop: 'debtEnd',
     type: CellType.number,
-    label: () => tolgee.t('detail.debt-end') + ' ' + CURRENCY_IN_BRACKETS(),
+    label: () => i18n.global.t('detail.debt-end') + ' ' + CURRENCY_IN_BRACKETS(),
     align: 'center',
   },
 ] as const
