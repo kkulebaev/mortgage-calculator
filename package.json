@@ -42,7 +42,7 @@
     "@kkulebaev/prettier-config": "0.2.0",
     "@tolgee/cli": "2.1.2",
     "@types/node": "20.14.9",
-    "@vitejs/plugin-vue": "5.0.4",
+    "@vitejs/plugin-vue": "5.1.0",
     "@vitest/ui": "2.0.1",
     "@vue/test-utils": "2.4.5",
     "eslint": "9.7.0",
