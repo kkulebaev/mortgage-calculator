@@ -45,7 +45,7 @@
     "@vitejs/plugin-vue": "5.1.0",
     "@vitest/ui": "2.0.1",
     "@vue/test-utils": "2.4.5",
-    "eslint": "9.9.0",
+    "eslint": "9.10.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-simple-import-sort": "12.1.0",
     "eslint-plugin-unicorn": "55.0.0",
