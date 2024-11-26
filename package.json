@@ -35,7 +35,7 @@
     "pinia": "2.2.0",
     "valibot": "^0.42.0",
     "vue": "3.5.0",
-    "vue-i18n": "9.14.1",
+    "vue-i18n": "10.0.4",
     "vue-router": "4.5.0"
   },
   "devDependencies": {
