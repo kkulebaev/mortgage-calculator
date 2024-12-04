@@ -32,7 +32,7 @@
     "@vueuse/core": "11.3.0",
     "animate.css": "4.1.1",
     "element-plus": "2.9.0",
-    "pinia": "2.2.0",
+    "pinia": "2.3.0",
     "valibot": "^0.42.0",
     "vue": "3.5.0",
     "vue-i18n": "10.0.4",
