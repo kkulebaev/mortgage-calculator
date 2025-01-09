@@ -50,7 +50,7 @@
     "eslint-plugin-simple-import-sort": "12.1.0",
     "eslint-plugin-unicorn": "56.0.0",
     "eslint-plugin-vue": "9.32.0",
-    "jsdom": "25.0.0",
+    "jsdom": "26.0.0",
     "nano-staged": "0.8.0",
     "postcss": "8.4.38",
     "postcss-custom-media": "11.0.0",
