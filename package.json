@@ -54,7 +54,7 @@
     "nano-staged": "0.8.0",
     "postcss": "8.5.0",
     "postcss-custom-media": "11.0.0",
-    "postcss-html": "1.7.0",
+    "postcss-html": "1.8.0",
     "prettier": "3.4.0",
     "simple-git-hooks": "2.11.1",
     "stylelint": "16.13.0",
