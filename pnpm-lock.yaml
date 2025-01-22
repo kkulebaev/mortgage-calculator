@@ -106,8 +106,8 @@ importers:
         specifier: 16.13.0
         version: 16.13.0(typescript@5.7.2)
       stylelint-config-recommended-vue:
-        specifier: 1.5.0
-        version: 1.5.0(postcss-html@1.8.0)(stylelint@16.13.0(typescript@5.7.2))
+        specifier: 1.6.0
+        version: 1.6.0(postcss-html@1.8.0)(stylelint@16.13.0(typescript@5.7.2))
       stylelint-config-standard:
         specifier: 37.0.0
         version: 37.0.0(stylelint@16.13.0(typescript@5.7.2))
@@ -1902,11 +1902,6 @@ packages:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
 
-  semver@7.6.2:
-    resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
@@ -2003,18 +1998,12 @@ packages:
       postcss-html: ^1.0.0
       stylelint: '>=14.0.0'
 
-  stylelint-config-recommended-vue@1.5.0:
-    resolution: {integrity: sha512-65TAK/clUqkNtkZLcuytoxU0URQYlml+30Nhop7sRkCZ/mtWdXt7T+spPSB3KMKlb+82aEVJ4OrcstyDBdbosg==}
+  stylelint-config-recommended-vue@1.6.0:
+    resolution: {integrity: sha512-syk1adIHvbH2T1OiR/spUK4oQy35PZIDw8Zmc7E0+eVK9Z9SK3tdMpGRT/bgGnAPpMt/WaL9K1u0tlF6xM0sMQ==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       postcss-html: ^1.0.0
       stylelint: '>=14.0.0'
-
-  stylelint-config-recommended@14.0.0:
-    resolution: {integrity: sha512-jSkx290CglS8StmrLp2TxAppIajzIBZKYm3IxT89Kg6fGlxbPiTiyH9PS5YUuVAFwaJLl1ikiXX0QWjI0jmgZQ==}
-    engines: {node: '>=18.12.0'}
-    peerDependencies:
-      stylelint: ^16.0.0
 
   stylelint-config-recommended@15.0.0:
     resolution: {integrity: sha512-9LejMFsat7L+NXttdHdTq94byn25TD+82bzGRiV1Pgasl99pWnwipXS5DguTpp3nP1XjvLXVnEJIuYBfsRjRkA==}
@@ -4120,8 +4109,6 @@ snapshots:
 
   semver@5.7.2: {}
 
-  semver@7.6.2: {}
-
   semver@7.6.3: {}
 
   shebang-command@2.0.0:
@@ -4205,17 +4192,13 @@ snapshots:
       postcss-html: 1.8.0
       stylelint: 16.13.0(typescript@5.7.2)
 
-  stylelint-config-recommended-vue@1.5.0(postcss-html@1.8.0)(stylelint@16.13.0(typescript@5.7.2)):
+  stylelint-config-recommended-vue@1.6.0(postcss-html@1.8.0)(stylelint@16.13.0(typescript@5.7.2)):
     dependencies:
       postcss-html: 1.8.0
-      semver: 7.6.2
+      semver: 7.6.3
       stylelint: 16.13.0(typescript@5.7.2)
       stylelint-config-html: 1.1.0(postcss-html@1.8.0)(stylelint@16.13.0(typescript@5.7.2))
-      stylelint-config-recommended: 14.0.0(stylelint@16.13.0(typescript@5.7.2))
-
-  stylelint-config-recommended@14.0.0(stylelint@16.13.0(typescript@5.7.2)):
-    dependencies:
-      stylelint: 16.13.0(typescript@5.7.2)
+      stylelint-config-recommended: 15.0.0(stylelint@16.13.0(typescript@5.7.2))
 
   stylelint-config-recommended@15.0.0(stylelint@16.13.0(typescript@5.7.2)):
     dependencies:
