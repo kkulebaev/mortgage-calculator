@@ -33,7 +33,7 @@
     "animate.css": "4.1.1",
     "element-plus": "2.9.0",
     "pinia": "3.0.1",
-    "valibot": "^1.0.0",
+    "valibot": "^1.1.0",
     "vue": "3.5.0",
     "vue-i18n": "11.1.0",
     "vue-router": "4.5.0"
