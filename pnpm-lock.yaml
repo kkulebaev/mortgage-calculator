@@ -52,8 +52,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0
       '@tolgee/cli':
-        specifier: 2.12.0
-        version: 2.12.0(typescript@5.8.2)
+        specifier: 2.13.0
+        version: 2.13.0(typescript@5.8.2)
       '@types/node':
         specifier: 22.15.0
         version: 22.15.0
@@ -644,8 +644,8 @@ packages:
   '@sxzz/popperjs-es@2.11.7':
     resolution: {integrity: sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==}
 
-  '@tolgee/cli@2.12.0':
-    resolution: {integrity: sha512-SrLqQy9xVUfM1MT3AzSXuYaA5oIUTVLRhZCxwLQqmXTjx+zLf1UJ/3x64JaZf98pPGJeHE93cUraVNQRDFjCkg==}
+  '@tolgee/cli@2.13.0':
+    resolution: {integrity: sha512-rajxzgeklhX9+wyBhcw+6k70uj29wswUB8URnamQV8RnmvN2ak4greUhwIVKthoR6mwO3YoZNzDNddq+wd36LQ==}
     engines: {node: '>= 18'}
     hasBin: true
     peerDependencies:
@@ -2738,7 +2738,7 @@ snapshots:
 
   '@sxzz/popperjs-es@2.11.7': {}
 
-  '@tolgee/cli@2.12.0(typescript@5.8.2)':
+  '@tolgee/cli@2.13.0(typescript@5.8.2)':
     dependencies:
       ajv: 8.17.1
       ansi-colors: 4.1.3
@@ -2748,7 +2748,7 @@ snapshots:
       json5: 2.2.3
       jsonschema: 1.5.0
       openapi-fetch: 0.13.1
-      tinyglobby: 0.2.12
+      tinyglobby: 0.2.14
       unescape-js: 1.1.4
       vscode-oniguruma: 2.0.1
       vscode-textmate: 9.1.0
