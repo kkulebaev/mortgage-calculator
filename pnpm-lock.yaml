@@ -45,8 +45,8 @@ importers:
         specifier: 11.1.0
         version: 11.1.0(vue@3.5.0(typescript@5.9.2))
       vue-router:
-        specifier: 4.5.0
-        version: 4.5.0(vue@3.5.0(typescript@5.9.2))
+        specifier: 4.6.0
+        version: 4.6.0(vue@3.5.0(typescript@5.9.2))
     devDependencies:
       '@kkulebaev/prettier-config':
         specifier: 0.2.0
@@ -2269,10 +2269,10 @@ packages:
     peerDependencies:
       vue: ^3.0.0
 
-  vue-router@4.5.0:
-    resolution: {integrity: sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==}
+  vue-router@4.6.0:
+    resolution: {integrity: sha512-YRrWLi4ayHe1d6zyH6sMPwF/WwcDY8XgUOfQGa0Kx4kmugSorLavD1ExrM/Y83B4X2NQMXYpJFSq2pbZh9ildQ==}
     peerDependencies:
-      vue: ^3.2.0
+      vue: ^3.5.0
 
   vue-tsc@3.1.0:
     resolution: {integrity: sha512-fbMynMG7kXSnqZTRBSCh9ROYaVpXfCZbEO0gY3lqOjLbp361uuS88n6BDajiUriDIF+SGLWoinjvf6stS2J3Gg==}
@@ -4454,7 +4454,7 @@ snapshots:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.0(typescript@5.9.2)
 
-  vue-router@4.5.0(vue@3.5.0(typescript@5.9.2)):
+  vue-router@4.6.0(vue@3.5.0(typescript@5.9.2)):
     dependencies:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.0(typescript@5.9.2)
