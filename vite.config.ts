@@ -20,6 +20,12 @@ export default defineConfig(() => {
       },
     },
 
+    build: {
+      commonjsOptions: {
+        transformMixedEsModules: true,
+      },
+    },
+
     test: {
       environment: 'jsdom',
       coverage: {
