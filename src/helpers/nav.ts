@@ -1,17 +1,19 @@
+import { CircleHelp, Home, Table } from 'lucide-vue-next'
+
 export const NAV_ITEMS = [
   {
     id: 'home',
     to: { name: 'MainPage' },
-    icon: ['fas', 'house'],
+    icon: Home,
   },
   {
     id: 'detail',
     to: { name: 'DetailPage' },
-    icon: ['fas', 'table'],
+    icon: Table,
   },
   {
     id: 'faq',
     to: { name: 'FaqPage' },
-    icon: ['fas', 'circle-question'],
+    icon: CircleHelp,
   },
 ] as const

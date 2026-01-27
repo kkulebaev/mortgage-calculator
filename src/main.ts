@@ -1,5 +1,3 @@
-import './plugins/fontawesome'
-
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 

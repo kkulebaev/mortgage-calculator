@@ -2,10 +2,9 @@
   <div class="main-page">
     <div class="main-page__data">
       <header class="header">
-        <FontAwesomeIcon
+        <Calculator
           class="app-logo"
-          :icon="['fas', 'calculator']"
-          :size="isMobile ? '3x' : '4x'"
+          :size="isMobile ? 40 : 48"
         />
         <PageTitle :title="$t('app-title')" />
         <ColorSchemeSwitcher
@@ -19,7 +18,7 @@
         v-model:term="inputValues.term"
         v-model:period="inputValues.period"
         v-model:rate="inputValues.rate"
-        v-model:paymentType="inputValues.type"
+        v-model:payment-type="inputValues.type"
         @change="clearOutput"
       />
       <img
@@ -42,9 +41,9 @@
 </template>
 
 <script lang="ts">
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { onKeyStroke } from '@vueuse/core'
 import { ElNotification } from 'element-plus'
+import { Calculator } from 'lucide-vue-next'
 import { storeToRefs } from 'pinia'
 import * as v from 'valibot'
 import { defineComponent } from 'vue'
@@ -65,7 +64,7 @@ export default defineComponent({
     SocialNetworks,
     PageTitle,
     ColorSchemeSwitcher,
-    FontAwesomeIcon,
+    Calculator,
   },
 
   setup() {

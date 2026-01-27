@@ -1,9 +1,9 @@
 <template>
   <div class="burger-menu">
-    <FontAwesomeIcon
+    <component
+      :is="icon"
       class="burger"
-      :icon="icon"
-      size="3x"
+      :size="32"
       @click="isShowMenu = !isShowMenu"
     />
     <AppNav
@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { Menu, X } from 'lucide-vue-next'
 import { computed, defineComponent, ref } from 'vue'
 
 import AppNav from './app-nav.vue'
@@ -24,14 +24,13 @@ export default defineComponent({
   name: 'BurgerMenu',
 
   components: {
-    FontAwesomeIcon,
     AppNav,
   },
 
   setup() {
     const isShowMenu = ref(false)
 
-    const icon = computed(() => (isShowMenu.value ? ['fas', 'xmark'] : ['fas', 'bars']))
+    const icon = computed(() => (isShowMenu.value ? X : Menu))
 
     return {
       isShowMenu,

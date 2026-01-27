@@ -24,15 +24,12 @@
     "print-config:stylelint": "stylelint \"./src/app.vue\" --print-config"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "7.1.0",
-    "@fortawesome/free-brands-svg-icons": "7.1.0",
-    "@fortawesome/free-regular-svg-icons": "7.1.0",
-    "@fortawesome/free-solid-svg-icons": "7.1.0",
-    "@fortawesome/vue-fontawesome": "3.1.0",
     "@vueuse/core": "14.1.0",
     "animate.css": "4.1.1",
     "element-plus": "2.13.0",
+    "lucide-vue-next": "^0.563.0",
     "pinia": "3.0.1",
+    "simple-icons": "^16.6.1",
     "valibot": "^1.2.0",
     "vue": "3.5.0",
     "vue-i18n": "11.2.1",

@@ -6,27 +6,22 @@
       class="nav__link"
       :to="item.to"
     >
-      <FontAwesomeIcon
+      <component
+        :is="item.icon"
         class="nav__icon"
-        :icon="item.icon"
-        size="3x"
+        :size="32"
       />
     </RouterLink>
   </nav>
 </template>
 
 <script lang="ts">
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { defineComponent } from 'vue'
 
 import { NAV_ITEMS } from '@/helpers'
 
 export default defineComponent({
   name: 'AppNav',
-
-  components: {
-    FontAwesomeIcon,
-  },
 
   setup() {
     return {

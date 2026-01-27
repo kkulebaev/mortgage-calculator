@@ -7,25 +7,26 @@
       :href="item.link"
       target="_blank"
     >
-      <FontAwesomeIcon
-        :icon="item.icon"
-        size="3x"
+      <BaseSimpleIcon
+        :path="item.icon"
+        :size="32"
       />
     </a>
   </div>
 </template>
 
 <script lang="ts">
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { defineComponent } from 'vue'
 
 import { SOCIAL_NETWORKS } from '@/helpers'
+
+import BaseSimpleIcon from './base/base-simple-icon.vue'
 
 export default defineComponent({
   name: 'SocialNetworks',
 
   components: {
-    FontAwesomeIcon,
+    BaseSimpleIcon,
   },
 
   setup() {
