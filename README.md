@@ -22,12 +22,20 @@ Demo available on
 - i18n
 - GitHub Actions
 - Element Plus
+- Lucide Vue (icons)
+- Simple Icons (brand icons)
 - Eslint && Stylelint && Prettier
 - Pre commit hooks (simple-git-hooks && nano-staged)
 - Netlify
 - Render.com
 
 ## Installation Steps for Development
+
+### Requirements
+- Node.js >= 24.11.0
+- pnpm
+
+### Setup
 
 Clone repository
 
