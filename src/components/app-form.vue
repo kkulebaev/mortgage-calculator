@@ -1,8 +1,5 @@
 <template>
-  <form
-    class="form"
-    netlify
-  >
+  <form class="form" netlify>
     <div class="form-item">
       <span class="form-item__label"> {{ $t('mortgage-amount') }} </span>
       <ElInputNumber

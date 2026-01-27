@@ -1,8 +1,6 @@
 <template>
   <fieldset class="switcher">
-    <legend class="switcher__legend">
-      Color scheme
-    </legend>
+    <legend class="switcher__legend">Color scheme</legend>
     <input
       v-model="colorScheme"
       :value="COLOR_SCHEME.light"
@@ -10,7 +8,7 @@
       type="radio"
       name="color-scheme"
       aria-label="light"
-    >
+    />
     <input
       v-model="colorScheme"
       :value="COLOR_SCHEME.dark"
@@ -18,7 +16,7 @@
       type="radio"
       name="color-scheme"
       aria-label="dark"
-    >
+    />
     <div class="switcher__status" />
   </fieldset>
 </template>

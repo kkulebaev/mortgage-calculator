@@ -1,16 +1,7 @@
 <template>
   <div class="burger-menu">
-    <component
-      :is="icon"
-      class="burger"
-      :size="32"
-      @click="isShowMenu = !isShowMenu"
-    />
-    <AppNav
-      class="mobile-menu"
-      :class="{ open: isShowMenu }"
-      @click="isShowMenu = false"
-    />
+    <component :is="icon" class="burger" :size="32" @click="isShowMenu = !isShowMenu" />
+    <AppNav class="mobile-menu" :class="{ open: isShowMenu }" @click="isShowMenu = false" />
   </div>
 </template>
 

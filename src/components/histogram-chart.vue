@@ -1,9 +1,6 @@
 <template>
   <div class="histogram-chart">
-    <template
-      v-for="(item, index) in histograms"
-      :key="index"
-    >
+    <template v-for="(item, index) in histograms" :key="index">
       <Transition
         enter-active-class="animated bounceInUp"
         leave-active-class="animated bounceOutUp"

@@ -1,19 +1,13 @@
 <template>
   <div class="result-block">
-    <HistogramChart
-      :take-value="takeValue"
-      :repay-value="repayValue"
-    />
+    <HistogramChart :take-value="takeValue" :repay-value="repayValue" />
 
     <div class="info-block">
       <Transition
         enter-active-class="animated bounceInUp"
         leave-active-class="animated bounceOutUp"
       >
-        <div
-          v-if="overpaymentValue"
-          class="info-block__item"
-        >
+        <div v-if="overpaymentValue" class="info-block__item">
           <span class="info-block__item__label"> {{ $t('mortgage-overpayment') }}: </span>
 
           <span class="info-block__item__label">

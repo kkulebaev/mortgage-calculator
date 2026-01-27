@@ -7,10 +7,7 @@
       :href="item.link"
       target="_blank"
     >
-      <BaseSimpleIcon
-        :path="item.icon"
-        :size="32"
-      />
+      <BaseSimpleIcon :path="item.icon" :size="32" />
     </a>
   </div>
 </template>
