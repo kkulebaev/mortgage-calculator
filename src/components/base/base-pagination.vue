@@ -1,6 +1,6 @@
 <template>
   <ElPagination
-    v-model:currentPage="curValue"
+    v-model:current-page="curValue"
     class="pagination"
     layout="prev, pager, next"
     :total="total"

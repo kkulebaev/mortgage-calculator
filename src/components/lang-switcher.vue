@@ -1,5 +1,8 @@
 <template>
-  <ElSelect v-model="lang" class="lang-switcher">
+  <ElSelect
+    v-model="lang"
+    class="lang-switcher"
+  >
     <ElOption
       v-for="locale in availableLocales"
       :key="`locale-${locale}`"

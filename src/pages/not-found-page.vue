@@ -12,14 +12,17 @@
       <h1 class="content-404__title">
         {{ NOT_FOUND_STATUS_CODE }}
       </h1>
-      <hr class="content-404__hr" />
+      <hr class="content-404__hr">
       <h2 class="content-404__subtitle primary-word">
         {{ $t('notFound.page') }}
       </h2>
       <h2 class="content-404__subtitle secondary-word">
         {{ $t('notFound.notFound') }}
       </h2>
-      <RouterLink class="content-404__back-to" :to="{ name: 'MainPage' }">
+      <RouterLink
+        class="content-404__back-to"
+        :to="{ name: 'MainPage' }"
+      >
         {{ $t('notFound.back') }}
       </RouterLink>
     </div>

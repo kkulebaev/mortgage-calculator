@@ -1,7 +1,16 @@
 <template>
   <nav class="nav">
-    <RouterLink v-for="item in NAV_ITEMS" :key="item.id" class="nav__link" :to="item.to">
-      <component :is="item.icon" class="nav__icon" :size="32" />
+    <RouterLink
+      v-for="item in NAV_ITEMS"
+      :key="item.id"
+      class="nav__link"
+      :to="item.to"
+    >
+      <component
+        :is="item.icon"
+        class="nav__icon"
+        :size="32"
+      />
     </RouterLink>
   </nav>
 </template>

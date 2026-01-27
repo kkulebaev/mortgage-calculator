@@ -2,9 +2,15 @@
   <div class="main-page">
     <div class="main-page__data">
       <header class="header">
-        <Calculator class="app-logo" :size="isMobile ? 40 : 48" />
+        <Calculator
+          class="app-logo"
+          :size="isMobile ? 40 : 48"
+        />
         <PageTitle :title="$t('app-title')" />
-        <ColorSchemeSwitcher v-if="!isMobile" class="header__switcher" />
+        <ColorSchemeSwitcher
+          v-if="!isMobile"
+          class="header__switcher"
+        />
         <LangSwitcher />
       </header>
       <AppForm
@@ -22,7 +28,7 @@
         width="957"
         height="1060"
         alt="logo"
-      />
+      >
       <SocialNetworks v-if="isDesktop" />
     </div>
     <AppResult

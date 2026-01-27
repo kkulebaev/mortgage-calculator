@@ -1,5 +1,8 @@
 <template>
-  <span class="simple-icon" v-html="svg" />
+  <span
+    class="simple-icon"
+    v-html="svg"
+  />
 </template>
 
 <script lang="ts">
