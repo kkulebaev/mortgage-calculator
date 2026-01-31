@@ -24,7 +24,7 @@
     "print-config:stylelint": "stylelint \"./src/app.vue\" --print-config"
   },
   "dependencies": {
-    "@vueuse/core": "14.1.0",
+    "@vueuse/core": "14.2.0",
     "animate.css": "4.1.1",
     "element-plus": "2.13.0",
     "lucide-vue-next": "^0.563.0",
