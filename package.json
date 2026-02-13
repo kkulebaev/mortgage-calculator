@@ -27,7 +27,7 @@
     "@vueuse/core": "14.2.0",
     "animate.css": "4.1.1",
     "element-plus": "2.13.0",
-    "lucide-vue-next": "^0.563.0",
+    "lucide-vue-next": "^0.564.0",
     "pinia": "3.0.1",
     "simple-icons": "^16.8.0",
     "valibot": "^1.2.0",
