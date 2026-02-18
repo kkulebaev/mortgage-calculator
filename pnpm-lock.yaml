@@ -43,8 +43,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0
       '@tolgee/cli':
-        specifier: 2.15.0
-        version: 2.15.0(typescript@5.9.2)
+        specifier: 2.16.0
+        version: 2.16.0(typescript@5.9.2)
       '@types/node':
         specifier: 24.10.0
         version: 24.10.0
@@ -677,8 +677,8 @@ packages:
   '@sxzz/popperjs-es@2.11.7':
     resolution: {integrity: sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==}
 
-  '@tolgee/cli@2.15.0':
-    resolution: {integrity: sha512-MKcMjPgOt8zeDDjeoTDvoWYDbGkMhDV3hLbWS1a4paXznvuteR3IwFaWNj2zu8UMSM/WMVvei7BUxD0e5Vt+8Q==}
+  '@tolgee/cli@2.16.0':
+    resolution: {integrity: sha512-CJEx3eUHSxcvzzvUncOAfavzoRtqLXTqXeCMB/SRCMSsl5JmAS2SRGrDC9x5v4BwiRFKWXiHpTUON33uBwjTCw==}
     engines: {node: '>= 18'}
     hasBin: true
     peerDependencies:
@@ -2955,7 +2955,7 @@ snapshots:
 
   '@sxzz/popperjs-es@2.11.7': {}
 
-  '@tolgee/cli@2.15.0(typescript@5.9.2)':
+  '@tolgee/cli@2.16.0(typescript@5.9.2)':
     dependencies:
       '@stomp/stompjs': 7.2.1
       ajv: 8.17.1

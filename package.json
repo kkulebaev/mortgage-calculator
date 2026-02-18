@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@kkulebaev/prettier-config": "0.2.0",
-    "@tolgee/cli": "2.15.0",
+    "@tolgee/cli": "2.16.0",
     "@types/node": "24.10.0",
     "@vitejs/plugin-vue": "6.0.0",
     "@vitest/ui": "4.0.1",
