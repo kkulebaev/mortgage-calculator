@@ -24,8 +24,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1(typescript@5.9.2)(vue@3.5.0(typescript@5.9.2))
       simple-icons:
-        specifier: ^16.10.0
-        version: 16.10.0
+        specifier: ^16.11.0
+        version: 16.11.0
       valibot:
         specifier: ^1.2.0
         version: 1.2.0(typescript@5.9.2)
@@ -2051,8 +2051,8 @@ packages:
     resolution: {integrity: sha512-N+goiLxlkHJlyaYEglFypzVNMaNplPAk5syu0+OPp/Bk6dwVoXF6FfOw2vO0Dp+JHsBaI+w6cm8TnFl2Hw6tDA==}
     hasBin: true
 
-  simple-icons@16.10.0:
-    resolution: {integrity: sha512-62kuxaG3pE+cFNerudUtwb9BLmudzayHrlHkvU9gf8Nxcj7VYOm9dh3WNbGaFk60aQtfnRyzViZaouFG2B45kg==}
+  simple-icons@16.11.0:
+    resolution: {integrity: sha512-6vqbcdaT6PsgUXud9rrP9w+nrmRzzStMEvyDavMeGwDgZSYM4uJ3tH7zurgTLHJO0RnMqU3Q09Vgo7WdTXV1eA==}
     engines: {node: '>=0.12.18'}
 
   sirv@3.0.2:
@@ -4435,7 +4435,7 @@ snapshots:
 
   simple-git-hooks@2.13.0: {}
 
-  simple-icons@16.10.0: {}
+  simple-icons@16.11.0: {}
 
   sirv@3.0.2:
     dependencies:
