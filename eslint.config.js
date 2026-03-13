@@ -10,7 +10,7 @@ const CUSTOM_SPLITTER = '/'
 export default [
   {
     name: CUSTOM_PREFIX + CUSTOM_SPLITTER + 'ignores',
-    ignores: ['**/*.{test,spec}.ts'],
+    ignores: ['**/*.{test,spec}.ts', 'vite.config.ts', 'eslint.config.js'],
   },
   {
     name: 'eslint-js/recommended',
