@@ -75,5 +75,5 @@
     "pre-commit": "./node_modules/.bin/simple-git-hooks && ./node_modules/.bin/nano-staged",
     "commit-msg": "./node_modules/.bin/commitlint --edit $1"
   },
-  "packageManager": "pnpm@9.15.0"
+  "packageManager": "pnpm@10.32.1"
 }
