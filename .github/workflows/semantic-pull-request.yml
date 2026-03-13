@@ -59,17 +59,10 @@ jobs:
           node-version-file: 'package.json'
 
       - name: Install commitlint
-        run: |
-          corepack pnpm install conventional-changelog-conventionalcommits
-          corepack pnpm install commitlint@latest
-          corepack pnpm install @commitlint/{config-conventional,cli}
-
-      - name: Set up commitlint configuration
-        run: |
-          echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.cjs
+        run: corepack pnpm install
 
       - name: Validate PR commits with commitlint
-        run: npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+        run: pnpm commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
       - name: Pull Request Comment
         uses: marocchino/sticky-pull-request-comment@v3

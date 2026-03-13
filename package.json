@@ -36,6 +36,8 @@
     "vue-router": "5.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "20.4.4",
+    "@commitlint/config-conventional": "20.4.4",
     "@kkulebaev/prettier-config": "0.2.0",
     "@tolgee/cli": "2.16.0",
     "@types/node": "24.12.0",
@@ -70,7 +72,8 @@
     ]
   },
   "simple-git-hooks": {
-    "pre-commit": "./node_modules/.bin/simple-git-hooks && ./node_modules/.bin/nano-staged"
+    "pre-commit": "./node_modules/.bin/simple-git-hooks && ./node_modules/.bin/nano-staged",
+    "commit-msg": "./node_modules/.bin/commitlint --edit $1"
   },
   "packageManager": "pnpm@9.15.0"
 }
