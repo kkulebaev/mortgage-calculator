@@ -106,8 +106,8 @@ importers:
         specifier: 1.6.0
         version: 1.6.0(postcss-html@1.8.0)(stylelint@17.4.0(typescript@5.9.2))
       stylelint-config-standard:
-        specifier: 37.0.0
-        version: 37.0.0(stylelint@17.4.0(typescript@5.9.2))
+        specifier: 40.0.0
+        version: 40.0.0(stylelint@17.4.0(typescript@5.9.2))
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -1484,6 +1484,7 @@ packages:
   eslint@9.39.0:
     resolution: {integrity: sha512-iy2GE3MHrYTL5lrCtMZ0X1KLEKKUjmK0kzwcnefhR66txcEmXZD2YWgR5GNdcEwkNx3a0siYkSvl0vIC+Svjmg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -1627,6 +1628,7 @@ packages:
   git-raw-commits@5.0.1:
     resolution: {integrity: sha512-Y+csSm2GD/PCSh6Isd/WiMjNAydu0VBiG9J7EdQsNA5P9uXvLayqjmTsNlK5Gs9IhblFZqOU0yid5Il5JPoLiQ==}
     engines: {node: '>=18'}
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   glob-parent@5.1.2:
@@ -2005,6 +2007,7 @@ packages:
 
   lucide-vue-next@0.577.0:
     resolution: {integrity: sha512-py05bAfv9SHVJqscbiOnjcnLlEmOffA58a+7XhZuFxrs6txe1E8VoR1ngWGTYO+9aVKABAz8l3ee3PqiQN9QPA==}
+    deprecated: Package deprecated. Please use @lucide/vue instead.
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -2447,11 +2450,17 @@ packages:
     peerDependencies:
       stylelint: ^16.13.0
 
-  stylelint-config-standard@37.0.0:
-    resolution: {integrity: sha512-+6eBlbSTrOn/il2RlV0zYGQwRTkr+WtzuVSs1reaWGObxnxLpbcspCUYajVQHonVfxVw2U+h42azGhrBvcg8OA==}
-    engines: {node: '>=18.12.0'}
+  stylelint-config-recommended@18.0.0:
+    resolution: {integrity: sha512-mxgT2XY6YZ3HWWe3Di8umG6aBmWmHTblTgu/f10rqFXnyWxjKWwNdjSWkgkwCtxIKnqjSJzvFmPT5yabVIRxZg==}
+    engines: {node: '>=20.19.0'}
     peerDependencies:
-      stylelint: ^16.13.0
+      stylelint: ^17.0.0
+
+  stylelint-config-standard@40.0.0:
+    resolution: {integrity: sha512-EznGJxOUhtWck2r6dJpbgAdPATIzvpLdK9+i5qPd4Lx70es66TkBPljSg4wN3Qnc6c4h2n+WbUrUynQ3fanjHw==}
+    engines: {node: '>=20.19.0'}
+    peerDependencies:
+      stylelint: ^17.0.0
 
   stylelint@17.4.0:
     resolution: {integrity: sha512-3kQ2/cHv3Zt8OBg+h2B8XCx9evEABQIrv4hh3uXahGz/ZEHrTR80zxBiK2NfXNaSoyBzxO1pjsz1Vhdzwn5XSw==}
@@ -5150,10 +5159,14 @@ snapshots:
     dependencies:
       stylelint: 17.4.0(typescript@5.9.2)
 
-  stylelint-config-standard@37.0.0(stylelint@17.4.0(typescript@5.9.2)):
+  stylelint-config-recommended@18.0.0(stylelint@17.4.0(typescript@5.9.2)):
     dependencies:
       stylelint: 17.4.0(typescript@5.9.2)
-      stylelint-config-recommended: 15.0.0(stylelint@17.4.0(typescript@5.9.2))
+
+  stylelint-config-standard@40.0.0(stylelint@17.4.0(typescript@5.9.2)):
+    dependencies:
+      stylelint: 17.4.0(typescript@5.9.2)
+      stylelint-config-recommended: 18.0.0(stylelint@17.4.0(typescript@5.9.2))
 
   stylelint@17.4.0(typescript@5.9.2):
     dependencies:
