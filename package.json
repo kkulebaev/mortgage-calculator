@@ -39,7 +39,7 @@
     "@commitlint/cli": "20.4.4",
     "@commitlint/config-conventional": "20.4.4",
     "@kkulebaev/prettier-config": "0.2.0",
-    "@tolgee/cli": "2.16.0",
+    "@tolgee/cli": "2.20.0",
     "@types/node": "24.12.0",
     "@vitejs/plugin-vue": "6.0.0",
     "@vitest/ui": "4.1.0",
