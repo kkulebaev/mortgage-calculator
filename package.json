@@ -36,8 +36,8 @@
     "vue-router": "5.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.4.4",
-    "@commitlint/config-conventional": "20.4.4",
+    "@commitlint/cli": "20.5.3",
+    "@commitlint/config-conventional": "20.5.3",
     "@kkulebaev/prettier-config": "0.2.0",
     "@tolgee/cli": "2.16.0",
     "@types/node": "24.12.0",
